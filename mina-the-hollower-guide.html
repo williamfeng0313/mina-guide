@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mina the Hollower — Complete Guide & Wiki</title>
+<meta name="description" content="Complete guide for Mina the Hollower — boss strategies, all 60 trinkets, weapon builds, walkthrough, and 100% completion tips for Tenebrous Isle.">
+<meta name="keywords" content="Mina the Hollower guide, Mina the Hollower wiki, boss guide, trinket locations, weapon builds, walkthrough, Yacht Club Games">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --parchment: #f5ead8;
+    --parchment-dark: #e8d8ba;
+    --parchment-deeper: #d4bc96;
+    --forest: #1e3a2b;
+    --forest-mid: #2d5240;
+    --forest-light: #3d7055;
+    --candle: #c8860a;
+    --candle-light: #e8a020;
+    --candle-pale: #f4cc7a;
+    --bone: #d8cdb8;
+    --bone-dark: #b8a888;
+    --shadow: rgba(10,6,2,0.18);
+    --shadow-deep: rgba(10,6,2,0.35);
+    --text-body: #2a1e0e;
+    --text-muted: #6b5440;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--forest);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(30,58,43,0.9) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(15,30,20,0.95) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: var(--text-body);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15, 28, 18, 0.97);
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--candle-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-brand::before {
+    content: '⚰';
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+  .nav-links {
+    display: flex; gap: 0; list-style: none;
+  }
+  .nav-links a {
+    display: block; padding: 0 1rem; height: 56px; line-height: 56px;
+    font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 400;
+    color: var(--bone); text-decoration: none; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--candle-light); background: rgba(200,134,10,0.08); }
+  .nav-search {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(245,234,216,0.08); border: 1px solid rgba(200,134,10,0.25);
+    border-radius: 4px; padding: 0 10px; height: 32px;
+  }
+  .nav-search input {
+    background: none; border: none; outline: none;
+    font-family: 'Crimson Text', serif; font-size: 0.9rem;
+    color: var(--parchment); width: 160px;
+  }
+  .nav-search input::placeholder { color: rgba(245,234,216,0.35); }
+  .nav-search svg { color: rgba(245,234,216,0.4); flex-shrink: 0; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--bone); padding: 4px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(180deg, rgba(10,18,12,0.7) 0%, transparent 40%, rgba(10,18,12,0.5) 100%),
+      var(--forest);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid rgba(200,134,10,0.2);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 48px,
+      rgba(200,134,10,0.03) 48px, rgba(200,134,10,0.03) 49px
+    );
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    color: var(--candle); text-transform: uppercase;
+    margin-bottom: 1.2rem; opacity: 0.85;
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif; font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: var(--parchment);
+    line-height: 1.15; letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+  .hero h1 span {
+    color: var(--candle-light);
+    display: block; font-size: 0.55em; font-weight: 400;
+    font-family: 'IM Fell English', serif; letter-spacing: 0.06em;
+    font-style: italic; margin-top: 0.3rem;
+  }
+  .hero-desc {
+    font-family: 'IM Fell English', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--bone);
+    max-width: 560px; margin: 1.5rem auto 2.5rem;
+    opacity: 0.9; line-height: 1.6;
+  }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--candle); color: var(--ink);
+    border: none; border-radius: 3px;
+    font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.7rem 1.6rem; cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--candle-light); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--parchment);
+    border: 1px solid rgba(245,234,216,0.35); border-radius: 3px;
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.7rem 1.6rem; cursor: pointer; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--candle); background: rgba(200,134,10,0.1); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: rgba(10,18,12,0.7);
+    border-bottom: 1px solid rgba(200,134,10,0.15);
+    display: flex; justify-content: center; gap: 0;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    padding: 0.9rem 2rem;
+    border-right: 1px solid rgba(200,134,10,0.12);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700;
+    color: var(--candle-light); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: var(--bone-dark);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .site-body {
+    max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem;
+    display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-box {
+    background: rgba(245,234,216,0.06);
+    border: 1px solid rgba(200,134,10,0.22);
+    border-radius: 4px; overflow: hidden; margin-bottom: 1.2rem;
+  }
+  .sidebar-box-title {
+    background: rgba(200,134,10,0.12);
+    border-bottom: 1px solid rgba(200,134,10,0.22);
+    padding: 0.6rem 1rem;
+    font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600;
+    color: var(--candle); letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .sidebar-nav-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0.55rem 1rem;
+    font-size: 0.92rem; color: var(--bone);
+    text-decoration: none; border-bottom: 1px solid rgba(200,134,10,0.08);
+    transition: background 0.15s, color 0.15s;
+  }
+  .sidebar-nav-link:last-child { border-bottom: none; }
+  .sidebar-nav-link:hover { background: rgba(200,134,10,0.1); color: var(--candle-light); }
+  .sidebar-nav-link .icon { font-size: 0.85rem; opacity: 0.7; width: 16px; text-align: center; }
+  .sidebar-nav-link .badge {
+    margin-left: auto; font-size: 0.68rem; font-family: 'Cinzel', serif;
+    background: rgba(200,134,10,0.25); color: var(--candle-pale);
+    padding: 1px 6px; border-radius: 2px; letter-spacing: 0.05em;
+  }
+
+  /* ── CONTENT ── */
+  .content {}
+  .section-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-divider h2 {
+    font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600;
+    color: var(--candle-light); letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .section-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(200,134,10,0.4), transparent);
+  }
+  .section-divider::before {
+    content: '✦'; color: var(--candle); font-size: 0.7rem; opacity: 0.6;
+  }
+
+  /* ── GUIDE CARDS ── */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem; margin-bottom: 2.5rem;
+  }
+  .guide-card {
+    background: rgba(245,234,216,0.06);
+    border: 1px solid rgba(200,134,10,0.2);
+    border-radius: 4px; padding: 1.25rem;
+    text-decoration: none; color: inherit;
+    display: block; transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    position: relative; overflow: hidden;
+  }
+  .guide-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--candle), transparent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .guide-card:hover { border-color: rgba(200,134,10,0.5); background: rgba(245,234,216,0.1); transform: translateY(-2px); }
+  .guide-card:hover::before { opacity: 1; }
+  .card-icon { font-size: 1.6rem; margin-bottom: 0.7rem; display: block; }
+  .card-title {
+    font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600;
+    color: var(--parchment); margin-bottom: 0.4rem; letter-spacing: 0.04em;
+  }
+  .card-desc { font-size: 0.88rem; color: var(--bone-dark); line-height: 1.5; }
+  .card-tag {
+    display: inline-block; margin-top: 0.7rem;
+    font-size: 0.68rem; font-family: 'Cinzel', serif; letter-spacing: 0.08em;
+    color: var(--candle); text-transform: uppercase;
+    border: 1px solid rgba(200,134,10,0.35); padding: 2px 7px; border-radius: 2px;
+  }
+
+  /* ── BOSS TABLE ── */
+  .boss-section { margin-bottom: 2.5rem; }
+  .boss-table {
+    width: 100%; border-collapse: collapse; font-size: 0.9rem;
+  }
+  .boss-table th {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--candle); font-weight: 600;
+    padding: 0.6rem 0.9rem; text-align: left;
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    background: rgba(200,134,10,0.07);
+  }
+  .boss-table td {
+    padding: 0.7rem 0.9rem; color: var(--bone);
+    border-bottom: 1px solid rgba(200,134,10,0.08);
+    vertical-align: middle;
+  }
+  .boss-table tr:hover td { background: rgba(200,134,10,0.05); }
+  .boss-name { font-weight: 600; color: var(--parchment); font-family: 'IM Fell English', serif; font-size: 1rem; }
+  .diff-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 2px;
+    font-size: 0.7rem; font-family: 'Cinzel', serif; letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .diff-normal { background: rgba(61,112,85,0.3); color: #7ecda0; }
+  .diff-hard   { background: rgba(200,134,10,0.25); color: var(--candle-pale); }
+  .diff-brutal { background: rgba(180,30,30,0.3); color: #e88080; }
+  .diff-secret { background: rgba(80,40,120,0.3); color: #c0a0e0; }
+  .region-label {
+    font-size: 0.78rem; color: var(--bone-dark); font-style: italic;
+  }
+  .boss-tip { font-size: 0.82rem; color: var(--bone-dark); font-style: italic; }
+
+  /* ── WEAPON GRID ── */
+  .weapon-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .weapon-card {
+    background: rgba(245,234,216,0.05); border: 1px solid rgba(200,134,10,0.18);
+    border-radius: 4px; padding: 1rem 1.1rem;
+  }
+  .weapon-name { font-family: 'IM Fell English', serif; font-size: 1.05rem; color: var(--parchment); margin-bottom: 0.2rem; }
+  .weapon-type { font-size: 0.72rem; color: var(--candle); text-transform: uppercase; font-family: 'Cinzel', serif; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+  .weapon-bars { display: flex; flex-direction: column; gap: 5px; margin-bottom: 0.7rem; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar-label { font-size: 0.72rem; color: var(--bone-dark); width: 52px; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 4px; background: rgba(245,234,216,0.1); border-radius: 2px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 2px; background: var(--candle); }
+  .weapon-for { font-size: 0.8rem; color: var(--bone-dark); font-style: italic; }
+
+  /* ── TRINKET SECTION ── */
+  .trinket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.7rem; margin-bottom: 2.5rem; }
+  .trinket-item {
+    background: rgba(245,234,216,0.04); border: 1px solid rgba(200,134,10,0.14);
+    border-radius: 3px; padding: 0.7rem 0.85rem;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .trinket-item:hover { border-color: rgba(200,134,10,0.35); background: rgba(245,234,216,0.08); }
+  .trinket-name { font-family: 'IM Fell English', serif; font-size: 0.95rem; color: var(--parchment); margin-bottom: 0.2rem; }
+  .trinket-effect { font-size: 0.8rem; color: var(--bone-dark); line-height: 1.4; }
+  .trinket-location { font-size: 0.72rem; color: var(--candle); margin-top: 0.3rem; font-style: italic; }
+
+  /* ── TIPS SECTION ── */
+  .tips-list { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2.5rem; }
+  .tip-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: rgba(245,234,216,0.04); border: 1px solid rgba(200,134,10,0.15);
+    border-left: 3px solid var(--candle); border-radius: 0 3px 3px 0;
+    padding: 0.9rem 1rem;
+  }
+  .tip-num {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--candle-light); flex-shrink: 0; line-height: 1.3;
+    min-width: 28px;
+  }
+  .tip-content {}
+  .tip-title { font-family: 'IM Fell English', serif; font-size: 1rem; color: var(--parchment); margin-bottom: 0.25rem; }
+  .tip-body { font-size: 0.88rem; color: var(--bone-dark); line-height: 1.55; }
+
+  /* ── AREAS SECTION ── */
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .area-card {
+    border: 1px solid rgba(200,134,10,0.2);
+    border-radius: 4px; overflow: hidden;
+    text-decoration: none; color: inherit;
+    display: block; transition: transform 0.15s, border-color 0.2s;
+  }
+  .area-card:hover { transform: translateY(-2px); border-color: rgba(200,134,10,0.45); }
+  .area-header {
+    padding: 0.8rem 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .area-name { font-family: 'Cinzel', serif; font-size: 0.88rem; font-weight: 600; color: var(--parchment); }
+  .area-spark { font-size: 0.72rem; color: var(--candle-pale); font-family: 'Cinzel', serif; }
+  .area-body { padding: 0.7rem 1rem 0.9rem; }
+  .area-desc { font-size: 0.85rem; color: var(--bone-dark); line-height: 1.5; }
+  .area-meta { margin-top: 0.5rem; font-size: 0.72rem; color: var(--bone-dark); opacity: 0.7; }
+
+  .area-ossex { background: linear-gradient(135deg, rgba(30,58,43,0.8), rgba(20,40,30,0.9)); }
+  .area-septemburg { background: linear-gradient(135deg, rgba(50,35,15,0.8), rgba(35,25,10,0.9)); }
+  .area-crypt { background: linear-gradient(135deg, rgba(20,20,35,0.8), rgba(15,15,25,0.9)); }
+  .area-bayou { background: linear-gradient(135deg, rgba(15,35,25,0.8), rgba(10,25,18,0.9)); }
+  .area-sands { background: linear-gradient(135deg, rgba(45,35,15,0.8), rgba(35,28,12,0.9)); }
+  .area-heath { background: linear-gradient(135deg, rgba(30,20,30,0.8), rgba(20,15,20,0.9)); }
+  .area-astral { background: linear-gradient(135deg, rgba(15,15,40,0.8), rgba(10,10,30,0.9)); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(5,12,8,0.95);
+    border-top: 1px solid rgba(200,134,10,0.2);
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--candle-light); margin-bottom: 0.6rem;
+  }
+  .footer-text { font-size: 0.85rem; color: var(--bone-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.82rem; color: var(--bone-dark); text-decoration: none; }
+  .footer-links a:hover { color: var(--candle); }
+  .footer-disclaimer { margin-top: 1.5rem; font-size: 0.75rem; color: var(--text-muted); opacity: 0.6; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce {
+    background: rgba(200,134,10,0.15);
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    padding: 0.45rem 1rem; text-align: center;
+    font-size: 0.82rem; color: var(--candle-pale);
+    font-family: 'Cinzel', serif; letter-spacing: 0.05em;
+  }
+  .announce a { color: var(--candle-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .site-body { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .hero { padding: 3.5rem 1.5rem 3rem; }
+  }
+  @media (max-width: 560px) {
+    .stats-bar { gap: 0; }
+    .stat-item { padding: 0.7rem 1rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .boss-table td:nth-child(4), .boss-table th:nth-child(4) { display: none; }
+  }
+
+  /* ── SCROLL DECORATIONS ── */
+  .scroll-ornament {
+    text-align: center; color: rgba(200,134,10,0.3);
+    font-size: 0.9rem; letter-spacing: 0.4em;
+    margin: 2rem 0 1rem;
+  }
+
+  /* Mobile nav overlay */
+  .mobile-nav-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(5,12,8,0.97);
+    flex-direction: column; padding: 5rem 2rem 2rem;
+    gap: 0;
+  }
+  .mobile-nav-overlay.open { display: flex; }
+  .mobile-nav-overlay a {
+    display: block; padding: 1rem 0;
+    font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.1em;
+    color: var(--bone); text-decoration: none;
+    border-bottom: 1px solid rgba(200,134,10,0.15);
+  }
+  .mobile-nav-overlay a:hover { color: var(--candle-light); }
+  .mobile-close-btn {
+    position: absolute; top: 1rem; right: 1.5rem;
+    background: none; border: none; cursor: pointer;
+    color: var(--bone); font-size: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">
+  ⚔ Mina the Hollower launched May 29, 2026 — guides are live and updating daily &nbsp;|&nbsp;
+  <a href="#tips">New: 11 beginner tips →</a>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="nav-brand">Tenebrous Isle Guide</a>
+  <ul class="nav-links">
+    <li><a href="#guides">Guides</a></li>
+    <li><a href="#bosses">Bosses</a></li>
+    <li><a href="#weapons">Weapons</a></li>
+    <li><a href="#trinkets">Trinkets</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…" aria-label="Search guides">
+  </div>
+  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">✕</button>
+  <a href="#guides" onclick="document.getElementById('mobileNav').classList.remove('open')">Guides</a>
+  <a href="#bosses" onclick="document.getElementById('mobileNav').classList.remove('open')">Boss Guide</a>
+  <a href="#weapons" onclick="document.getElementById('mobileNav').classList.remove('open')">Weapons & Builds</a>
+  <a href="#trinkets" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+  <a href="#areas" onclick="document.getElementById('mobileNav').classList.remove('open')">Areas & Map</a>
+  <a href="#tips" onclick="document.getElementById('mobileNav').classList.remove('open')">Beginner Tips</a>
+</div>
+
+<!-- Hero -->
+<header class="hero">
+  <p class="hero-eyebrow">Complete Wiki & Strategy Guide</p>
+  <h1>
+    Mina the Hollower
+    <span>Tenebrous Isle awaits — with 26 bosses, 60 trinkets, and darkness at every turn</span>
+  </h1>
+  <p class="hero-desc">
+    Master the cursed island's secrets. Boss strategies, weapon builds, all trinket locations,
+    full walkthrough — everything you need to restore the Spark Generators and survive.
+  </p>
+  <div class="hero-ctas">
+    <a href="#guides" class="btn-primary">Start Here</a>
+    <a href="#bosses" class="btn-secondary">Boss Guide</a>
+    <a href="#tips" class="btn-secondary">Beginner Tips</a>
+  </div>
+</header>
+
+<!-- Stats -->
+<div class="stats-bar" role="region" aria-label="Game overview stats">
+  <div class="stat-item"><span class="stat-num">26</span><span class="stat-label">Boss Fights</span></div>
+  <div class="stat-item"><span class="stat-num">60</span><span class="stat-label">Trinkets</span></div>
+  <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Weapons</span></div>
+  <div class="stat-item"><span class="stat-num">15</span><span class="stat-label">Sidearms</span></div>
+  <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">NG+ Modes</span></div>
+  <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Regions</span></div>
+</div>
+
+<!-- Main content -->
+<div class="site-body">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Guide navigation">
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Quick Navigation</div>
+      <a href="#guides" class="sidebar-nav-link"><span class="icon">📜</span> Guide Hub <span class="badge">New</span></a>
+      <a href="#bosses" class="sidebar-nav-link"><span class="icon">💀</span> Boss Guide</a>
+      <a href="#weapons" class="sidebar-nav-link"><span class="icon">⚡</span> Weapons & Builds</a>
+      <a href="#trinkets" class="sidebar-nav-link"><span class="icon">💎</span> All Trinkets <span class="badge">60</span></a>
+      <a href="#areas" class="sidebar-nav-link"><span class="icon">🗺</span> Areas & Map</a>
+      <a href="#tips" class="sidebar-nav-link"><span class="icon">🕯</span> Beginner Tips</a>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Game Info</div>
+      <a href="#" class="sidebar-nav-link"><span class="icon">🎮</span> Platforms: PC / Console</a>
+      <a href="#" class="sidebar-nav-link"><span class="icon">📅</span> Released May 29, 2026</a>
+      <a href="#" class="sidebar-nav-link"><span class="icon">🏢</span> Yacht Club Games</a>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Popular Guides</div>
+      <a href="#bosses" class="sidebar-nav-link"><span class="icon">⚔</span> Carving Man Boss</a>
+      <a href="#trinkets" class="sidebar-nav-link"><span class="icon">🔮</span> Best Trinket Builds</a>
+      <a href="#weapons" class="sidebar-nav-link"><span class="icon">🌟</span> Nightstar Combos</a>
+      <a href="#tips" class="sidebar-nav-link"><span class="icon">🦴</span> Bone Farming Tips</a>
+      <a href="#areas" class="sidebar-nav-link"><span class="icon">🌊</span> Mirror's End Route</a>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Guide Hub -->
+    <section id="guides" aria-label="Guide categories">
+      <div class="section-divider"><h2>Guide Hub</h2></div>
+      <div class="cards-grid">
+        <a href="#tips" class="guide-card">
+          <span class="card-icon">🕯</span>
+          <div class="card-title">Beginner's Guide</div>
+          <div class="card-desc">Start here — core mechanics, first steps on Tenebrous Isle, and 11 tips to survive your first few hours.</div>
+          <span class="card-tag">Starter</span>
+        </a>
+        <a href="#bosses" class="guide-card">
+          <span class="card-icon">💀</span>
+          <div class="card-title">Boss Guide</div>
+          <div class="card-desc">All 26 bosses with attack patterns, weaknesses, and the fastest strategies for every main and secret fight.</div>
+          <span class="card-tag">Combat</span>
+        </a>
+        <a href="#weapons" class="guide-card">
+          <span class="card-icon">⚡</span>
+          <div class="card-title">Weapons & Builds</div>
+          <div class="card-desc">All 5 weapons broken down by playstyle. Best trinket synergies and recommended builds for each.</div>
+          <span class="card-tag">Builds</span>
+        </a>
+        <a href="#trinkets" class="guide-card">
+          <span class="card-icon">💎</span>
+          <div class="card-title">Trinket Locations</div>
+          <div class="card-desc">All 60 trinkets — effects, exact locations, and which combine for the strongest loadouts.</div>
+          <span class="card-tag">Collectibles</span>
+        </a>
+        <a href="#areas" class="guide-card">
+          <span class="card-icon">🗺</span>
+          <div class="card-title">Area Walkthrough</div>
+          <div class="card-desc">Region-by-region walkthrough with Spark Generator order, missables checklist, and hidden paths.</div>
+          <span class="card-tag">Walkthrough</span>
+        </a>
+        <a href="#" class="guide-card">
+          <span class="card-icon">🔄</span>
+          <div class="card-title">New Game Plus</div>
+          <div class="card-desc">All 7 NG+ modes explained — what changes, recommended completion order, and seed sharing tips.</div>
+          <span class="card-tag">Post-Game</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Boss Guide -->
+    <section id="bosses" class="boss-section" aria-label="Boss guide">
+      <div class="section-divider"><h2>Boss Guide</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">
+        Tenebrous Isle holds 26 bosses — 9 of which are secret fights hidden behind side quests. Difficulty ratings are relative to your first encounter on a standard run.
+      </p>
+      <div style="overflow-x:auto;">
+        <table class="boss-table" role="table">
+          <thead>
+            <tr>
+              <th>Boss</th>
+              <th>Region</th>
+              <th>Difficulty</th>
+              <th>Key Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="boss-name">Carving Man</div></td>
+              <td><span class="region-label">Septemburg</span></td>
+              <td><span class="diff-badge diff-normal">Normal</span></td>
+              <td class="boss-tip">Invulnerable during chase — only attack in the final arena. Use Recall Disc to punish his jump.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Nether Kraken</div></td>
+              <td><span class="region-label">Loner's Landing</span></td>
+              <td><span class="diff-badge diff-hard">Hard</span></td>
+              <td class="boss-tip">Optional intro boss. Aim for the glowing eye cluster; burrowing avoids the tentacle sweeps entirely.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Major Miner</div></td>
+              <td><span class="region-label">Sifted Sands</span></td>
+              <td><span class="diff-badge diff-normal">Normal</span></td>
+              <td class="boss-tip">Phase 2 spawns TNT carts — use them against him. Battery Buster from range is very effective.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Dark Deluxy</div></td>
+              <td><span class="region-label">Bone Beach</span></td>
+              <td><span class="diff-badge diff-secret">Secret</span></td>
+              <td class="boss-tip">Secret boss. Only accessible after collecting 3+ Sparks. Bring Vascular Syrup for the DoT phases.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">The Worm's Back</div></td>
+              <td><span class="region-label">Sifted Sands</span></td>
+              <td><span class="diff-badge diff-hard">Hard</span></td>
+              <td class="boss-tip">Ride the segments; jump attacks hit the weak point on top. Thorn Harness negates most poison.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Worm Queen</div></td>
+              <td><span class="region-label">Queensbury Crypt</span></td>
+              <td><span class="diff-badge diff-hard">Hard</span></td>
+              <td class="boss-tip">Attack the glowing egg sacs; dodge the sweep attacks.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Tide Caller</div></td>
+              <td><span class="region-label">Nox's Bayou</span></td>
+              <td><span class="diff-badge diff-normal">Normal</span></td>
+              <td class="boss-tip">Use Battery Buster from range; avoid entering the water.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Astral Gate Warden</div></td>
+              <td><span class="region-label">Astral Orrery</span></td>
+              <td><span class="diff-badge diff-brutal">Brutal</span></td>
+              <td class="boss-tip">Final gauntlet. Activate all 5 mirrors before attempting — fast travel is essential here.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.8rem; font-size:0.82rem; color:var(--bone-dark); font-style:italic;">
+        ✦ Full strategies for all 26 bosses coming soon — bookmark this page and check back daily.
+      </p>
+    </section>
+
+    <!-- Weapons -->
+    <section id="weapons" aria-label="Weapons and builds">
+      <div class="section-divider"><h2>Weapons & Builds</h2></div>
+      <div class="weapon-cards">
+        <div class="weapon-card">
+          <div class="weapon-name">Nightstar</div>
+          <div class="weapon-type">Whip — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Beginners, safe spacing, crowd control</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Whisper & Vesper</div>
+          <div class="weapon-type">Twin Daggers — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Aggressive players, high-DPS boss runs</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Blaststrike Maul</div>
+          <div class="weapon-type">Hammer — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Patient players, stagger-focused combat</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Guardian Casket</div>
+          <div class="weapon-type">Shield — Unlockable</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Parry</span><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--candle-light)"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Parry specialists, counter-attack builds</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Battery Buster</div>
+          <div class="weapon-type">Blaster — Unlockable</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Mixed-range combat, versatile runs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trinkets (sample) -->
+    <section id="trinkets" aria-label="Trinket guide">
+      <div class="section-divider"><h2>Trinkets (All 60)</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">
+        You can equip up to 6 trinkets simultaneously. Each build below is a recommended 6-slot loadout for a specific playstyle. Full 60-trinket database is being updated daily.
+      </p>
+      <div class="trinket-grid">
+        <div class="trinket-item">
+          <div class="trinket-name">Proto Spark</div>
+          <div class="trinket-effect">Retain 20% of Bones on death. Essential for all early-game builds.</div>
+          <div class="trinket-location">📍 Ossex — starting vendor</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Vascular Syrup</div>
+          <div class="trinket-effect">Plasma heals give a rolling 3-second recovery window for bonus HP.</div>
+          <div class="trinket-location">📍 Ossex merchant, 300 Bones</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Iron Lung</div>
+          <div class="trinket-effect">+1 Plasma charge capacity. Stack with Vascular Syrup for survivability.</div>
+          <div class="trinket-location">📍 Septemburg chest (hidden path)</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Keri the Wisp</div>
+          <div class="trinket-effect">Increases burrowing speed and distance significantly.</div>
+          <div class="trinket-location">📍 Queensbury Crypt secret room</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Thorn Harness</div>
+          <div class="trinket-effect">Poison damage taken reduced by 60%. Mandatory in Nox's Bayou.</div>
+          <div class="trinket-location">📍 Nox's Bayou — NPC reward</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Blinkstep Claw</div>
+          <div class="trinket-effect">Burrowing triggers a short damage burst on re-emerge. Syncs with daggers.</div>
+          <div class="trinket-location">📍 Sifted Sands — Worm's Back area</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Marrow Flask</div>
+          <div class="trinket-effect">+25% Bone pickup value. Dramatically speeds up progression.</div>
+          <div class="trinket-location">📍 Bone Beach — standard chest</div>
+        </div>
+        <div class="trinket-item">
+          <div class="trinket-name">Shadowhide</div>
+          <div class="trinket-effect">Taking damage while burrowed does not interrupt the burrow state.</div>
+          <div class="trinket-location">📍 Eastern Heath secret boss reward</div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem; color:var(--bone-dark); font-style:italic;">
+        ✦ 52 more trinkets being documented — full database launching this week.
+      </p>
+    </section>
+
+    <!-- Areas -->
+    <section id="areas" aria-label="Game areas">
+      <div class="section-divider"><h2>Areas & Regions</h2></div>
+      <div class="areas-grid">
+        <a href="#" class="area-card area-ossex">
+          <div class="area-header">
+            <span class="area-name">Ossex (Hub)</span>
+            <span class="area-spark">🏠 Home Base</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Central hub of Tenebrous Isle. Shops, the Trinket Chest, and all major story beats anchor here.</div>
+            <div class="area-meta">Return frequently to bank Bones & buy trinkets</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-septemburg">
+          <div class="area-header">
+            <span class="area-name">Septemburg</span>
+            <span class="area-spark">⚡ Spark #1</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Autumnal farm region. Aggressive plant-wildlife hybrids and the Carving Man boss await.</div>
+            <div class="area-meta">Rescue 3 lost children for a free Trinket</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-crypt">
+          <div class="area-header">
+            <span class="area-name">Queensbury Crypt</span>
+            <span class="area-spark">⚡ Spark #2</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Gothic graveyard labyrinth. Dense undead enemies; Keri the Wisp trinket hidden in a secret room.</div>
+            <div class="area-meta">Contains Mirror #1 for Astral Orrery access</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-bayou">
+          <div class="area-header">
+            <span class="area-name">Nox's Bayou</span>
+            <span class="area-spark">⚡ Spark #3</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Swamp biome with pervasive poison. Equip Thorn Harness before entering.</div>
+            <div class="area-meta">Fishing minigame unlocks after the Bayou boss</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-sands">
+          <div class="area-header">
+            <span class="area-name">Sifted Sands</span>
+            <span class="area-spark">⚡ Spark #4</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Desert with sandfall traversal puzzles. Yellow Umbrella and Pit Preserver required for full exploration.</div>
+            <div class="area-meta">Dark Deluxy secret boss on Bone Beach nearby</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-heath">
+          <div class="area-header">
+            <span class="area-name">Eastern Heath</span>
+            <span class="area-spark">⚡ Spark #5 & 6</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Purple moors with Wrecker minigame and the Renegade Roundup secret boss chain (5 bosses).</div>
+            <div class="area-meta">High density of side content — explore fully</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-astral">
+          <div class="area-header">
+            <span class="area-name">Astral Orrery</span>
+            <span class="area-spark">🌟 Endgame</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Celestial realm accessed only through Mirror's End. Hardest region — requires 3 mirrors activated.</div>
+            <div class="area-meta">Budget 2–4 hours; fast travel is essential here</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips" aria-label="Beginner tips">
+      <div class="section-divider"><h2>11 Tips for New Players</h2></div>
+      <div class="tips-list">
+        <div class="tip-item">
+          <div class="tip-num">01</div>
+          <div class="tip-content">
+            <div class="tip-title">Bind your controls before your first boss</div>
+            <div class="tip-body">Responsive Hollowing and Plasma use depend on comfortable inputs. Adjust controller or keyboard bindings in the settings menu before pushing into dangerous areas — you'll thank yourself later.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">02</div>
+          <div class="tip-content">
+            <div class="tip-title">Start with Nightstar — switch when you know your playstyle</div>
+            <div class="tip-body">The whip's long reach and safe spacing make it the most forgiving starter. Once you've fought a few bosses, consider switching to the daggers for aggression or the hammer for heavy commitment damage.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">03</div>
+          <div class="tip-content">
+            <div class="tip-title">Bank Bones at vendors constantly</div>
+            <div class="tip-body">Bones drop on death and must be recovered at your death site — but Bone Stone banked at vendors is permanent. Never enter a boss fight with more than 200 unbanked Bones unless you have Proto Spark equipped.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">04</div>
+          <div class="tip-content">
+            <div class="tip-title">Save Sidearms for bosses, not exploration</div>
+            <div class="tip-body">Sidearms consume Joules and are lost when you die. They're powerful enough to change a boss fight entirely — hold them back during routine exploration and deploy when you need them most.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">05</div>
+          <div class="tip-content">
+            <div class="tip-title">Smash everything — destructibles hide Bones and secret paths</div>
+            <div class="tip-body">Barrels, crates, and cracked walls regularly hide Bones, Plasma refills, and passage to hidden rooms. Clear a room, then sweep for breakables before moving on.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">06</div>
+          <div class="tip-content">
+            <div class="tip-title">After dying, identify the exact cause — then fix it with one trinket swap</div>
+            <div class="tip-body">Burst damage? Add Vascular Syrup. Falling into pits? Get Keri the Wisp. Ranged pressure? Equip Shadowhide. Swapping one targeted trinket is almost always better than rebuilding your whole loadout.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">07</div>
+          <div class="tip-content">
+            <div class="tip-title">Don't heal in a panic — learn patterns first</div>
+            <div class="tip-body">Plasma vials are limited. Drinking one mid-flurry often results in another hit that erases the heal. Back off, read the next 1–2 attacks, then drink during the opening window.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">08</div>
+          <div class="tip-content">
+            <div class="tip-title">Activate mirrors as you find them — don't save them for later</div>
+            <div class="tip-body">You need exactly 3 activated mirrors to reach Astral Orrery. Activating each one also enables fast travel in that area. There's no reason to delay — always activate on first discovery.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">09</div>
+          <div class="tip-content">
+            <div class="tip-title">Talk to every NPC in Ossex after each Spark Generator</div>
+            <div class="tip-body">New dialogue, side quests, and vendor stock unlock each time you restore power to a region. Many of the best trinkets are NPC rewards, not chest drops.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">10</div>
+          <div class="tip-content">
+            <div class="tip-title">The Mina's Grave hidden quest unlocks after 3 Sparks</div>
+            <div class="tip-body">This challenging hidden side quest sits in one of the game's earliest regions but requires significant story progress. It's missable if you skip back-tracking — our full guide covers the exact trigger conditions.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">11</div>
+          <div class="tip-content">
+            <div class="tip-title">NG+ changes more than just difficulty</div>
+            <div class="tip-body">All 7 New Game Plus modes can remix item placement, world layout, and rules — not just scale enemy HP. If you want to replay, pick the mode that addresses what felt too easy or too familiar, not the hardest one.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scroll-ornament">✦ &nbsp; &nbsp; ✦ &nbsp; &nbsp; ✦</div>
+
+  </main>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">⚰ Tenebrous Isle Guide</div>
+  <p class="footer-text">The most complete English guide for Mina the Hollower — updated daily as we explore the island.</p>
+  <div class="footer-links">
+    <a href="#guides">Guides</a>
+    <a href="#bosses">Boss Guide</a>
+    <a href="#weapons">Weapons</a>
+    <a href="#trinkets">Trinkets</a>
+    <a href="#areas">Areas</a>
+    <a href="#tips">Tips</a>
+  </div>
+  <p class="footer-disclaimer">
+    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+    All game content belongs to their respective owners.
+  </p>
+</footer>
+
+<script>
+  document.querySelector('.nav-search input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      const q = this.value.trim().toLowerCase();
+      const sectionMap = {
+        boss: '#bosses', weapon: '#weapons', trinket: '#trinkets',
+        area: '#areas', region: '#areas', tip: '#tips', guide: '#guides',
+        beginner: '#tips', build: '#weapons', walkthrough: '#areas'
+      };
+      let target = '#guides';
+      for (const [kw, href] of Object.entries(sectionMap)) {
+        if (q.includes(kw)) { target = href; break; }
+      }
+      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+      this.value = '';
+    }
+  });
+</script>
+</body>
+</html>
