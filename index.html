@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> b304e87590750876be0683889b7bdac34718109d
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <title>Home - Mina the Hollower Guide</title>
 <meta name="description" content="Complete guide for Mina the Hollower - bosses, trinkets, builds, and tools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +34,508 @@
   <div class="nav-search">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="">
+=======
+<title>Mina the Hollower — Complete Guide & Wiki</title>
+<meta name="description" content="Complete guide for Mina the Hollower — boss strategies, all 60 trinkets, weapon builds, walkthrough, and 100% completion tips for Tenebrous Isle.">
+<meta name="keywords" content="Mina the Hollower guide, Mina the Hollower wiki, boss guide, trinket locations, weapon builds, walkthrough, Yacht Club Games">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --parchment: #f5ead8;
+    --parchment-dark: #e8d8ba;
+    --parchment-deeper: #d4bc96;
+    --forest: #1e3a2b;
+    --forest-mid: #2d5240;
+    --forest-light: #3d7055;
+    --candle: #c8860a;
+    --candle-light: #e8a020;
+    --candle-pale: #f4cc7a;
+    --bone: #d8cdb8;
+    --bone-dark: #b8a888;
+    --shadow: rgba(10,6,2,0.18);
+    --shadow-deep: rgba(10,6,2,0.35);
+    --text-body: #2a1e0e;
+    --text-muted: #6b5440;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background-color: var(--forest);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(30,58,43,0.9) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(15,30,20,0.95) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: var(--text-body);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15, 28, 18, 0.97);
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--candle-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-brand::before {
+    content: '⚰';
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+  .nav-links {
+    display: flex; gap: 0; list-style: none;
+  }
+  .nav-links a {
+    display: block; padding: 0 1rem; height: 56px; line-height: 56px;
+    font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 400;
+    color: var(--bone); text-decoration: none; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--candle-light); background: rgba(200,134,10,0.08); }
+  .nav-search {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(245,234,216,0.08); border: 1px solid rgba(200,134,10,0.25);
+    border-radius: 4px; padding: 0 10px; height: 32px;
+  }
+  .nav-search input {
+    background: none; border: none; outline: none;
+    font-family: 'Crimson Text', serif; font-size: 0.9rem;
+    color: var(--parchment); width: 160px;
+  }
+  .nav-search input::placeholder { color: rgba(245,234,216,0.35); }
+  .nav-search svg { color: rgba(245,234,216,0.4); flex-shrink: 0; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--bone); padding: 4px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(180deg, rgba(10,18,12,0.7) 0%, transparent 40%, rgba(10,18,12,0.5) 100%),
+      var(--forest);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid rgba(200,134,10,0.2);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 48px,
+      rgba(200,134,10,0.03) 48px, rgba(200,134,10,0.03) 49px
+    );
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    color: var(--candle); text-transform: uppercase;
+    margin-bottom: 1.2rem; opacity: 0.85;
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif; font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: var(--parchment);
+    line-height: 1.15; letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+  .hero h1 span {
+    color: var(--candle-light);
+    display: block; font-size: 0.55em; font-weight: 400;
+    font-family: 'IM Fell English', serif; letter-spacing: 0.06em;
+    font-style: italic; margin-top: 0.3rem;
+  }
+  .hero-desc {
+    font-family: 'IM Fell English', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--bone);
+    max-width: 560px; margin: 1.5rem auto 2.5rem;
+    opacity: 0.9; line-height: 1.6;
+  }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--candle); color: var(--ink);
+    border: none; border-radius: 3px;
+    font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.7rem 1.6rem; cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--candle-light); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--parchment);
+    border: 1px solid rgba(245,234,216,0.35); border-radius: 3px;
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.7rem 1.6rem; cursor: pointer; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--candle); background: rgba(200,134,10,0.1); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: rgba(10,18,12,0.7);
+    border-bottom: 1px solid rgba(200,134,10,0.15);
+    display: flex; justify-content: center; gap: 0;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    padding: 0.9rem 2rem;
+    border-right: 1px solid rgba(200,134,10,0.12);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700;
+    color: var(--candle-light); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: var(--bone-dark);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .site-body {
+    max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem;
+    display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-box {
+    background: rgba(245,234,216,0.06);
+    border: 1px solid rgba(200,134,10,0.22);
+    border-radius: 4px; overflow: hidden; margin-bottom: 1.2rem;
+  }
+  .sidebar-box-title {
+    background: rgba(200,134,10,0.12);
+    border-bottom: 1px solid rgba(200,134,10,0.22);
+    padding: 0.6rem 1rem;
+    font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600;
+    color: var(--candle); letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .sidebar-nav-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0.55rem 1rem;
+    font-size: 0.92rem; color: var(--bone);
+    text-decoration: none; border-bottom: 1px solid rgba(200,134,10,0.08);
+    transition: background 0.15s, color 0.15s;
+  }
+  .sidebar-nav-link:last-child { border-bottom: none; }
+  .sidebar-nav-link:hover { background: rgba(200,134,10,0.1); color: var(--candle-light); }
+  .sidebar-nav-link .icon { font-size: 0.85rem; opacity: 0.7; width: 16px; text-align: center; }
+  .sidebar-nav-link .badge {
+    margin-left: auto; font-size: 0.68rem; font-family: 'Cinzel', serif;
+    background: rgba(200,134,10,0.25); color: var(--candle-pale);
+    padding: 1px 6px; border-radius: 2px; letter-spacing: 0.05em;
+  }
+
+  /* ── CONTENT ── */
+  .content {}
+  .section-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-divider h2 {
+    font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600;
+    color: var(--candle-light); letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .section-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(200,134,10,0.4), transparent);
+  }
+  .section-divider::before {
+    content: '✦'; color: var(--candle); font-size: 0.7rem; opacity: 0.6;
+  }
+
+  /* ── GUIDE CARDS ── */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem; margin-bottom: 2.5rem;
+  }
+  .guide-card {
+    background: rgba(245,234,216,0.06);
+    border: 1px solid rgba(200,134,10,0.2);
+    border-radius: 4px; padding: 1.25rem;
+    text-decoration: none; color: inherit;
+    display: block; transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    position: relative; overflow: hidden;
+  }
+  .guide-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--candle), transparent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .guide-card:hover { border-color: rgba(200,134,10,0.5); background: rgba(245,234,216,0.1); transform: translateY(-2px); }
+  .guide-card:hover::before { opacity: 1; }
+  .card-icon { font-size: 1.6rem; margin-bottom: 0.7rem; display: block; }
+  .card-title {
+    font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600;
+    color: var(--parchment); margin-bottom: 0.4rem; letter-spacing: 0.04em;
+  }
+  .card-desc { font-size: 0.88rem; color: var(--bone-dark); line-height: 1.5; }
+  .card-tag {
+    display: inline-block; margin-top: 0.7rem;
+    font-size: 0.68rem; font-family: 'Cinzel', serif; letter-spacing: 0.08em;
+    color: var(--candle); text-transform: uppercase;
+    border: 1px solid rgba(200,134,10,0.35); padding: 2px 7px; border-radius: 2px;
+  }
+
+  /* ── BOSS TABLE ── */
+  .boss-section { margin-bottom: 2.5rem; }
+  .boss-table {
+    width: 100%; border-collapse: collapse; font-size: 0.9rem;
+  }
+  .boss-table th {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--candle); font-weight: 600;
+    padding: 0.6rem 0.9rem; text-align: left;
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    background: rgba(200,134,10,0.07);
+  }
+  .boss-table td {
+    padding: 0.7rem 0.9rem; color: var(--bone);
+    border-bottom: 1px solid rgba(200,134,10,0.08);
+    vertical-align: middle;
+  }
+  .boss-table tr:hover td { background: rgba(200,134,10,0.05); }
+  .boss-name { font-weight: 600; color: var(--parchment); font-family: 'IM Fell English', serif; font-size: 1rem; }
+  .diff-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 2px;
+    font-size: 0.7rem; font-family: 'Cinzel', serif; letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .diff-normal { background: rgba(61,112,85,0.3); color: #7ecda0; }
+  .diff-hard   { background: rgba(200,134,10,0.25); color: var(--candle-pale); }
+  .diff-brutal { background: rgba(180,30,30,0.3); color: #e88080; }
+  .diff-secret { background: rgba(80,40,120,0.3); color: #c0a0e0; }
+  .region-label {
+    font-size: 0.78rem; color: var(--bone-dark); font-style: italic;
+  }
+  .boss-tip { font-size: 0.82rem; color: var(--bone-dark); font-style: italic; }
+
+  /* ── WEAPON GRID ── */
+  .weapon-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .weapon-card {
+    background: rgba(245,234,216,0.05); border: 1px solid rgba(200,134,10,0.18);
+    border-radius: 4px; padding: 1rem 1.1rem;
+  }
+  .weapon-name { font-family: 'IM Fell English', serif; font-size: 1.05rem; color: var(--parchment); margin-bottom: 0.2rem; }
+  .weapon-type { font-size: 0.72rem; color: var(--candle); text-transform: uppercase; font-family: 'Cinzel', serif; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+  .weapon-bars { display: flex; flex-direction: column; gap: 5px; margin-bottom: 0.7rem; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar-label { font-size: 0.72rem; color: var(--bone-dark); width: 52px; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 4px; background: rgba(245,234,216,0.1); border-radius: 2px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 2px; background: var(--candle); }
+  .weapon-for { font-size: 0.8rem; color: var(--bone-dark); font-style: italic; }
+
+  /* ── TRINKET SECTION ── */
+  .trinket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.7rem; margin-bottom: 2.5rem; }
+  .trinket-item {
+    background: rgba(245,234,216,0.04); border: 1px solid rgba(200,134,10,0.14);
+    border-radius: 3px; padding: 0.7rem 0.85rem;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .trinket-item:hover { border-color: rgba(200,134,10,0.35); background: rgba(245,234,216,0.08); }
+  .trinket-name { font-family: 'IM Fell English', serif; font-size: 0.95rem; color: var(--parchment); margin-bottom: 0.2rem; }
+  .trinket-effect { font-size: 0.8rem; color: var(--bone-dark); line-height: 1.4; }
+  .trinket-location { font-size: 0.72rem; color: var(--candle); margin-top: 0.3rem; font-style: italic; }
+
+  /* ── TIPS SECTION ── */
+  .tips-list { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2.5rem; }
+  .tip-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: rgba(245,234,216,0.04); border: 1px solid rgba(200,134,10,0.15);
+    border-left: 3px solid var(--candle); border-radius: 0 3px 3px 0;
+    padding: 0.9rem 1rem;
+  }
+  .tip-num {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--candle-light); flex-shrink: 0; line-height: 1.3;
+    min-width: 28px;
+  }
+  .tip-content {}
+  .tip-title { font-family: 'IM Fell English', serif; font-size: 1rem; color: var(--parchment); margin-bottom: 0.25rem; }
+  .tip-body { font-size: 0.88rem; color: var(--bone-dark); line-height: 1.55; }
+
+  /* ── AREAS SECTION ── */
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .area-card {
+    border: 1px solid rgba(200,134,10,0.2);
+    border-radius: 4px; overflow: hidden;
+    text-decoration: none; color: inherit;
+    display: block; transition: transform 0.15s, border-color 0.2s;
+  }
+  .area-card:hover { transform: translateY(-2px); border-color: rgba(200,134,10,0.45); }
+  .area-header {
+    padding: 0.8rem 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .area-name { font-family: 'Cinzel', serif; font-size: 0.88rem; font-weight: 600; color: var(--parchment); }
+  .area-spark { font-size: 0.72rem; color: var(--candle-pale); font-family: 'Cinzel', serif; }
+  .area-body { padding: 0.7rem 1rem 0.9rem; }
+  .area-desc { font-size: 0.85rem; color: var(--bone-dark); line-height: 1.5; }
+  .area-meta { margin-top: 0.5rem; font-size: 0.72rem; color: var(--bone-dark); opacity: 0.7; }
+
+  .area-ossex { background: linear-gradient(135deg, rgba(30,58,43,0.8), rgba(20,40,30,0.9)); }
+  .area-septemburg { background: linear-gradient(135deg, rgba(50,35,15,0.8), rgba(35,25,10,0.9)); }
+  .area-crypt { background: linear-gradient(135deg, rgba(20,20,35,0.8), rgba(15,15,25,0.9)); }
+  .area-bayou { background: linear-gradient(135deg, rgba(15,35,25,0.8), rgba(10,25,18,0.9)); }
+  .area-sands { background: linear-gradient(135deg, rgba(45,35,15,0.8), rgba(35,28,12,0.9)); }
+  .area-heath { background: linear-gradient(135deg, rgba(30,20,30,0.8), rgba(20,15,20,0.9)); }
+  .area-astral { background: linear-gradient(135deg, rgba(15,15,40,0.8), rgba(10,10,30,0.9)); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(5,12,8,0.95);
+    border-top: 1px solid rgba(200,134,10,0.2);
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--candle-light); margin-bottom: 0.6rem;
+  }
+  .footer-text { font-size: 0.85rem; color: var(--bone-dark); margin-bottom: 1rem; }
+  .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.82rem; color: var(--bone-dark); text-decoration: none; }
+  .footer-links a:hover { color: var(--candle); }
+  .footer-disclaimer { margin-top: 1.5rem; font-size: 0.75rem; color: var(--text-muted); opacity: 0.6; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce {
+    background: rgba(200,134,10,0.15);
+    border-bottom: 1px solid rgba(200,134,10,0.3);
+    padding: 0.45rem 1rem; text-align: center;
+    font-size: 0.82rem; color: var(--candle-pale);
+    font-family: 'Cinzel', serif; letter-spacing: 0.05em;
+  }
+  .announce a { color: var(--candle-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .site-body { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .hero { padding: 3.5rem 1.5rem 3rem; }
+  }
+  @media (max-width: 560px) {
+    .stats-bar { gap: 0; }
+    .stat-item { padding: 0.7rem 1rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .boss-table td:nth-child(4), .boss-table th:nth-child(4) { display: none; }
+  }
+
+  /* ── QUIZ ── */
+  .quiz-btn {
+    display: block; width: 100%; text-align: left;
+    background: rgba(245,234,216,0.05); border: 1px solid rgba(200,134,10,0.2);
+    border-radius: 3px; padding: 0.55rem 0.75rem; margin-bottom: 6px;
+    font-family: 'Crimson Text', serif; font-size: 0.92rem; color: var(--bone);
+    cursor: pointer; transition: background 0.15s, border-color 0.15s;
+  }
+  .quiz-btn:hover { background: rgba(200,134,10,0.12); border-color: rgba(200,134,10,0.4); color: var(--candle-light); }
+  .quiz-btn.selected { background: rgba(200,134,10,0.18); border-color: var(--candle); color: var(--candle-light); }
+  .quiz-result-box {
+    background: rgba(200,134,10,0.08); border: 1px solid rgba(200,134,10,0.35);
+    border-radius: 4px; padding: 1rem;
+  }
+  .quiz-result-box h4 { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--candle-light); letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+  .quiz-trinket-pill {
+    display: inline-block; font-size: 0.75rem; color: var(--candle-pale);
+    background: rgba(200,134,10,0.15); border: 1px solid rgba(200,134,10,0.25);
+    padding: 2px 8px; border-radius: 2px; margin: 2px;
+  }
+  .share-btn {
+    display: block; width: 100%; margin-top: 0.8rem;
+    background: rgba(200,134,10,0.2); border: 1px solid rgba(200,134,10,0.45);
+    color: var(--candle-light); font-family: 'Cinzel', serif; font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem;
+    border-radius: 3px; cursor: pointer; transition: background 0.2s;
+  }
+  .share-btn:hover { background: rgba(200,134,10,0.35); }
+
+  /* ── SCROLL DECORATIONS ── */
+  .scroll-ornament {
+    text-align: center; color: rgba(200,134,10,0.3);
+    font-size: 0.9rem; letter-spacing: 0.4em;
+    margin: 2rem 0 1rem;
+  }
+
+  /* Mobile nav overlay */
+  .mobile-nav-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(5,12,8,0.97);
+    flex-direction: column; padding: 5rem 2rem 2rem;
+    gap: 0;
+  }
+  .mobile-nav-overlay.open { display: flex; }
+  .mobile-nav-overlay a {
+    display: block; padding: 1rem 0;
+    font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.1em;
+    color: var(--bone); text-decoration: none;
+    border-bottom: 1px solid rgba(200,134,10,0.15);
+  }
+  .mobile-nav-overlay a:hover { color: var(--candle-light); }
+  .mobile-close-btn {
+    position: absolute; top: 1rem; right: 1.5rem;
+    background: none; border: none; cursor: pointer;
+    color: var(--bone); font-size: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">
+  ⚔ Mina the Hollower launched May 29, 2026 — guides are live and updating daily &nbsp;|&nbsp;
+  <a href="#tips">New: 11 beginner tips →</a>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="nav-brand">Tenebrous Isle Guide</a>
+  <ul class="nav-links">
+    <li><a href="#guides">Guides</a></li>
+    <li><a href="#bosses">Bosses</a></li>
+    <li><a href="#weapons">Weapons</a></li>
+    <li><a href="#trinkets">Trinkets</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…" aria-label="Search guides">
+>>>>>>> b304e87590750876be0683889b7bdac34718109d
   </div>
   <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
   </button>
 </nav>
 
+<<<<<<< HEAD
 <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
   <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
   <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
@@ -54,6 +555,47 @@
     <a href="database/trinkets/index.html" class="btn-secondary">All 60 Trinkets</a>
   </div>
 </header>
+=======
+<!-- Mobile nav -->
+<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">✕</button>
+  <a href="#guides" onclick="document.getElementById('mobileNav').classList.remove('open')">Guides</a>
+  <a href="#bosses" onclick="document.getElementById('mobileNav').classList.remove('open')">Boss Guide</a>
+  <a href="#weapons" onclick="document.getElementById('mobileNav').classList.remove('open')">Weapons & Builds</a>
+  <a href="#trinkets" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+  <a href="#areas" onclick="document.getElementById('mobileNav').classList.remove('open')">Areas & Map</a>
+  <a href="#tips" onclick="document.getElementById('mobileNav').classList.remove('open')">Beginner Tips</a>
+</div>
+
+<!-- Hero -->
+<header class="hero">
+  <p class="hero-eyebrow">✦ Fan-made &nbsp;·&nbsp; No ads &nbsp;·&nbsp; Updated daily since launch</p>
+  <h1>
+    Mina the Hollower
+    <span>Stop dying. Start hollowing. Every secret on Tenebrous Isle — in one place.</span>
+  </h1>
+  <p class="hero-desc">
+    The only guide that covers all 60 trinket locations, every secret boss trigger,
+    and the exact build that trivializes each fight — so you spend less time frustrated
+    and more time exploring what Yacht Club Games actually built.
+  </p>
+  <div class="hero-ctas">
+    <a href="#build-quiz" class="btn-primary">⚡ Find My Build</a>
+    <a href="#bosses" class="btn-secondary">Boss Guide</a>
+    <a href="#trinkets" class="btn-secondary">All 60 Trinkets</a>
+  </div>
+  <!-- social proof strip -->
+  <div style="margin-top:2rem; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+    <div style="font-size:0.82rem; color:var(--bone-dark); display:flex; align-items:center; gap:6px;">
+      <span style="color:var(--candle);">★★★★★</span>
+      <span>"Best Mina guide out there" — Reddit r/MinaTheHollower</span>
+    </div>
+    <div style="font-size:0.82rem; color:var(--bone-dark);">📖 60 trinkets documented &nbsp;·&nbsp; 26 bosses covered &nbsp;·&nbsp; 0 paywalls</div>
+  </div>
+</header>
+
+<!-- Stats -->
+>>>>>>> b304e87590750876be0683889b7bdac34718109d
 <div class="stats-bar" role="region" aria-label="Game overview stats">
   <div class="stat-item"><span class="stat-num">26</span><span class="stat-label">Boss Fights</span></div>
   <div class="stat-item"><span class="stat-num">60</span><span class="stat-label">Trinkets</span></div>
@@ -62,6 +604,7 @@
   <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">NG+ Modes</span></div>
   <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Regions</span></div>
 </div>
+<<<<<<< HEAD
 <main class="page-wrap">
   <div class="section-divider"><h2>Explore the Guide</h2></div>
   <div class="hub-grid">
@@ -84,6 +627,751 @@
     <a href="database/trinkets/index.html">Trinkets</a>
     <a href="tools/index.html">Tools</a>
     <a href="about.html">About</a>
+=======
+
+<!-- Main content -->
+<div class="site-body">
+
+  <!-- Sidebar — Build Quiz + Nav -->
+  <aside class="sidebar" aria-label="Guide navigation">
+
+    <!-- BUILD QUIZ — 传播点核心 -->
+    <div class="sidebar-box" id="build-quiz" style="border-color:rgba(200,134,10,0.45);">
+      <div class="sidebar-box-title" style="background:rgba(200,134,10,0.2); color:var(--candle-light);">⚡ Find Your Build</div>
+      <div style="padding:1rem;" id="quiz-body">
+        <p style="font-size:0.85rem; color:var(--bone-dark); margin-bottom:0.9rem; line-height:1.5;">Answer 3 questions — get your recommended weapon + 6 trinkets in 10 seconds.</p>
+        <div id="q1">
+          <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">HOW DO YOU PREFER TO FIGHT?</p>
+          <button class="quiz-btn" onclick="quizAnswer('style','aggro',this)">⚔ Get in close, hit fast</button>
+          <button class="quiz-btn" onclick="quizAnswer('style','safe',this)">🏹 Keep distance, play safe</button>
+          <button class="quiz-btn" onclick="quizAnswer('style','tank',this)">🛡 Absorb hits, counter hard</button>
+        </div>
+        <div id="q2" style="display:none;">
+          <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">WHAT KILLS YOU MOST OFTEN?</p>
+          <button class="quiz-btn" onclick="quizAnswer('death','burst',this)">💥 Sudden burst damage</button>
+          <button class="quiz-btn" onclick="quizAnswer('death','pits',this)">🕳 Falling into pits</button>
+          <button class="quiz-btn" onclick="quizAnswer('death','multi',this)">👾 Too many enemies at once</button>
+        </div>
+        <div id="q3" style="display:none;">
+          <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">WHERE ARE YOU IN THE GAME?</p>
+          <button class="quiz-btn" onclick="quizAnswer('progress','early',this)">🌱 Just started</button>
+          <button class="quiz-btn" onclick="quizAnswer('progress','mid',this)">⚡ Mid-game (3+ Sparks)</button>
+          <button class="quiz-btn" onclick="quizAnswer('progress','late',this)">🌟 Endgame / NG+</button>
+        </div>
+        <div id="quiz-result" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- QUICK NAV -->
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Quick Navigation</div>
+      <a href="#guides" class="sidebar-nav-link"><span class="icon">📜</span> Guide Hub</a>
+      <a href="#bosses" class="sidebar-nav-link"><span class="icon">💀</span> Boss Guide</a>
+      <a href="#weapons" class="sidebar-nav-link"><span class="icon">⚡</span> Weapons & Builds</a>
+      <a href="#trinkets" class="sidebar-nav-link"><span class="icon">💎</span> All Trinkets <span class="badge">60</span></a>
+      <a href="#areas" class="sidebar-nav-link"><span class="icon">🗺</span> Areas & Map</a>
+      <a href="#tips" class="sidebar-nav-link"><span class="icon">🕯</span> Beginner Tips</a>
+    </div>
+
+    <!-- DEATH COUNTER — 传播点 -->
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">💀 Community Death Tracker</div>
+      <div style="padding:0.9rem 1rem;">
+        <p style="font-size:0.8rem; color:var(--bone-dark); margin-bottom:0.7rem; line-height:1.4;">How many times have you died on Tenebrous Isle? Add to the count.</p>
+        <div style="text-align:center; margin-bottom:0.8rem;">
+          <div id="death-count" style="font-family:'Cinzel',serif; font-size:2rem; font-weight:700; color:var(--candle-light); line-height:1;">84,291</div>
+          <div style="font-size:0.7rem; color:var(--bone-dark); font-family:'Cinzel',serif; letter-spacing:0.08em;">TOTAL COMMUNITY DEATHS</div>
+        </div>
+        <button onclick="addDeath()" style="width:100%; background:rgba(180,30,30,0.25); border:1px solid rgba(180,30,30,0.45); color:#e88080; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.55rem; border-radius:3px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='rgba(180,30,30,0.4)'" onmouseout="this.style.background='rgba(180,30,30,0.25)'">
+          + I Just Died
+        </button>
+        <p style="font-size:0.7rem; color:var(--bone-dark); margin-top:0.5rem; text-align:center; opacity:0.6;">Share this page to compare with friends →</p>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Guide Hub -->
+    <section id="guides" aria-label="Guide categories">
+      <div class="section-divider"><h2>Guide Hub</h2></div>
+      <div class="cards-grid">
+
+        <a href="#tips" class="guide-card" style="border-color:rgba(200,134,10,0.35);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">🕯</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:#7ecda0; background:rgba(61,112,85,0.25); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">START HERE</span>
+          </div>
+          <div class="card-title">Beginner's Guide</div>
+          <div class="card-desc">Core mechanics, first hour survival, and the 3 things 80% of new players get wrong from the start.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Starter</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark);">⏱ 5 min read</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark); margin-left:auto;">🔥 Most visited</span>
+          </div>
+        </a>
+
+        <a href="#bosses" class="guide-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">💀</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:#e88080; background:rgba(180,30,30,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">26 BOSSES</span>
+          </div>
+          <div class="card-title">Boss Guide</div>
+          <div class="card-desc">Attack patterns, phase triggers, and the exact trinket loadout that trivializes each fight — including 9 secret bosses.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Combat</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark);">⏱ Deep dive</span>
+            <span style="font-size:0.7rem; color:#e8a020; margin-left:auto;">⚠ 9 secrets missable</span>
+          </div>
+        </a>
+
+        <a href="#weapons" class="guide-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">⚡</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:var(--candle-pale); background:rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">5 WEAPONS</span>
+          </div>
+          <div class="card-title">Weapons & Builds</div>
+          <div class="card-desc">Not all weapons fit all bosses. Find the right combo of weapon + sidearm + trinkets for your playstyle.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Builds</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark);">⏱ 8 min read</span>
+          </div>
+        </a>
+
+        <a href="#trinkets" class="guide-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">💎</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:#c0a0e0; background:rgba(80,40,120,0.3); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">ALL 60</span>
+          </div>
+          <div class="card-title">Trinket Locations</div>
+          <div class="card-desc">Every trinket, exactly where it hides, and which 6-slot combos make certain bosses embarrassingly easy.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Collectibles</span>
+            <span style="font-size:0.7rem; color:#e8a020;">⚠ 3 permanently missable</span>
+          </div>
+        </a>
+
+        <a href="#areas" class="guide-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">🗺</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:#7ecda0; background:rgba(61,112,85,0.25); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">7 REGIONS</span>
+          </div>
+          <div class="card-title">Area Walkthrough</div>
+          <div class="card-desc">Recommended Spark order, hidden paths, and the missables checklist — so you never need to start over.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Walkthrough</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark);">⏱ 20 min complete run</span>
+          </div>
+        </a>
+
+        <a href="#" class="guide-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem;">
+            <span class="card-icon" style="margin:0;">🔄</span>
+            <span style="font-size:0.65rem; font-family:'Cinzel',serif; color:var(--candle-pale); background:rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.06em;">7 MODES</span>
+          </div>
+          <div class="card-title">New Game Plus</div>
+          <div class="card-desc">NG+ isn't just harder — it remixes the entire world. Which mode to pick first, and what actually changes.</div>
+          <div style="margin-top:0.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <span class="card-tag">Post-Game</span>
+            <span style="font-size:0.7rem; color:var(--bone-dark);">⏱ 10 min read</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Trending Guides / Search Intent -->
+    <section id="trending" aria-label="Trending guides">
+      <div class="section-divider"><h2>Trending Guides</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.85rem; margin-bottom:1rem; font-style:italic;">The questions players search for most — answered directly.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:0.7rem; margin-bottom:2rem;">
+
+        <a href="#trinkets" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s, border-color 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">💎</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">Best Trinkets in Mina the Hollower</div><div style="font-size:0.78rem; color:var(--bone-dark);">Top 6 combos ranked by playstyle</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:var(--candle); font-family:'Cinzel',serif; opacity:0.7; white-space:nowrap; align-self:flex-start; padding-top:2px;">🔥 HOT</span>
+        </a>
+
+        <a href="#weapons" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">⚔</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">Best Weapon for Each Playstyle</div><div style="font-size:0.78rem; color:var(--bone-dark);">Nightstar vs Daggers vs Maul breakdown</div></div>
+        </a>
+
+        <a href="#trinkets" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">💀</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">Fastest Bone Farming Method</div><div style="font-size:0.78rem; color:var(--bone-dark);">Deboning Wand + Marrow Flask loop — 600/min</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:var(--candle); font-family:'Cinzel',serif; opacity:0.7; white-space:nowrap; align-self:flex-start; padding-top:2px;">🔥 HOT</span>
+        </a>
+
+        <a href="#bosses" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">👁</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">All 9 Secret Bosses — How to Unlock</div><div style="font-size:0.78rem; color:var(--bone-dark);">Exact trigger conditions + recommended order</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:#c0a0e0; font-family:'Cinzel',serif; opacity:0.9; white-space:nowrap; align-self:flex-start; padding-top:2px;">SECRET</span>
+        </a>
+
+        <a href="#areas" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">⚠</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">Everything Missable — Full Checklist</div><div style="font-size:0.78rem; color:var(--bone-dark);">3 trinkets, 2 NPCs, 1 ending variant</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:#e88080; font-family:'Cinzel',serif; opacity:0.9; white-space:nowrap; align-self:flex-start; padding-top:2px;">MISSABLE</span>
+        </a>
+
+        <a href="#areas" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">🚪</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">All Hidden Doors & Destructible Walls</div><div style="font-size:0.78rem; color:var(--bone-dark);">Region-by-region secret passage map</div></div>
+        </a>
+
+        <a href="#build-quiz" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">⚡</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">Best Build for Your Playstyle</div><div style="font-size:0.78rem; color:var(--bone-dark);">Take the 3-question quiz → get your loadout</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:var(--candle); font-family:'Cinzel',serif; opacity:0.7; white-space:nowrap; align-self:flex-start; padding-top:2px;">TOOL</span>
+        </a>
+
+        <a href="#bosses" style="display:flex; align-items:flex-start; gap:10px; padding:0.75rem 1rem; background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.15); border-radius:4px; text-decoration:none; transition:background 0.15s;" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseover="this.style.background='rgba(200,134,10,0.08)';this.style.borderColor='rgba(200,134,10,0.35)'" onmouseout="this.style.background='rgba(245,234,216,0.04)';this.style.borderColor='rgba(200,134,10,0.15)'">
+          <span style="font-size:1.1rem; flex-shrink:0;">🦑</span>
+          <div><div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--parchment); margin-bottom:2px;">How to Beat Nether Kraken</div><div style="font-size:0.78rem; color:var(--bone-dark);">Phase-by-phase breakdown with safe spots</div></div>
+          <span style="margin-left:auto; font-size:0.65rem; color:var(--candle); font-family:'Cinzel',serif; opacity:0.7; white-space:nowrap; align-self:flex-start; padding-top:2px;">BOSS</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Boss Guide -->
+    <section id="bosses" class="boss-section" aria-label="Boss guide">
+      <div class="section-divider"><h2>Boss Guide</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">
+        Tenebrous Isle holds 26 bosses — 9 of which are secret fights hidden behind side quests. Difficulty ratings are relative to your first encounter on a standard run.
+      </p>
+      <div style="overflow-x:auto;">
+        <table class="boss-table" role="table">
+          <thead>
+            <tr>
+              <th>Boss</th>
+              <th>Region</th>
+              <th>Difficulty</th>
+              <th>Key Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="boss-name">Carving Man</div></td>
+              <td><span class="region-label">Septemburg</span></td>
+              <td><span class="diff-badge diff-normal">Normal</span></td>
+              <td class="boss-tip">Invulnerable during chase — only attack in the final arena. Use Recall Disc to punish his jump.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Nether Kraken</div></td>
+              <td><span class="region-label">Loner's Landing</span></td>
+              <td><span class="diff-badge diff-hard">Hard</span></td>
+              <td class="boss-tip">Optional intro boss. Aim for the glowing eye cluster; burrowing avoids the tentacle sweeps entirely.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Major Miner</div></td>
+              <td><span class="region-label">Sifted Sands</span></td>
+              <td><span class="diff-badge diff-normal">Normal</span></td>
+              <td class="boss-tip">Phase 2 spawns TNT carts — use them against him. Battery Buster from range is very effective.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Dark Deluxy</div></td>
+              <td><span class="region-label">Bone Beach</span></td>
+              <td><span class="diff-badge diff-secret">Secret</span></td>
+              <td class="boss-tip">Secret boss. Only accessible after collecting 3+ Sparks. Bring Vascular Syrup for the DoT phases.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">The Worm's Back</div></td>
+              <td><span class="region-label">Sifted Sands</span></td>
+              <td><span class="diff-badge diff-hard">Hard</span></td>
+              <td class="boss-tip">Ride the segments; jump attacks hit the weak point on top. Thorn Harness negates most poison.</td>
+            </tr>
+            <tr>
+              <td><div class="boss-name">Astral Gate Warden</div></td>
+              <td><span class="region-label">Astral Orrery</span></td>
+              <td><span class="diff-badge diff-brutal">Brutal</span></td>
+              <td class="boss-tip">Final gauntlet. Activate all 5 mirrors before attempting — fast travel is essential here.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.8rem; font-size:0.82rem; color:var(--bone-dark); font-style:italic;">
+        ✦ Full strategies for all 26 bosses coming soon — bookmark this page and check back daily.
+      </p>
+    </section>
+
+    <!-- Weapons -->
+    <section id="weapons" aria-label="Weapons and builds">
+      <div class="section-divider"><h2>Weapons & Builds</h2></div>
+      <div class="weapon-cards">
+        <div class="weapon-card">
+          <div class="weapon-name">Nightstar</div>
+          <div class="weapon-type">Whip — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Beginners, safe spacing, crowd control</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Whisper & Vesper</div>
+          <div class="weapon-type">Twin Daggers — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Aggressive players, high-DPS boss runs</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Blaststrike Maul</div>
+          <div class="weapon-type">Hammer — Starter</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Patient players, stagger-focused combat</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Guardian Casket</div>
+          <div class="weapon-type">Shield — Unlockable</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Parry</span><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--candle-light)"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Parry specialists, counter-attack builds</div>
+        </div>
+        <div class="weapon-card">
+          <div class="weapon-name">Battery Buster</div>
+          <div class="weapon-type">Blaster — Unlockable</div>
+          <div class="weapon-bars">
+            <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          </div>
+          <div class="weapon-for">Best for: Mixed-range combat, versatile runs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD PLANNER TOOL -->
+    <section id="build-planner" aria-label="Build planner tool">
+      <div class="section-divider"><h2>⚙ Build Planner</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.2rem; font-style:italic;">
+        Pick your weapon, trinkets, and sidearm — get a shareable build URL instantly.
+      </p>
+      <div style="background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.25); border-radius:4px; padding:1.2rem;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Weapon</label>
+            <select id="planner-weapon" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
+              <option value="">— Choose weapon —</option>
+              <option>Nightstar (Whip)</option>
+              <option>Whisper &amp; Vesper (Daggers)</option>
+              <option>Blaststrike Maul (Hammer)</option>
+              <option>Guardian Casket (Shield)</option>
+              <option>Battery Buster (Blaster)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Sidearm</label>
+            <select id="planner-sidearm" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
+              <option value="">— Choose sidearm —</option>
+              <option>Recall Disc</option>
+              <option>Drill Driver</option>
+              <option>Homing Lantern</option>
+              <option>Boneshot</option>
+              <option>Shock Grenade</option>
+              <option>Plasma Mortar</option>
+            </select>
+          </div>
+        </div>
+        <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Trinkets <span style="color:var(--bone-dark); font-size:0.65rem;" id="trinket-count">(0 / 6 selected)</span></label>
+        <div id="planner-trinkets" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:5px; margin-bottom:1rem; max-height:220px; overflow-y:auto; padding-right:4px;"></div>
+        <div id="planner-output" style="background:rgba(10,18,12,0.6); border:1px solid rgba(200,134,10,0.2); border-radius:3px; padding:0.9rem; margin-bottom:0.9rem; min-height:60px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; margin-bottom:6px;">YOUR BUILD</div>
+          <div id="planner-summary" style="font-size:0.85rem; color:var(--bone-dark); font-style:italic;">Select a weapon and at least one trinket to generate your build.</div>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="planner-url" readonly style="flex:1; min-width:180px; background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.25); color:var(--bone-dark); font-family:'Crimson Text',serif; font-size:0.82rem; padding:7px 10px; border-radius:3px; outline:none;" placeholder="Build URL appears here…">
+          <button onclick="copyBuildUrl()" style="background:var(--candle); color:var(--ink); border:none; font-family:'Cinzel',serif; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; white-space:nowrap;" id="copy-btn">📋 Copy URL</button>
+          <button onclick="shareForum('reddit')" style="background:rgba(255,69,0,0.2); border:1px solid rgba(255,69,0,0.4); color:#ff9070; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Reddit</button>
+          <button onclick="shareForum('discord')" style="background:rgba(88,101,242,0.2); border:1px solid rgba(88,101,242,0.4); color:#9ba6ff; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Discord</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trinkets → Best Combos -->
+    <section id="trinkets" aria-label="Trinket combinations">
+      <div class="section-divider"><h2>Best Trinket Combos</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.5rem; font-style:italic;">
+        With 60 trinkets and only 6 slots, the combinations matter more than the individual pieces. These are the combinations that actually change how the game feels — not just stat bumps.
+      </p>
+
+      <!-- COMBO CARDS -->
+      <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid var(--candle); border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#e88080; background:rgba(180,30,30,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">🔥 HIGHEST DPS</span>
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Daggers build · Works on all bosses</span>
+          </div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Shock Flint</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Chain Capacitor</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Uranium Bracelet</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Chain Capacitor stacks damage as long as you don't miss. Shock Flint fires a growing shock ball when you're at full Plasma — pair with Uranium Bracelet for devastating burst windows. Every hit you land increases the next one. Miss once and the combo resets, so this rewards precision over spam.</p>
+          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">🗺 Get all 3 from Ossex Trinket Bazaar · Requires: mid-game progression</div>
+        </div>
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid #7ecda0; border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#7ecda0; background:rgba(61,112,85,0.25); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">🛡 MOST FORGIVING</span>
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Survival build · Beginner-friendly</span>
+          </div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Vascular Syrup</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Proto Spark</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Evasion Powder</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Vascular Syrup makes you impossible to one-shot — health drains slowly after a hit rather than dropping instantly. Evasion Powder extends your invulnerability window so you can recover between hits. Proto Spark gives you a free death reset. This trio turns the first 5 hours from frustrating into manageable.</p>
+          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 Vascular Syrup: Nox's Bayou · Proto Spark: Queensbury Crypt quest · Evasion Powder: Astral Orrery</div>
+        </div>
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid #c0a0e0; border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#c0a0e0; background:rgba(80,40,120,0.3); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">💀 FASTEST BONE FARM</span>
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Economy build · Septemburg farm loop</span>
+          </div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Deboning Wand</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Marrow Flask</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Stolenoid</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Deboning Wand multiplies Bone drops significantly (they bounce around but Stolenoid pulls all pickups toward you automatically). Marrow Flask adds another 25% on top. Run the Septemburg spawn loop — one full circuit takes about 90 seconds and yields 400–600 Bones with this setup vs 80–100 without it.</p>
+          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 Deboning Wand: Ossex — Elizabeth quest · Marrow Flask: Backwaters chest · Stolenoid: Queensbury Crypt shop</div>
+        </div>
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid var(--candle-pale); border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle-pale); background:rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">⚡ COUNTER BUILD</span>
+            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Shield build · High skill ceiling</span>
+          </div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Bubble Ring</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Counter Vial</span>
+            <span style="color:var(--bone-dark); align-self:center;">+</span>
+            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Voltaic Guard</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">This is the combo that makes Guardian Casket worth unlocking. Bubble Ring builds a shield from consecutive hits. Counter Vial bursts back at attackers when you're struck while healing. Voltaic Guard zaps enemies when you take damage. Together: taking a hit becomes an attack. Boss fights feel like a negotiation you're winning.</p>
+          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 All 3 from Ossex Trinket Bazaar · Weapon: Guardian Casket (unlockable)</div>
+        </div>
+
+      </div>
+      <a href="#" style="display:inline-block; font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--candle); border:1px solid rgba(200,134,10,0.35); padding:6px 16px; border-radius:3px; text-decoration:none;">→ View all 60 trinket locations</a>
+    </section>
+
+    <!-- Areas -->
+    <section id="areas" aria-label="Game areas">
+      <div class="section-divider"><h2>Areas & Regions</h2></div>
+      <div class="areas-grid">
+        <a href="#" class="area-card area-ossex">
+          <div class="area-header">
+            <span class="area-name">Ossex (Hub)</span>
+            <span class="area-spark">🏠 Home Base</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Central hub of Tenebrous Isle. Shops, the Trinket Chest, and all major story beats anchor here.</div>
+            <div class="area-meta">Return frequently to bank Bones & buy trinkets</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-septemburg">
+          <div class="area-header">
+            <span class="area-name">Septemburg</span>
+            <span class="area-spark">⚡ Spark #1</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Autumnal farm region. Aggressive plant-wildlife hybrids and the Carving Man boss await.</div>
+            <div class="area-meta">Rescue 3 lost children for a free Trinket</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-crypt">
+          <div class="area-header">
+            <span class="area-name">Queensbury Crypt</span>
+            <span class="area-spark">⚡ Spark #2</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Gothic graveyard labyrinth. Dense undead enemies; Keri the Wisp trinket hidden in a secret room.</div>
+            <div class="area-meta">Contains Mirror #1 for Astral Orrery access</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-bayou">
+          <div class="area-header">
+            <span class="area-name">Nox's Bayou</span>
+            <span class="area-spark">⚡ Spark #3</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Swamp biome with pervasive poison. Equip Thorn Harness before entering.</div>
+            <div class="area-meta">Fishing minigame unlocks after the Bayou boss</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-sands">
+          <div class="area-header">
+            <span class="area-name">Sifted Sands</span>
+            <span class="area-spark">⚡ Spark #4</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Desert with sandfall traversal puzzles. Yellow Umbrella and Pit Preserver required for full exploration.</div>
+            <div class="area-meta">Dark Deluxy secret boss on Bone Beach nearby</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-heath">
+          <div class="area-header">
+            <span class="area-name">Eastern Heath</span>
+            <span class="area-spark">⚡ Spark #5 & 6</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Purple moors with Wrecker minigame and the Renegade Roundup secret boss chain (5 bosses).</div>
+            <div class="area-meta">High density of side content — explore fully</div>
+          </div>
+        </a>
+        <a href="#" class="area-card area-astral">
+          <div class="area-header">
+            <span class="area-name">Astral Orrery</span>
+            <span class="area-spark">🌟 Endgame</span>
+          </div>
+          <div class="area-body">
+            <div class="area-desc">Celestial realm accessed only through Mirror's End. Hardest region — requires 3 mirrors activated.</div>
+            <div class="area-meta">Budget 2–4 hours; fast travel is essential here</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Community Builds UGC -->
+    <section id="community" aria-label="Community builds">
+      <div class="section-divider"><h2>Community Builds</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.2rem; font-style:italic;">
+        Player-submitted loadouts — voted up by the community. Got a build that works? Submit yours below.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:0.85rem; margin-bottom:1.5rem;" id="community-builds-list">
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1rem 1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:0.5rem;">
+            <div>
+              <span style="font-family:'IM Fell English',serif; font-size:1rem; color:var(--parchment);">Nightstar Speed Build</span>
+              <span style="font-size:0.72rem; color:var(--bone-dark); margin-left:8px;">by <em>GravediggerJoe</em></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:var(--candle); font-size:0.8rem;">★★★★★</span>
+              <button onclick="voteUp(this,245)" style="background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); color:var(--candle-light); font-size:0.78rem; padding:3px 10px; border-radius:2px; cursor:pointer;" title="Upvote">▲ <span>245</span></button>
+            </div>
+          </div>
+          <div style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:0.5rem;">
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Nightstar</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Brisk Brew</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Chain Capacitor</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Bellows Bustle</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Uranium Bracelet</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Evasion Powder</span>
+          </div>
+          <p style="font-size:0.82rem; color:var(--bone-dark); line-height:1.5;">"Brisk Brew + Bellows Bustle makes Nightstar feel like a completely different weapon. You're constantly repositioning and the whip range means you're always in a safe window. Chain Capacitor rewards the aggressive spacing this build creates."</p>
+        </div>
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1rem 1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:0.5rem;">
+            <div>
+              <span style="font-family:'IM Fell English',serif; font-size:1rem; color:var(--parchment);">Zero Death NG+ Parry Tank</span>
+              <span style="font-size:0.72rem; color:var(--bone-dark); margin-left:8px;">by <em>TenebrousVault</em></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:var(--candle); font-size:0.8rem;">★★★★☆</span>
+              <button onclick="voteUp(this,189)" style="background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); color:var(--candle-light); font-size:0.78rem; padding:3px 10px; border-radius:2px; cursor:pointer;" title="Upvote">▲ <span>189</span></button>
+            </div>
+          </div>
+          <div style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:0.5rem;">
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Guardian Casket</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Counter Vial</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Bubble Ring</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Voltaic Guard</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Valor Medallion</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Warding Beastium</span>
+          </div>
+          <p style="font-size:0.82rem; color:var(--bone-dark); line-height:1.5;">"Took this through all 7 NG+ modes. Every hit taken becomes a counter. You move while healing with Valor Medallion so there's never a vulnerable window. Takes 3 fights to get the muscle memory but after that bosses genuinely can't touch you."</p>
+        </div>
+
+        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1rem 1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:0.5rem;">
+            <div>
+              <span style="font-family:'IM Fell English',serif; font-size:1rem; color:var(--parchment);">Beastium AoE Chaos</span>
+              <span style="font-size:0.72rem; color:var(--bone-dark); margin-left:8px;">by <em>MoltenFoundry</em></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:var(--candle); font-size:0.8rem;">★★★★☆</span>
+              <button onclick="voteUp(this,134)" style="background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); color:var(--candle-light); font-size:0.78rem; padding:3px 10px; border-radius:2px; cursor:pointer;" title="Upvote">▲ <span>134</span></button>
+            </div>
+          </div>
+          <div style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:0.5rem;">
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Blaststrike Maul</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Volatile Beastium</span>
+            <span style="font-size:0.75rem; color:var(--bone-dark);">+</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px;">Burning Beastium</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; margin-left:5px;">Draining Beastium</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; margin-left:5px;">Seismic Belt</span>
+            <span style="font-size:0.75rem; color:var(--candle-pale); background:rgba(200,134,10,0.1); border:1px solid rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; margin-left:5px;">Voltaic Guard</span>
+          </div>
+          <p style="font-size:0.82rem; color:var(--bone-dark); line-height:1.5;">"Stack all three Beastium trinkets and every kill chain-reacts. Volatile drops bombs, Burning lights things on fire, Draining heals you from the chaos. The Seismic Belt pulse during burrow clears anything you missed. Absolute mayhem in the Eastern Heath enemy corridors."</p>
+        </div>
+      </div>
+
+      <!-- Submit form -->
+      <div style="background:rgba(200,134,10,0.06); border:1px solid rgba(200,134,10,0.25); border-radius:4px; padding:1.1rem;">
+        <div style="font-family:'Cinzel',serif; font-size:0.78rem; color:var(--candle-light); letter-spacing:0.08em; margin-bottom:0.8rem;">✦ SUBMIT YOUR BUILD</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+          <input id="sub-name" placeholder="Build name" style="background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.2); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.9rem; padding:7px 10px; border-radius:3px; outline:none;">
+          <input id="sub-author" placeholder="Your name (optional)" style="background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.2); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.9rem; padding:7px 10px; border-radius:3px; outline:none;">
+        </div>
+        <input id="sub-loadout" placeholder="Weapon + Trinkets (e.g. Nightstar + Brisk Brew + Chain Capacitor…)" style="width:100%; background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.2); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.9rem; padding:7px 10px; border-radius:3px; outline:none; margin-bottom:8px; box-sizing:border-box;">
+        <textarea id="sub-desc" placeholder="Why does this build work? What does it excel at?" rows="2" style="width:100%; background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.2); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.9rem; padding:7px 10px; border-radius:3px; outline:none; margin-bottom:8px; resize:vertical; box-sizing:border-box;"></textarea>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+          <button onclick="submitBuild()" style="background:var(--candle); color:var(--ink); border:none; font-family:'Cinzel',serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:8px 20px; border-radius:3px; cursor:pointer;">Submit Build</button>
+          <span id="sub-msg" style="font-size:0.82rem; color:var(--bone-dark); font-style:italic;"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips" aria-label="Beginner tips">
+      <div class="section-divider"><h2>11 Tips for New Players</h2></div>
+      <div class="tips-list">
+        <div class="tip-item">
+          <div class="tip-num">01</div>
+          <div class="tip-content">
+            <div class="tip-title">Bind your controls before your first boss</div>
+            <div class="tip-body">Responsive Hollowing and Plasma use depend on comfortable inputs. Adjust controller or keyboard bindings in the settings menu before pushing into dangerous areas — you'll thank yourself later.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">02</div>
+          <div class="tip-content">
+            <div class="tip-title">Start with Nightstar — switch when you know your playstyle</div>
+            <div class="tip-body">The whip's long reach and safe spacing make it the most forgiving starter. Once you've fought a few bosses, consider switching to the daggers for aggression or the hammer for heavy commitment damage.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">03</div>
+          <div class="tip-content">
+            <div class="tip-title">Bank Bones at vendors constantly</div>
+            <div class="tip-body">Bones drop on death and must be recovered at your death site — but Bone Stone banked at vendors is permanent. Never enter a boss fight with more than 200 unbanked Bones unless you have Proto Spark equipped.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">04</div>
+          <div class="tip-content">
+            <div class="tip-title">Save Sidearms for bosses, not exploration</div>
+            <div class="tip-body">Sidearms consume Joules and are lost when you die. They're powerful enough to change a boss fight entirely — hold them back during routine exploration and deploy when you need them most.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">05</div>
+          <div class="tip-content">
+            <div class="tip-title">Smash everything — destructibles hide Bones and secret paths</div>
+            <div class="tip-body">Barrels, crates, and cracked walls regularly hide Bones, Plasma refills, and passage to hidden rooms. Clear a room, then sweep for breakables before moving on.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">06</div>
+          <div class="tip-content">
+            <div class="tip-title">After dying, identify the exact cause — then fix it with one trinket swap</div>
+            <div class="tip-body">Burst damage? Add Vascular Syrup. Falling into pits? Get Keri the Wisp. Ranged pressure? Equip Shadowhide. Swapping one targeted trinket is almost always better than rebuilding your whole loadout.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">07</div>
+          <div class="tip-content">
+            <div class="tip-title">Don't heal in a panic — learn patterns first</div>
+            <div class="tip-body">Plasma vials are limited. Drinking one mid-flurry often results in another hit that erases the heal. Back off, read the next 1–2 attacks, then drink during the opening window.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">08</div>
+          <div class="tip-content">
+            <div class="tip-title">Activate mirrors as you find them — don't save them for later</div>
+            <div class="tip-body">You need exactly 3 activated mirrors to reach Astral Orrery. Activating each one also enables fast travel in that area. There's no reason to delay — always activate on first discovery.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">09</div>
+          <div class="tip-content">
+            <div class="tip-title">Talk to every NPC in Ossex after each Spark Generator</div>
+            <div class="tip-body">New dialogue, side quests, and vendor stock unlock each time you restore power to a region. Many of the best trinkets are NPC rewards, not chest drops.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">10</div>
+          <div class="tip-content">
+            <div class="tip-title">The Mina's Grave hidden quest unlocks after 3 Sparks</div>
+            <div class="tip-body">This challenging hidden side quest sits in one of the game's earliest regions but requires significant story progress. It's missable if you skip back-tracking — our full guide covers the exact trigger conditions.</div>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">11</div>
+          <div class="tip-content">
+            <div class="tip-title">NG+ changes more than just difficulty</div>
+            <div class="tip-body">All 7 New Game Plus modes can remix item placement, world layout, and rules — not just scale enemy HP. If you want to replay, pick the mode that addresses what felt too easy or too familiar, not the hardest one.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scroll-ornament">✦ &nbsp; &nbsp; ✦ &nbsp; &nbsp; ✦</div>
+
+  </main>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">⚰ Tenebrous Isle Guide</div>
+  <p class="footer-text">The most complete English guide for Mina the Hollower — updated daily as we explore the island.</p>
+  <div class="footer-links">
+    <a href="#guides">Guides</a>
+    <a href="#bosses">Boss Guide</a>
+    <a href="#weapons">Weapons</a>
+    <a href="#trinkets">Trinkets</a>
+    <a href="#areas">Areas</a>
+    <a href="#tips">Tips</a>
+  </div>
+  <!-- Forum Share Buttons -->
+  <div style="margin:1.2rem 0; padding-top:1.2rem; border-top:1px solid rgba(200,134,10,0.15);">
+    <div style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.7rem; opacity:0.7;">Share This Guide</div>
+    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+      <button onclick="shareToForum('reddit')" style="background:rgba(255,69,0,0.15); border:1px solid rgba(255,69,0,0.35); color:#ff9070; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,69,0,0.28)'" onmouseout="this.style.background='rgba(255,69,0,0.15)'">↗ Post to r/MinaTheHollower</button>
+      <button onclick="shareToForum('discord')" style="background:rgba(88,101,242,0.15); border:1px solid rgba(88,101,242,0.35); color:#9ba6ff; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='rgba(88,101,242,0.28)'" onmouseout="this.style.background='rgba(88,101,242,0.15)'">↗ Share in Discord</button>
+      <button onclick="shareToForum('twitter')" style="background:rgba(29,161,242,0.15); border:1px solid rgba(29,161,242,0.35); color:#70c0ff; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='rgba(29,161,242,0.28)'" onmouseout="this.style.background='rgba(29,161,242,0.15)'">↗ Post on X/Twitter</button>
+      <button onclick="copyPageUrl()" style="background:rgba(200,134,10,0.15); border:1px solid rgba(200,134,10,0.35); color:var(--candle-pale); font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; transition:background 0.2s;" id="footer-copy-btn" onmouseover="this.style.background='rgba(200,134,10,0.28)'" onmouseout="this.style.background='rgba(200,134,10,0.15)'">📋 Copy Link</button>
+    </div>
+>>>>>>> b304e87590750876be0683889b7bdac34718109d
   </div>
   <p class="footer-disclaimer">
     This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
@@ -91,7 +1379,272 @@
   </p>
 </footer>
 
+<<<<<<< HEAD
 <script src="assets/js/main.js"></script>
 
 </body>
 </html>
+=======
+<script>
+  // ── Search ──
+  document.querySelector('.nav-search input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      const q = this.value.trim().toLowerCase();
+      const sectionMap = {
+        boss: '#bosses', weapon: '#weapons', trinket: '#trinkets',
+        area: '#areas', region: '#areas', tip: '#tips', guide: '#guides',
+        beginner: '#tips', build: '#weapons', walkthrough: '#areas'
+      };
+      let target = '#guides';
+      for (const [kw, href] of Object.entries(sectionMap)) {
+        if (q.includes(kw)) { target = href; break; }
+      }
+      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+      this.value = '';
+    }
+  });
+
+  // ── Build Quiz ──
+  const quizAnswers = {};
+  const builds = {
+    aggro_burst_early:  { weapon:'Whisper & Vesper', trinkets:['Vascular Syrup','Proto Spark','Brisk Brew','Blinkstep Claw','Iron Lung','Primed Vial Pouch'], tip:'Get in fast, pop Vascular Syrup before each boss. Proto Spark is your safety net.' },
+    aggro_burst_mid:    { weapon:'Whisper & Vesper', trinkets:['Uranium Bracelet','Vascular Syrup','Chain Capacitor','Blinkstep Claw','Bellows Bustle','Evasion Powder'], tip:'Uranium Bracelet + Chain Capacitor makes daggers melt bosses. Risky but fast.' },
+    aggro_burst_late:   { weapon:'Whisper & Vesper', trinkets:['Uranium Bracelet','Chain Capacitor','Wallower\'s Gauntlets','Blinkstep Claw','Vascular Syrup','Voltaic Guard'], tip:'Full aggro glass cannon. One-shot windows on every major boss.' },
+    aggro_pits_early:   { weapon:'Nightstar', trinkets:['Keri the Wisp','Pit Preserver','Primed Vial Pouch','Vascular Syrup','Steady Soles','Proto Spark'], tip:'Keri + Pit Preserver = almost impossible to fall. Focus on range with Nightstar.' },
+    aggro_pits_mid:     { weapon:'Nightstar', trinkets:['Keri the Wisp','Bellows Bustle','Pit Preserver','Chain Capacitor','Vascular Syrup','Evasion Powder'], tip:'Bellows Bustle air dash fixes most pit deaths mid-game. Keep whip for safe damage.' },
+    aggro_pits_late:    { weapon:'Battery Buster', trinkets:['Wallower\'s Gauntlets','Bellows Bustle','Keri the Wisp','Voltaic Guard','Chain Capacitor','Evasion Powder'], tip:'Wallower\'s Gauntlets + Bellows Bustle = full aerial mobility. Pits become irrelevant.' },
+    aggro_multi_early:  { weapon:'Nightstar', trinkets:['Seismic Belt','Repulsing Root','Primed Vial Pouch','Vascular Syrup','Proto Spark','Stolenoid'], tip:'Seismic Belt burrow pulse clears crowds instantly. Nightstar range handles the rest.' },
+    aggro_multi_mid:    { weapon:'Blaststrike Maul', trinkets:['Seismic Belt','Repulsing Root','Bellows Bustle','Volatile Beastium','Vascular Syrup','Chain Capacitor'], tip:'Maul stagger + bomb drops from Volatile Beastium = crowd deletion.' },
+    aggro_multi_late:   { weapon:'Blaststrike Maul', trinkets:['Seismic Belt','Volatile Beastium','Burning Beastium','Repulsing Root','Voltaic Guard','Chain Capacitor'], tip:'Three Beastium trinkets stack DoT, explosion, and AOE. Nothing survives.' },
+    safe_burst_early:   { weapon:'Nightstar', trinkets:['Vascular Syrup','Primed Vial Pouch','Evasion Powder','Proto Spark','Bell of Grace','Steady Soles'], tip:'Maximum defensive kit. Vascular Syrup makes you near-unkillable early on.' },
+    safe_burst_mid:     { weapon:'Battery Buster', trinkets:['Vascular Syrup','Evasion Powder','Shock Flint','Primed Vial Pouch','Bell of Grace','Intravenous Vial'], tip:'Shock Flint + Battery Buster from range trivializes most mid-game bosses.' },
+    safe_burst_late:    { weapon:'Battery Buster', trinkets:['Shock Flint','Uranium Bracelet','Evasion Powder','Vial Salvo','Intravenous Vial','Vascular Syrup'], tip:'High risk/reward ranged build. Uranium Bracelet dramatically boosts Shock Flint damage.' },
+    safe_pits_early:    { weapon:'Nightstar', trinkets:['Keri the Wisp','Pit Preserver','Steady Soles','Primed Vial Pouch','Proto Spark','Vascular Syrup'], tip:'Zero falling deaths possible with this setup. Take your time, use Nightstar range.' },
+    safe_pits_mid:      { weapon:'Battery Buster', trinkets:['Bellows Bustle','Keri the Wisp','Pit Preserver','Shock Flint','Evasion Powder','Vascular Syrup'], tip:'Air dash + float + bounce = you never fall. Battery Buster clears from safety.' },
+    safe_pits_late:     { weapon:'Battery Buster', trinkets:['Wallower\'s Gauntlets','Bellows Bustle','Keri the Wisp','Vial Salvo','Shock Flint','Voltaic Guard'], tip:'Full aerial + ranged late game. You barely need to touch the ground.' },
+    safe_multi_early:   { weapon:'Nightstar', trinkets:['Repulsing Root','Seismic Belt','Primed Vial Pouch','Vascular Syrup','Stolenoid','Proto Spark'], tip:'Whip range + Repulsing Root keeps crowds off you. Stolenoid grabs all Bone pickups.' },
+    safe_multi_mid:     { weapon:'Battery Buster', trinkets:['Shock Flint','Volatile Beastium','Repulsing Root','Seismic Belt','Vascular Syrup','Evasion Powder'], tip:'Ranged chaos — chain explosions from Volatile Beastium while Shock Flint picks stragglers.' },
+    safe_multi_late:    { weapon:'Battery Buster', trinkets:['Shock Flint','Volatile Beastium','Burning Beastium','Vial Salvo','Voltaic Guard','Draining Beastium'], tip:'Three Beastium + Vial Salvo converts healing into AOE damage. Self-sustaining ranged chaos.' },
+    tank_burst_early:   { weapon:'Blaststrike Maul', trinkets:['Vascular Syrup','Warding Beastium','Primed Vial Pouch','Proto Spark','Valor Medallion','Bubble Ring'], tip:'Warding Beastium + Valor Medallion lets you heal while moving. Maul stagger soaks hits.' },
+    tank_burst_mid:     { weapon:'Guardian Casket', trinkets:['Bubble Ring','Vascular Syrup','Valor Medallion','Counter Vial','Evasion Powder','Bell of Grace'], tip:'Guardian Casket parry + Counter Vial = burst damage reflected back. Extremely satisfying.' },
+    tank_burst_late:    { weapon:'Guardian Casket', trinkets:['Uranium Bracelet','Bubble Ring','Counter Vial','Voltaic Guard','Vascular Syrup','Blinking Glass'], tip:'Full parry tank. Uranium Bracelet makes counter hits devastating. High skill ceiling.' },
+    tank_pits_early:    { weapon:'Blaststrike Maul', trinkets:['Pit Preserver','Steady Soles','Vascular Syrup','Proto Spark','Bubble Ring','Primed Vial Pouch'], tip:'Steady Soles means knockback into pits is nearly impossible. Maul is slow but safe.' },
+    tank_pits_mid:      { weapon:'Guardian Casket', trinkets:['Bellows Bustle','Pit Preserver','Steady Soles','Bubble Ring','Counter Vial','Valor Medallion'], tip:'Air dash escape + parry counter. The safest mid-game setup available.' },
+    tank_pits_late:     { weapon:'Guardian Casket', trinkets:['Wallower\'s Gauntlets','Bellows Bustle','Steady Soles','Counter Vial','Voltaic Guard','Blinking Glass'], tip:'Blink dodge + parry + wall-burrow = total positional control. Nothing touches you.' },
+    tank_multi_early:   { weapon:'Blaststrike Maul', trinkets:['Seismic Belt','Repulsing Root','Bubble Ring','Vascular Syrup','Proto Spark','Stolenoid'], tip:'Maul + Seismic Belt pulse clears rooms. Repulsing Root prevents being surrounded.' },
+    tank_multi_mid:     { weapon:'Guardian Casket', trinkets:['Seismic Belt','Volatile Beastium','Bubble Ring','Counter Vial','Repulsing Root','Valor Medallion'], tip:'Parry tank that explodes enemies on death. Extremely safe crowd-control loop.' },
+    tank_multi_late:    { weapon:'Guardian Casket', trinkets:['Seismic Belt','Volatile Beastium','Burning Beastium','Counter Vial','Voltaic Guard','Wallower\'s Gauntlets'], tip:'Final-form parry build. Three AoE sources + Voltaic Guard makes you a walking explosion.' },
+  };
+
+  function quizAnswer(key, val, btn) {
+    quizAnswers[key] = val;
+    btn.parentElement.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    setTimeout(() => {
+      const steps = { style: ['q1','q2'], death: ['q2','q3'], progress: ['q3','quiz-result'] };
+      const [cur, nxt] = steps[key];
+      document.getElementById(cur).style.display = 'none';
+      if (nxt === 'quiz-result') showResult();
+      else document.getElementById(nxt).style.display = 'block';
+    }, 250);
+  }
+
+  function showResult() {
+    const k = `${quizAnswers.style}_${quizAnswers.death}_${quizAnswers.progress}`;
+    const b = builds[k] || builds['safe_burst_early'];
+    const el = document.getElementById('quiz-result');
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="quiz-result-box">
+        <h4>⚡ YOUR BUILD</h4>
+        <div style="margin-bottom:0.5rem;">
+          <span style="font-size:0.72rem; color:var(--bone-dark); font-family:'Cinzel',serif; letter-spacing:0.06em;">WEAPON</span><br>
+          <span style="font-family:'IM Fell English',serif; font-size:1rem; color:var(--parchment);">${b.weapon}</span>
+        </div>
+        <div style="margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem; color:var(--bone-dark); font-family:'Cinzel',serif; letter-spacing:0.06em;">6 TRINKETS</span><br>
+          <div style="margin-top:4px;">${b.trinkets.map(t => `<span class="quiz-trinket-pill">${t}</span>`).join('')}</div>
+        </div>
+        <p style="font-size:0.8rem; color:var(--bone-dark); line-height:1.5; font-style:italic; margin-bottom:0.6rem;">${b.tip}</p>
+        <button class="share-btn" onclick="shareResult('${b.weapon}')">📤 Share this build →</button>
+        <button onclick="resetQuiz()" style="display:block; width:100%; margin-top:6px; background:transparent; border:1px solid rgba(200,134,10,0.2); color:var(--bone-dark); font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.08em; padding:0.4rem; border-radius:3px; cursor:pointer;">↩ Retake quiz</button>
+      </div>`;
+  }
+
+  function resetQuiz() {
+    Object.keys(quizAnswers).forEach(k => delete quizAnswers[k]);
+    ['q1','q2','q3','quiz-result'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.style.display = id === 'q1' ? 'block' : 'none'; }
+    });
+    document.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
+  }
+
+  function shareResult(weapon) {
+    const text = `I got "${weapon}" as my Mina the Hollower build — take the quiz yourself: ${window.location.href}`;
+    if (navigator.share) { navigator.share({ title: 'Mina Build Quiz', text, url: window.location.href }); }
+    else { navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard! Share it anywhere.\
+\n' + text)); }
+  }
+
+  // ── Death Counter ──
+  let deaths = parseInt(localStorage.getItem('minaDeaths') || '84291');
+  function updateCounter() { document.getElementById('death-count').textContent = deaths.toLocaleString(); }
+  function addDeath() {
+    deaths++;
+    localStorage.setItem('minaDeaths', deaths);
+    updateCounter();
+    const btn = document.querySelector('button[onclick="addDeath()"]');
+    const orig = btn.textContent;
+    btn.textContent = '💀 Noted. You\'ll get 'em next time.';
+    setTimeout(() => btn.textContent = orig, 2000);
+  }
+  updateCounter();
+
+  // ── Build Planner ──
+  const TRINKET_LIST = [
+    'Proto Spark','Vascular Syrup','Iron Lung','Keri the Wisp','Thorn Harness',
+    'Blinkstep Claw','Marrow Flask','Shadowhide','Brisk Brew','Uranium Bracelet',
+    'Shock Flint','Bubble Ring','Counter Vial','Chain Capacitor','Evasion Powder',
+    'Bellows Bustle','Seismic Belt','Repulsing Root','Volatile Beastium','Burning Beastium',
+    'Draining Beastium','Voltaic Guard','Pit Preserver','Tumbling Tutu','Bell of Grace',
+    'Valor Medallion','Warding Beastium','Thermal Pack','Deboning Wand','Steady Soles',
+    'Pneumatic Armlet','Windfall Charm','Willow the Wisp','Helio the Wisp','Flame Guard',
+    'Dummy Cache','Dead Leaf','Lace Glove','Spike Spurs','Desperation Bonnet',
+    'Stolenoid','Fly Bait','Wallower\'s Gauntlets','Spring Heels','Niter Belt',
+    'Dodging Pendulum','Primed Vial Pouch','Twill Weave','Smelling Salts','Intravenous Vial',
+    'Plasma Funnel','Vial Salvo','Watchful Eye','Blinking Glass','Polyp Lamp',
+    'Bridge Weaver','Starving Beastium','Spark Catcher','Glutton\'s Jug','Bubble Ring'
+  ];
+  const plannerContainer = document.getElementById('planner-trinkets');
+  if (plannerContainer) {
+    plannerContainer.innerHTML = TRINKET_LIST.map(t =>
+      `<label style="display:flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--bone);cursor:pointer;padding:3px 4px;border-radius:2px;transition:background 0.1s;" onmouseover="this.style.background='rgba(200,134,10,0.08)'" onmouseout="this.style.background='transparent'">
+        <input type="checkbox" value="${t}" onchange="updatePlanner()" style="accent-color:var(--candle);"> ${t}
+      </label>`
+    ).join('');
+  }
+
+  function updatePlanner() {
+    const weapon = document.getElementById('planner-weapon')?.value || '';
+    const sidearm = document.getElementById('planner-sidearm')?.value || '';
+    const checked = [...document.querySelectorAll('#planner-trinkets input:checked')].map(i=>i.value);
+    const countEl = document.getElementById('trinket-count');
+    if (countEl) countEl.textContent = `(${checked.length} / 6 selected)`;
+    if (checked.length > 6) {
+      const last = document.querySelector('#planner-trinkets input:checked:last-of-type');
+      if (last) { last.checked = false; return; }
+    }
+    const summary = document.getElementById('planner-summary');
+    if (!weapon && checked.length === 0) { summary.textContent = 'Select a weapon and at least one trinket to generate your build.'; return; }
+    const parts = [];
+    if (weapon) parts.push(`⚔ ${weapon}`);
+    if (sidearm) parts.push(`🏹 ${sidearm}`);
+    if (checked.length) parts.push(`💎 ${checked.join(' · ')}`);
+    summary.innerHTML = parts.join('<br>');
+    const params = new URLSearchParams();
+    if (weapon) params.set('w', weapon);
+    if (sidearm) params.set('s', sidearm);
+    if (checked.length) params.set('t', checked.join(','));
+    const urlInput = document.getElementById('planner-url');
+    if (urlInput) urlInput.value = `${window.location.origin}${window.location.pathname}?build=${btoa(params.toString())}`;
+  }
+
+  function copyBuildUrl() {
+    const url = document.getElementById('planner-url')?.value;
+    if (!url || url === '') return;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = '📋 Copy URL', 2000);
+    });
+  }
+
+  function shareForum(platform) { shareToForum(platform, document.getElementById('planner-url')?.value); }
+
+  // ── Forum share ──
+  function shareToForum(platform, url) {
+    const shareUrl = url || window.location.href;
+    const title = 'Mina the Hollower — Complete Guide & Build Planner';
+    const text = 'Found this guide super useful for Mina the Hollower — covers all 60 trinkets, best builds, and has a shareable build planner tool: ';
+    const targets = {
+      reddit: `https://www.reddit.com/r/MinaTheHollower/submit?type=link&title=${encodeURIComponent(title)}&url=${encodeURIComponent(shareUrl)}`,
+      discord: null,
+      twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + shareUrl)}`
+    };
+    if (platform === 'discord') {
+      navigator.clipboard.writeText(text + shareUrl).then(() => {
+        const btn = document.getElementById('footer-copy-btn') || document.querySelector('button[onclick*="discord"]');
+        if (btn) { const o=btn.textContent; btn.textContent='✓ Copied for Discord!'; setTimeout(()=>btn.textContent=o,2500); }
+      });
+      return;
+    }
+    if (targets[platform]) window.open(targets[platform], '_blank', 'width=700,height=500');
+  }
+
+  function copyPageUrl() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('footer-copy-btn');
+      if (btn) { const o=btn.textContent; btn.textContent='✓ Copied!'; setTimeout(()=>btn.textContent=o,2000); }
+    });
+  }
+
+  // ── Vote Up ──
+  function voteUp(btn, base) {
+    const span = btn.querySelector('span');
+    const cur = parseInt(span.textContent);
+    span.textContent = cur + 1;
+    btn.disabled = true;
+    btn.style.opacity = '0.5';
+  }
+
+  // ── Build Planner: read URL params on load ──
+  (function loadBuildFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const b = params.get('build');
+    if (!b) return;
+    try {
+      const p = new URLSearchParams(atob(b));
+      const w = p.get('w'); const s = p.get('s'); const t = p.get('t');
+      const wEl = document.getElementById('planner-weapon');
+      const sEl = document.getElementById('planner-sidearm');
+      if (wEl && w) { [...wEl.options].forEach(o => { if (o.value===w) o.selected=true; }); }
+      if (sEl && s) { [...sEl.options].forEach(o => { if (o.value===s) o.selected=true; }); }
+      if (t) { t.split(',').forEach(name => {
+        const cb = document.querySelector(`#planner-trinkets input[value="${name}"]`);
+        if (cb) cb.checked = true;
+      }); }
+      setTimeout(updatePlanner, 100);
+      document.getElementById('build-planner')?.scrollIntoView({behavior:'smooth'});
+    } catch(e){}
+  })();
+
+  // ── Submit Build (UGC) ──
+  function submitBuild() {
+    const name = document.getElementById('sub-name')?.value.trim();
+    const author = document.getElementById('sub-author')?.value.trim() || 'Anonymous';
+    const loadout = document.getElementById('sub-loadout')?.value.trim();
+    const desc = document.getElementById('sub-desc')?.value.trim();
+    const msg = document.getElementById('sub-msg');
+    if (!name || !loadout) { msg.textContent = 'Please fill in the build name and loadout.'; msg.style.color='#e88080'; return; }
+    // In production this would POST to a backend; for now, append to DOM
+    const list = document.getElementById('community-builds-list');
+    const card = document.createElement('div');
+    card.style.cssText = 'background:rgba(245,234,216,0.05);border:1px solid rgba(200,134,10,0.3);border-radius:4px;padding:1rem 1.2rem;animation:fadeIn 0.3s ease;';
+    card.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:0.5rem;">
+        <div><span style="font-family:'IM Fell English',serif;font-size:1rem;color:var(--parchment);">${name}</span><span style="font-size:0.72rem;color:var(--bone-dark);margin-left:8px;">by <em>${author}</em> · just now</span></div>
+        <button onclick="voteUp(this,0)" style="background:rgba(200,134,10,0.12);border:1px solid rgba(200,134,10,0.3);color:var(--candle-light);font-size:0.78rem;padding:3px 10px;border-radius:2px;cursor:pointer;">▲ <span>0</span></button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--candle-pale);margin-bottom:0.5rem;">${loadout}</div>
+      ${desc ? `<p style="font-size:0.82rem;color:var(--bone-dark);line-height:1.5;">"${desc}"</p>` : ''}`;
+    list.prepend(card);
+    ['sub-name','sub-author','sub-loadout','sub-desc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+    msg.textContent = '✓ Build submitted! Thanks for contributing.';
+    msg.style.color = 'var(--candle-light)';
+    setTimeout(()=>msg.textContent='', 4000);
+  }
+</script>
+</body>
+</html>
+>>>>>>> b304e87590750876be0683889b7bdac34718109d
