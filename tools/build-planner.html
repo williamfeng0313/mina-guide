@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Planner - Mina the Hollower Guide</title>
+<meta name="description" content="Plan and share Mina the Hollower builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+</head>
+<body>
+
+<div class="announce">
+  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
+  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
+</div>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
+  <ul class="nav-links">
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../database/index.html">Database</a></li>
+    <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
+    <li><a href="../about.html">About</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  </div>
+  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
+  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+</div>
+
+<main class="page-wrap narrow">
+  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Build Planner</div>
+  <section aria-label="Build planner tool">
+      <div class="section-divider"><h2>⚙ Build Planner</h2></div>
+      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.2rem; font-style:italic;">
+        Pick your weapon, trinkets, and sidearm — get a shareable build URL instantly.
+      </p>
+      <div style="background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.25); border-radius:4px; padding:1.2rem;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Weapon</label>
+            <select id="planner-weapon" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
+              <option value="">— Choose weapon —</option>
+              <option>Nightstar (Whip)</option>
+              <option>Whisper &amp; Vesper (Daggers)</option>
+              <option>Blaststrike Maul (Hammer)</option>
+              <option>Guardian Casket (Shield)</option>
+              <option>Battery Buster (Blaster)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Sidearm</label>
+            <select id="planner-sidearm" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
+              <option value="">— Choose sidearm —</option>
+              <option>Recall Disc</option>
+              <option>Drill Driver</option>
+              <option>Homing Lantern</option>
+              <option>Boneshot</option>
+              <option>Shock Grenade</option>
+              <option>Plasma Mortar</option>
+            </select>
+          </div>
+        </div>
+        <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Trinkets <span style="color:var(--bone-dark); font-size:0.65rem;" id="trinket-count">(0 / 6 selected)</span></label>
+        <div id="planner-trinkets" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:5px; margin-bottom:1rem; max-height:220px; overflow-y:auto; padding-right:4px;"></div>
+        <div id="planner-output" style="background:rgba(10,18,12,0.6); border:1px solid rgba(200,134,10,0.2); border-radius:3px; padding:0.9rem; margin-bottom:0.9rem; min-height:60px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; margin-bottom:6px;">YOUR BUILD</div>
+          <div id="planner-summary" style="font-size:0.85rem; color:var(--bone-dark); font-style:italic;">Select a weapon and at least one trinket to generate your build.</div>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input id="planner-url" readonly style="flex:1; min-width:180px; background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.25); color:var(--bone-dark); font-family:'Crimson Text',serif; font-size:0.82rem; padding:7px 10px; border-radius:3px; outline:none;" placeholder="Build URL appears here…">
+          <button onclick="copyBuildUrl()" style="background:var(--candle); color:var(--ink); border:none; font-family:'Cinzel',serif; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; white-space:nowrap;" id="copy-btn">📋 Copy URL</button>
+          <button onclick="shareForum('reddit')" style="background:rgba(255,69,0,0.2); border:1px solid rgba(255,69,0,0.4); color:#ff9070; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Reddit</button>
+          <button onclick="shareForum('discord')" style="background:rgba(88,101,242,0.2); border:1px solid rgba(88,101,242,0.4); color:#9ba6ff; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Discord</button>
+        </div>
+      </div>
+    </section>
+</main>
+
+<footer>
+  <div class="footer-brand">Tenebrous Isle Guide</div>
+  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
+  <div class="footer-links">
+    <a href="../blog/index.html">Blog</a>
+    <a href="../database/bosses/index.html">Bosses</a>
+    <a href="../database/weapons/index.html">Weapons</a>
+    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../tools/index.html">Tools</a>
+    <a href="../about.html">About</a>
+  </div>
+  <p class="footer-disclaimer">
+    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+    All game content belongs to their respective owners.
+  </p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
