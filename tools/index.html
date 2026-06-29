@@ -1,78 +1,1085 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tools - Mina the Hollower Guide</title>
-<meta name="description" content="Interactive tools for Mina the Hollower - build planner, quiz, checklist.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Mina the Hollower Tools | Build Planner, Quiz, Checklist & Tracker</title>
+  <meta name="description" content="Interactive Mina the Hollower tools: build planner, build quiz, 100% checklist, progress tracker, and completion helpers for Tenebrous Isle." />
+  <meta name="keywords" content="Mina the Hollower tools, Mina build planner, Mina build quiz, Mina checklist, Mina progress tracker, Mina 100% completion" />
+
+  <link rel="canonical" href="https://minahollower.com/tools/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mina the Hollower Tools" />
+  <meta property="og:description" content="Build planner, build quiz, checklist, and progress tracker for Mina the Hollower." />
+  <meta property="og:url" content="https://minahollower.com/tools/" />
+  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mina the Hollower Tools" />
+  <meta name="twitter:description" content="Interactive tools for builds, completion, and progress tracking in Mina the Hollower." />
+  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --forest-3: #2d5240;
+      --parchment: #f5ead8;
+      --parchment-2: #e8d8ba;
+      --parchment-3: #d4bc96;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --blood: #6e1f1a;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Crimson Text", Georgia, serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.32), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.11), transparent 28%),
+        radial-gradient(circle at 60% 100%, rgba(6, 10, 7, 0.9), transparent 50%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(245,234,216,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,234,216,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.52) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .announce {
+      background: rgba(12, 22, 15, 0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--candle-pale);
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.52rem 1rem;
+    }
+
+    .announce a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.6);
+    }
+
+    nav {
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(9, 16, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: var(--candle-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand::before {
+      content: "✦";
+      color: var(--candle);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 190px;
+      height: 34px;
+      padding: 0 0.7rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      background: rgba(245,234,216,0.06);
+      border-radius: 3px;
+    }
+
+    .nav-search svg {
+      color: rgba(245,234,216,0.45);
+      flex: 0 0 auto;
+    }
+
+    .nav-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-search input::placeholder {
+      color: rgba(216,205,184,0.48);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(6, 12, 8, 0.98);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .mobile-nav-overlay.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay a {
+      padding: 1rem 0;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .tools-hero {
+      position: relative;
+      padding: 5rem 2rem 4.2rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9,16,11,0.25), rgba(9,16,11,0.88)),
+        radial-gradient(circle at 50% 10%, rgba(232,160,32,0.13), transparent 30%);
+      overflow: hidden;
+    }
+
+    .tools-hero::before {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .tools-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .breadcrumb {
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone-dark);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--candle);
+      text-decoration: none;
+    }
+
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tools-hero h1 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: 0.015em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.65);
+    }
+
+    .tools-hero h1 span {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 0.42em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 640px;
+      margin: 1.5rem 0 1.7rem;
+      color: var(--bone);
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.72;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.25rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--candle);
+      color: var(--ink);
+      border: 1px solid rgba(244,204,122,0.3);
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(200,134,10,0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--candle-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--parchment);
+      border: 1px solid rgba(245,234,216,0.3);
+      background: rgba(245,234,216,0.04);
+    }
+
+    .btn-secondary:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+      transform: translateY(-1px);
+    }
+
+    .tool-panel {
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.98), rgba(232,216,186,0.95));
+      color: #2a1e0e;
+      border: 1px solid rgba(244,204,122,0.5);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.55),
+        inset 0 0 36px rgba(96, 66, 28, 0.14);
+      padding: 1.5rem;
+      transform: rotate(1deg);
+      position: relative;
+    }
+
+    .tool-panel::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(90, 55, 16, 0.23);
+      pointer-events: none;
+    }
+
+    .tool-panel h2 {
+      font-family: "Cinzel", serif;
+      color: #3b2a12;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,55,16,0.25);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .tool-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .tool-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0.8rem;
+      border-bottom: 1px dashed rgba(90,55,16,0.22);
+      padding-bottom: 0.75rem;
+    }
+
+    .tool-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .tool-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(90,55,16,0.28);
+      background: rgba(200,134,10,0.12);
+      font-family: "Cinzel", serif;
+      color: #4b3517;
+      font-weight: 700;
+    }
+
+    .tool-list strong {
+      display: block;
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+      color: #2a1e0e;
+    }
+
+    .tool-list span {
+      color: #6b5440;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.4rem 3.5rem;
+    }
+
+    .section {
+      margin-bottom: 3.6rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-kicker {
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .section h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.28rem;
+      letter-spacing: 0.06em;
+    }
+
+    .section-note {
+      max-width: 430px;
+      color: var(--bone-dark);
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: right;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .tool-card {
+      position: relative;
+      display: block;
+      min-height: 250px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.085), rgba(245,234,216,0.035));
+      border: 1px solid rgba(200,134,10,0.21);
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+      transition: 0.18s ease;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--candle), transparent);
+      opacity: 0;
+      transition: 0.18s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200,134,10,0.52);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.115), rgba(245,234,216,0.05));
+    }
+
+    .tool-card:hover::before {
+      opacity: 1;
+    }
+
+    .tool-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .tool-icon {
+      font-size: 1.6rem;
+      color: var(--candle-light);
+    }
+
+    .tool-status {
+      font-family: "Cinzel", serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7ecda0;
+      border: 1px solid rgba(126,205,160,0.32);
+      padding: 0.14rem 0.4rem;
+      background: rgba(61,112,85,0.15);
+    }
+
+    .tool-status.planned {
+      color: var(--candle-pale);
+      border-color: rgba(200,134,10,0.28);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .tool-card h3 {
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .tool-card p {
+      color: var(--bone-dark);
+      font-size: 0.94rem;
+      line-height: 1.48;
+      margin-bottom: 1rem;
+    }
+
+    .tool-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-family: "Cinzel", serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.28);
+      padding: 0.14rem 0.4rem;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .route-panel {
+      padding: 2rem;
+      border: 1px solid rgba(200,134,10,0.32);
+      background:
+        linear-gradient(135deg, rgba(245,234,216,0.1), rgba(200,134,10,0.08)),
+        rgba(5,12,8,0.58);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .route-panel h2 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: 1.7rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .route-panel p {
+      color: var(--bone);
+      max-width: 780px;
+      margin-bottom: 1.2rem;
+    }
+
+    .route-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+
+    .route-link {
+      text-decoration: none;
+      border: 1px solid var(--line-soft);
+      background: rgba(245,234,216,0.045);
+      padding: 0.85rem;
+      transition: 0.18s ease;
+    }
+
+    .route-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .route-link small {
+      display: block;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .route-link strong {
+      display: block;
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5, 12, 8, 0.92);
+      padding: 2.5rem 1.4rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-text {
+      color: var(--bone-dark);
+      max-width: 660px;
+      margin: 0 auto 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--bone);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .footer-disclaimer {
+      color: rgba(216,205,184,0.48);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 1080px) {
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .tools-hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-panel {
+        transform: none;
+      }
+
+      .route-links {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-note {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .tools-hero {
+        padding: 3.5rem 1.2rem 3.2rem;
+      }
+
+      .tools-hero::before {
+        inset: 1rem;
+      }
+
+      .tools-hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .tools-grid,
+      .route-links {
+        grid-template-columns: 1fr;
+      }
+
+      .page-wrap {
+        padding-top: 3rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Mina the Hollower Tools",
+    "url": "https://minahollower.com/tools/",
+    "description": "Interactive tools for Mina the Hollower including build planner, build quiz, checklist, and progress tracker."
+  }
+  </script>
 </head>
+
 <body>
+  <div class="site-shell">
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
+    <div class="announce">
+      Tools for surviving Tenebrous Isle &nbsp;|&nbsp;
+      <a href="build-planner.html">Open the Build Planner →</a>
+    </div>
 
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+    <nav>
+      <a href="../index.html" class="nav-brand">MinaHollower</a>
+
+      <ul class="nav-links">
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../database/index.html">Database</a></li>
+        <li><a href="../database/bosses/index.html">Bosses</a></li>
+        <li><a href="../database/trinkets/index.html">Trinkets</a></li>
+        <li><a href="../tools/index.html" class="active">Tools</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+
+      <div class="nav-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="Search tools..." aria-label="Search tools" />
+      </div>
+
+      <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+      <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">×</button>
+      <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+      <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+      <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+      <a href="../database/bosses/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Bosses</a>
+      <a href="../database/trinkets/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+      <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+      <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+    </div>
+
+    <header class="tools-hero">
+      <div class="tools-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a> / Tools
+          </div>
+
+          <p class="hero-eyebrow">Builds · Checklists · Tracking · Practical helpers</p>
+
+          <h1>
+            The Workbench
+            <span>Tools for planning builds, tracking progress, and surviving the island.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Guides help you understand Mina the Hollower. Tools help you act.
+            Use the build planner, build quiz, completion checklist, and progress tracker
+            to turn field notes into decisions.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="build-planner.html" class="btn-primary">Open Build Planner</a>
+            <a href="checklist.html" class="btn-secondary">100% Checklist</a>
+            <a href="build-quiz.html" class="btn-secondary">Take Build Quiz</a>
+          </div>
+        </div>
+
+        <aside class="tool-panel" aria-label="Tool summary">
+          <h2>Workbench Inventory</h2>
+
+          <ul class="tool-list">
+            <li>
+              <div class="tool-mark">1</div>
+              <div>
+                <strong>Plan a build</strong>
+                <span>Choose weapons, sidearms, and Trinkets before a boss or route.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="tool-mark">2</div>
+              <div>
+                <strong>Find your playstyle</strong>
+                <span>Use the quiz when you do not know what build fits you.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="tool-mark">3</div>
+              <div>
+                <strong>Track completion</strong>
+                <span>Mark bosses, Trinkets, secrets, and progress toward 100%.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="tool-mark">4</div>
+              <div>
+                <strong>Return later</strong>
+                <span>Tools create repeat visits. That is how the site becomes useful.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+
+      <section class="section" aria-label="Interactive tools">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Use the workbench</div>
+            <h2>Interactive Tools</h2>
+          </div>
+          <p class="section-note">
+            These pages are not decoration. They are retention engines: players come back when tools solve repeat problems.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <a class="tool-card" href="build-planner.html">
+            <div class="tool-top">
+              <span class="tool-icon">⚒</span>
+              <span class="tool-status">Live</span>
+            </div>
+            <h3>Build Planner</h3>
+            <p>
+              Pick a weapon, sidearm, and Trinket loadout. Use it to prepare for bosses,
+              farming routes, or exploration-heavy sections.
+            </p>
+            <div class="tool-tags">
+              <span class="tag">Builds</span>
+              <span class="tag">Loadouts</span>
+              <span class="tag">Shareable</span>
+            </div>
+          </a>
+
+          <a class="tool-card" href="build-quiz.html">
+            <div class="tool-top">
+              <span class="tool-icon">⚡</span>
+              <span class="tool-status">Live</span>
+            </div>
+            <h3>Build Quiz</h3>
+            <p>
+              Answer a few questions and get a recommended weapon + Trinket direction
+              based on how you actually play.
+            </p>
+            <div class="tool-tags">
+              <span class="tag">Quiz</span>
+              <span class="tag">Beginner</span>
+              <span class="tag">Fast</span>
+            </div>
+          </a>
+
+          <a class="tool-card" href="checklist.html">
+            <div class="tool-top">
+              <span class="tool-icon">☑</span>
+              <span class="tool-status">Live</span>
+            </div>
+            <h3>100% Checklist</h3>
+            <p>
+              Track Trinkets, bosses, weapons, secrets, regions, and completion goals
+              without losing your route.
+            </p>
+            <div class="tool-tags">
+              <span class="tag">100%</span>
+              <span class="tag">Tracking</span>
+              <span class="tag">Completion</span>
+            </div>
+          </a>
+
+          <a class="tool-card" href="progress.html">
+            <div class="tool-top">
+              <span class="tool-icon">📌</span>
+              <span class="tool-status planned">Planned</span>
+            </div>
+            <h3>Progress Tracker</h3>
+            <p>
+              Mark regions, Sparks, mirrors, bosses, and key milestones while exploring
+              Tenebrous Isle.
+            </p>
+            <div class="tool-tags">
+              <span class="tag">Progress</span>
+              <span class="tag">Regions</span>
+              <span class="tag">Route</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Recommended tool route">
+        <div class="route-panel">
+          <h2>Recommended Tool Route</h2>
+          <p>
+            If you are stuck, do not start with the tracker. Start with the build quiz.
+            If you already know your playstyle, use the build planner. If you are chasing
+            full completion, open the checklist and keep it pinned.
+          </p>
+
+          <div class="route-links">
+            <a class="route-link" href="build-quiz.html">
+              <small>Unsure</small>
+              <strong>Take the Build Quiz</strong>
+            </a>
+
+            <a class="route-link" href="build-planner.html">
+              <small>Prepare</small>
+              <strong>Use Build Planner</strong>
+            </a>
+
+            <a class="route-link" href="checklist.html">
+              <small>Complete</small>
+              <strong>Open Checklist</strong>
+            </a>
+
+            <a class="route-link" href="../database/trinkets/index.html">
+              <small>Reference</small>
+              <strong>Browse Trinkets</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-brand">MinaHollower</div>
+
+      <p class="footer-text">
+        A fan-made Mina the Hollower guide site built like a battered gothic field journal:
+        bosses, Trinkets, builds, tools, and walkthroughs for Tenebrous Isle.
+      </p>
+
+      <div class="footer-links">
+        <a href="../blog/index.html">Blog</a>
+        <a href="../database/index.html">Database</a>
+        <a href="../database/bosses/index.html">Bosses</a>
+        <a href="../database/trinkets/index.html">Trinkets</a>
+        <a href="../tools/index.html">Tools</a>
+        <a href="../about.html">About</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+        All game content belongs to its respective owners.
+      </p>
+    </footer>
+
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+  <script>
+    const searchInput = document.querySelector(".nav-search input");
 
-<main class="page-wrap">
-  <div class="breadcrumb"><a href="../index.html">Home</a> / Tools</div>
-  <div class="section-divider"><h2>Interactive Tools</h2></div>
-  <div class="hub-grid">
-    <a class="hub-card" href="build-quiz.html"><h3>鈿?Build Quiz</h3><p>Answer 3 questions 鈥?get your recommended weapon and 6 trinkets.</p></a>
-    <a class="hub-card" href="build-planner.html"><h3>馃搵 Build Planner</h3><p>Pick loadout components and share a build URL.</p></a>
-    <a class="hub-card" href="checklist.html"><h3>鉁?100% Checklist</h3><p>Track missables, trinkets, and secret bosses.</p></a>
-    <a class="hub-card" href="progress.html"><h3>馃椇 Progress Tracker</h3><p>Mark regions, Sparks, and mirrors as you explore.</p></a>
-  </div>
-</main>
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") return;
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
-    <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
-    <a href="../tools/index.html">Tools</a>
-    <a href="../about.html">About</a>
-  </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
+        const q = this.value.trim().toLowerCase();
+        if (!q) return;
 
-<script src="../assets/js/main.js"></script>
+        const routes = [
+          { keys: ["planner", "build", "loadout"], url: "build-planner.html" },
+          { keys: ["quiz", "recommend"], url: "build-quiz.html" },
+          { keys: ["checklist", "100", "completion"], url: "checklist.html" },
+          { keys: ["progress", "tracker"], url: "progress.html" },
+          { keys: ["trinket", "database"], url: "../database/trinkets/index.html" },
+          { keys: ["boss"], url: "../database/bosses/index.html" }
+        ];
 
+        const match = routes.find(route => route.keys.some(key => q.includes(key)));
+        window.location.href = match ? match.url : "index.html";
+      });
+    }
+  </script>
 </body>
 </html>
