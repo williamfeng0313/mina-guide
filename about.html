@@ -1,81 +1,972 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Mina the Hollower Guide</title>
-<meta name="description" content="About the Tenebrous Isle fan guide for Mina the Hollower.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>About MinaHollower | Fan-Made Mina the Hollower Guide</title>
+  <meta name="description" content="Learn about MinaHollower, a fan-made Mina the Hollower guide site covering bosses, Trinkets, builds, tools, walkthroughs, and completion resources." />
+  <meta name="keywords" content="MinaHollower, Mina the Hollower guide, Mina the Hollower fan site, Mina the Hollower wiki, Tenebrous Isle guide" />
+
+  <link rel="canonical" href="https://minahollower.com/about.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About MinaHollower" />
+  <meta property="og:description" content="A fan-made Mina the Hollower guide site built for players exploring Tenebrous Isle." />
+  <meta property="og:url" content="https://minahollower.com/about.html" />
+  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About MinaHollower" />
+  <meta name="twitter:description" content="Fan-made Mina the Hollower guide site covering bosses, Trinkets, builds, tools, and completion resources." />
+  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --forest-3: #2d5240;
+      --parchment: #f5ead8;
+      --parchment-2: #e8d8ba;
+      --parchment-3: #d4bc96;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --blood: #6e1f1a;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Crimson Text", Georgia, serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.32), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.11), transparent 28%),
+        radial-gradient(circle at 60% 100%, rgba(6, 10, 7, 0.9), transparent 50%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(245,234,216,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,234,216,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.52) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .announce {
+      background: rgba(12, 22, 15, 0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--candle-pale);
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.52rem 1rem;
+    }
+
+    .announce a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.6);
+    }
+
+    nav {
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(9, 16, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: var(--candle-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand::before {
+      content: "✦";
+      color: var(--candle);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 190px;
+      height: 34px;
+      padding: 0 0.7rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      background: rgba(245,234,216,0.06);
+      border-radius: 3px;
+    }
+
+    .nav-search svg {
+      color: rgba(245,234,216,0.45);
+      flex: 0 0 auto;
+    }
+
+    .nav-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-search input::placeholder {
+      color: rgba(216,205,184,0.48);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(6, 12, 8, 0.98);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .mobile-nav-overlay.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay a {
+      padding: 1rem 0;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .about-hero {
+      position: relative;
+      padding: 5rem 2rem 4.2rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9,16,11,0.25), rgba(9,16,11,0.88)),
+        radial-gradient(circle at 50% 10%, rgba(232,160,32,0.13), transparent 30%);
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .about-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .breadcrumb {
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone-dark);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--candle);
+      text-decoration: none;
+    }
+
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .about-hero h1 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: 0.015em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.65);
+    }
+
+    .about-hero h1 span {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 0.42em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 640px;
+      margin: 1.5rem 0 1.7rem;
+      color: var(--bone);
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.72;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.25rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--candle);
+      color: var(--ink);
+      border: 1px solid rgba(244,204,122,0.3);
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(200,134,10,0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--candle-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--parchment);
+      border: 1px solid rgba(245,234,216,0.3);
+      background: rgba(245,234,216,0.04);
+    }
+
+    .btn-secondary:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+      transform: translateY(-1px);
+    }
+
+    .notice-card {
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.98), rgba(232,216,186,0.95));
+      color: #2a1e0e;
+      border: 1px solid rgba(244,204,122,0.5);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.55),
+        inset 0 0 36px rgba(96, 66, 28, 0.14);
+      padding: 1.5rem;
+      transform: rotate(1deg);
+      position: relative;
+    }
+
+    .notice-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(90, 55, 16, 0.23);
+      pointer-events: none;
+    }
+
+    .notice-card h2 {
+      font-family: "Cinzel", serif;
+      color: #3b2a12;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,55,16,0.25);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .notice-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .notice-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0.8rem;
+      border-bottom: 1px dashed rgba(90,55,16,0.22);
+      padding-bottom: 0.75rem;
+    }
+
+    .notice-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .notice-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(90,55,16,0.28);
+      background: rgba(200,134,10,0.12);
+      font-family: "Cinzel", serif;
+      color: #4b3517;
+      font-weight: 700;
+    }
+
+    .notice-list strong {
+      display: block;
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+      color: #2a1e0e;
+    }
+
+    .notice-list span {
+      color: #6b5440;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.4rem 3.5rem;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .article-panel,
+    .side-panel {
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+      padding: 1.5rem;
+    }
+
+    .article-panel h2,
+    .side-panel h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .article-panel h3 {
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 1.45rem 0 0.45rem;
+    }
+
+    .article-panel p,
+    .article-panel li,
+    .side-panel p,
+    .side-panel li {
+      color: var(--bone);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .article-panel p {
+      margin-bottom: 0.9rem;
+    }
+
+    .article-panel ul,
+    .side-panel ul {
+      padding-left: 1.15rem;
+      margin: 0.6rem 0 1rem;
+    }
+
+    .article-panel li,
+    .side-panel li {
+      margin-bottom: 0.35rem;
+    }
+
+    .article-panel em {
+      color: var(--parchment);
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 84px;
+    }
+
+    .fact-list {
+      list-style: none;
+      padding-left: 0 !important;
+    }
+
+    .fact-list li {
+      border-bottom: 1px solid var(--line-soft);
+      padding: 0.7rem 0;
+      margin-bottom: 0;
+    }
+
+    .fact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .fact-list strong {
+      display: block;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .cta-panel {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(200,134,10,0.32);
+      background:
+        linear-gradient(135deg, rgba(245,234,216,0.1), rgba(200,134,10,0.08)),
+        rgba(5,12,8,0.58);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .cta-panel h2 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: 1.7rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .cta-panel p {
+      color: var(--bone);
+      max-width: 780px;
+      margin-bottom: 1.2rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5, 12, 8, 0.92);
+      padding: 2.5rem 1.4rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-text {
+      color: var(--bone-dark);
+      max-width: 660px;
+      margin: 0 auto 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--bone);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .footer-disclaimer {
+      color: rgba(216,205,184,0.48);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .about-hero-inner,
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .notice-card {
+        transform: none;
+      }
+
+      .side-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .about-hero {
+        padding: 3.5rem 1.2rem 3.2rem;
+      }
+
+      .about-hero::before {
+        inset: 1rem;
+      }
+
+      .about-hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .page-wrap {
+        padding-top: 3rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About MinaHollower",
+    "url": "https://minahollower.com/about.html",
+    "description": "About MinaHollower, a fan-made Mina the Hollower guide site for bosses, Trinkets, builds, tools, and completion resources."
+  }
+  </script>
 </head>
+
 <body>
+  <div class="site-shell">
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
+    <div class="announce">
+      Fan-made guidebook for Tenebrous Isle &nbsp;|&nbsp;
+      <a href="blog/beginner-guide.html">Start with the beginner guide →</a>
+    </div>
 
-<nav>
-  <a href="index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="blog/index.html">Blog</a></li>
-    <li><a href="database/index.html">Database</a></li>
-    <li><a href="tools/index.html">Tools</a></li>
-    <li><a href="about.html" style="color:var(--candle-light)">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="">
+    <nav>
+      <a href="index.html" class="nav-brand">MinaHollower</a>
+
+      <ul class="nav-links">
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="database/index.html">Database</a></li>
+        <li><a href="database/bosses/index.html">Bosses</a></li>
+        <li><a href="database/trinkets/index.html">Trinkets</a></li>
+        <li><a href="tools/index.html">Tools</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+
+      <div class="nav-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="Search guides..." aria-label="Search guides" />
+      </div>
+
+      <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+      <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">×</button>
+      <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+      <a href="blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+      <a href="database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+      <a href="database/bosses/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Bosses</a>
+      <a href="database/trinkets/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+      <a href="tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+      <a href="about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+    </div>
+
+    <header class="about-hero">
+      <div class="about-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a> / About
+          </div>
+
+          <p class="hero-eyebrow">Fan-made · English guide · Built for players</p>
+
+          <h1>
+            About MinaHollower
+            <span>A battered field journal for Mina the Hollower players.</span>
+          </h1>
+
+          <p class="hero-desc">
+            MinaHollower is a fan-made guide site for players exploring Tenebrous Isle.
+            The goal is simple: document the game clearly, organize the discoveries, and help players
+            find useful answers without digging through scattered posts.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="blog/beginner-guide.html" class="btn-primary">Start Reading</a>
+            <a href="database/index.html" class="btn-secondary">Open Database</a>
+            <a href="tools/index.html" class="btn-secondary">Use Tools</a>
+          </div>
+        </div>
+
+        <aside class="notice-card" aria-label="Site principles">
+          <h2>Site Principles</h2>
+
+          <ul class="notice-list">
+            <li>
+              <div class="notice-mark">1</div>
+              <div>
+                <strong>Useful first</strong>
+                <span>Every page should solve a real player problem, not just fill space.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="notice-mark">2</div>
+              <div>
+                <strong>Readable guides</strong>
+                <span>Short, practical explanations written for English players.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="notice-mark">3</div>
+              <div>
+                <strong>Structured archive</strong>
+                <span>Bosses, Trinkets, weapons, tools, and articles should connect cleanly.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="notice-mark">4</div>
+              <div>
+                <strong>Fan-made</strong>
+                <span>Independent, unofficial, and respectful of the original game.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="about-layout">
+
+        <article class="article-panel">
+          <h2>What this site is</h2>
+
+          <p>
+            <strong>MinaHollower</strong> is an unofficial, fan-made guide site for
+            <em>Mina the Hollower</em> by Yacht Club Games. It is built as a central reference
+            for players who want boss strategies, Trinket locations, build ideas, tools,
+            and completion help in one place.
+          </p>
+
+          <p>
+            The style of the site follows the tone of the game: gothic, old-world, and slightly worn.
+            Instead of a generic dark game portal, MinaHollower is designed like a battered adventure
+            journal: deep forest green, bone-white text, candle-orange accents, and parchment-style panels.
+          </p>
+
+          <h3>What we cover</h3>
+
+          <p>
+            The guide is organized around four major sections:
+          </p>
+
+          <ul>
+            <li><strong>Blog:</strong> beginner guides, boss advice, build explanations, mistakes, and hidden mechanics.</li>
+            <li><strong>Database:</strong> Trinkets, bosses, weapons, and reference-style archive pages.</li>
+            <li><strong>Tools:</strong> build planner, build quiz, checklist, and progress tracking helpers.</li>
+            <li><strong>Completion support:</strong> pages designed for players chasing full collection and 100% completion.</li>
+          </ul>
+
+          <h3>Why the site exists</h3>
+
+          <p>
+            Players often find answers scattered across forum posts, videos, comments, and short wiki entries.
+            MinaHollower exists to turn those scattered questions into organized pages:
+            what to use, where to go, what to avoid, and what matters next.
+          </p>
+
+          <h3>Update philosophy</h3>
+
+          <p>
+            The site is intended to grow as more routes, boss strategies, Trinket combinations,
+            and hidden interactions are documented. Pages may be revised as better information becomes available.
+            When something is uncertain, it should be treated as a working note, not a final truth.
+          </p>
+
+          <h3>Unofficial disclaimer</h3>
+
+          <p>
+            MinaHollower is not affiliated with, endorsed by, or sponsored by Yacht Club Games.
+            <em>Mina the Hollower</em> and related names, characters, art, and game content belong to their
+            respective owners. This site exists as a fan-made guide and reference resource.
+          </p>
+        </article>
+
+        <aside class="side-panel">
+          <h2>Quick Facts</h2>
+
+          <ul class="fact-list">
+            <li>
+              <strong>Site name</strong>
+              MinaHollower
+            </li>
+
+            <li>
+              <strong>Focus</strong>
+              Mina the Hollower guides, database pages, and tools
+            </li>
+
+            <li>
+              <strong>Language</strong>
+              English
+            </li>
+
+            <li>
+              <strong>Status</strong>
+              Fan-made and unofficial
+            </li>
+
+            <li>
+              <strong>Main sections</strong>
+              Blog, Database, Bosses, Trinkets, Tools
+            </li>
+
+            <li>
+              <strong>Best starting page</strong>
+              Beginner Guide
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+
+      <section class="cta-panel" aria-label="Start using MinaHollower">
+        <h2>Start with the field notes, then open the archive.</h2>
+        <p>
+          If you are new, read the beginner guide first. If you are stuck, open the boss records.
+          If you are collecting, start with the Trinket ledger. If you are optimizing,
+          use the build planner.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="blog/beginner-guide.html" class="btn-primary">Beginner Guide</a>
+          <a href="database/trinkets/index.html" class="btn-secondary">Trinket Ledger</a>
+          <a href="tools/build-planner.html" class="btn-secondary">Build Planner</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand">MinaHollower</div>
+
+      <p class="footer-text">
+        A fan-made Mina the Hollower guide site built like a battered gothic field journal:
+        bosses, Trinkets, builds, tools, and walkthroughs for Tenebrous Isle.
+      </p>
+
+      <div class="footer-links">
+        <a href="blog/index.html">Blog</a>
+        <a href="database/index.html">Database</a>
+        <a href="database/bosses/index.html">Bosses</a>
+        <a href="database/trinkets/index.html">Trinkets</a>
+        <a href="tools/index.html">Tools</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+        All game content belongs to its respective owners.
+      </p>
+    </footer>
+
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+  <script>
+    const searchInput = document.querySelector(".nav-search input");
 
-<main class="page-wrap narrow">
-  <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
-  <div class="section-divider"><h2>About This Guide</h2></div>
-  <div class="article-body">
-    <p>Tenebrous Isle Guide is a fan-made, ad-free resource for <em>Mina the Hollower</em> by Yacht Club Games. We document every trinket location, boss strategy, and build combination so you can focus on exploring the island instead of guessing.</p>
-    <h2>What we cover</h2>
-    <p>Our database lists all 60 trinkets with exact acquisition steps, every documented boss with key strategies, and all five weapons with recommended playstyles. Interactive tools let you plan builds and track completion.</p>
-    <h2>Updates</h2>
-    <p>Content is updated daily as the community discovers new secrets. Missing something? Check back 鈥?we're still mapping all 26 bosses and hidden questlines.</p>
-    <h2>Disclaimer</h2>
-    <p>This is not an official Yacht Club Games product. All game content belongs to their respective owners.</p>
-  </div>
-</main>
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") return;
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
-    <a href="blog/index.html">Blog</a>
-    <a href="database/bosses/index.html">Bosses</a>
-    <a href="database/weapons/index.html">Weapons</a>
-    <a href="database/trinkets/index.html">Trinkets</a>
-    <a href="tools/index.html">Tools</a>
-    <a href="about.html">About</a>
-  </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
+        const q = this.value.trim().toLowerCase();
+        if (!q) return;
 
-<script src="assets/js/main.js"></script>
+        const routes = [
+          { keys: ["beginner", "start", "tips"], url: "blog/beginner-guide.html" },
+          { keys: ["trinket", "collectible"], url: "database/trinkets/index.html" },
+          { keys: ["boss", "fight"], url: "database/bosses/index.html" },
+          { keys: ["weapon", "build"], url: "database/weapons/index.html" },
+          { keys: ["tool", "planner"], url: "tools/index.html" },
+          { keys: ["checklist", "100"], url: "tools/checklist.html" }
+        ];
 
+        const match = routes.find(route => route.keys.some(key => q.includes(key)));
+        window.location.href = match ? match.url : "blog/index.html";
+      });
+    }
+  </script>
 </body>
 </html>
