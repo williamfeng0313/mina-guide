@@ -1,162 +1,1361 @@
-<header class="hero">
-  <p class="hero-eyebrow">Fan-made Mina the Hollower Guide</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <h1>
-    Mina the Hollower
-    <span>Bosses. Trinkets. Builds. Secrets. All in one place.</span>
-  </h1>
+  <title>Mina the Hollower Guide | Bosses, Trinkets, Builds & Walkthrough</title>
+  <meta name="description" content="A complete fan-made Mina the Hollower guide with all 60 Trinkets, boss strategies, best builds, weapons, tools, walkthroughs, and 100% completion help." />
+  <meta name="keywords" content="Mina the Hollower guide, Mina the Hollower wiki, Mina Trinkets, Mina bosses, Mina builds, Mina walkthrough, Mina the Hollower weapons" />
 
-  <p class="hero-desc">
-    A complete guide hub for Tenebrous Isle: boss strategies, all 60 Trinket locations,
-    best builds, weapons, tools, and walkthroughs for players chasing 100% completion.
-  </p>
+  <link rel="canonical" href="https://minahollower.com/" />
 
-  <div class="hero-ctas">
-    <a href="blog/beginner-guide.html" class="btn-primary">Start Here</a>
-    <a href="database/trinkets/index.html" class="btn-secondary">All 60 Trinkets</a>
-    <a href="tools/build-planner.html" class="btn-secondary">Build Planner</a>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mina the Hollower Guide" />
+  <meta property="og:description" content="Boss guides, all 60 Trinkets, builds, tools, database pages, and walkthroughs for Mina the Hollower." />
+  <meta property="og:url" content="https://minahollower.com/" />
+  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mina the Hollower Guide" />
+  <meta name="twitter:description" content="Complete guide, database, tools, builds, Trinkets, and boss strategies." />
+  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --forest-3: #2d5240;
+      --parchment: #f5ead8;
+      --parchment-2: #e8d8ba;
+      --parchment-3: #d4bc96;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --blood: #6e1f1a;
+      --purple: #5f4278;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+      --paper-shadow: rgba(6, 4, 2, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Crimson Text", Georgia, serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.34), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.12), transparent 28%),
+        radial-gradient(circle at 60% 100%, rgba(6, 10, 7, 0.9), transparent 50%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 40%, #09100c 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(245,234,216,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,234,216,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.52) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .announce {
+      background: rgba(12, 22, 15, 0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--candle-pale);
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.52rem 1rem;
+    }
+
+    .announce a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.6);
+    }
+
+    nav {
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(9, 16, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: var(--candle-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand::before {
+      content: "✦";
+      color: var(--candle);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 190px;
+      height: 34px;
+      padding: 0 0.7rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      background: rgba(245,234,216,0.06);
+      border-radius: 3px;
+    }
+
+    .nav-search svg {
+      color: rgba(245,234,216,0.45);
+      flex: 0 0 auto;
+    }
+
+    .nav-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-search input::placeholder {
+      color: rgba(216,205,184,0.48);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(6, 12, 8, 0.98);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .mobile-nav-overlay.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay a {
+      padding: 1rem 0;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      padding: 5.5rem 2rem 4rem;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9,16,11,0.2), rgba(9,16,11,0.88)),
+        radial-gradient(circle at 50% 8%, rgba(232,160,32,0.13), transparent 28%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      bottom: 1.25rem;
+      transform: translateX(-50%);
+      color: rgba(200,134,10,0.55);
+      font-size: 1.1rem;
+      letter-spacing: 0.8em;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+    }
+
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: clamp(2.75rem, 6vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: 0.015em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.65);
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 0.38em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 610px;
+      margin: 1.65rem 0 1.8rem;
+      color: var(--bone);
+      font-size: 1.12rem;
+      font-style: italic;
+      line-height: 1.72;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.25rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--candle);
+      color: var(--ink);
+      border: 1px solid rgba(244,204,122,0.3);
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(200,134,10,0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--candle-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--parchment);
+      border: 1px solid rgba(245,234,216,0.3);
+      background: rgba(245,234,216,0.04);
+    }
+
+    .btn-secondary:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+      transform: translateY(-1px);
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.25rem;
+    }
+
+    .proof-pill {
+      border: 1px solid rgba(200,134,10,0.22);
+      background: rgba(5, 12, 8, 0.48);
+      color: var(--bone-dark);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+    }
+
+    .journal-card {
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.98), rgba(232,216,186,0.95));
+      color: #2a1e0e;
+      border: 1px solid rgba(244,204,122,0.5);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.55),
+        inset 0 0 36px rgba(96, 66, 28, 0.14);
+      padding: 1.45rem;
+      transform: rotate(1.1deg);
+    }
+
+    .journal-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(90, 55, 16, 0.23);
+      pointer-events: none;
+    }
+
+    .journal-title {
+      font-family: "Cinzel", serif;
+      color: #3b2a12;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,55,16,0.25);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .journal-list {
+      display: grid;
+      gap: 0.8rem;
+      list-style: none;
+    }
+
+    .journal-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0.8rem;
+      align-items: start;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(90,55,16,0.22);
+    }
+
+    .journal-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .journal-icon {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(90,55,16,0.28);
+      display: grid;
+      place-items: center;
+      background: rgba(200,134,10,0.12);
+      color: #4b3517;
+      font-size: 1.2rem;
+    }
+
+    .journal-list strong {
+      display: block;
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+      color: #2a1e0e;
+    }
+
+    .journal-list span {
+      display: block;
+      color: #6b5440;
+      font-size: 0.9rem;
+      line-height: 1.38;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      max-width: 1180px;
+      margin: -2.2rem auto 0;
+      position: relative;
+      z-index: 5;
+      border: 1px solid var(--line);
+      background: rgba(8, 15, 10, 0.92);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.35);
+    }
+
+    .stat-item {
+      padding: 1rem 0.8rem;
+      text-align: center;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      display: block;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      display: block;
+      color: var(--bone-dark);
+      font-family: "Cinzel", serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.4rem 3.5rem;
+    }
+
+    .section {
+      margin-bottom: 3.6rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-kicker {
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .section h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.28rem;
+      letter-spacing: 0.06em;
+    }
+
+    .section-note {
+      max-width: 420px;
+      color: var(--bone-dark);
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: right;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .guide-card,
+    .database-card,
+    .tool-card,
+    .update-card {
+      position: relative;
+      display: block;
+      min-height: 170px;
+      padding: 1.15rem;
+      text-decoration: none;
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      border: 1px solid rgba(200,134,10,0.21);
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+      transition: 0.18s ease;
+      overflow: hidden;
+    }
+
+    .guide-card::before,
+    .database-card::before,
+    .tool-card::before,
+    .update-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--candle), transparent);
+      opacity: 0;
+      transition: 0.18s ease;
+    }
+
+    .guide-card:hover,
+    .database-card:hover,
+    .tool-card:hover,
+    .update-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200,134,10,0.52);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.105), rgba(245,234,216,0.05));
+    }
+
+    .guide-card:hover::before,
+    .database-card:hover::before,
+    .tool-card:hover::before,
+    .update-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-icon {
+      font-size: 1.45rem;
+      color: var(--candle-light);
+    }
+
+    .card-badge {
+      font-family: "Cinzel", serif;
+      font-size: 0.61rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.28);
+      padding: 0.12rem 0.4rem;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .guide-card h3,
+    .database-card h3,
+    .tool-card h3,
+    .update-card h3 {
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+    }
+
+    .guide-card p,
+    .database-card p,
+    .tool-card p,
+    .update-card p {
+      color: var(--bone-dark);
+      font-size: 0.92rem;
+      line-height: 1.48;
+    }
+
+    .featured-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+    }
+
+    .main-feature {
+      min-height: 350px;
+      padding: 1.55rem;
+      background:
+        linear-gradient(180deg, rgba(200,134,10,0.12), rgba(245,234,216,0.04)),
+        rgba(245,234,216,0.04);
+    }
+
+    .main-feature h3 {
+      font-family: "Cinzel", serif;
+      font-size: 1.8rem;
+      color: var(--parchment);
+      line-height: 1.2;
+      margin-bottom: 0.7rem;
+    }
+
+    .main-feature p {
+      max-width: 620px;
+      color: var(--bone);
+      font-size: 1.02rem;
+    }
+
+    .feature-links {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .mini-link {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      text-decoration: none;
+      background: rgba(245,234,216,0.055);
+      border: 1px solid var(--line-soft);
+      padding: 0.85rem;
+      transition: 0.18s ease;
+    }
+
+    .mini-link:hover {
+      border-color: rgba(200,134,10,0.45);
+      background: rgba(200,134,10,0.07);
+      transform: translateX(2px);
+    }
+
+    .mini-link span {
+      color: var(--candle-light);
+      font-size: 1.05rem;
+    }
+
+    .mini-link strong {
+      display: block;
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.02rem;
+    }
+
+    .mini-link small {
+      display: block;
+      color: var(--bone-dark);
+      line-height: 1.35;
+      margin-top: 0.12rem;
+    }
+
+    .database-card {
+      min-height: 220px;
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.08), rgba(12,22,15,0.24));
+    }
+
+    .database-number {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 0.65rem;
+    }
+
+    .tool-card {
+      min-height: 210px;
+      border-color: rgba(244,204,122,0.24);
+    }
+
+    .tool-card .tool-status {
+      margin-top: 1rem;
+      display: inline-block;
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7ecda0;
+      border: 1px solid rgba(126,205,160,0.32);
+      padding: 0.16rem 0.45rem;
+      background: rgba(61,112,85,0.15);
+    }
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .update-card {
+      min-height: 120px;
+    }
+
+    .update-card time {
+      display: block;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+      border: 1px solid rgba(200,134,10,0.32);
+      background:
+        linear-gradient(135deg, rgba(245,234,216,0.1), rgba(200,134,10,0.08)),
+        rgba(5,12,8,0.58);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .cta-panel h2 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-panel p {
+      color: var(--bone);
+      max-width: 740px;
+      margin-bottom: 1.2rem;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid var(--line);
+      background: rgba(5, 12, 8, 0.92);
+      padding: 2.5rem 1.4rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-text {
+      color: var(--bone-dark);
+      max-width: 660px;
+      margin: 0 auto 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--bone);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .footer-disclaimer {
+      color: rgba(216,205,184,0.48);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 4rem 1.4rem 4.4rem;
+      }
+
+      .hero::before {
+        inset: 1rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-card {
+        transform: none;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(5, 1fr);
+        margin: 0;
+        border-left: none;
+        border-right: none;
+      }
+
+      .featured-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4,
+      .latest-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-note {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-desc {
+        font-size: 1rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .grid-3,
+      .grid-4,
+      .latest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-wrap {
+        padding-top: 3rem;
+      }
+
+      .journal-list li {
+        grid-template-columns: 34px 1fr;
+      }
+
+      .journal-icon {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MinaHollower",
+    "url": "https://minahollower.com/",
+    "description": "Complete fan-made guide, database, tools, and walkthroughs for Mina the Hollower.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://minahollower.com/search.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <div class="announce">
+      Fan-made adventure log for Mina the Hollower players &nbsp;|&nbsp;
+      <a href="blog/beginner-guide.html">Read the Beginner Guide →</a>
+    </div>
+
+    <nav>
+      <a href="index.html" class="nav-brand">MinaHollower</a>
+
+      <ul class="nav-links">
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="database/index.html">Database</a></li>
+        <li><a href="database/bosses/index.html">Bosses</a></li>
+        <li><a href="database/trinkets/index.html">Trinkets</a></li>
+        <li><a href="tools/index.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <div class="nav-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="Search guides..." aria-label="Search guides" />
+      </div>
+
+      <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+      <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">×</button>
+      <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+      <a href="blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+      <a href="database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+      <a href="database/bosses/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Bosses</a>
+      <a href="database/trinkets/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+      <a href="tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+      <a href="about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Dark gothic guidebook · Tenebrous Isle field notes</p>
+
+          <h1>
+            Mina the Hollower
+            <span>A worn adventure journal for every boss, Trinket, build, and secret.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Step into Tenebrous Isle with a complete fan-made guide built for English players:
+            all 60 Trinkets, boss strategies, best builds, weapons, tools, and completion routes —
+            written like an old field journal rather than another neon game wiki.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="blog/beginner-guide.html" class="btn-primary">Start the Guide</a>
+            <a href="database/trinkets/index.html" class="btn-secondary">All 60 Trinkets</a>
+            <a href="tools/build-planner.html" class="btn-secondary">Build Planner</a>
+          </div>
+
+          <div class="hero-proof">
+            <span class="proof-pill">60 Trinkets documented</span>
+            <span class="proof-pill">26 boss fights mapped</span>
+            <span class="proof-pill">No paywalls</span>
+            <span class="proof-pill">Updated as the island unfolds</span>
+          </div>
+        </div>
+
+        <aside class="journal-card" aria-label="Field journal highlights">
+          <div class="journal-title">Field Journal Index</div>
+
+          <ul class="journal-list">
+            <li>
+              <div class="journal-icon">💎</div>
+              <div>
+                <strong>Trinket Ledger</strong>
+                <span>Every known Trinket with effect, location, and routing notes for collectors.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="journal-icon">💀</div>
+              <div>
+                <strong>Boss Notes</strong>
+                <span>Pattern reads, difficulty tags, recommended tools, and survival habits.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="journal-icon">⚔</div>
+              <div>
+                <strong>Build Pages</strong>
+                <span>Weapon, sidearm, and Trinket combinations for damage, safety, and farming.</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="journal-icon">🕯</div>
+              <div>
+                <strong>Beginner Route</strong>
+                <span>Where to go first, what to avoid, and which early choices matter most.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <div class="stats-bar" role="region" aria-label="Guide overview stats">
+      <div class="stat-item"><span class="stat-num">60</span><span class="stat-label">Trinkets</span></div>
+      <div class="stat-item"><span class="stat-num">26</span><span class="stat-label">Bosses</span></div>
+      <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Weapons</span></div>
+      <div class="stat-item"><span class="stat-num">15</span><span class="stat-label">Sidearms</span></div>
+      <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Regions</span></div>
+    </div>
+
+    <main class="page-wrap">
+
+      <section class="section" aria-label="Featured guides">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Start reading</div>
+            <h2>Featured Guides</h2>
+          </div>
+          <p class="section-note">
+            The pages players will actually search for: beginner help, best Trinkets, boss prep, and build decisions.
+          </p>
+        </div>
+
+        <div class="featured-layout">
+          <a class="guide-card main-feature" href="blog/beginner-guide.html">
+            <div class="card-topline">
+              <span class="card-icon">🕯</span>
+              <span class="card-badge">Start Here</span>
+            </div>
+            <h3>Beginner Guide: Survive the First Hours on Tenebrous Isle</h3>
+            <p>
+              Learn the habits that matter early: when to burrow, how to spend resources,
+              which Trinkets are worth chasing first, and how to stop dying to the same mistake twice.
+            </p>
+          </a>
+
+          <div class="feature-links">
+            <a class="mini-link" href="blog/best-trinkets.html">
+              <span>💎</span>
+              <div>
+                <strong>Best Trinkets Ranked</strong>
+                <small>Damage, survival, exploration, and farming picks.</small>
+              </div>
+            </a>
+
+            <a class="mini-link" href="blog/best-builds.html">
+              <span>⚔</span>
+              <div>
+                <strong>Best Builds</strong>
+                <small>Weapon + sidearm + Trinket loadouts by playstyle.</small>
+              </div>
+            </a>
+
+            <a class="mini-link" href="blog/boss-tier-list.html">
+              <span>💀</span>
+              <div>
+                <strong>Boss Tier List</strong>
+                <small>Every fight ranked by danger, prep, and pattern pressure.</small>
+              </div>
+            </a>
+
+            <a class="mini-link" href="blog/hidden-mechanics.html">
+              <span>📜</span>
+              <div>
+                <strong>Hidden Mechanics</strong>
+                <small>Burrow timing, iframe logic, spacing, and combat rhythm.</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Database">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Browse the records</div>
+            <h2>Game Database</h2>
+          </div>
+          <p class="section-note">
+            The database is the archive. The guides tell you what matters. Use both.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <a class="database-card" href="database/trinkets/index.html">
+            <div class="database-number">60</div>
+            <h3>Trinkets</h3>
+            <p>Names, effects, exact locations, route notes, and build relevance for every Trinket.</p>
+          </a>
+
+          <a class="database-card" href="database/bosses/index.html">
+            <div class="database-number">26</div>
+            <h3>Bosses</h3>
+            <p>Boss strategies, region notes, danger ratings, and recommended loadouts.</p>
+          </a>
+
+          <a class="database-card" href="database/weapons/index.html">
+            <div class="database-number">5</div>
+            <h3>Weapons</h3>
+            <p>Weapon strengths, weaknesses, matchup notes, and recommended Trinket pairings.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Interactive tools">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Tools for repeat visits</div>
+            <h2>Interactive Tools</h2>
+          </div>
+          <p class="section-note">
+            Tools give players a reason to come back, not just read once and leave.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <a class="tool-card" href="tools/build-planner.html">
+            <div class="card-topline">
+              <span class="card-icon">⚒</span>
+              <span class="card-badge">Tool</span>
+            </div>
+            <h3>Build Planner</h3>
+            <p>Create and share weapon + Trinket loadouts for bosses, farming, and exploration.</p>
+            <span class="tool-status">Live</span>
+          </a>
+
+          <a class="tool-card" href="tools/checklist.html">
+            <div class="card-topline">
+              <span class="card-icon">☑</span>
+              <span class="card-badge">Tracker</span>
+            </div>
+            <h3>100% Checklist</h3>
+            <p>Track Trinkets, bosses, weapons, secrets, and completion progress.</p>
+            <span class="tool-status">Live</span>
+          </a>
+
+          <a class="tool-card" href="tools/build-quiz.html">
+            <div class="card-topline">
+              <span class="card-icon">⚡</span>
+              <span class="card-badge">Quiz</span>
+            </div>
+            <h3>Build Quiz</h3>
+            <p>Answer a few questions and get a recommended build for your playstyle.</p>
+            <span class="tool-status">Live</span>
+          </a>
+
+          <a class="tool-card" href="tools/progress.html">
+            <div class="card-topline">
+              <span class="card-icon">📌</span>
+              <span class="card-badge">Progress</span>
+            </div>
+            <h3>Progress Tracker</h3>
+            <p>Save collection progress while combing through Tenebrous Isle.</p>
+            <span class="tool-status">Planned</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Latest updates">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Fresh pages</div>
+            <h2>Latest Updates</h2>
+          </div>
+          <p class="section-note">
+            A living guide should look alive. These entries help both players and search engines.
+          </p>
+        </div>
+
+        <div class="latest-grid">
+          <a class="update-card" href="database/trinkets/bubble-ring.html">
+            <time>Latest Trinket Note</time>
+            <h3>Bubble Ring</h3>
+            <p>Survival Trinket notes, use cases, and build recommendations.</p>
+          </a>
+
+          <a class="update-card" href="database/bosses/worm-queen.html">
+            <time>Boss Strategy</time>
+            <h3>Worm Queen</h3>
+            <p>Pattern breakdown, safe windows, and early build suggestions.</p>
+          </a>
+
+          <a class="update-card" href="blog/mistakes.html">
+            <time>Beginner Help</time>
+            <h3>Biggest Beginner Mistakes</h3>
+            <p>Common early traps that make the game harder than it needs to be.</p>
+          </a>
+
+          <a class="update-card" href="blog/hidden-mechanics.html">
+            <time>Combat Notes</time>
+            <h3>Hidden Mechanics</h3>
+            <p>Burrow timing, movement habits, and combat reads most players miss.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="cta-panel" aria-label="Guide call to action">
+        <h2>Do not wander Tenebrous Isle empty-handed.</h2>
+        <p>
+          Start with the beginner route, then use the database and build tools as your field journal.
+          This site is built for players who want answers fast — without turning the game into a spreadsheet.
+        </p>
+        <div class="hero-ctas">
+          <a href="blog/beginner-guide.html" class="btn-primary">Begin the Route</a>
+          <a href="database/index.html" class="btn-secondary">Open Database</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-brand">MinaHollower</div>
+      <p class="footer-text">
+        A fan-made Mina the Hollower guide site built like a battered gothic field journal:
+        bosses, Trinkets, builds, tools, and walkthroughs for Tenebrous Isle.
+      </p>
+
+      <div class="footer-links">
+        <a href="blog/index.html">Blog</a>
+        <a href="database/index.html">Database</a>
+        <a href="database/bosses/index.html">Bosses</a>
+        <a href="database/trinkets/index.html">Trinkets</a>
+        <a href="tools/index.html">Tools</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+        All game content belongs to its respective owners.
+      </p>
+    </footer>
+
   </div>
-</header>
 
-<div class="stats-bar" role="region" aria-label="Game guide stats">
-  <div class="stat-item"><span class="stat-num">60</span><span class="stat-label">Trinkets</span></div>
-  <div class="stat-item"><span class="stat-num">26</span><span class="stat-label">Bosses</span></div>
-  <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Weapons</span></div>
-  <div class="stat-item"><span class="stat-num">15</span><span class="stat-label">Sidearms</span></div>
-  <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Regions</span></div>
-</div>
+  <script>
+    const searchInput = document.querySelector(".nav-search input");
 
-<main class="page-wrap">
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") return;
 
-  <section aria-label="Featured guides">
-    <div class="section-divider"><h2>Featured Guides</h2></div>
+        const q = this.value.trim().toLowerCase();
+        if (!q) return;
 
-    <div class="hub-grid">
-      <a class="hub-card" href="blog/beginner-guide.html">
-        <h3>Beginner Guide</h3>
-        <p>Core mechanics, survival tips, early routes, and mistakes new players should avoid.</p>
-      </a>
+        const routes = [
+          { keys: ["boss", "worm", "queen"], url: "database/bosses/index.html" },
+          { keys: ["trinket", "bubble", "ring"], url: "database/trinkets/index.html" },
+          { keys: ["weapon", "build"], url: "database/weapons/index.html" },
+          { keys: ["tool", "planner"], url: "tools/build-planner.html" },
+          { keys: ["checklist", "100"], url: "tools/checklist.html" },
+          { keys: ["beginner", "start"], url: "blog/beginner-guide.html" },
+          { keys: ["best", "rank"], url: "blog/best-trinkets.html" }
+        ];
 
-      <a class="hub-card" href="blog/best-trinkets.html">
-        <h3>Best Trinkets Ranked</h3>
-        <p>The strongest Trinkets for damage, survival, exploration, and boss fights.</p>
-      </a>
-
-      <a class="hub-card" href="blog/best-builds.html">
-        <h3>Best Builds</h3>
-        <p>Recommended weapon, sidearm, and Trinket combinations for different playstyles.</p>
-      </a>
-
-      <a class="hub-card" href="blog/boss-tier-list.html">
-        <h3>Boss Tier List</h3>
-        <p>Every major boss ranked by difficulty, threat level, and required preparation.</p>
-      </a>
-
-      <a class="hub-card" href="blog/hidden-mechanics.html">
-        <h3>Hidden Mechanics</h3>
-        <p>Burrow timing, damage windows, movement tricks, iframe logic, and combat habits.</p>
-      </a>
-
-      <a class="hub-card" href="blog/mistakes.html">
-        <h3>Beginner Mistakes</h3>
-        <p>The common mistakes that make Mina harder than it needs to be.</p>
-      </a>
-    </div>
-  </section>
-
-  <section aria-label="Database">
-    <div class="section-divider"><h2>Database</h2></div>
-
-    <div class="hub-grid">
-      <a class="hub-card" href="database/trinkets/index.html">
-        <h3>Trinket Database</h3>
-        <p>All 60 Trinkets with names, effects, exact locations, and route notes.</p>
-      </a>
-
-      <a class="hub-card" href="database/bosses/index.html">
-        <h3>Boss Database</h3>
-        <p>Boss pages with strategies, weakness notes, difficulty, and recommended builds.</p>
-      </a>
-
-      <a class="hub-card" href="database/weapons/index.html">
-        <h3>Weapon Database</h3>
-        <p>Weapon stats, use cases, best matchups, and build recommendations.</p>
-      </a>
-    </div>
-  </section>
-
-  <section aria-label="Tools">
-    <div class="section-divider"><h2>Interactive Tools</h2></div>
-
-    <div class="hub-grid">
-      <a class="hub-card" href="tools/build-planner.html">
-        <h3>Build Planner</h3>
-        <p>Create and share weapon + Trinket loadouts for bosses, farming, and exploration.</p>
-      </a>
-
-      <a class="hub-card" href="tools/checklist.html">
-        <h3>100% Checklist</h3>
-        <p>Track bosses, Trinkets, weapons, secrets, areas, and completion progress.</p>
-      </a>
-
-      <a class="hub-card" href="tools/build-quiz.html">
-        <h3>Build Quiz</h3>
-        <p>Answer a few questions and get a suggested build for your playstyle.</p>
-      </a>
-
-      <a class="hub-card" href="tools/progress.html">
-        <h3>Progress Tracker</h3>
-        <p>Save your collection and completion status while exploring Tenebrous Isle.</p>
-      </a>
-    </div>
-  </section>
-
-  <section aria-label="Start here">
-    <div class="section-divider"><h2>Start Here</h2></div>
-
-    <div class="hub-grid">
-      <a class="hub-card" href="blog/beginner-guide.html">
-        <h3>New Player Route</h3>
-        <p>Start with the safest early-game route before your first major boss wall.</p>
-      </a>
-
-      <a class="hub-card" href="database/bosses/worm-queen.html">
-        <h3>Worm Queen Guide</h3>
-        <p>One of the first real difficulty checks. Learn the pattern before wasting resources.</p>
-      </a>
-
-      <a class="hub-card" href="database/trinkets/bubble-ring.html">
-        <h3>Bubble Ring</h3>
-        <p>A key survival Trinket for players who struggle with boss damage windows.</p>
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="footer-brand">MinaHollower</div>
-
-  <p class="footer-text">
-    Fan-made Mina the Hollower guide site covering bosses, Trinkets, builds, tools, and walkthroughs.
-  </p>
-
-  <div class="footer-links">
-    <a href="blog/index.html">Blog</a>
-    <a href="database/index.html">Database</a>
-    <a href="database/bosses/index.html">Bosses</a>
-    <a href="database/trinkets/index.html">Trinkets</a>
-    <a href="tools/index.html">Tools</a>
-    <a href="about.html">About</a>
-  </div>
-
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to its respective owners.
-  </p>
-</footer>
-
-<script src="assets/js/main.js"></script>
-
+        const match = routes.find(route => route.keys.some(key => q.includes(key)));
+        window.location.href = match ? match.url : "blog/index.html";
+      });
+    }
+  </script>
 </body>
 </html>
