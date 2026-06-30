@@ -1,144 +1,1311 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Trinkets - Mina the Hollower Guide</title>
-<meta name="description" content="Top trinket combos ranked by playstyle in Mina the Hollower.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Best Trinkets in Mina the Hollower | Best Combos & Trinket Builds</title>
+  <meta name="description" content="The best Trinkets in Mina the Hollower ranked by playstyle, including DPS, survival, Bone farming, counter builds, beginner setups, and all 60 Trinket database links." />
+  <meta name="keywords" content="Mina the Hollower best trinkets, Mina the Hollower trinket combos, Mina Trinkets, Mina the Hollower builds, Mina best trinket build" />
+
+  <link rel="canonical" href="https://minahollower.com/blog/best-trinkets.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Best Trinkets in Mina the Hollower" />
+  <meta property="og:description" content="Best Trinket combos and builds for DPS, survival, Bone farming, counter play, and beginner progression." />
+  <meta property="og:url" content="https://minahollower.com/blog/best-trinkets.html" />
+  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Trinkets in Mina the Hollower" />
+  <meta name="twitter:description" content="Best Trinket combos and builds for DPS, survival, farming, and boss fights." />
+  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --forest-3: #2d5240;
+      --parchment: #f5ead8;
+      --parchment-2: #e8d8ba;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --red: #e88080;
+      --green: #7ecda0;
+      --purple: #c0a0e0;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Crimson Text", Georgia, serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.32), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.11), transparent 28%),
+        radial-gradient(circle at 60% 100%, rgba(6,10,7,0.9), transparent 50%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(245,234,216,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,234,216,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.52) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .announce {
+      background: rgba(12,22,15,0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--candle-pale);
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.52rem 1rem;
+    }
+
+    .announce a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.6);
+    }
+
+    nav {
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(9,16,11,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: var(--candle-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand::before {
+      content: "✦";
+      color: var(--candle);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 190px;
+      height: 34px;
+      padding: 0 0.7rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      background: rgba(245,234,216,0.06);
+      border-radius: 3px;
+    }
+
+    .nav-search svg {
+      color: rgba(245,234,216,0.45);
+      flex: 0 0 auto;
+    }
+
+    .nav-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-search input::placeholder {
+      color: rgba(216,205,184,0.48);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(6,12,8,0.98);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .mobile-nav-overlay.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay a {
+      padding: 1rem 0;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .article-hero {
+      position: relative;
+      padding: 5rem 2rem 4.2rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9,16,11,0.25), rgba(9,16,11,0.88)),
+        radial-gradient(circle at 50% 10%, rgba(232,160,32,0.13), transparent 30%);
+      overflow: hidden;
+    }
+
+    .article-hero::before {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .breadcrumb {
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone-dark);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--candle);
+      text-decoration: none;
+    }
+
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: 0.015em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.65);
+    }
+
+    .article-hero h1 span {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 0.42em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 650px;
+      margin: 1.5rem 0 1.7rem;
+      color: var(--bone);
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.72;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.28);
+      padding: 0.14rem 0.42rem;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .summary-card {
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.98), rgba(232,216,186,0.95));
+      color: #2a1e0e;
+      border: 1px solid rgba(244,204,122,0.5);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.55),
+        inset 0 0 36px rgba(96,66,28,0.14);
+      padding: 1.5rem;
+      transform: rotate(1deg);
+      position: relative;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(90,55,16,0.23);
+      pointer-events: none;
+    }
+
+    .summary-card h2 {
+      font-family: "Cinzel", serif;
+      color: #3b2a12;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,55,16,0.25);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .summary-card li {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 0.7rem;
+      border-bottom: 1px dashed rgba(90,55,16,0.22);
+      padding-bottom: 0.7rem;
+    }
+
+    .summary-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .summary-card b {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(90,55,16,0.28);
+      background: rgba(200,134,10,0.12);
+      font-family: "Cinzel", serif;
+      color: #4b3517;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+      color: #2a1e0e;
+    }
+
+    .summary-card span {
+      color: #6b5440;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.4rem 3.5rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .article-body {
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+      padding: 1.6rem;
+    }
+
+    .article-body h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body h3 {
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin: 1.2rem 0 0.35rem;
+    }
+
+    .article-body p {
+      color: var(--bone);
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+
+    .article-body a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.45);
+    }
+
+    .intro-note {
+      border-left: 3px solid var(--candle);
+      background: rgba(200,134,10,0.08);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--bone);
+      font-style: italic;
+    }
+
+    .combo-card {
+      position: relative;
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.085), rgba(245,234,216,0.035));
+      padding: 1.15rem;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+
+    .combo-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: var(--candle);
+    }
+
+    .combo-card.dps::before {
+      background: var(--red);
+    }
+
+    .combo-card.survival::before {
+      background: var(--green);
+    }
+
+    .combo-card.farm::before {
+      background: var(--purple);
+    }
+
+    .combo-card.counter::before {
+      background: var(--candle-pale);
+    }
+
+    .combo-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .combo-label {
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.28);
+      padding: 0.14rem 0.42rem;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .combo-label.red {
+      color: var(--red);
+      border-color: rgba(232,128,128,0.35);
+      background: rgba(180,30,30,0.12);
+    }
+
+    .combo-label.green {
+      color: var(--green);
+      border-color: rgba(126,205,160,0.35);
+      background: rgba(61,112,85,0.16);
+    }
+
+    .combo-label.purple {
+      color: var(--purple);
+      border-color: rgba(192,160,224,0.35);
+      background: rgba(80,40,120,0.18);
+    }
+
+    .combo-note {
+      color: var(--bone-dark);
+      font-family: "Cinzel", serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .trinket-line {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0.75rem 0;
+    }
+
+    .trinket-chip {
+      font-family: "IM Fell English", serif;
+      font-size: 1rem;
+      color: var(--parchment);
+      background: rgba(200,134,10,0.12);
+      border: 1px solid rgba(200,134,10,0.3);
+      padding: 0.22rem 0.62rem;
+      border-radius: 3px;
+    }
+
+    .plus {
+      color: var(--bone-dark);
+    }
+
+    .location-note {
+      margin-top: 0.75rem;
+      color: var(--bone-dark);
+      font-size: 0.86rem;
+      opacity: 0.9;
+    }
+
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+    }
+
+    .tier-table th,
+    .tier-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--line-soft);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .tier-table th {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .tier-table td {
+      color: var(--bone);
+    }
+
+    .tier-rank {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 84px;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .side-card {
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      padding: 1rem;
+    }
+
+    .side-card h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .toc,
+    .related-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .toc a {
+      color: var(--bone-dark);
+      text-decoration: none;
+      font-size: 0.92rem;
+      line-height: 1.3;
+    }
+
+    .toc a:hover {
+      color: var(--candle-light);
+    }
+
+    .related-list a {
+      display: block;
+      color: var(--bone);
+      text-decoration: none;
+      border: 1px solid var(--line-soft);
+      padding: 0.65rem;
+      transition: 0.18s ease;
+    }
+
+    .related-list a:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line-soft);
+      padding: 1rem 0;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    .next-panel {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(200,134,10,0.32);
+      background:
+        linear-gradient(135deg, rgba(245,234,216,0.1), rgba(200,134,10,0.08)),
+        rgba(5,12,8,0.58);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .next-panel h2 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: 1.7rem;
+      margin-bottom: 0.65rem;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .next-panel p {
+      color: var(--bone);
+      max-width: 780px;
+      margin-bottom: 1.2rem;
+    }
+
+    .next-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    .next-link {
+      text-decoration: none;
+      border: 1px solid var(--line-soft);
+      background: rgba(245,234,216,0.045);
+      padding: 0.85rem;
+      transition: 0.18s ease;
+    }
+
+    .next-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .next-link small {
+      display: block;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .next-link strong {
+      display: block;
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5,12,8,0.92);
+      padding: 2.5rem 1.4rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-text {
+      color: var(--bone-dark);
+      max-width: 660px;
+      margin: 0 auto 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--bone);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .footer-disclaimer {
+      color: rgba(216,205,184,0.48);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .article-hero-inner,
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        transform: none;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .next-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .article-hero {
+        padding: 3.5rem 1.2rem 3.2rem;
+      }
+
+      .article-hero::before {
+        inset: 1rem;
+      }
+
+      .article-hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .page-wrap {
+        padding-top: 3rem;
+      }
+
+      .tier-table {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Best Trinkets in Mina the Hollower: Best Combos and Trinket Builds",
+    "description": "A guide to the best Trinkets and Trinket combinations in Mina the Hollower for DPS, survival, farming, counter builds, and beginner progression.",
+    "author": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://minahollower.com/blog/best-trinkets.html"
+    }
+  }
+  </script>
 </head>
+
 <body>
+  <div class="site-shell">
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
+    <div class="announce">
+      Trinket field notes for Tenebrous Isle &nbsp;|&nbsp;
+      <a href="../database/trinkets/index.html">Browse all 60 Trinkets →</a>
+    </div>
 
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
-  </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
+    <nav>
+      <a href="../index.html" class="nav-brand">MinaHollower</a>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html" class="active">Blog</a></li>
+        <li><a href="../database/index.html">Database</a></li>
+        <li><a href="../database/bosses/index.html">Bosses</a></li>
+        <li><a href="../database/trinkets/index.html">Trinkets</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
 
-<main class="page-wrap narrow"><div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Best Trinkets</div><section aria-label="Trinket combinations">
-      <div class="section-divider"><h2>Best Trinket Combos</h2></div>
-      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.5rem; font-style:italic;">
-        With 60 trinkets and only 6 slots, the combinations matter more than the individual pieces. These are the combinations that actually change how the game feels — not just stat bumps.
-      </p>
+      <div class="nav-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="Search guides..." aria-label="Search guides" />
+      </div>
 
-      <!-- COMBO CARDS -->
-      <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+      <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </nav>
 
-        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid var(--candle); border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#e88080; background:rgba(180,30,30,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">🔥 HIGHEST DPS</span>
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Daggers build · Works on all bosses</span>
+    <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+      <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">×</button>
+      <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+      <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+      <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+      <a href="../database/bosses/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Bosses</a>
+      <a href="../database/trinkets/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+      <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+      <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+    </div>
+
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Best Trinkets
           </div>
-          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Shock Flint</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Chain Capacitor</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Uranium Bracelet</span>
+
+          <p class="hero-eyebrow">Trinket ranking · Build theory · Boss preparation</p>
+
+          <h1>
+            Best Trinkets in Mina the Hollower
+            <span>The strongest combos for damage, survival, Bone farming, and counter play.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Mina the Hollower gives you dozens of Trinkets, but only a few slots. The best Trinkets are not always the flashiest ones:
+            they are the pieces that solve real problems, turn a weapon into a build, or make a boss attempt more forgiving.
+          </p>
+
+          <div class="article-meta">
+            <span class="tag">Trinket Guide</span>
+            <span class="tag">Best Combos</span>
+            <span class="tag">Builds</span>
+            <span class="tag">MinaHollower</span>
           </div>
-          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Chain Capacitor stacks damage as long as you don't miss. Shock Flint fires a growing shock ball when you're at full Plasma — pair with Uranium Bracelet for devastating burst windows. Every hit you land increases the next one. Miss once and the combo resets, so this rewards precision over spam.</p>
-          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">🗺 Get all 3 from Ossex Trinket Bazaar · Requires: mid-game progression</div>
         </div>
 
-        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid #7ecda0; border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#7ecda0; background:rgba(61,112,85,0.25); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">🛡 MOST FORGIVING</span>
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Survival build · Beginner-friendly</span>
-          </div>
-          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Vascular Syrup</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Proto Spark</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Evasion Powder</span>
-          </div>
-          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Vascular Syrup makes you impossible to one-shot — health drains slowly after a hit rather than dropping instantly. Evasion Powder extends your invulnerability window so you can recover between hits. Proto Spark gives you a free death reset. This trio turns the first 5 hours from frustrating into manageable.</p>
-          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 Vascular Syrup: Nox's Bayou · Proto Spark: Queensbury Crypt quest · Evasion Powder: Astral Orrery</div>
-        </div>
+        <aside class="summary-card" aria-label="Quick summary">
+          <h2>Quick Picks</h2>
+          <ul>
+            <li>
+              <b>D</b>
+              <div>
+                <strong>Best DPS combo</strong>
+                <span>Shock Flint + Chain Capacitor + Uranium Bracelet.</span>
+              </div>
+            </li>
 
-        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid #c0a0e0; border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:#c0a0e0; background:rgba(80,40,120,0.3); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">💀 FASTEST BONE FARM</span>
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Economy build · Septemburg farm loop</span>
-          </div>
-          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Deboning Wand</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Marrow Flask</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Stolenoid</span>
-          </div>
-          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">Deboning Wand multiplies Bone drops significantly (they bounce around but Stolenoid pulls all pickups toward you automatically). Marrow Flask adds another 25% on top. Run the Septemburg spawn loop — one full circuit takes about 90 seconds and yields 400–600 Bones with this setup vs 80–100 without it.</p>
-          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 Deboning Wand: Ossex — Elizabeth quest · Marrow Flask: Backwaters chest · Stolenoid: Queensbury Crypt shop</div>
-        </div>
+            <li>
+              <b>S</b>
+              <div>
+                <strong>Best survival combo</strong>
+                <span>Vascular Syrup + Proto Spark + Evasion Powder.</span>
+              </div>
+            </li>
 
-        <div style="background:rgba(245,234,216,0.05); border:1px solid rgba(200,134,10,0.28); border-left:3px solid var(--candle-pale); border-radius:0 4px 4px 0; padding:1rem 1.2rem;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.5rem; flex-wrap:wrap;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle-pale); background:rgba(200,134,10,0.2); padding:2px 8px; border-radius:2px; letter-spacing:0.08em;">⚡ COUNTER BUILD</span>
-            <span style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--bone-dark); letter-spacing:0.05em;">Shield build · High skill ceiling</span>
+            <li>
+              <b>F</b>
+              <div>
+                <strong>Best farming combo</strong>
+                <span>Deboning Wand + Marrow Flask + Stolenoid.</span>
+              </div>
+            </li>
+
+            <li>
+              <b>C</b>
+              <div>
+                <strong>Best counter combo</strong>
+                <span>Bubble Ring + Counter Vial + Voltaic Guard.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="article-layout">
+
+        <article class="article-body">
+          <h2 id="quick-answer">Quick answer: what are the best Trinkets?</h2>
+
+          <p class="intro-note">
+            The best Trinket setup depends on what is killing you. For pure damage, build around hit consistency.
+            For survival, build around recovery and safety windows. For farming, build around pickup economy.
+          </p>
+
+          <p>
+            Because Mina the Hollower limits your Trinket slots, the strongest setups are not single Trinkets in isolation.
+            They are combinations that create a clear playstyle. This guide ranks practical Trinket combos by what they are best at:
+            damage, survival, Bone farming, counter play, and beginner comfort.
+          </p>
+
+          <h2 id="best-combos">Best Trinket combos</h2>
+
+          <section class="combo-card dps" id="highest-dps">
+            <div class="combo-top">
+              <span class="combo-label red">Highest DPS</span>
+              <span class="combo-note">Precision build · best for aggressive players</span>
+            </div>
+
+            <h3>Shock Flint + Chain Capacitor + Uranium Bracelet</h3>
+
+            <div class="trinket-line">
+              <span class="trinket-chip">Shock Flint</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Chain Capacitor</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Uranium Bracelet</span>
+            </div>
+
+            <p>
+              This combo rewards clean hits and punishes sloppy play. Chain Capacitor makes repeated accuracy matter,
+              Shock Flint adds burst pressure, and Uranium Bracelet pushes the setup toward high-damage windows.
+              It is not the safest setup, but it can melt fights when you already know the pattern.
+            </p>
+
+            <p class="location-note">
+              Best for: daggers, aggressive boss attempts, players who can keep pressure without whiffing.
+            </p>
+          </section>
+
+          <section class="combo-card survival" id="survival-combo">
+            <div class="combo-top">
+              <span class="combo-label green">Most Forgiving</span>
+              <span class="combo-note">Survival build · best for beginners</span>
+            </div>
+
+            <h3>Vascular Syrup + Proto Spark + Evasion Powder</h3>
+
+            <div class="trinket-line">
+              <span class="trinket-chip">Vascular Syrup</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Proto Spark</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Evasion Powder</span>
+            </div>
+
+            <p>
+              This is the setup for players who are still learning boss timing. Vascular Syrup softens burst punishment,
+              Proto Spark gives you a second chance, and Evasion Powder makes recovery windows more forgiving.
+              It does not maximize damage, but it keeps you alive long enough to actually learn.
+            </p>
+
+            <p class="location-note">
+              Best for: first clears, new players, bosses with punishing burst damage, and long learning attempts.
+            </p>
+          </section>
+
+          <section class="combo-card farm" id="bone-farm">
+            <div class="combo-top">
+              <span class="combo-label purple">Best Bone Farm</span>
+              <span class="combo-note">Economy build · best for grinding</span>
+            </div>
+
+            <h3>Deboning Wand + Marrow Flask + Stolenoid</h3>
+
+            <div class="trinket-line">
+              <span class="trinket-chip">Deboning Wand</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Marrow Flask</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Stolenoid</span>
+            </div>
+
+            <p>
+              This combo is not for hard fights. It is for economy. Deboning Wand and Marrow Flask improve Bone returns,
+              while Stolenoid makes collection smoother by reducing pickup friction. Use this when you are farming resources,
+              then swap back to a combat setup before entering a serious boss fight.
+            </p>
+
+            <p class="location-note">
+              Best for: farming loops, vendor preparation, recovery after losing resources, and completion cleanup.
+            </p>
+          </section>
+
+          <section class="combo-card counter" id="counter-build">
+            <div class="combo-top">
+              <span class="combo-label">Counter Build</span>
+              <span class="combo-note">High-risk build · best after pattern knowledge</span>
+            </div>
+
+            <h3>Bubble Ring + Counter Vial + Voltaic Guard</h3>
+
+            <div class="trinket-line">
+              <span class="trinket-chip">Bubble Ring</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Counter Vial</span>
+              <span class="plus">+</span>
+              <span class="trinket-chip">Voltaic Guard</span>
+            </div>
+
+            <p>
+              This setup turns defense into pressure. Bubble Ring improves shield value, Counter Vial punishes enemies
+              around recovery moments, and Voltaic Guard makes taking damage less passive. It is not a beginner setup,
+              but it feels powerful when you understand enemy timing.
+            </p>
+
+            <p class="location-note">
+              Best for: shield-focused play, counter-heavy boss attempts, and players who can recover calmly after being hit.
+            </p>
+          </section>
+
+          <h2 id="tier-list">Practical Trinket combo tier list</h2>
+
+          <table class="tier-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Combo</th>
+                <th>Best Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tier-rank">S</td>
+                <td>Vascular Syrup + Proto Spark + Evasion Powder</td>
+                <td>Best general survival setup for players still learning the game.</td>
+              </tr>
+              <tr>
+                <td class="tier-rank">S</td>
+                <td>Shock Flint + Chain Capacitor + Uranium Bracelet</td>
+                <td>Best damage-focused combo when you can maintain pressure.</td>
+              </tr>
+              <tr>
+                <td class="tier-rank">A</td>
+                <td>Bubble Ring + Counter Vial + Voltaic Guard</td>
+                <td>Strong counter setup, but requires better timing and calm recovery.</td>
+              </tr>
+              <tr>
+                <td class="tier-rank">A</td>
+                <td>Deboning Wand + Marrow Flask + Stolenoid</td>
+                <td>Excellent for farming, but should be swapped out before hard fights.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="how-to-choose">How to choose the right Trinkets</h2>
+
+          <p>
+            Do not choose Trinkets because they look strong on paper. Choose them based on the problem in front of you.
+            If a boss kills you in two hits, you need survival. If a fight lasts too long, you need damage. If you are short
+            on resources, you need economy. If you keep getting clipped while healing, you need safer recovery.
+          </p>
+
+          <p>
+            The simplest rule is this: change one Trinket to solve one problem. If that does not work, change the second.
+            Rebuilding the entire loadout after every death makes it harder to understand what actually helped.
+          </p>
+
+          <h2 id="faq">Best Trinkets FAQ</h2>
+
+          <div class="faq-item">
+            <h3>What is the best Trinket combo for beginners?</h3>
+            <p>
+              The safest beginner combo is a survival-focused setup such as Vascular Syrup, Proto Spark, and Evasion Powder.
+              It gives you more room to learn patterns without getting deleted too quickly.
+            </p>
           </div>
-          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:0.6rem;">
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Bubble Ring</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Counter Vial</span>
-            <span style="color:var(--bone-dark); align-self:center;">+</span>
-            <span style="font-family:'IM Fell English',serif; font-size:0.95rem; color:var(--parchment); background:rgba(200,134,10,0.12); border:1px solid rgba(200,134,10,0.3); padding:3px 10px; border-radius:3px;">Voltaic Guard</span>
+
+          <div class="faq-item">
+            <h3>What is the best Trinket combo for damage?</h3>
+            <p>
+              Shock Flint, Chain Capacitor, and Uranium Bracelet are a strong damage-focused trio when you can keep landing clean hits.
+              It is best for players who already understand boss movement.
+            </p>
           </div>
-          <p style="font-size:0.85rem; color:var(--bone-dark); line-height:1.5;">This is the combo that makes Guardian Casket worth unlocking. Bubble Ring builds a shield from consecutive hits. Counter Vial bursts back at attackers when you're struck while healing. Voltaic Guard zaps enemies when you take damage. Together: taking a hit becomes an attack. Boss fights feel like a negotiation you're winning.</p>
-          <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--bone-dark); opacity:0.7;">📍 All 3 from Ossex Trinket Bazaar · Weapon: Guardian Casket (unlockable)</div>
-        </div>
+
+          <div class="faq-item">
+            <h3>Should I use farming Trinkets during boss fights?</h3>
+            <p>
+              Usually no. Farming Trinkets are best used while collecting resources. Before a boss, swap into survival,
+              damage, or counter tools depending on the fight.
+            </p>
+          </div>
+
+          <section class="next-panel" aria-label="Recommended next reads">
+            <h2>Read next</h2>
+            <p>
+              Once you know the best Trinkets, connect them to a full build and then test them against real boss pressure.
+            </p>
+
+            <div class="next-links">
+              <a class="next-link" href="best-builds.html">
+                <small>Builds</small>
+                <strong>Best Builds</strong>
+              </a>
+
+              <a class="next-link" href="boss-tier-list.html">
+                <small>Bosses</small>
+                <strong>Boss Tier List</strong>
+              </a>
+
+              <a class="next-link" href="../database/trinkets/index.html">
+                <small>Database</small>
+                <strong>All 60 Trinkets</strong>
+              </a>
+            </div>
+          </section>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h2>Contents</h2>
+            <ul class="toc">
+              <li><a href="#quick-answer">Quick answer</a></li>
+              <li><a href="#best-combos">Best combos</a></li>
+              <li><a href="#highest-dps">Highest DPS</a></li>
+              <li><a href="#survival-combo">Best survival</a></li>
+              <li><a href="#bone-farm">Best Bone farm</a></li>
+              <li><a href="#counter-build">Counter build</a></li>
+              <li><a href="#tier-list">Tier list</a></li>
+              <li><a href="#how-to-choose">How to choose</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h2>Useful links</h2>
+            <ul class="related-list">
+              <li><a href="../database/trinkets/index.html">All 60 Trinkets</a></li>
+              <li><a href="best-builds.html">Best Builds</a></li>
+              <li><a href="../tools/build-planner.html">Build Planner</a></li>
+              <li><a href="../tools/checklist.html">100% Checklist</a></li>
+            </ul>
+          </div>
+        </aside>
 
       </div>
-      <a href="../database/trinkets/index.html" style="display:inline-block; font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--candle); border:1px solid rgba(200,134,10,0.35); padding:6px 16px; border-radius:3px; text-decoration:none;">→ View all 60 trinket locations</a>
-    </section></main>
+    </main>
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
-    <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
-    <a href="../tools/index.html">Tools</a>
-    <a href="../about.html">About</a>
+    <footer>
+      <div class="footer-brand">MinaHollower</div>
+
+      <p class="footer-text">
+        A fan-made Mina the Hollower guide site built like a battered gothic field journal:
+        bosses, Trinkets, builds, tools, and walkthroughs for Tenebrous Isle.
+      </p>
+
+      <div class="footer-links">
+        <a href="../blog/index.html">Blog</a>
+        <a href="../database/index.html">Database</a>
+        <a href="../database/bosses/index.html">Bosses</a>
+        <a href="../database/trinkets/index.html">Trinkets</a>
+        <a href="../tools/index.html">Tools</a>
+        <a href="../about.html">About</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+        All game content belongs to its respective owners.
+      </p>
+    </footer>
+
   </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
 
-<script src="../assets/js/main.js"></script>
+  <script>
+    const searchInput = document.querySelector(".nav-search input");
 
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") return;
+
+        const q = this.value.trim().toLowerCase();
+        if (!q) return;
+
+        const routes = [
+          { keys: ["beginner", "start", "tips"], url: "beginner-guide.html" },
+          { keys: ["build", "weapon", "loadout"], url: "best-builds.html" },
+          { keys: ["boss", "tier", "difficulty"], url: "boss-tier-list.html" },
+          { keys: ["mechanic", "hidden", "burrow"], url: "hidden-mechanics.html" },
+          { keys: ["mistake", "wrong", "death"], url: "mistakes.html" },
+          { keys: ["database", "trinket"], url: "../database/trinkets/index.html" },
+          { keys: ["tool", "planner"], url: "../tools/index.html" }
+        ];
+
+        const match = routes.find(route => route.keys.some(key => q.includes(key)));
+        window.location.href = match ? match.url : "index.html";
+      });
+    }
+  </script>
 </body>
 </html>
