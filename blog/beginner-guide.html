@@ -1,150 +1,1180 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beginner Guide - Mina the Hollower Guide</title>
-<meta name="description" content="11 essential tips for new Mina the Hollower players.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Mina the Hollower Beginner Guide | 11 Essential Tips for New Players</title>
+  <meta name="description" content="A practical Mina the Hollower beginner guide with 11 essential tips for new players, covering controls, weapons, Bones, Sidearms, Trinkets, healing, mirrors, NPCs, and New Game Plus." />
+  <meta name="keywords" content="Mina the Hollower beginner guide, Mina the Hollower tips, Mina the Hollower new players, Mina the Hollower guide, Mina tips, Mina the Hollower walkthrough" />
+
+  <link rel="canonical" href="https://minahollower.com/blog/beginner-guide.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mina the Hollower Beginner Guide" />
+  <meta property="og:description" content="11 essential tips for new Mina the Hollower players exploring Tenebrous Isle." />
+  <meta property="og:url" content="https://minahollower.com/blog/beginner-guide.html" />
+  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mina the Hollower Beginner Guide" />
+  <meta name="twitter:description" content="11 essential tips for surviving your first hours in Mina the Hollower." />
+  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --forest-3: #2d5240;
+      --parchment: #f5ead8;
+      --parchment-2: #e8d8ba;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Crimson Text", Georgia, serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.32), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.11), transparent 28%),
+        radial-gradient(circle at 60% 100%, rgba(6, 10, 7, 0.9), transparent 50%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(245,234,216,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,234,216,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.52) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .announce {
+      background: rgba(12, 22, 15, 0.94);
+      border-bottom: 1px solid var(--line);
+      color: var(--candle-pale);
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.52rem 1rem;
+    }
+
+    .announce a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.6);
+    }
+
+    nav {
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(9, 16, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: var(--candle-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand::before {
+      content: "✦";
+      color: var(--candle);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 190px;
+      height: 34px;
+      padding: 0 0.7rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      background: rgba(245,234,216,0.06);
+      border-radius: 3px;
+    }
+
+    .nav-search svg {
+      color: rgba(245,234,216,0.45);
+      flex: 0 0 auto;
+    }
+
+    .nav-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-search input::placeholder {
+      color: rgba(216,205,184,0.48);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(6, 12, 8, 0.98);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .mobile-nav-overlay.open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--bone);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-overlay a {
+      padding: 1rem 0;
+      color: var(--bone);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .article-hero {
+      position: relative;
+      padding: 5rem 2rem 4.2rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9,16,11,0.25), rgba(9,16,11,0.88)),
+        radial-gradient(circle at 50% 10%, rgba(232,160,32,0.13), transparent 30%);
+      overflow: hidden;
+    }
+
+    .article-hero::before {
+      content: "";
+      position: absolute;
+      inset: 2rem;
+      border: 1px solid rgba(200,134,10,0.28);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .article-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .breadcrumb {
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone-dark);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--candle);
+      text-decoration: none;
+    }
+
+    .hero-eyebrow {
+      font-family: "Cinzel", serif;
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .article-hero h1 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: 0.015em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.65);
+    }
+
+    .article-hero h1 span {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 0.42em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 650px;
+      margin: 1.5rem 0 1.7rem;
+      color: var(--bone);
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.72;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.28);
+      padding: 0.14rem 0.42rem;
+      background: rgba(200,134,10,0.08);
+    }
+
+    .summary-card {
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.98), rgba(232,216,186,0.95));
+      color: #2a1e0e;
+      border: 1px solid rgba(244,204,122,0.5);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,0.55),
+        inset 0 0 36px rgba(96, 66, 28, 0.14);
+      padding: 1.5rem;
+      transform: rotate(1deg);
+      position: relative;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(90, 55, 16, 0.23);
+      pointer-events: none;
+    }
+
+    .summary-card h2 {
+      font-family: "Cinzel", serif;
+      color: #3b2a12;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(90,55,16,0.25);
+      padding-bottom: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .summary-card li {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 0.7rem;
+      border-bottom: 1px dashed rgba(90,55,16,0.22);
+      padding-bottom: 0.7rem;
+    }
+
+    .summary-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .summary-card b {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(90,55,16,0.28);
+      background: rgba(200,134,10,0.12);
+      font-family: "Cinzel", serif;
+      color: #4b3517;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+      color: #2a1e0e;
+    }
+
+    .summary-card span {
+      color: #6b5440;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.4rem 3.5rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .article-body {
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+      padding: 1.6rem;
+    }
+
+    .article-body h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      margin: 2rem 0 0.65rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body h3 {
+      color: var(--candle-light);
+      font-family: "IM Fell English", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin: 1.2rem 0 0.35rem;
+    }
+
+    .article-body p {
+      color: var(--bone);
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+
+    .article-body a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.45);
+    }
+
+    .intro-note {
+      border-left: 3px solid var(--candle);
+      background: rgba(200,134,10,0.08);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--bone);
+      font-style: italic;
+    }
+
+    .tip-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .tip-item:last-child {
+      border-bottom: none;
+    }
+
+    .tip-num {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(200,134,10,0.38);
+      background: rgba(200,134,10,0.08);
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .tip-title {
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: 0.35rem;
+    }
+
+    .tip-body {
+      color: var(--bone);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 84px;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .side-card {
+      border: 1px solid rgba(200,134,10,0.24);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.075), rgba(245,234,216,0.035));
+      padding: 1rem;
+    }
+
+    .side-card h2 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .toc {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .toc a {
+      color: var(--bone-dark);
+      text-decoration: none;
+      font-size: 0.92rem;
+      line-height: 1.3;
+    }
+
+    .toc a:hover {
+      color: var(--candle-light);
+    }
+
+    .related-list {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .related-list a {
+      display: block;
+      color: var(--bone);
+      text-decoration: none;
+      border: 1px solid var(--line-soft);
+      padding: 0.65rem;
+      transition: 0.18s ease;
+    }
+
+    .related-list a:hover {
+      color: var(--candle-light);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line-soft);
+      padding: 1rem 0;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    .next-panel {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(200,134,10,0.32);
+      background:
+        linear-gradient(135deg, rgba(245,234,216,0.1), rgba(200,134,10,0.08)),
+        rgba(5,12,8,0.58);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .next-panel h2 {
+      font-family: "Cinzel", serif;
+      color: var(--parchment);
+      font-size: 1.7rem;
+      margin-bottom: 0.65rem;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .next-panel p {
+      color: var(--bone);
+      max-width: 780px;
+      margin-bottom: 1.2rem;
+    }
+
+    .next-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    .next-link {
+      text-decoration: none;
+      border: 1px solid var(--line-soft);
+      background: rgba(245,234,216,0.045);
+      padding: 0.85rem;
+      transition: 0.18s ease;
+    }
+
+    .next-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(200,134,10,0.5);
+      background: rgba(200,134,10,0.08);
+    }
+
+    .next-link small {
+      display: block;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .next-link strong {
+      display: block;
+      color: var(--parchment);
+      font-family: "IM Fell English", serif;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(5, 12, 8, 0.92);
+      padding: 2.5rem 1.4rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-text {
+      color: var(--bone-dark);
+      max-width: 660px;
+      margin: 0 auto 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--bone);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .footer-disclaimer {
+      color: rgba(216,205,184,0.48);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .article-hero-inner,
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        transform: none;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .next-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .article-hero {
+        padding: 3.5rem 1.2rem 3.2rem;
+      }
+
+      .article-hero::before {
+        inset: 1rem;
+      }
+
+      .article-hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .page-wrap {
+        padding-top: 3rem;
+      }
+
+      .tip-item {
+        grid-template-columns: 1fr;
+      }
+
+      .tip-num {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mina the Hollower Beginner Guide: 11 Essential Tips for New Players",
+    "description": "A practical beginner guide for Mina the Hollower with 11 essential tips for new players.",
+    "author": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://minahollower.com/blog/beginner-guide.html"
+    }
+  }
+  </script>
 </head>
+
 <body>
+  <div class="site-shell">
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
+    <div class="announce">
+      New player field notes for Tenebrous Isle &nbsp;|&nbsp;
+      <a href="../database/trinkets/index.html">Browse all 60 Trinkets →</a>
+    </div>
 
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
-  </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
+    <nav>
+      <a href="../index.html" class="nav-brand">MinaHollower</a>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html" class="active">Blog</a></li>
+        <li><a href="../database/index.html">Database</a></li>
+        <li><a href="../database/bosses/index.html">Bosses</a></li>
+        <li><a href="../database/trinkets/index.html">Trinkets</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
 
-<main class="page-wrap narrow"><div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Beginner Guide</div><section aria-label="Beginner tips">
-      <div class="section-divider"><h2>11 Tips for New Players</h2></div>
-      <div class="tips-list">
-        <div class="tip-item">
-          <div class="tip-num">01</div>
-          <div class="tip-content">
-            <div class="tip-title">Bind your controls before your first boss</div>
-            <div class="tip-body">Responsive Hollowing and Plasma use depend on comfortable inputs. Adjust controller or keyboard bindings in the settings menu before pushing into dangerous areas — you'll thank yourself later.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">02</div>
-          <div class="tip-content">
-            <div class="tip-title">Start with Nightstar — switch when you know your playstyle</div>
-            <div class="tip-body">The whip's long reach and safe spacing make it the most forgiving starter. Once you've fought a few bosses, consider switching to the daggers for aggression or the hammer for heavy commitment damage.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">03</div>
-          <div class="tip-content">
-            <div class="tip-title">Bank Bones at vendors constantly</div>
-            <div class="tip-body">Bones drop on death and must be recovered at your death site — but Bone Stone banked at vendors is permanent. Never enter a boss fight with more than 200 unbanked Bones unless you have Proto Spark equipped.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">04</div>
-          <div class="tip-content">
-            <div class="tip-title">Save Sidearms for bosses, not exploration</div>
-            <div class="tip-body">Sidearms consume Joules and are lost when you die. They're powerful enough to change a boss fight entirely — hold them back during routine exploration and deploy when you need them most.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">05</div>
-          <div class="tip-content">
-            <div class="tip-title">Smash everything — destructibles hide Bones and secret paths</div>
-            <div class="tip-body">Barrels, crates, and cracked walls regularly hide Bones, Plasma refills, and passage to hidden rooms. Clear a room, then sweep for breakables before moving on.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">06</div>
-          <div class="tip-content">
-            <div class="tip-title">After dying, identify the exact cause — then fix it with one trinket swap</div>
-            <div class="tip-body">Burst damage? Add Vascular Syrup. Falling into pits? Get Keri the Wisp. Ranged pressure? Equip Shadowhide. Swapping one targeted trinket is almost always better than rebuilding your whole loadout.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">07</div>
-          <div class="tip-content">
-            <div class="tip-title">Don't heal in a panic — learn patterns first</div>
-            <div class="tip-body">Plasma vials are limited. Drinking one mid-flurry often results in another hit that erases the heal. Back off, read the next 1–2 attacks, then drink during the opening window.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">08</div>
-          <div class="tip-content">
-            <div class="tip-title">Activate mirrors as you find them — don't save them for later</div>
-            <div class="tip-body">You need exactly 3 activated mirrors to reach Astral Orrery. Activating each one also enables fast travel in that area. There's no reason to delay — always activate on first discovery.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">09</div>
-          <div class="tip-content">
-            <div class="tip-title">Talk to every NPC in Ossex after each Spark Generator</div>
-            <div class="tip-body">New dialogue, side quests, and vendor stock unlock each time you restore power to a region. Many of the best trinkets are NPC rewards, not chest drops.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">10</div>
-          <div class="tip-content">
-            <div class="tip-title">The Mina's Grave hidden quest unlocks after 3 Sparks</div>
-            <div class="tip-body">This challenging hidden side quest sits in one of the game's earliest regions but requires significant story progress. It's missable if you skip back-tracking — our full guide covers the exact trigger conditions.</div>
-          </div>
-        </div>
-        <div class="tip-item">
-          <div class="tip-num">11</div>
-          <div class="tip-content">
-            <div class="tip-title">NG+ changes more than just difficulty</div>
-            <div class="tip-body">All 7 New Game Plus modes can remix item placement, world layout, and rules — not just scale enemy HP. If you want to replay, pick the mode that addresses what felt too easy or too familiar, not the hardest one.</div>
-          </div>
-        </div>
+      <div class="nav-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" placeholder="Search guides..." aria-label="Search guides" />
       </div>
-    </section></main>
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
-    <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
-    <a href="../tools/index.html">Tools</a>
-    <a href="../about.html">About</a>
+      <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+      <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">×</button>
+      <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+      <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+      <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+      <a href="../database/bosses/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Bosses</a>
+      <a href="../database/trinkets/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Trinkets</a>
+      <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+      <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+    </div>
+
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Beginner Guide
+          </div>
+
+          <p class="hero-eyebrow">Beginner route · Survival habits · First mistakes to avoid</p>
+
+          <h1>
+            Mina the Hollower Beginner Guide
+            <span>11 essential tips before Tenebrous Isle starts taking your Bones.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Mina the Hollower can feel brutal early, but most beginner deaths come from a few fixable habits:
+            bad healing timing, poor resource management, uncomfortable controls, and trying to force one build
+            through every problem. Start here before your first real boss wall.
+          </p>
+
+          <div class="article-meta">
+            <span class="tag">Beginner Guide</span>
+            <span class="tag">11 Tips</span>
+            <span class="tag">Updated Guide</span>
+            <span class="tag">MinaHollower</span>
+          </div>
+        </div>
+
+        <aside class="summary-card" aria-label="Quick summary">
+          <h2>Quick Summary</h2>
+          <ul>
+            <li>
+              <b>1</b>
+              <div>
+                <strong>Fix controls first</strong>
+                <span>Comfortable inputs matter more than early optimization.</span>
+              </div>
+            </li>
+
+            <li>
+              <b>2</b>
+              <div>
+                <strong>Protect your Bones</strong>
+                <span>Bank often and stop entering boss fights overexposed.</span>
+              </div>
+            </li>
+
+            <li>
+              <b>3</b>
+              <div>
+                <strong>Swap Trinkets with purpose</strong>
+                <span>Change one thing to solve one problem.</span>
+              </div>
+            </li>
+
+            <li>
+              <b>4</b>
+              <div>
+                <strong>Do not panic-heal</strong>
+                <span>Heal after reading the pattern, not during the flurry.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <div class="article-layout">
+
+        <article class="article-body">
+          <h2>Before you begin</h2>
+
+          <p class="intro-note">
+            This guide is written for new players. It is not a full walkthrough. The goal is to fix the habits
+            that make Mina the Hollower harder than it needs to be.
+          </p>
+
+          <p>
+            If you are new to <em>Mina the Hollower</em>, do not start by chasing a perfect build.
+            Start by learning how the game punishes greed. Most early deaths come from staying too long,
+            healing too late, spending Sidearms too freely, or carrying too many unbanked Bones into danger.
+          </p>
+
+          <h2 id="tips">11 essential tips for new players</h2>
+
+          <section class="tip-item" id="tip-1">
+            <div class="tip-num">01</div>
+            <div>
+              <h3 class="tip-title">Bind your controls before your first boss</h3>
+              <p class="tip-body">
+                Responsive Hollowing and Plasma use depend on comfortable inputs. Adjust controller or keyboard bindings
+                in the settings menu before pushing into dangerous areas. A bad control layout quietly makes every fight harder.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-2">
+            <div class="tip-num">02</div>
+            <div>
+              <h3 class="tip-title">Start with Nightstar, then switch when you understand your playstyle</h3>
+              <p class="tip-body">
+                The whip’s long reach and safer spacing make it a forgiving starter choice. Once you have fought a few bosses,
+                you can test faster or heavier options based on how aggressive you want to be.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-3">
+            <div class="tip-num">03</div>
+            <div>
+              <h3 class="tip-title">Bank Bones at vendors constantly</h3>
+              <p class="tip-body">
+                Bones can be lost when you die and must be recovered at the death site. Banked Bone Stone is safer.
+                Do not enter a boss fight carrying a large amount of unbanked Bones unless you are comfortable risking them.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-4">
+            <div class="tip-num">04</div>
+            <div>
+              <h3 class="tip-title">Save Sidearms for bosses, not routine exploration</h3>
+              <p class="tip-body">
+                Sidearms are powerful enough to change a boss attempt. Do not waste them clearing ordinary rooms unless
+                the room is genuinely dangerous or blocking progress. Save your strongest tools for moments that matter.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-5">
+            <div class="tip-num">05</div>
+            <div>
+              <h3 class="tip-title">Smash everything and check suspicious walls</h3>
+              <p class="tip-body">
+                Breakables and suspicious corners can hide Bones, resources, or secret paths. After clearing a room,
+                sweep it once before leaving. The habit costs seconds and can save a lot of backtracking later.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-6">
+            <div class="tip-num">06</div>
+            <div>
+              <h3 class="tip-title">After dying, fix one problem with one Trinket swap</h3>
+              <p class="tip-body">
+                Do not rebuild your entire loadout after every death. Ask what killed you: burst damage, ranged pressure,
+                pits, poison, or poor spacing. Then make one targeted Trinket swap and try again.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-7">
+            <div class="tip-num">07</div>
+            <div>
+              <h3 class="tip-title">Do not heal in a panic</h3>
+              <p class="tip-body">
+                Panic-healing often gets punished immediately. Back off, read the next attack or two, then drink during
+                a real opening. Healing at the wrong time is just another way to take damage.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-8">
+            <div class="tip-num">08</div>
+            <div>
+              <h3 class="tip-title">Activate mirrors as you find them</h3>
+              <p class="tip-body">
+                Mirrors are useful because they improve movement across the world. Do not “save them for later.”
+                If you find one, activate it and make future routing easier.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-9">
+            <div class="tip-num">09</div>
+            <div>
+              <h3 class="tip-title">Talk to NPCs again after major progress</h3>
+              <p class="tip-body">
+                New dialogue, side quests, and shop changes can appear after major progress. Returning to NPCs is not flavor-only.
+                Some useful rewards and clues are easy to miss if you never check back.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-10">
+            <div class="tip-num">10</div>
+            <div>
+              <h3 class="tip-title">Backtrack with intent, not randomly</h3>
+              <p class="tip-body">
+                Mina the Hollower rewards returning to earlier places after gaining progress, tools, or knowledge.
+                But random wandering wastes time. Keep notes on locked doors, strange rooms, and NPC hints.
+              </p>
+            </div>
+          </section>
+
+          <section class="tip-item" id="tip-11">
+            <div class="tip-num">11</div>
+            <div>
+              <h3 class="tip-title">Treat New Game Plus as a different route, not just harder mode</h3>
+              <p class="tip-body">
+                New Game Plus is not only about more difficulty. Think about what you want from a replay:
+                tougher fights, different routing, cleaner collection, or a new build. Pick the route that changes the game
+                in the way you actually want.
+              </p>
+            </div>
+          </section>
+
+          <h2 id="faq">Beginner FAQ</h2>
+
+          <div class="faq-item">
+            <h3>What should I do first in Mina the Hollower?</h3>
+            <p>
+              Start by fixing your controls, learning your weapon spacing, and banking Bones often.
+              Do not rush into boss fights carrying resources you are not willing to lose.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the best beginner weapon?</h3>
+            <p>
+              A safe starter weapon is usually the one that gives you reliable spacing and predictable timing.
+              Once you understand boss patterns, you can switch toward faster or heavier options.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Should beginners focus on Trinkets?</h3>
+            <p>
+              Yes, but do not chase every Trinket immediately. Use Trinkets to solve specific problems:
+              survivability, spacing, movement, resource pressure, or boss damage windows.
+            </p>
+          </div>
+
+          <section class="next-panel" aria-label="Recommended next reads">
+            <h2>Read next</h2>
+            <p>
+              Once these habits feel natural, move into Trinket rankings, builds, and boss preparation.
+            </p>
+
+            <div class="next-links">
+              <a class="next-link" href="best-trinkets.html">
+                <small>Next Step</small>
+                <strong>Best Trinkets Ranked</strong>
+              </a>
+
+              <a class="next-link" href="best-builds.html">
+                <small>Builds</small>
+                <strong>Best Builds</strong>
+              </a>
+
+              <a class="next-link" href="boss-tier-list.html">
+                <small>Bosses</small>
+                <strong>Boss Tier List</strong>
+              </a>
+            </div>
+          </section>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h2>Contents</h2>
+            <ul class="toc">
+              <li><a href="#tips">11 essential tips</a></li>
+              <li><a href="#tip-1">01. Bind controls</a></li>
+              <li><a href="#tip-2">02. Start with Nightstar</a></li>
+              <li><a href="#tip-3">03. Bank Bones</a></li>
+              <li><a href="#tip-4">04. Save Sidearms</a></li>
+              <li><a href="#tip-6">06. Swap Trinkets</a></li>
+              <li><a href="#tip-7">07. Do not panic-heal</a></li>
+              <li><a href="#faq">Beginner FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h2>Useful links</h2>
+            <ul class="related-list">
+              <li><a href="../database/trinkets/index.html">All 60 Trinkets</a></li>
+              <li><a href="../database/bosses/index.html">Boss Records</a></li>
+              <li><a href="../tools/build-planner.html">Build Planner</a></li>
+              <li><a href="../tools/checklist.html">100% Checklist</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-brand">MinaHollower</div>
+
+      <p class="footer-text">
+        A fan-made Mina the Hollower guide site built like a battered gothic field journal:
+        bosses, Trinkets, builds, tools, and walkthroughs for Tenebrous Isle.
+      </p>
+
+      <div class="footer-links">
+        <a href="../blog/index.html">Blog</a>
+        <a href="../database/index.html">Database</a>
+        <a href="../database/bosses/index.html">Bosses</a>
+        <a href="../database/trinkets/index.html">Trinkets</a>
+        <a href="../tools/index.html">Tools</a>
+        <a href="../about.html">About</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+        All game content belongs to its respective owners.
+      </p>
+    </footer>
+
   </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
 
-<script src="../assets/js/main.js"></script>
+  <script>
+    const searchInput = document.querySelector(".nav-search input");
 
+    if (searchInput) {
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") return;
+
+        const q = this.value.trim().toLowerCase();
+        if (!q) return;
+
+        const routes = [
+          { keys: ["trinket", "best", "rank"], url: "best-trinkets.html" },
+          { keys: ["build", "weapon", "loadout"], url: "best-builds.html" },
+          { keys: ["boss", "tier", "difficulty"], url: "boss-tier-list.html" },
+          { keys: ["mechanic", "hidden", "burrow"], url: "hidden-mechanics.html" },
+          { keys: ["mistake", "wrong", "death"], url: "mistakes.html" },
+          { keys: ["database"], url: "../database/index.html" },
+          { keys: ["tool", "planner"], url: "../tools/index.html" }
+        ];
+
+        const match = routes.find(route => route.keys.some(key => q.includes(key)));
+        window.location.href = match ? match.url : "index.html";
+      });
+    }
+  </script>
 </body>
 </html>
