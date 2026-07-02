@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/main.css?v=2">
 
   
 
@@ -455,19 +455,22 @@
         if (!q) return;
 
         const routes = [
-          { keys: ["beginner", "start", "tips"], url: "beginner-guide.html" },
+        { keys: ["beginner", "start", "tips"], url: "beginner-guide.html" },
+          { keys: ["all trinket", "trinket location", "locations", "60 trinkets", "collect"], url: "all-trinket-locations.html" },
+          { keys: ["trinket", "best", "rank", "combo"], url: "best-trinkets.html" },
           { keys: ["build", "weapon", "loadout"], url: "best-builds.html" },
           { keys: ["boss", "tier", "difficulty"], url: "boss-tier-list.html" },
           { keys: ["mechanic", "hidden", "burrow"], url: "hidden-mechanics.html" },
           { keys: ["mistake", "wrong", "death"], url: "mistakes.html" },
-          { keys: ["database", "trinket"], url: "../database/trinkets/index.html" },
+          { keys: ["database"], url: "../database/index.html" },
           { keys: ["tool", "planner"], url: "../tools/index.html" }
-        ];
+         ];
 
         const match = routes.find(route => route.keys.some(key => q.includes(key)));
         window.location.href = match ? match.url : "index.html";
       });
     }
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
