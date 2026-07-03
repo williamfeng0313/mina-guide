@@ -437,50 +437,75 @@
     }
 
     .journal-list {
-      display: grid;
-      gap: 0.8rem;
-      list-style: none;
-    }
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    .journal-list li {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 0.8rem;
-      align-items: start;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px dashed rgba(90,55,16,0.22);
-    }
+.journal-list li {
+  display: block;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(90,55,16,0.22);
+}
 
-    .journal-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+.journal-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 
-    .journal-icon {
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(90,55,16,0.28);
-      display: grid;
-      place-items: center;
-      background: rgba(200,134,10,0.12);
-      color: #4b3517;
-      font-size: 1.2rem;
-    }
+.journal-link {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
 
-    .journal-list strong {
-      display: block;
-      font-family: "IM Fell English", serif;
-      font-size: 1.05rem;
-      color: #2a1e0e;
-    }
+.journal-link,
+.journal-link:visited,
+.journal-link:hover,
+.journal-link:active {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .journal-list span {
-      display: block;
-      color: #6b5440;
-      font-size: 0.9rem;
-      line-height: 1.38;
-    }
+.journal-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(90,55,16,0.28);
+  display: grid;
+  place-items: center;
+  background: rgba(200,134,10,0.12);
+  color: #4b3517;
+  font-size: 1.2rem;
+  line-height: 1;
+}
 
+.journal-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #2a1e0e;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.journal-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.9rem;
+  line-height: 1.38;
+  text-decoration: none;
+}
+
+.journal-link:hover strong {
+  color: #8a5b08;
+}
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -957,8 +982,8 @@
         padding-top: 3rem;
       }
 
-      .journal-list li {
-        grid-template-columns: 34px 1fr;
+      .journal-link {
+        grid-template-columns: 34px minmax(0, 1fr);
       }
 
       .journal-icon {
@@ -1065,35 +1090,43 @@
 
           <ul class="journal-list">
             <li>
-              <div class="journal-icon">💎</div>
-              <div>
-                <strong>Trinket Ledger</strong>
-                <span>Every known Trinket with effect, location, and routing notes for collectors.</span>
-              </div>
+              <a class="journal-link" href="database/trinkets/index.html">
+                <div class="journal-icon">💎</div>
+                <div>
+                  <strong>Trinket Ledger</strong>
+                  <span>Every known Trinket with effect, location, and routing notes for collectors.</span>
+                </div>
+              </a>
             </li>
-
+            
             <li>
-              <div class="journal-icon">💀</div>
-              <div>
-                <strong>Boss Notes</strong>
-                <span>Pattern reads, difficulty tags, recommended tools, and survival habits.</span>
-              </div>
+              <a class="journal-link" href="database/bosses/index.html">
+                <div class="journal-icon">💀</div>
+                <div>
+                  <strong>Boss Notes</strong>
+                  <span>Pattern reads, difficulty tags, recommended tools, and survival habits.</span>
+                </div>
+              </a>
             </li>
-
+            
             <li>
-              <div class="journal-icon">⚔</div>
-              <div>
-                <strong>Build Pages</strong>
-                <span>Weapon, sidearm, and Trinket combinations for damage, safety, and farming.</span>
-              </div>
+              <a class="journal-link" href="blog/best-builds.html">
+                <div class="journal-icon">⚔</div>
+                <div>
+                  <strong>Build Pages</strong>
+                  <span>Weapon, sidearm, and Trinket combinations for damage, safety, and farming.</span>
+                </div>
+              </a>
             </li>
-
+            
             <li>
-              <div class="journal-icon">🕯</div>
-              <div>
-                <strong>Beginner Route</strong>
-                <span>Where to go first, what to avoid, and which early choices matter most.</span>
-              </div>
+              <a class="journal-link" href="blog/beginner-guide.html">
+                <div class="journal-icon">🧪</div>
+                <div>
+                  <strong>Beginner Route</strong>
+                  <span>Where to go first, what to avoid, and which early choices matter most.</span>
+                </div>
+              </a>
             </li>
           </ul>
         </aside>
