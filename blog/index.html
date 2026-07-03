@@ -828,6 +828,77 @@
         padding-top: 3rem;
       }
     }
+
+    .reading-path-list {
+     list-style: none;
+     display: grid;
+     gap: 0.75rem;
+     margin: 0;
+    padding: 0;
+   }
+
+    .reading-path-list li {
+     margin: 0;
+     padding: 0;
+   }
+
+     .reading-path-link {
+     display: grid;
+     grid-template-columns: 42px minmax(0, 1fr);
+     gap: 0.8rem;
+     align-items: start;
+     color: inherit;
+     text-decoration: none;
+     padding: 0.75rem 0;
+     border-bottom: 1px dashed rgba(90, 55, 16, 0.22);
+   }
+
+     .reading-path-list li:last-child .reading-path-link {
+     border-bottom: none;
+   }
+
+     .reading-path-link,
+     .reading-path-link:visited,
+     .reading-path-link:hover,
+     .reading-path-link:active {
+      color: inherit;
+     text-decoration: none;
+   }
+
+  .reading-path-link b {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(90, 55, 16, 0.28);
+  background: rgba(200, 134, 10, 0.12);
+  color: #4b3517;
+  font-family: "Cinzel", serif;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.reading-path-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #2a1e0e;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.reading-path-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.9rem;
+  line-height: 1.38;
+  text-decoration: none;
+}
+
+.reading-path-link:hover strong {
+  color: #8a5b08;
+}
   </style>
 
   <script type="application/ld+json">
@@ -917,46 +988,56 @@
 
         <aside class="journal-panel" aria-label="Recommended reading path">
           <h2>Recommended Reading Path</h2>
-
-          <ul class="reading-path">
+        
+          <ul class="reading-path-list">
             <li>
-              <b>1</b>
-              <div>
-                <strong>Beginner Guide</strong>
-                <span>Learn the core survival habits before the first major wall.</span>
-              </div>
+              <a class="reading-path-link" href="beginner-guide.html">
+                <b>1</b>
+                <div>
+                  <strong>Beginner Guide</strong>
+                  <span>Learn the basics before chasing every collectible.</span>
+                </div>
+              </a>
             </li>
-            
+        
             <li>
-              <b>2</b>
-              <div>
-                <strong>All Trinket Locations</strong>
-                <span>Use the 60-trinket checklist before deciding what is worth equipping.</span>
-              </div>
+              <a class="reading-path-link" href="all-trinket-locations.html">
+                <b>2</b>
+                <div>
+                  <strong>All Trinket Locations</strong>
+                  <span>Use the full checklist to find every Trinket by name, effect, area, and location note.</span>
+                </div>
+              </a>
             </li>
-
+        
             <li>
-              <b>3</b>
-              <div>
-                <strong>Best Trinkets Ranked</strong>
-                <span>Understand what is actually worth using, not just collecting.</span>
-              </div>
+              <a class="reading-path-link" href="missable-trinkets.html">
+                <b>3</b>
+                <div>
+                  <strong>Missable Trinkets</strong>
+                  <span>Check NPC rewards, condition-based Trinkets, and easy-to-overlook cleanup items.</span>
+                </div>
+              </a>
             </li>
-
+        
             <li>
-              <b>4</b>
-              <div>
-                <strong>Best Builds</strong>
-                <span>Turn weapons, sidearms, and Trinkets into a real playstyle.</span>
-              </div>
+              <a class="reading-path-link" href="black-market-trinkets.html">
+                <b>4</b>
+                <div>
+                  <strong>Black Market Trinkets</strong>
+                  <span>Understand recovery checks before assuming a Trinket is permanently lost.</span>
+                </div>
+              </a>
             </li>
-
+        
             <li>
-              <b>5</b>
-              <div>
-                <strong>Boss Tier List</strong>
-                <span>Prepare for the fights that punish bad habits.</span>
-              </div>
+              <a class="reading-path-link" href="best-trinkets.html">
+                <b>5</b>
+                <div>
+                  <strong>Best Trinkets</strong>
+                  <span>After cleanup, decide which Trinkets are actually worth using.</span>
+                </div>
+              </a>
             </li>
           </ul>
         </aside>

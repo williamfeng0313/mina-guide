@@ -1551,7 +1551,7 @@ footer {
 .hero-subtitle {
   max-width: 900px;
   margin: 0 auto;
-  color: var(--mist);
+  color: var(--bone);
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -1590,7 +1590,7 @@ footer {
 
 .guide-table th {
   color: var(--candle-light);
-  font-family: var(--font-title);
+  font-family: "Cinzel", serif;
   letter-spacing: 0.04em;
   background: rgba(201, 151, 48, 0.08);
 }
@@ -1602,3 +1602,157 @@ footer {
 .guide-table tr:hover td {
   background: rgba(255, 255, 255, 0.03);
 }
+
+/* Homepage field journal index */
+
+.journal-list {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.journal-list li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px dashed rgba(90, 55, 16, 0.22);
+}
+
+.journal-list li:last-child {
+  border-bottom: none;
+}
+
+.journal-link {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+  padding: 0.9rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-link,
+.journal-link:visited,
+.journal-link:hover,
+.journal-link:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(90, 55, 16, 0.28);
+  background: rgba(200, 134, 10, 0.12);
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.journal-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #2a1e0e;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.journal-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.journal-link:hover strong {
+  color: #8a5b08;
+}
+
+.journal-link:hover .journal-icon {
+  border-color: rgba(200, 134, 10, 0.55);
+  background: rgba(200, 134, 10, 0.2);
+}
+
+/* Blog recommended reading path clickable links */
+
+.reading-path-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.reading-path-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.reading-path-link {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed rgba(90, 55, 16, 0.22);
+}
+
+.reading-path-list li:last-child .reading-path-link {
+  border-bottom: none;
+}
+
+.reading-path-link,
+.reading-path-link:visited,
+.reading-path-link:hover,
+.reading-path-link:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reading-path-link b {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(90, 55, 16, 0.28);
+  background: rgba(200, 134, 10, 0.12);
+  color: #4b3517;
+  font-family: "Cinzel", serif;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.reading-path-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #2a1e0e;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.reading-path-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.9rem;
+  line-height: 1.38;
+  text-decoration: none;
+}
+
+.reading-path-link:hover strong {
+  color: #8a5b08;
+}
+
+
