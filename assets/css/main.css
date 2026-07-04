@@ -1794,3 +1794,114 @@ footer {
     width: 100%;
   }
 }
+.summary-link {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 0.7rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.summary-link,
+.summary-link:visited,
+.summary-link:hover,
+.summary-link:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.summary-link b {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(90,55,16,0.28);
+  background: rgba(200,134,10,0.12);
+  font-family: "Cinzel", serif;
+  color: #4b3517;
+}
+
+.summary-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.05rem;
+  color: #2a1e0e;
+  text-decoration: none;
+}
+
+.summary-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.summary-link:hover strong {
+  color: #8a5b08;
+}
+/* Fix clickable Quick Picks layout on best-trinkets page */
+
+.quick-picks-card li {
+  display: block;
+  grid-template-columns: none;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed rgba(90,55,16,0.22);
+}
+
+.quick-picks-card li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.quick-picks-card .summary-link {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.quick-picks-card .summary-link,
+.quick-picks-card .summary-link:visited,
+.quick-picks-card .summary-link:hover,
+.quick-picks-card .summary-link:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.quick-picks-card .summary-link b {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(90,55,16,0.28);
+  background: rgba(200,134,10,0.12);
+  font-family: "Cinzel", serif;
+  color: #4b3517;
+  line-height: 1;
+}
+
+.quick-picks-card .summary-link strong {
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #2a1e0e;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.quick-picks-card .summary-link span {
+  display: block;
+  color: #6b5440;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.quick-picks-card .summary-link:hover strong {
+  color: #8a5b08;
+}

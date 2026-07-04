@@ -26,9 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/main.css?v=2">
-
-  
+  <link rel="stylesheet" href="../assets/css/main.css?v=4">
 
   <script type="application/ld+json">
   {
@@ -125,39 +123,47 @@
           </div>
         </div>
 
-        <aside class="summary-card" aria-label="Quick summary">
+        <aside class="summary-card" aria-label="Quick picks"><aside class="summary-card quick-picks-card" aria-label="Quick picks">
           <h2>Quick Picks</h2>
           <ul>
             <li>
-              <b>D</b>
-              <div>
-                <strong>Best DPS combo</strong>
-                <span>Shock Flint + Chain Capacitor + Uranium Bracelet.</span>
-              </div>
+              <a class="summary-link" href="#highest-dps">
+                <b>D</b>
+                <div>
+                  <strong>Best DPS combo</strong>
+                  <span>Shock Flint + Chain Capacitor + Uranium Bracelet.</span>
+                </div>
+              </a>
             </li>
 
             <li>
-              <b>S</b>
-              <div>
-                <strong>Best survival combo</strong>
-                <span>Vascular Syrup + Proto Spark + Evasion Powder.</span>
-              </div>
+              <a class="summary-link" href="#survival-combo">
+                <b>S</b>
+                <div>
+                  <strong>Best survival combo</strong>
+                  <span>Vascular Syrup + Proto Spark + Evasion Powder.</span>
+                </div>
+              </a>
             </li>
 
             <li>
-              <b>F</b>
-              <div>
-                <strong>Best farming combo</strong>
-                <span>Deboning Wand + Marrow Flask + Stolenoid.</span>
-              </div>
+              <a class="summary-link" href="#bone-farm">
+                <b>F</b>
+                <div>
+                  <strong>Best farming combo</strong>
+                  <span>Deboning Wand + Marrow Flask + Stolenoid.</span>
+                </div>
+              </a>
             </li>
 
             <li>
-              <b>C</b>
-              <div>
-                <strong>Best counter combo</strong>
-                <span>Bubble Ring + Counter Vial + Voltaic Guard.</span>
-              </div>
+              <a class="summary-link" href="#counter-build">
+                <b>C</b>
+                <div>
+                  <strong>Best counter combo</strong>
+                  <span>Bubble Ring + Counter Vial + Voltaic Guard.</span>
+                </div>
+              </a>
             </li>
           </ul>
         </aside>
@@ -180,6 +186,12 @@
             They are combinations that create a clear playstyle. This guide ranks practical Trinket combos by what they are best at:
             damage, survival, Bone farming, counter play, and beginner comfort.
           </p>
+
+          <div class="guide-link-row">
+            <a href="all-trinket-locations.html">All Trinket Locations</a>
+            <a href="missable-trinkets.html">Missable Trinkets</a>
+            <a href="black-market-trinkets.html">Black Market Recovery</a>
+          </div>
 
           <h2 id="best-combos">Best Trinket combos</h2>
 
@@ -367,7 +379,8 @@
           <section class="next-panel" aria-label="Recommended next reads">
             <h2>Read next</h2>
             <p>
-              Once you know the best Trinkets, connect them to a full build and then test them against real boss pressure.
+              Once you know the best Trinkets, connect them to a full build, check missable rewards,
+              and verify every location in the full Trinket checklist.
             </p>
 
             <div class="next-links">
@@ -375,15 +388,20 @@
                 <small>Builds</small>
                 <strong>Best Builds</strong>
               </a>
+
+              <a class="next-link" href="all-trinket-locations.html">
+                <small>Checklist</small>
+                <strong>All Trinket Locations</strong>
+              </a>
               
               <a class="next-link" href="missable-trinkets.html">
                 <small>Completion</small>
                 <strong>Missable Trinkets</strong>
               </a>
 
-              <a class="next-link" href="boss-tier-list.html">
-                <small>Bosses</small>
-                <strong>Boss Tier List</strong>
+              <a class="next-link" href="black-market-trinkets.html">
+                <small>Recovery</small>
+                <strong>Black Market Trinkets</strong>
               </a>
 
               <a class="next-link" href="../database/trinkets/index.html">
@@ -413,10 +431,12 @@
           <div class="side-card">
             <h2>Useful links</h2>
             <ul class="related-list">
-              <li><a href="../database/trinkets/index.html">All 60 Trinkets</a></li>
+              <li><a href="all-trinket-locations.html">All Trinket Locations</a></li>
+              <li><a href="missable-trinkets.html">Missable Trinkets</a></li>
+              <li><a href="black-market-trinkets.html">Black Market Trinkets</a></li>
               <li><a href="best-builds.html">Best Builds</a></li>
+              <li><a href="../database/trinkets/index.html">Trinket Database</a></li>
               <li><a href="../tools/build-planner.html">Build Planner</a></li>
-              <li><a href="../tools/checklist.html">100% Checklist</a></li>
             </ul>
           </div>
         </aside>
@@ -460,8 +480,10 @@
         if (!q) return;
 
         const routes = [
-        { keys: ["beginner", "start", "tips"], url: "beginner-guide.html" },
+          { keys: ["beginner", "start", "tips"], url: "beginner-guide.html" },
           { keys: ["all trinket", "trinket location", "locations", "60 trinkets", "collect"], url: "all-trinket-locations.html" },
+          { keys: ["missable", "miss", "lost"], url: "missable-trinkets.html" },
+          { keys: ["black market", "recovery"], url: "black-market-trinkets.html" },
           { keys: ["trinket", "best", "rank", "combo"], url: "best-trinkets.html" },
           { keys: ["build", "weapon", "loadout"], url: "best-builds.html" },
           { keys: ["boss", "tier", "difficulty"], url: "boss-tier-list.html" },
@@ -469,13 +491,14 @@
           { keys: ["mistake", "wrong", "death"], url: "mistakes.html" },
           { keys: ["database"], url: "../database/index.html" },
           { keys: ["tool", "planner"], url: "../tools/index.html" }
-         ];
+        ];
 
         const match = routes.find(route => route.keys.some(key => q.includes(key)));
         window.location.href = match ? match.url : "index.html";
       });
     }
   </script>
+
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
