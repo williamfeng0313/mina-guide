@@ -1755,4 +1755,42 @@ footer {
   color: #8a5b08;
 }
 
+.guide-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
 
+.guide-link-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(200, 134, 10, 0.35);
+  background: rgba(200, 134, 10, 0.08);
+  color: var(--candle-light);
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.guide-link-row a:hover {
+  background: rgba(200, 134, 10, 0.16);
+  border-color: rgba(200, 134, 10, 0.6);
+}
+
+@media (max-width: 620px) {
+  .guide-link-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .guide-link-row a {
+    width: 100%;
+  }
+}
