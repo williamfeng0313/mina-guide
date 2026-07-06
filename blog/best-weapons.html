@@ -12,118 +12,114 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
 
   <style>
-    .article-container {
-      max-width: 980px !important;
-      margin: 0 auto !important;
-      padding: 2.5rem 1.2rem 4rem !important;
+    .weapon-page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1.2rem 4rem;
     }
-  
-    .article {
-      max-width: 860px !important;
-      margin: 0 auto !important;
-      width: 100% !important;
+
+    .weapon-article {
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
     }
-  
-    .article h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem) !important;
-      line-height: 1.15 !important;
-      margin: 0 0 1rem !important;
+
+    .weapon-article h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 1rem;
     }
-  
-    .article h2 {
-      margin: 2rem 0 0.8rem !important;
+
+    .weapon-article h2 {
+      margin: 2rem 0 0.8rem;
     }
-  
-    .article h3 {
-      margin: 1.4rem 0 0.5rem !important;
+
+    .weapon-article h3 {
+      margin: 1.4rem 0 0.5rem;
     }
-  
-    .article p {
-      margin: 0 0 1rem !important;
+
+    .weapon-article p {
+      margin: 0 0 1rem;
     }
-  
-    .article ul {
-      margin: 0.7rem 0 1.2rem 1.5rem !important;
-      padding-left: 1rem !important;
+
+    .weapon-article ul {
+      margin: 0.7rem 0 1.2rem 1.5rem;
+      padding-left: 1rem;
     }
-  
-    .article li {
-      margin-bottom: 0.45rem !important;
+
+    .weapon-article li {
+      margin-bottom: 0.45rem;
     }
-  
-    .quick-answer,
-    .table-of-contents,
+
+    .weapon-box,
+    .weapon-toc,
     .related-guides {
-      display: block !important;
-      position: static !important;
-      float: none !important;
-      clear: both !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      border: 1px solid rgba(200, 134, 10, 0.28) !important;
-      background: rgba(245, 234, 216, 0.045) !important;
-      padding: 1.2rem !important;
-      margin: 1.5rem 0 !important;
-      box-sizing: border-box !important;
+      width: 100%;
+      border: 1px solid rgba(200, 134, 10, 0.28);
+      background: rgba(245, 234, 216, 0.045);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      box-sizing: border-box;
     }
-  
-    .table-of-contents ul,
+
+    .weapon-toc ul,
     .related-guides ul {
-      margin: 0.7rem 0 0 1.5rem !important;
-      padding-left: 1rem !important;
+      margin: 0.7rem 0 0 1.5rem;
+      padding-left: 1rem;
     }
-  
-    .table-of-contents li,
+
+    .weapon-toc li,
     .related-guides li {
-      margin-bottom: 0.45rem !important;
+      margin-bottom: 0.45rem;
     }
-  
-    .breadcrumb {
-      font-size: 0.85rem !important;
-      opacity: 0.75 !important;
-      margin-bottom: 1rem !important;
+
+    .weapon-breadcrumb {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-bottom: 1rem;
     }
-  
-    .site-header {
-      border-bottom: 1px solid rgba(200, 134, 10, 0.28) !important;
-      background: rgba(9, 16, 11, 0.92) !important;
+
+    .weapon-header {
+      border-bottom: 1px solid rgba(200, 134, 10, 0.28);
+      background: rgba(9, 16, 11, 0.92);
     }
-  
-    .site-header .container {
-      max-width: 1180px !important;
-      margin: 0 auto !important;
-      padding: 1rem 1.2rem !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 1rem !important;
+
+    .weapon-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
-  
-    .site-title {
-      white-space: nowrap !important;
+
+    .weapon-site-title {
+      white-space: nowrap;
+      font-weight: 700;
     }
-  
-    .site-nav {
-      display: flex !important;
-      gap: 1rem !important;
-      flex-wrap: wrap !important;
+
+    .weapon-nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-  
-    .site-footer {
-      border-top: 1px solid rgba(200, 134, 10, 0.28) !important;
-      margin-top: 3rem !important;
-      padding: 2rem 1.2rem !important;
-      text-align: center !important;
+
+    .weapon-footer {
+      border-top: 1px solid rgba(200, 134, 10, 0.28);
+      margin-top: 3rem;
+      padding: 2rem 1.2rem;
+      text-align: center;
     }
-  
+
     @media (max-width: 700px) {
-      .site-header .container {
-        align-items: flex-start !important;
-        flex-direction: column !important;
+      .weapon-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
-  
-      .site-nav {
-        gap: 0.7rem !important;
+
+      .weapon-nav {
+        gap: 0.7rem;
       }
     }
   </style>
@@ -132,33 +128,34 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-title">Mina the Hollower Guide</a>
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
-        <a href="/blog/all-trinket-locations.html">All Trinkets</a>
-        <a href="/blog/missable-trinkets.html">Missable Trinkets</a>
-      </nav>
+  <header class="weapon-header">
+    <div class="weapon-header-inner">
+      <a href="../index.html" class="weapon-site-title">Mina the Hollower Guide</a>
+
+      <div class="weapon-nav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="all-trinket-locations.html">All Trinkets</a>
+        <a href="missable-trinkets.html">Missable Trinkets</a>
+      </div>
     </div>
   </header>
 
-  <main class="container article-container">
-    <article class="article">
-      <p class="breadcrumb">
-        <a href="/">Home</a> › <a href="/blog/">Blog</a> › Best Weapons
+  <main class="weapon-page">
+    <article class="weapon-article">
+      <p class="weapon-breadcrumb">
+        <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Best Weapons
       </p>
 
       <h1>Best Weapons in Mina the Hollower: Which Weapon Should You Use?</h1>
 
-      <p class="article-intro">
+      <p>
         The best weapon in <strong>Mina the Hollower</strong> depends on what you are trying to do.
         A weapon that feels great for bosses may feel risky during exploration, while a safer weapon
         may be better for beginners or 100% cleanup.
       </p>
 
-      <div class="quick-answer">
+      <div class="weapon-box">
         <h2>Quick Answer</h2>
         <ul>
           <li><strong>Best beginner weapon:</strong> the safer, faster weapon with reliable reach.</li>
@@ -169,7 +166,7 @@
         </ul>
       </div>
 
-      <nav class="table-of-contents">
+      <div class="weapon-toc">
         <h2>On this page</h2>
         <ul>
           <li><a href="#best-beginner-weapon">Best weapon for beginners</a></li>
@@ -180,7 +177,7 @@
           <li><a href="#completion">Best weapon for 100% completion</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-      </nav>
+      </div>
 
       <section id="best-beginner-weapon">
         <h2>Best Weapon for Beginners</h2>
@@ -288,8 +285,8 @@
 
         <p>
           If you are cleaning up missed trinkets, you may also want to check the
-          <a href="/blog/missable-trinkets.html">missable trinkets checklist</a> and
-          <a href="/blog/all-trinket-locations.html">all trinket locations guide</a>.
+          <a href="missable-trinkets.html">missable trinkets checklist</a> and
+          <a href="all-trinket-locations.html">all trinket locations guide</a>.
         </p>
       </section>
 
@@ -329,7 +326,7 @@
           leftover collectibles, dying to random contact damage wastes more time than low damage does.
         </p>
 
-        <div class="quick-answer">
+        <div class="weapon-box">
           <h3>Best 100% cleanup mindset</h3>
           <ul>
             <li>Use the weapon you can control safely.</li>
@@ -344,9 +341,9 @@
         </p>
 
         <ul>
-          <li><a href="/blog/missable-trinkets.html">Missable Trinkets Guide</a></li>
-          <li><a href="/blog/black-market-trinkets.html">Black Market Trinkets Guide</a></li>
-          <li><a href="/blog/best-trinkets.html">Best Trinkets Guide</a></li>
+          <li><a href="missable-trinkets.html">Missable Trinkets Guide</a></li>
+          <li><a href="black-market-trinkets.html">Black Market Trinkets Guide</a></li>
+          <li><a href="best-trinkets.html">Best Trinkets Guide</a></li>
         </ul>
       </section>
 
@@ -387,17 +384,17 @@
       <section class="related-guides">
         <h2>Related Guides</h2>
         <ul>
-          <li><a href="/blog/missable-trinkets.html">Mina the Hollower Missable Trinkets Guide</a></li>
-          <li><a href="/blog/all-trinket-locations.html">All Trinket Locations</a></li>
-          <li><a href="/blog/best-trinkets.html">Best Trinkets in Mina the Hollower</a></li>
-          <li><a href="/blog/black-market-trinkets.html">Black Market Trinkets Guide</a></li>
+          <li><a href="missable-trinkets.html">Mina the Hollower Missable Trinkets Guide</a></li>
+          <li><a href="all-trinket-locations.html">All Trinket Locations</a></li>
+          <li><a href="best-trinkets.html">Best Trinkets in Mina the Hollower</a></li>
+          <li><a href="black-market-trinkets.html">Black Market Trinkets Guide</a></li>
         </ul>
       </section>
     </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
+  <footer class="weapon-footer">
+    <div>
       <p>Mina the Hollower Guide — cleanup checklists for trinkets, weapons, collectibles, and 100% completion.</p>
     </div>
   </footer>
