@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How Hard Is 100% in Mina the Hollower? Achievement Cleanup Guide</title>
+  <meta name="description" content="How hard is 100% completion in Mina the Hollower? A practical achievement cleanup guide covering missed trinkets, mirrors, Below Zero warnings, Bounding Bonanza, weapons, and final checks." />
+  <meta name="keywords" content="Mina the Hollower 100%, Mina the Hollower achievements, Mina the Hollower achievement guide, Mina the Hollower Below Zero, Mina the Hollower Bounding Bonanza, Mina the Hollower completion guide" />
+
+  <link rel="canonical" href="https://www.minahollower.com/blog/achievement-difficulty.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Hard Is 100% in Mina the Hollower?" />
+  <meta property="og:description" content="Achievement cleanup guide for Mina the Hollower, including missed trinkets, mirrors, challenge run warnings, weapons, and 100% completion checks." />
+  <meta property="og:url" content="https://www.minahollower.com/blog/achievement-difficulty.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Hard Is 100% in Mina the Hollower?" />
+  <meta name="twitter:description" content="A practical Mina the Hollower achievement cleanup guide for players going after 100% completion." />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --forest-2: #1e3a2b;
+      --parchment: #f5ead8;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.34), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.12), transparent 28%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.55);
+    }
+
+    a:hover {
+      color: var(--candle-pale);
+    }
+
+    .achievement-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 4rem;
+    }
+
+    .achievement-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0 1.4rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2rem;
+    }
+
+    .achievement-brand {
+      color: var(--candle-light);
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: none;
+    }
+
+    .achievement-nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .achievement-nav-links a {
+      color: var(--bone);
+      border-bottom: none;
+    }
+
+    .achievement-nav-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .achievement-header {
+      padding: 2.2rem;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.08), rgba(245,234,216,0.025)),
+        rgba(8, 15, 10, 0.72);
+      margin-bottom: 1.6rem;
+    }
+
+    .achievement-kicker {
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .achievement-header h1 {
+      color: var(--parchment);
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-header p {
+      max-width: 780px;
+      color: var(--bone);
+      font-size: 1.05rem;
+    }
+
+    .achievement-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .achievement-pill {
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+      padding: 0.25rem 0.55rem;
+      font-size: 0.78rem;
+    }
+
+    .achievement-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .achievement-toc {
+      position: sticky;
+      top: 1rem;
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.58);
+      padding: 1rem;
+    }
+
+    .achievement-toc strong {
+      display: block;
+      color: var(--parchment);
+      margin-bottom: 0.65rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .achievement-toc a {
+      display: block;
+      color: var(--bone-dark);
+      border-bottom: none;
+      padding: 0.34rem 0;
+      font-size: 0.92rem;
+    }
+
+    .achievement-toc a:hover {
+      color: var(--candle-light);
+    }
+
+    .achievement-article {
+      min-width: 0;
+    }
+
+    .achievement-box {
+      border: 1px solid var(--line-soft);
+      background: rgba(245,234,216,0.045);
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .achievement-box.highlight {
+      border-color: rgba(200,134,10,0.42);
+      background:
+        linear-gradient(180deg, rgba(200,134,10,0.12), rgba(245,234,216,0.04));
+    }
+
+    .achievement-box.warning {
+      border-color: rgba(220, 120, 70, 0.45);
+      background:
+        linear-gradient(180deg, rgba(220,120,70,0.12), rgba(245,234,216,0.035));
+    }
+
+    .achievement-box h2 {
+      color: var(--parchment);
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 0.65rem;
+    }
+
+    .achievement-box h3 {
+      color: var(--candle-pale);
+      font-size: 1.12rem;
+      margin: 1rem 0 0.35rem;
+    }
+
+    .achievement-box p {
+      margin-bottom: 0.85rem;
+    }
+
+    .achievement-box ul,
+    .achievement-box ol {
+      margin: 0.6rem 0 0.8rem 1.25rem;
+    }
+
+    .achievement-box li {
+      margin-bottom: 0.4rem;
+    }
+
+    .achievement-checklist {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 0.8rem;
+    }
+
+    .achievement-check {
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.42);
+      padding: 0.8rem;
+    }
+
+    .achievement-check strong {
+      color: var(--parchment);
+    }
+
+    .related-guides {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    .related-guides a {
+      display: block;
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.42);
+      padding: 0.85rem;
+      color: var(--bone);
+      text-decoration: none;
+    }
+
+    .related-guides a:hover {
+      border-color: rgba(200,134,10,0.48);
+      color: var(--candle-light);
+    }
+
+    .achievement-footer {
+      border-top: 1px solid var(--line);
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      color: var(--bone-dark);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .achievement-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .achievement-toc {
+        position: static;
+      }
+
+      .related-guides {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .achievement-page {
+        padding: 1rem 1rem 3rem;
+      }
+
+      .achievement-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .achievement-header {
+        padding: 1.4rem;
+      }
+
+      .achievement-box {
+        padding: 1rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Hard Is 100% in Mina the Hollower? Achievement Cleanup Guide",
+    "description": "A practical achievement cleanup guide for Mina the Hollower, covering 100% difficulty, challenge run warnings, missed trinkets, mirrors, weapons, and final checks.",
+    "url": "https://www.minahollower.com/blog/achievement-difficulty.html",
+    "author": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="achievement-page">
+
+    <div class="achievement-nav">
+      <a class="achievement-brand" href="../index.html">MinaHollower</a>
+      <div class="achievement-nav-links">
+        <a href="index.html">Blog</a>
+        <a href="100-percent-cleanup-checklist.html">100% Checklist</a>
+        <a href="missable-trinkets.html">Missable Trinkets</a>
+        <a href="mirror-guide.html">Mirror Guide</a>
+      </div>
+    </div>
+
+    <header class="achievement-header">
+      <div class="achievement-kicker">Achievement cleanup guide</div>
+      <h1>How Hard Is 100% in Mina the Hollower?</h1>
+      <p>
+        Getting 100% in Mina the Hollower is not only about beating bosses. The harder part is often cleanup:
+        missed trinkets, unclear achievement rules, mirror backtracking, weapon checks, challenge-run restrictions,
+        and knowing what can quietly ruin a completion attempt.
+      </p>
+
+      <div class="achievement-meta">
+        <span class="achievement-pill">100% Completion</span>
+        <span class="achievement-pill">Achievements</span>
+        <span class="achievement-pill">Cleanup</span>
+        <span class="achievement-pill">Spoiler-light</span>
+      </div>
+    </header>
+
+    <div class="achievement-layout">
+
+      <div class="achievement-toc">
+        <strong>On this page</strong>
+        <a href="#quick-answer">Quick Answer</a>
+        <a href="#is-it-hard">Is 100% Hard?</a>
+        <a href="#confusing">Why Achievements Are Confusing</a>
+        <a href="#below-zero">Below Zero Warning</a>
+        <a href="#bounding-bonanza">Bounding Bonanza</a>
+        <a href="#trinkets">Missable Trinkets</a>
+        <a href="#mirrors">Mirrors & Backtracking</a>
+        <a href="#weapons">Weapons & Sidearms</a>
+        <a href="#final-checklist">Final Checklist</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <main class="achievement-article">
+
+        <section class="achievement-box highlight" id="quick-answer">
+          <h2>Quick Answer</h2>
+          <p>
+            <strong>100% in Mina the Hollower is moderately difficult, but the difficulty is more about tracking than raw execution.</strong>
+            The game has hard bosses and precise platforming, but most completion frustration comes from not knowing what still counts,
+            what was missed, and which achievements need special conditions.
+          </p>
+          <p>
+            If you are going for completion, use this page together with the
+            <a href="100-percent-cleanup-checklist.html">Mina the Hollower 100% Cleanup Checklist</a>.
+            That page works as the broad route; this page focuses on achievement difficulty and common completion mistakes.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="is-it-hard">
+          <h2>Is 100% Hard?</h2>
+          <p>
+            Mina's 100% completion is not impossible, but it is easy to make messy if you play without notes.
+            A normal clear teaches combat and movement, while a completion run asks different questions:
+          </p>
+
+          <ul>
+            <li>Did you miss any trinkets?</li>
+            <li>Did you understand how mirrors affect backtracking?</li>
+            <li>Did you collect all required items for completion?</li>
+            <li>Did you accidentally break a challenge-run condition?</li>
+            <li>Do you know which achievements require specific setups?</li>
+          </ul>
+
+          <p>
+            For many players, the hard part is not a single boss. It is the late-game sweep where you know something is missing,
+            but the game does not always make it obvious what that missing thing is.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="confusing">
+          <h2>Why Mina Achievements Can Feel Confusing</h2>
+          <p>
+            Mina the Hollower uses a lot of old-school design language: suspicious objects, blocked paths, hidden routes,
+            revisit logic, and mechanics that seem decorative until they become important. That style is part of the charm,
+            but it also makes achievements harder to track.
+          </p>
+
+          <h3>The main problem is wording</h3>
+          <p>
+            Some achievements and challenge-style runs are easy to misunderstand because short online tips may say things like
+            “avoid power ups” or “do not collect X,” without clearly explaining what counts, what is safe, and what permanently
+            changes completion tracking.
+          </p>
+
+          <h3>Cleanup is different from finishing the game</h3>
+          <p>
+            Finishing Mina proves you can clear the adventure. Getting 100% means you need to understand the game's hidden structure:
+            trinkets, mirrors, weapons, collectibles, challenge checks, and achievement-specific setups.
+          </p>
+        </section>
+
+        <section class="achievement-box warning" id="below-zero">
+          <h2>Below Zero Warning</h2>
+          <p>
+            Challenge runs like <strong>Below Zero</strong> are where players should be especially careful. The biggest risk is assuming
+            that a pickup is safe because it does not feel like a normal upgrade.
+          </p>
+
+          <p>
+            Before starting a Below Zero-style run, make sure you know exactly:
+          </p>
+
+          <ul>
+            <li>what counts as a forbidden pickup;</li>
+            <li>what counts toward collection or completion tracking;</li>
+            <li>whether gems, upgrades, trinkets, or other items affect the run;</li>
+            <li>which mistakes permanently ruin the attempt;</li>
+            <li>whether the run can be recovered or must be restarted.</li>
+          </ul>
+
+          <p>
+            The safest rule is: <strong>do not rely on vague blurbs.</strong> If a challenge has strict restrictions, write down the rule
+            before you start and treat anything tied to collection or completion tracking as suspicious until confirmed.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="bounding-bonanza">
+          <h2>Bounding Bonanza and Setup-Based Achievements</h2>
+          <p>
+            Some Mina achievements are not difficult because they require extreme skill. They are difficult because the setup is specific.
+            <strong>Bounding Bonanza</strong> is a good example of an achievement that many players may not trigger naturally during a normal run.
+          </p>
+
+          <p>
+            These achievements should be tracked separately during cleanup. Do not assume they will happen by accident.
+            If an achievement depends on a special enemy, room, weapon behavior, bounce, movement trick, or timing setup,
+            it belongs on your checklist.
+          </p>
+
+          <div class="achievement-checklist">
+            <div class="achievement-check">
+              <strong>Good habit:</strong> when you see an achievement that sounds mechanical, record both the achievement name and the setup location.
+            </div>
+            <div class="achievement-check">
+              <strong>Bad habit:</strong> leaving setup-based achievements until the very end without knowing where to attempt them reliably.
+            </div>
+          </div>
+        </section>
+
+        <section class="achievement-box" id="trinkets">
+          <h2>Missable Trinkets Matter for 100%</h2>
+          <p>
+            Trinkets are one of the biggest sources of completion anxiety because some are easy to overlook, and players often do not realize
+            what they missed until late cleanup.
+          </p>
+
+          <p>
+            Start with these two pages:
+          </p>
+
+          <ul>
+            <li><a href="missable-trinkets.html">Missable Trinkets</a> — for trinkets that are easy to overlook during a normal playthrough.</li>
+            <li><a href="all-trinket-locations.html">All Trinket Locations</a> — for checking the full list when you need a complete sweep.</li>
+          </ul>
+
+          <p>
+            If you lost access to or missed a trinket route, also check
+            <a href="black-market-trinkets.html">Black Market Trinkets</a> for recovery notes.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="mirrors">
+          <h2>Mirrors and Backtracking</h2>
+          <p>
+            Mirrors are easy to misread as a “come back later with an item” mechanic. Many players notice them early,
+            but do not immediately understand that they should think of mirrors as part of progression and cleanup.
+          </p>
+
+          <p>
+            This matters for 100% because mirrors affect how you revisit areas, how you plan backtracking, and how you mentally organize
+            the world after the main route opens up.
+          </p>
+
+          <p>
+            For a dedicated explanation, read the
+            <a href="mirror-guide.html">Mina the Hollower Mirror Guide</a>.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="weapons">
+          <h2>Weapons, Sidearms, and Completion Checks</h2>
+          <p>
+            Weapon choice does not only matter for bosses. It also changes how safe certain rooms feel during cleanup.
+            Some weapons make spacing easier, some help with safer punish windows, and some are better for players who want consistency
+            instead of raw damage.
+          </p>
+
+          <p>
+            For a completion run, your best weapon is not always the highest-damage option. It is the one that keeps you consistent while
+            checking old rooms, revisiting dangerous areas, and cleaning up missed objectives.
+          </p>
+
+          <p>
+            Read the <a href="best-weapons.html">Best Weapons Guide</a> if you are deciding whether to stick with your favorite weapon
+            or branch out for bosses and cleanup.
+          </p>
+        </section>
+
+        <section class="achievement-box highlight" id="final-checklist">
+          <h2>Final 100% Achievement Cleanup Checklist</h2>
+          <p>
+            Before you decide that your save is stuck, check these categories first:
+          </p>
+
+          <div class="achievement-checklist">
+            <div class="achievement-check">
+              <strong>Trinkets:</strong> compare your collection against the <a href="all-trinket-locations.html">full trinket list</a>.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Missable items:</strong> review the <a href="missable-trinkets.html">missable trinkets guide</a>.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Black Market recovery:</strong> check whether a missed trinket can be recovered later.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Mirrors:</strong> confirm you understand mirror routes and revisit logic.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Weapons:</strong> make sure weapon-related checks are complete.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Setup achievements:</strong> track achievements like Bounding Bonanza separately.
+            </div>
+
+            <div class="achievement-check">
+              <strong>Challenge runs:</strong> do not start a strict run until you know what invalidates it.
+            </div>
+          </div>
+
+          <p style="margin-top: 1rem;">
+            For the broader route, go back to the
+            <a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a>.
+          </p>
+        </section>
+
+        <section class="achievement-box" id="faq">
+          <h2>FAQ</h2>
+
+          <h3>Is Mina the Hollower hard to 100%?</h3>
+          <p>
+            Yes, but not only because of combat. The harder part is tracking everything: trinkets, mirrors, achievements,
+            challenge rules, and late-game cleanup.
+          </p>
+
+          <h3>Should I use a checklist before finishing the game?</h3>
+          <p>
+            For a blind first run, you can play naturally. For 100%, yes, a checklist helps a lot.
+            Mina has enough hidden and easily missed checks that notes save time later.
+          </p>
+
+          <h3>Are mirrors easy to miss?</h3>
+          <p>
+            Yes. Many players notice mirrors but assume they need a later item or ability. They are important for understanding cleanup
+            and backtracking.
+          </p>
+
+          <h3>Are challenge runs easy to ruin?</h3>
+          <p>
+            They can be. Any challenge with strict item or pickup restrictions should be researched before starting.
+            The safest approach is to confirm what counts as forbidden before collecting anything suspicious.
+          </p>
+        </section>
+
+        <section class="achievement-box">
+          <h2>Related Guides</h2>
+          <div class="related-guides">
+            <a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a>
+            <a href="missable-trinkets.html">Missable Trinkets</a>
+            <a href="mirror-guide.html">Mirror Guide</a>
+            <a href="best-weapons.html">Best Weapons</a>
+            <a href="all-trinket-locations.html">All Trinket Locations</a>
+            <a href="black-market-trinkets.html">Black Market Trinkets</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="achievement-footer">
+      <p>
+        MinaHollower is a fan-made guide site for Mina the Hollower. Mina the Hollower belongs to Yacht Club Games.
+      </p>
+    </footer>
+
+  </div>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

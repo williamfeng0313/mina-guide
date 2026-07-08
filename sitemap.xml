@@ -76,8 +76,16 @@
     <loc>https://www.minahollower.com/blog/hidden-mechanics.html</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.80</priority><priority>0.80</priority>
   </url>
+
+  <url>
+   <loc>https://www.minahollower.com/blog/achievement-difficulty.html</loc>
+   <lastmod>2026-07-08</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.80</priority>
+  </url>
+
 
   <url>
     <loc>https://www.minahollower.com/blog/mistakes.html</loc>
