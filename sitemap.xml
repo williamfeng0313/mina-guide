@@ -29,7 +29,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
- 
 
   <url>
     <loc>https://www.minahollower.com/blog/beginner-guide.html</loc>
@@ -115,6 +114,29 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <url>
+    <loc>https://www.minahollower.com/database/trinkets/bubble-ring.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+
+<url>
+    <loc>https://www.minahollower.com/database/trinkets/flame-guard.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+<url>
+    <loc>https://www.minahollower.com/database/trinkets/watchful-eye.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
 
   <url>
     <loc>https://www.minahollower.com/database/bosses/</loc>
