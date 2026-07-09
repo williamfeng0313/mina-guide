@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dark Deluxy in Mina the Hollower: Secret Boss Guide, Unlock Notes & Cleanup Tips</title>
+  <meta name="description" content="Dark Deluxy guide for Mina the Hollower, including secret boss unlock notes, difficulty, recommended builds, weapon tips, cleanup value, and related completion guides." />
+  <meta name="keywords" content="Mina the Hollower Dark Deluxy, Mina Dark Deluxy, Dark Deluxy boss, Mina the Hollower secret boss, Dark Deluxy guide, Mina the Hollower boss guide" />
+
+  <link rel="canonical" href="https://www.minahollower.com/blog/dark-deluxy-guide.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Dark Deluxy in Mina the Hollower" />
+  <meta property="og:description" content="Secret boss guide for Dark Deluxy in Mina the Hollower, with unlock notes, build advice, and cleanup tips." />
+  <meta property="og:url" content="https://www.minahollower.com/blog/dark-deluxy-guide.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dark Deluxy in Mina the Hollower" />
+  <meta name="twitter:description" content="Secret boss guide for Dark Deluxy, including unlock notes, recommended builds, and 100% cleanup tips." />
+
+  <meta name="theme-color" content="#1a1209" />
+
+  <style>
+    :root {
+      --ink: #120d07;
+      --forest: #14261c;
+      --parchment: #f5ead8;
+      --bone: #d8cdb8;
+      --bone-dark: #ad9a7a;
+      --candle: #c8860a;
+      --candle-light: #e8a020;
+      --candle-pale: #f4cc7a;
+      --line: rgba(200, 134, 10, 0.26);
+      --line-soft: rgba(200, 134, 10, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bone);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(61,112,85,0.34), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(200,134,10,0.12), transparent 28%),
+        linear-gradient(180deg, #0d1711 0%, var(--forest) 42%, #09100c 100%);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--candle-light);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232,160,32,0.55);
+    }
+
+    a:hover {
+      color: var(--candle-pale);
+    }
+
+    .dark-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 4rem;
+    }
+
+    .dark-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0 1.4rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2rem;
+    }
+
+    .dark-brand {
+      color: var(--candle-light);
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: none;
+    }
+
+    .dark-nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .dark-nav-links a {
+      color: var(--bone);
+      border-bottom: none;
+    }
+
+    .dark-nav-links a:hover {
+      color: var(--candle-light);
+    }
+
+    .dark-header {
+      padding: 2.2rem;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(245,234,216,0.08), rgba(245,234,216,0.025)),
+        rgba(8, 15, 10, 0.72);
+      margin-bottom: 1.6rem;
+    }
+
+    .dark-kicker {
+      color: var(--candle);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .dark-header h1 {
+      color: var(--parchment);
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .dark-header p {
+      max-width: 780px;
+      color: var(--bone);
+      font-size: 1.05rem;
+    }
+
+    .dark-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .dark-pill {
+      color: var(--candle-pale);
+      border: 1px solid rgba(200,134,10,0.32);
+      background: rgba(200,134,10,0.08);
+      padding: 0.25rem 0.55rem;
+      font-size: 0.78rem;
+    }
+
+    .dark-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .dark-toc {
+      position: sticky;
+      top: 1rem;
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.58);
+      padding: 1rem;
+    }
+
+    .dark-toc strong {
+      display: block;
+      color: var(--parchment);
+      margin-bottom: 0.65rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dark-toc a {
+      display: block;
+      color: var(--bone-dark);
+      border-bottom: none;
+      padding: 0.34rem 0;
+      font-size: 0.92rem;
+    }
+
+    .dark-toc a:hover {
+      color: var(--candle-light);
+    }
+
+    .dark-article {
+      min-width: 0;
+    }
+
+    .dark-box {
+      border: 1px solid var(--line-soft);
+      background: rgba(245,234,216,0.045);
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .dark-box.highlight {
+      border-color: rgba(200,134,10,0.42);
+      background:
+        linear-gradient(180deg, rgba(200,134,10,0.12), rgba(245,234,216,0.04));
+    }
+
+    .dark-box.warning {
+      border-color: rgba(220, 120, 70, 0.45);
+      background:
+        linear-gradient(180deg, rgba(220,120,70,0.12), rgba(245,234,216,0.035));
+    }
+
+    .dark-box h2 {
+      color: var(--parchment);
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 0.65rem;
+    }
+
+    .dark-box h3 {
+      color: var(--candle-pale);
+      font-size: 1.12rem;
+      margin: 1rem 0 0.35rem;
+    }
+
+    .dark-box p {
+      margin-bottom: 0.85rem;
+    }
+
+    .dark-box ul {
+      margin: 0.6rem 0 0.8rem 1.25rem;
+    }
+
+    .dark-box li {
+      margin-bottom: 0.4rem;
+    }
+
+    .dark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .dark-card {
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.42);
+      padding: 0.85rem;
+    }
+
+    .dark-card strong {
+      color: var(--parchment);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .related-guides {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    .related-guides a {
+      display: block;
+      border: 1px solid var(--line-soft);
+      background: rgba(5,12,8,0.42);
+      padding: 0.85rem;
+      color: var(--bone);
+      text-decoration: none;
+    }
+
+    .related-guides a:hover {
+      border-color: rgba(200,134,10,0.48);
+      color: var(--candle-light);
+    }
+
+    .dark-footer {
+      border-top: 1px solid var(--line);
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      color: var(--bone-dark);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .dark-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .dark-toc {
+        position: static;
+      }
+
+      .dark-grid,
+      .related-guides {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .dark-page {
+        padding: 1rem 1rem 3rem;
+      }
+
+      .dark-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .dark-header {
+        padding: 1.4rem;
+      }
+
+      .dark-box {
+        padding: 1rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dark Deluxy in Mina the Hollower: Secret Boss Guide, Unlock Notes & Cleanup Tips",
+    "description": "A practical guide to Dark Deluxy in Mina the Hollower, including secret boss unlock notes, difficulty, recommended builds, and 100% cleanup value.",
+    "url": "https://www.minahollower.com/blog/dark-deluxy-guide.html",
+    "author": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MinaHollower"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="dark-page">
+
+    <div class="dark-nav">
+      <a class="dark-brand" href="../index.html">MinaHollower</a>
+      <div class="dark-nav-links">
+        <a href="index.html">Blog</a>
+        <a href="boss-tier-list.html">Boss Tier List</a>
+        <a href="best-builds.html">Best Builds</a>
+        <a href="100-percent-cleanup-checklist.html">100% Checklist</a>
+      </div>
+    </div>
+
+    <header class="dark-header">
+      <div class="dark-kicker">Secret boss guide</div>
+      <h1>Dark Deluxy in Mina the Hollower</h1>
+      <p>
+        Dark Deluxy is one of Mina the Hollower's secret boss fights and a common completion question for players
+        checking optional bosses, Spark Containers, and 100% cleanup routes. This guide explains what to know before
+        the fight, how to think about the unlock, and which preparation choices make the encounter less frustrating.
+      </p>
+
+      <div class="dark-meta">
+        <span class="dark-pill">Secret Boss</span>
+        <span class="dark-pill">Boss Guide</span>
+        <span class="dark-pill">100% Cleanup</span>
+        <span class="dark-pill">Spoiler-light</span>
+      </div>
+    </header>
+
+    <div class="dark-layout">
+
+      <div class="dark-toc">
+        <strong>On this page</strong>
+        <a href="#quick-answer">Quick Answer</a>
+        <a href="#what-is">What Is Dark Deluxy?</a>
+        <a href="#unlock">Unlock Notes</a>
+        <a href="#difficulty">How Hard Is It?</a>
+        <a href="#build">Recommended Build</a>
+        <a href="#weapons">Best Weapons</a>
+        <a href="#cleanup">100% Cleanup Value</a>
+        <a href="#mistakes">Common Mistakes</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <main class="dark-article">
+
+        <section class="dark-box highlight" id="quick-answer">
+          <h2>Quick Answer</h2>
+          <p>
+            <strong>Dark Deluxy is an optional secret boss in Mina the Hollower, usually reached through a Spark-gated route connected to the Windy Generator and Luxy.</strong>
+            Public guide references commonly describe the setup as requiring two Spark Containers / two Spark slots, then escorting Luxy back to trigger the encounter.
+          </p>
+          <p>
+            For completion players, Dark Deluxy matters because secret bosses and Spark-related rewards can affect late-game cleanup planning.
+            If you are tracking 100%, pair this guide with the
+            <a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a> and
+            <a href="achievement-difficulty.html">100% Achievement Guide</a>.
+          </p>
+        </section>
+
+        <section class="dark-box" id="what-is">
+          <h2>What Is Dark Deluxy?</h2>
+          <p>
+            Dark Deluxy is a secret / optional boss tied to Luxy and the Windy Generator route.
+            It is not the kind of boss many players will naturally find on a straight first clear, which is why it often appears in secret boss,
+            completion, and cleanup discussions.
+          </p>
+          <p>
+            The important thing is to treat Dark Deluxy as a completion check rather than just another normal boss.
+            If you are already sweeping old areas, checking Spark routes, or trying to understand what is missing from your save,
+            this fight belongs on your cleanup list.
+          </p>
+        </section>
+
+        <section class="dark-box warning" id="unlock">
+          <h2>Unlock Notes</h2>
+          <p>
+            Reported guides describe Dark Deluxy as being connected to a two-Spark route near the Windy Generator.
+            The general idea is:
+          </p>
+
+          <ul>
+            <li>have enough Spark Containers for the two-Spark door / route;</li>
+            <li>enter the Spark-gated path connected to the Windy Generator area;</li>
+            <li>escort Luxy back toward the generator route;</li>
+            <li>trigger the Dark Deluxy encounter.</li>
+          </ul>
+
+          <p>
+            If this does not trigger for you, do not assume your save is broken immediately. Recheck your Spark progress,
+            the correct route, and whether the relevant area boss / progression step has been completed.
+          </p>
+        </section>
+
+        <section class="dark-box" id="difficulty">
+          <h2>How Hard Is Dark Deluxy?</h2>
+          <p>
+            Dark Deluxy is difficult mostly because it can punish slow reactions, poor spacing, and panic movement.
+            Players commonly describe the fight as fast and awkward if you enter with a weapon or setup that feels too slow for your playstyle.
+          </p>
+
+          <div class="dark-grid">
+            <div class="dark-card">
+              <strong>Hard for</strong>
+              <span>Players using slow weapons without clean punish timing.</span>
+            </div>
+            <div class="dark-card">
+              <strong>Easier with</strong>
+              <span>Controlled movement, safe spacing, and a build you already trust.</span>
+            </div>
+            <div class="dark-card">
+              <strong>Main risk</strong>
+              <span>Overchasing hits and losing control of the arena.</span>
+            </div>
+            <div class="dark-card">
+              <strong>Best mindset</strong>
+              <span>Survive first, punish second.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="dark-box" id="build">
+          <h2>Recommended Build</h2>
+          <p>
+            For most players, the safest Dark Deluxy build is not the highest-DPS setup. Use a weapon you can control,
+            then add Trinkets that reduce mistakes or improve consistency.
+          </p>
+
+          <ul>
+            <li><strong>Safe weapon:</strong> choose something with a rhythm you already understand.</li>
+            <li><strong>Survival Trinket:</strong> helps while learning the movement and timing.</li>
+            <li><strong>Utility Trinket:</strong> improves consistency during cleanup or repeat attempts.</li>
+            <li><strong>Damage option:</strong> add damage only after you can survive the fight.</li>
+          </ul>
+
+          <p>
+            For broader loadout advice, read the
+            <a href="best-builds.html">Best Builds Guide</a> and
+            <a href="best-weapons.html">Best Weapons Guide</a>.
+          </p>
+        </section>
+
+        <section class="dark-box" id="weapons">
+          <h2>Best Weapons for Dark Deluxy</h2>
+          <p>
+            The best weapon for Dark Deluxy depends on whether you need safety, speed, or punish damage.
+            If a weapon feels too slow for the fight, do not force it just because it has high damage.
+          </p>
+
+          <h3>Use a faster or safer weapon if you are still learning</h3>
+          <p>
+            Dark Deluxy can make slow setups feel worse because the fight rewards clean movement and quick decisions.
+            A safer weapon can help you spend more time learning the boss instead of resetting after panic mistakes.
+          </p>
+
+          <h3>Use a heavy weapon only if you trust your timing</h3>
+          <p>
+            Heavy weapons can work, but only if you wait for clear punish windows. Swinging early or chasing damage
+            usually makes the fight harder.
+          </p>
+        </section>
+
+        <section class="dark-box" id="cleanup">
+          <h2>Dark Deluxy and 100% Cleanup</h2>
+          <p>
+            Dark Deluxy belongs on a completion checklist because secret bosses are easy to forget while cleaning up
+            Trinkets, mirrors, weapons, Sparks, and achievement-specific checks.
+          </p>
+
+          <p>
+            If you are working through everything after the main route, use these pages together:
+          </p>
+
+          <ul>
+            <li><a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a></li>
+            <li><a href="achievement-difficulty.html">100% Achievement Guide</a></li>
+            <li><a href="boss-tier-list.html">Boss Tier List</a></li>
+            <li><a href="best-builds.html">Best Builds</a></li>
+          </ul>
+        </section>
+
+        <section class="dark-box" id="mistakes">
+          <h2>Common Mistakes</h2>
+          <ul>
+            <li><strong>Forcing a slow weapon:</strong> if the fight feels too fast, switch instead of stubbornly repeating.</li>
+            <li><strong>Chasing damage:</strong> prioritize survival and safe punish windows.</li>
+            <li><strong>Ignoring cleanup context:</strong> secret bosses should be tracked separately during 100% runs.</li>
+            <li><strong>Assuming the route is broken:</strong> recheck Spark requirements and Luxy routing before giving up.</li>
+          </ul>
+        </section>
+
+        <section class="dark-box" id="faq">
+          <h2>FAQ</h2>
+
+          <h3>Is Dark Deluxy optional?</h3>
+          <p>
+            Dark Deluxy is generally treated as a secret / optional boss rather than a normal required first-clear boss.
+            Completion players should still track it carefully.
+          </p>
+
+          <h3>Where is Dark Deluxy?</h3>
+          <p>
+            Public guides commonly connect Dark Deluxy to the Windy Generator route, Luxy, and a two-Spark door / two-Spark requirement.
+          </p>
+
+          <h3>What is the reward?</h3>
+          <p>
+            Public guides commonly describe Dark Deluxy as connected to a Spark Container reward. If you are tracking 100%,
+            verify your Spark progress after the encounter.
+          </p>
+
+          <h3>What build should I use?</h3>
+          <p>
+            Use a build that keeps you consistent. If you are still learning, survival and safe spacing matter more than maximum damage.
+          </p>
+        </section>
+
+        <section class="dark-box">
+          <h2>Related Guides</h2>
+          <div class="related-guides">
+            <a href="boss-tier-list.html">Boss Tier List</a>
+            <a href="best-builds.html">Best Builds</a>
+            <a href="best-weapons.html">Best Weapons</a>
+            <a href="best-trinkets.html">Best Trinkets</a>
+            <a href="achievement-difficulty.html">100% Achievement Guide</a>
+            <a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a>
+            <a href="../database/bosses/index.html">Boss Database</a>
+            <a href="../tools/checklist.html">Checklist Tool</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="dark-footer">
+      <p>
+        MinaHollower is a fan-made guide site for Mina the Hollower. Mina the Hollower belongs to Yacht Club Games.
+      </p>
+    </footer>
+
+  </div>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
