@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Trinkets in Mina the Hollower: Locations, Effects & Best Uses</title>
-<meta name="description" content="Complete Mina the Hollower trinket database with all 60 trinkets, locations, effects, shop notes, cleanup value, and links to detailed trinket guides.">
+<meta name="description" content="Complete Mina the Hollower trinket database with locations, effects, shop notes, cleanup value, and links to detailed trinket guides.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -66,14 +66,14 @@
     </p>
   </section>
   <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:1.5rem;">
-    <button onclick="filterTrinkets('all')" id="tab-all" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.5); background:rgba(200,134,10,0.2); color:var(--candle-light);">All (60)</button>
+    <button onclick="filterTrinkets('other')" id="tab-other" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Other Areas (26)</button>
     <button onclick="filterTrinkets('ossex')" id="tab-ossex" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Ossex (15)</button>
     <button onclick="filterTrinkets('outskirts')" id="tab-outskirts" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">S. Outskirts (2)</button>
     <button onclick="filterTrinkets('heath')" id="tab-heath" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">E. Heath (4)</button>
     <button onclick="filterTrinkets('bayou')" id="tab-bayou" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Nox's Bayou (6)</button>
     <button onclick="filterTrinkets('wilds')" id="tab-wilds" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">W. Wilds (5)</button>
     <button onclick="filterTrinkets('crypt')" id="tab-crypt" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Q. Crypt (4)</button>
-    <button onclick="filterTrinkets('other')" id="tab-other" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Other Areas (24)</button>
+    <button onclick="filterTrinkets('other')" id="tab-other" style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:3px; cursor:pointer; border:1px solid rgba(200,134,10,0.25); background:transparent; color:var(--bone);">Other Areas (26)</button>
   </div>
   <div id="trinket-container" class="trinket-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0.75rem; margin-bottom:2.5rem;">
         <div class="trinket-item" data-area="ossex"><div class="trinket-name"><a href="plasma-funnel.html" style="color:inherit;text-decoration:none;">Plasma Funnel</a></div><div class="trinket-effect">Drink Plasma Vials twice as fast. Don't lose Vials when hit.</div><div class="trinket-location">📍 Ossex — Trinket Bazaar shop</div></div>
@@ -163,6 +163,19 @@
             📍 Sandfalls — Score 5,000 points in the Ring Dive Parlor mini-game.
           </div>
         </div>
+
+        <div class="trinket-item" data-area="other">
+          <div class="trinket-name">
+            <a href="joule-syringe.html" style="color:inherit;text-decoration:none;">Joule Syringe</a>
+          </div>
+          <div class="trinket-effect">
+            Gain Plasma from Sidearms, unless at 1 HP. At 0 Joules, spend health to use Sidearms.
+          </div>
+          <div class="trinket-location">
+            📍 Bone Beach — Treasure chest.
+          </div>
+        </div>
+
         <div class="trinket-item" data-area="other"><div class="trinket-name"><a href="bellows-bustle.html" style="color:inherit;text-decoration:none;">Bellows Bustle</a></div><div class="trinket-effect">Press Jump while airborne for an air dash. Covers gaps and repositions in combat.</div><div class="trinket-location">📍 Sifted Sands — Win 3 races hosted by Blaise in the Sandfalls.</div></div>
         <div class="trinket-item" data-area="other">
           <div class="trinket-name">
