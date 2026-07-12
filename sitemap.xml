@@ -157,9 +157,16 @@
     <priority>0.95</priority>
   </url>
 
+    <url>
+    <loc>https://www.minahollower.com/database/trinkets/willow-the-wisp.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <url>
     <loc>https://www.minahollower.com/database/trinkets/twill-weave.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
