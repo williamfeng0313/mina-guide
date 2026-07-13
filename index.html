@@ -1054,6 +1054,183 @@
      }
   }
     
+  .secrets-feature {
+  position: relative;
+  max-width: 1180px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.4rem;
+  z-index: 5;
+}
+
+.secrets-feature-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow: hidden;
+  border: 1px solid rgba(200, 134, 10, 0.4);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(200, 134, 10, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(245, 234, 216, 0.08),
+      rgba(200, 134, 10, 0.05)
+    ),
+    rgba(5, 12, 8, 0.72);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.35),
+    inset 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.secrets-feature-inner::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(200, 134, 10, 0.12);
+  pointer-events: none;
+}
+
+.secrets-feature-copy,
+.secrets-feature-journal {
+  position: relative;
+  z-index: 2;
+}
+
+.secrets-feature-topline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.secrets-feature-badge,
+.secrets-feature-status {
+  display: inline-block;
+  padding: 0.22rem 0.55rem;
+  font-family: "Cinzel", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.secrets-feature-badge {
+  color: var(--candle-pale);
+  border: 1px solid rgba(200, 134, 10, 0.38);
+  background: rgba(200, 134, 10, 0.1);
+}
+
+.secrets-feature-status {
+  color: #9fd6b0;
+  border: 1px solid rgba(126, 205, 160, 0.32);
+  background: rgba(61, 112, 85, 0.14);
+}
+
+.secrets-feature h2 {
+  max-width: 720px;
+  margin-bottom: 0.9rem;
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  line-height: 1.15;
+}
+
+.secrets-feature-lead {
+  max-width: 720px;
+  color: var(--bone);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.secrets-feature-update {
+  margin-top: 0.85rem;
+  color: var(--candle-light);
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.secrets-feature-journal {
+  padding: 1.15rem;
+  border: 1px solid rgba(245, 234, 216, 0.14);
+  background: rgba(245, 234, 216, 0.045);
+}
+
+.secrets-journal-title {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(200, 134, 10, 0.2);
+  color: var(--candle-light);
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.secrets-journal-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed rgba(245, 234, 216, 0.12);
+}
+
+.secrets-journal-item:last-child {
+  border-bottom: none;
+}
+
+.secrets-journal-item > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--candle-light);
+  border: 1px solid rgba(200, 134, 10, 0.25);
+  background: rgba(200, 134, 10, 0.08);
+}
+
+.secrets-journal-item strong {
+  display: block;
+  margin-bottom: 0.1rem;
+  color: var(--parchment);
+  font-family: "IM Fell English", serif;
+  font-size: 1rem;
+}
+
+.secrets-journal-item small {
+  display: block;
+  color: var(--bone-dark);
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+
+  .secrets-feature-inner {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 620px) {
+
+  .secrets-feature {
+    padding: 0 1rem;
+  }
+
+  .secrets-feature-inner {
+    padding: 1.35rem;
+  }
+
+  .secrets-feature h2 {
+    font-size: 1.7rem;
+  }
+
+}
   </style>
 
   <script type="application/ld+json">
@@ -1130,7 +1307,8 @@
 
           <p class="hero-desc">
             Step into Tenebrous Isle with a complete fan-made guide built for English players:
-            all 60 Trinkets, boss strategies, best builds, weapons, tools, and completion routes —
+            all 60 Trinkets, boss strategies, best builds, weapons, tools, completion routes,
+            and a continuously updated archive of hidden secrets —
             written like an old field journal rather than another neon game wiki.
           </p>
 
@@ -1191,6 +1369,34 @@
                 </div>
               </a>
             </li>
+
+            <li>
+
+              <a
+                class="journal-link"
+                href="blog/hidden-secrets.html"
+              >
+            
+                <div class="journal-icon">
+                  ✦
+                </div>
+            
+                <div>
+            
+                  <strong>
+                    Secret Archive
+                  </strong>
+            
+                  <span>
+                    A continuously updated record of hidden bosses,
+                    endings, easter eggs, and new community discoveries.
+                  </span>
+            
+                </div>
+            
+              </a>
+            
+            </li>
           </ul>
         </aside>
       </div>
@@ -1206,9 +1412,150 @@
 
     <main class="page-wrap">
 
-      <section class="section" aria-label="Featured guides">
+      <section class="secrets-feature" aria-label="Hidden secrets living guide">
 
-        <main class="page-wrap">
+        <div class="secrets-feature-inner">
+      
+          <div class="secrets-feature-copy">
+      
+            <div class="secrets-feature-topline">
+      
+              <span class="secrets-feature-badge">
+                Living Guide
+              </span>
+      
+              <span class="secrets-feature-status">
+                Continuously Updated
+              </span>
+      
+            </div>
+      
+            <p class="section-kicker">
+              Beyond 100% Completion
+            </p>
+      
+            <h2>
+              Hidden Secrets in Mina the Hollower You May Have Missed
+            </h2>
+      
+            <p class="secrets-feature-lead">
+              Finished the game and think you've seen everything?
+              Tenebrous Isle may still be hiding secret bosses, unusual transformations,
+              hidden endings, easter eggs, strange interactions, and discoveries
+              the community is still investigating.
+            </p>
+      
+            <p class="secrets-feature-update">
+              New discoveries are added as they are verified.
+            </p>
+      
+            <div class="hero-ctas">
+      
+              <a
+                href="blog/hidden-secrets.html"
+                class="btn-primary"
+              >
+                Explore Hidden Secrets
+              </a>
+      
+              <a
+                href="blog/hidden-mechanics.html"
+                class="btn-secondary"
+              >
+                Hidden Mechanics
+              </a>
+      
+            </div>
+      
+          </div>
+      
+      
+          <div class="secrets-feature-journal">
+      
+            <div class="secrets-journal-title">
+              Current Secret Archive
+            </div>
+      
+            <div class="secrets-journal-item">
+      
+              <span>
+                ✦
+              </span>
+      
+              <div>
+                <strong>
+                  Hidden Endings
+                </strong>
+      
+                <small>
+                  Unusual conditions and late-game outcomes.
+                </small>
+              </div>
+      
+            </div>
+      
+      
+            <div class="secrets-journal-item">
+      
+              <span>
+                💀
+              </span>
+      
+              <div>
+                <strong>
+                  Secret Bosses
+                </strong>
+      
+                <small>
+                  Optional encounters outside the main route.
+                </small>
+              </div>
+      
+            </div>
+      
+      
+            <div class="secrets-journal-item">
+      
+              <span>
+                🜏
+              </span>
+      
+              <div>
+                <strong>
+                  Hidden Transformations
+                </strong>
+      
+                <small>
+                  Equipment combinations with unexpected results.
+                </small>
+              </div>
+      
+            </div>
+      
+      
+            <div class="secrets-journal-item">
+      
+              <span>
+                ?
+              </span>
+      
+              <div>
+                <strong>
+                  Still Investigating
+                </strong>
+      
+                <small>
+                  Community mysteries that have not yet been fully verified.
+                </small>
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </section>
 
           <section class="section" aria-label="Priority guides">
             <div class="section-head">
@@ -1407,7 +1754,15 @@
           </p>
         </div>
 
+
         <div class="latest-grid">
+
+          <a class="update-card" href="blog/hidden-secrets.html">
+            <time> Living Guide · Continuously Updated </time>
+            <h3> Hidden Secrets </h3>
+            <p> Secret bosses, hidden endings, unusual transformations, easter eggs, and community mysteries still being investigated.</p>
+          </a>
+
           <a class="update-card" href="database/trinkets/bubble-ring.html">
             <time>Latest Trinket Note</time>
             <h3>Bubble Ring</h3>
@@ -1498,9 +1853,10 @@
           { keys: ["tool", "planner"], url: "tools/build-planner.html" },
           { keys: ["checklist", "100", "cleanup", "completion"], url: "blog/100-percent-cleanup-checklist.html" },
           { keys: ["beginner", "start"], url: "blog/beginner-guide.html" },
-          { keys: ["best", "rank"], url: "blog/best-trinkets.html" }
+          { keys: ["best", "rank"], url: "blog/best-trinkets.html" }，
           { keys: ["missable", "missing", "missed trinket"], url: "blog/missable-trinkets.html" },
-        ];
+          { keys: [ "secret", "secrets", "hidden secret", "easter egg", "hidden boss", "secret ending"], url: "blog/hidden-secrets.html“ },
+          ];
 
         const match = routes.find(route => route.keys.some(key => q.includes(key)));
         window.location.href = match ? match.url : "blog/index.html";
