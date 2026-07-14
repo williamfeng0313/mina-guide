@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Every Mina the Hollower Boss Rated from 1 to 5 Stars</title>
+
+<meta
+  name="description"
+  content="Every Mina the Hollower boss rated from 1 to 5 stars by difficulty, with explanations, first-playthrough notes, secret boss ratings, and community-informed analysis."
+>
+
+<link
+  rel="canonical"
+  href="https://www.minahollower.com/blog/boss-difficulty-ratings.html"
+>
+
+<meta
+  property="og:type"
+  content="article"
+>
+
+<meta
+  property="og:title"
+  content="Every Mina the Hollower Boss Rated from 1 to 5 Stars"
+>
+
+<meta
+  property="og:description"
+  content="A complete Mina the Hollower boss difficulty guide with 1-to-5-star ratings for major bosses, secret fights, and optional encounters."
+>
+
+<meta
+  property="og:url"
+  content="https://www.minahollower.com/blog/boss-difficulty-ratings.html"
+>
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+  rel="stylesheet"
+>
+
+<link
+  rel="stylesheet"
+  href="../assets/css/main.css"
+>
+
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279091849881318"
+  crossorigin="anonymous">
+</script>
+
+
+<style>
+
+.rating-intro-note {
+  margin: 1.4rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--candle);
+  background: rgba(245, 234, 216, 0.04);
+  color: var(--bone);
+  line-height: 1.65;
+}
+
+.spoiler-warning {
+  margin: 1.4rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(200, 134, 10, 0.28);
+  background: rgba(200, 134, 10, 0.07);
+}
+
+.spoiler-warning strong {
+  color: var(--parchment);
+}
+
+
+.rating-scale {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.rating-scale-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid rgba(200, 134, 10, 0.16);
+  background: rgba(245, 234, 216, 0.025);
+}
+
+.rating-scale-stars {
+  color: var(--candle-light);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.rating-scale-item strong {
+  color: var(--parchment);
+}
+
+
+.boss-rating-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 820px;
+}
+
+.boss-rating-table th,
+.boss-rating-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid rgba(200, 134, 10, 0.16);
+  text-align: left;
+  vertical-align: top;
+}
+
+.boss-rating-table th {
+  color: var(--candle-light);
+  font-family: "Cinzel", serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(200, 134, 10, 0.06);
+}
+
+.boss-rating-table td {
+  color: var(--bone);
+}
+
+.boss-rating-table a {
+  color: var(--parchment);
+  text-decoration: none;
+}
+
+.boss-rating-table a:hover {
+  color: var(--candle-light);
+}
+
+.stars {
+  color: var(--candle-light);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+
+.rating-group {
+  margin-top: 3rem;
+}
+
+.rating-group-header {
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(200, 134, 10, 0.25);
+}
+
+.rating-group-header h2 {
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: 1.55rem;
+  margin-bottom: 0.35rem;
+}
+
+.rating-group-header p {
+  color: var(--bone-dark);
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+
+.boss-rating-entry {
+  margin-bottom: 1.2rem;
+}
+
+.boss-rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.boss-rating-header h3 {
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.boss-type-label {
+  margin-bottom: 0.25rem;
+  color: var(--candle);
+  font-family: "Cinzel", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.boss-stars {
+  color: var(--candle-light);
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.boss-feature-image {
+  margin: 1.2rem 0;
+}
+
+.boss-feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(200, 134, 10, 0.22);
+}
+
+.boss-feature-image figcaption {
+  margin-top: 0.55rem;
+  color: var(--bone-dark);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  margin: 1.2rem 0;
+  border: 1px solid rgba(200, 134, 10, 0.2);
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(200, 134, 10, 0.1),
+      transparent 58%
+    ),
+    rgba(5, 12, 8, 0.5);
+  color: var(--bone-dark);
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.boss-rating-summary {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--candle);
+  background: rgba(245, 234, 216, 0.035);
+  color: var(--bone);
+  line-height: 1.6;
+}
+
+.community-view {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(200, 134, 10, 0.18);
+  background: rgba(245, 234, 216, 0.025);
+}
+
+.community-view h4 {
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.community-view p {
+  margin: 0;
+}
+
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.award-card {
+  padding: 1rem;
+  border: 1px solid rgba(200, 134, 10, 0.2);
+  background: rgba(245, 234, 216, 0.03);
+}
+
+.award-card span {
+  display: block;
+  color: var(--candle);
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.award-card h3 {
+  color: var(--parchment);
+  font-family: "IM Fell English", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.award-card p {
+  color: var(--bone-dark);
+  margin: 0;
+}
+
+
+.update-log-list {
+  margin-left: 1.2rem;
+}
+
+.update-log-list li {
+  margin-bottom: 0.65rem;
+}
+
+
+@media (max-width: 760px) {
+
+  .rating-scale-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .boss-rating-header {
+    flex-direction: column;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Every Mina the Hollower Boss Rated from 1 to 5 Stars",
+  "description": "Every Mina the Hollower boss rated from 1 to 5 stars by difficulty, with first-playthrough notes and community-informed analysis.",
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minahollower.com/blog/boss-difficulty-ratings.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tenebrous Isle Guide"
+  }
+}
+</script>
+
+</head>
+
+
+<body>
+
+
+<div class="announce">
+
+  Mina the Hollower launched May 29, 2026 - guides are live and updating daily
+
+  &nbsp;|&nbsp;
+
+  <a href="hidden-secrets.html">
+    New: Hidden Secrets Living Guide
+  </a>
+
+</div>
+
+
+<nav>
+
+  <a
+    href="../index.html"
+    class="nav-brand"
+  >
+    Tenebrous Isle Guide
+  </a>
+
+
+  <ul class="nav-links">
+
+    <li>
+      <a
+        href="index.html"
+        style="color:var(--candle-light)"
+      >
+        Blog
+      </a>
+    </li>
+
+    <li>
+      <a href="../database/index.html">
+        Database
+      </a>
+    </li>
+
+    <li>
+      <a href="../tools/index.html">
+        Tools
+      </a>
+    </li>
+
+    <li>
+      <a href="../about.html">
+        About
+      </a>
+    </li>
+
+  </ul>
+
+
+  <div class="nav-search">
+
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      aria-hidden="true"
+    >
+
+      <circle
+        cx="11"
+        cy="11"
+        r="8">
+      </circle>
+
+      <path d="m21 21-4.35-4.35"></path>
+
+    </svg>
+
+    <input
+      type="text"
+      placeholder="Search guides..."
+      aria-label="Search guides"
+      data-search-root="../"
+    >
+
+  </div>
+
+
+  <button
+    class="hamburger"
+    aria-label="Open menu"
+    onclick="document.getElementById('mobileNav').classList.add('open')"
+  >
+
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+
+      <path d="M3 6h18M3 12h18M3 18h18"></path>
+
+    </svg>
+
+  </button>
+
+</nav>
+
+
+<div
+  class="mobile-nav-overlay"
+  id="mobileNav"
+  role="dialog"
+  aria-label="Navigation"
+>
+
+  <button
+    class="mobile-close-btn"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+    aria-label="Close menu"
+  >
+    X
+  </button>
+
+  <a
+    href="../index.html"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+  >
+    Home
+  </a>
+
+  <a
+    href="index.html"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+  >
+    Blog
+  </a>
+
+  <a
+    href="../database/index.html"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+  >
+    Database
+  </a>
+
+  <a
+    href="../tools/index.html"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+  >
+    Tools
+  </a>
+
+  <a
+    href="../about.html"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+  >
+    About
+  </a>
+
+</div>
+
+
+
+<main class="page-wrap">
+
+
+  <div class="breadcrumb">
+
+    <a href="../index.html">
+      Home
+    </a>
+
+    /
+
+    <a href="index.html">
+      Blog
+    </a>
+
+    /
+
+    Boss Difficulty Ratings
+
+  </div>
+
+
+
+  <section class="hero compact">
+
+    <p class="eyebrow">
+      Boss Difficulty Guide · Updated July 14, 2026
+    </p>
+
+    <h1>
+      Every Mina the Hollower Boss Rated from 1 to 5 Stars
+    </h1>
+
+    <p class="hero-subtitle">
+      A first-playthrough difficulty rating for major bosses,
+      secret fights, optional encounters, and the biggest walls on Tenebrous Isle.
+    </p>
+
+  </section>
+
+
+
+  <div class="spoiler-warning">
+
+    <strong>Spoiler Warning:</strong>
+
+    This page names late-game bosses, secret encounters, and final-area fights.
+
+  </div>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Quick Answer: What Are the Hardest Bosses in Mina the Hollower?
+    </h2>
+
+    <p>
+      The strongest difficulty walls on a normal first playthrough are generally
+      Mined Mind, Frozen Horror, The Congealed, Thalassion,
+      and Furgus the Faithful.
+    </p>
+
+    <p>
+      Nox's Beast, The Carving Man, Locomotress Agnes,
+      Dark Deluxy, and Baron Lionel sit just below that top tier
+      because they can still punish greed heavily,
+      but become more manageable once their patterns are understood.
+    </p>
+
+    <div class="rating-intro-note">
+
+      These ratings are editorial difficulty ratings for a normal first playthrough.
+      Your weapon, Bone Up level, Sidearm, Trinkets, and playstyle can move a boss
+      up or down by an entire star.
+
+    </div>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      How the Difficulty Ratings Work
+    </h2>
+
+    <p>
+      The ratings assume a normal first playthrough.
+      They do not assume New Game+, challenge-run modifiers,
+      speedrun strategies, or a heavily optimized endgame build.
+    </p>
+
+    <div class="rating-scale">
+
+      <div class="rating-scale-item">
+
+        <div class="rating-scale-stars">
+          ★★★★★
+        </div>
+
+        <div>
+          <strong>Very Hard</strong>
+          — One of the biggest walls in the game.
+          Strong execution, pattern knowledge, and good resource management matter.
+        </div>
+
+      </div>
+
+
+      <div class="rating-scale-item">
+
+        <div class="rating-scale-stars">
+          ★★★★☆
+        </div>
+
+        <div>
+          <strong>Hard</strong>
+          — Punishes greed and repeated mistakes,
+          but becomes manageable once the fight is learned.
+        </div>
+
+      </div>
+
+
+      <div class="rating-scale-item">
+
+        <div class="rating-scale-stars">
+          ★★★☆☆
+        </div>
+
+        <div>
+          <strong>Moderate</strong>
+          — Requires real pattern recognition,
+          positioning, or phase adaptation.
+        </div>
+
+      </div>
+
+
+      <div class="rating-scale-item">
+
+        <div class="rating-scale-stars">
+          ★★☆☆☆
+        </div>
+
+        <div>
+          <strong>Easy</strong>
+          — A lighter challenge once the basic gimmick or pattern is understood.
+        </div>
+
+      </div>
+
+
+      <div class="rating-scale-item">
+
+        <div class="rating-scale-stars">
+          ★☆☆☆☆
+        </div>
+
+        <div>
+          <strong>Very Easy</strong>
+          — More of an introduction, mini-boss, or low-pressure encounter
+          than a serious wall.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Full Boss Difficulty Ratings
+    </h2>
+
+    <p>
+      This table focuses on the unique major and optional encounters most useful
+      to compare by difficulty.
+      Recurring forms and database duplicates are not always treated as separate fights.
+    </p>
+
+    <div style="overflow-x:auto;">
+
+      <table class="boss-rating-table">
+
+        <thead>
+
+          <tr>
+            <th>Boss</th>
+            <th>Difficulty</th>
+            <th>Type</th>
+            <th>Quick Verdict</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <td>Mined Mind</td>
+            <td class="stars">★★★★★</td>
+            <td>Main Boss</td>
+            <td>High pressure and very little room for repeated mistakes.</td>
+          </tr>
+
+          <tr>
+            <td>Frozen Horror</td>
+            <td class="stars">★★★★★</td>
+            <td>Main Boss</td>
+            <td>A severe late-region execution check.</td>
+          </tr>
+
+          <tr>
+            <td>The Congealed</td>
+            <td class="stars">★★★★★</td>
+            <td>Main Boss</td>
+            <td>One of the strongest required difficulty walls.</td>
+          </tr>
+
+          <tr>
+            <td>Thalassion</td>
+            <td class="stars">★★★★★</td>
+            <td>Secret / Optional</td>
+            <td>An optional superboss that can punish even well-prepared players.</td>
+          </tr>
+
+          <tr>
+            <td>Furgus the Faithful</td>
+            <td class="stars">★★★★★</td>
+            <td>Endgame Boss</td>
+            <td>A demanding Radiant Manor fight in an already exhausting sequence.</td>
+          </tr>
+
+          <tr>
+            <td>Nox's Beast</td>
+            <td class="stars">★★★★☆</td>
+            <td>Main Boss</td>
+            <td>A strong early-to-mid-game wall with dangerous arena pressure.</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="../database/bosses/carving-man.html">
+                The Carving Man
+              </a>
+            </td>
+            <td class="stars">★★★★☆</td>
+            <td>Main Boss</td>
+            <td>Fast pressure and a fight that punishes panic.</td>
+          </tr>
+
+          <tr>
+            <td>Locomotress Agnes</td>
+            <td class="stars">★★★★☆</td>
+            <td>Main Boss</td>
+            <td>Movement-heavy pressure makes careless positioning expensive.</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="../database/bosses/dark-deluxy.html">
+                Dark Deluxy
+              </a>
+            </td>
+            <td class="stars">★★★★☆</td>
+            <td>Secret Boss</td>
+            <td>A difficult optional encounter that rewards preparation.</td>
+          </tr>
+
+          <tr>
+            <td>Baron Lionel</td>
+            <td class="stars">★★★★☆</td>
+            <td>Endgame Boss</td>
+            <td>A fast late-game duel with strong punishment for missed reads.</td>
+          </tr>
+
+          <tr>
+            <td>The Duchess of Queensbury</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Main Boss</td>
+            <td>A first meaningful wall that teaches proper dodge-and-punish rhythm.</td>
+          </tr>
+
+          <tr>
+            <td>Mock Moon</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>Tricky at first, but much easier once the rhythm becomes familiar.</td>
+          </tr>
+
+          <tr>
+            <td>Madd House</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Major Boss</td>
+            <td>A memorable gimmick fight with moderate execution demands.</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="../database/bosses/major-miner.html">
+                Major Miner
+              </a>
+            </td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>A solid mid-game test with manageable patterns.</td>
+          </tr>
+
+          <tr>
+            <td>Orrery Warden</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>A moderate Astral Orrery encounter that rewards clean movement.</td>
+          </tr>
+
+          <tr>
+            <td>Astromancer</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>Moderate pressure with a learning curve tied to the Orrery's mechanics.</td>
+          </tr>
+
+          <tr>
+            <td>Lumenarks</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>A mid-to-late fight that becomes manageable with pattern recognition.</td>
+          </tr>
+
+          <tr>
+            <td>Sparkmancer</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Boss</td>
+            <td>A moderate Astral Orrery encounter with enough pressure to punish mistakes.</td>
+          </tr>
+
+          <tr>
+            <td>Armand</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Secret Boss</td>
+            <td>A surprising optional duel with a fair but real challenge.</td>
+          </tr>
+
+          <tr>
+            <td>Midden</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Optional Boss</td>
+            <td>A hidden encounter that is more dangerous than its unusual trigger suggests.</td>
+          </tr>
+
+          <tr>
+            <td>Mirren</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Secret Boss</td>
+            <td>A solid optional fight that rewards patience.</td>
+          </tr>
+
+          <tr>
+            <td>Wonder Willis</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Secret Boss</td>
+            <td>A substantial sidequest payoff without reaching superboss difficulty.</td>
+          </tr>
+
+          <tr>
+            <td>Maxi</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Optional Boss</td>
+            <td>A surprise encounter that can feel harder if you arrive unprepared.</td>
+          </tr>
+
+          <tr>
+            <td>Evra the Undying</td>
+            <td class="stars">★★★☆☆</td>
+            <td>Secret Boss</td>
+            <td>A dangerous optional fight with enough pressure to demand attention.</td>
+          </tr>
+
+          <tr>
+            <td>Dugin</td>
+            <td class="stars">★★☆☆☆</td>
+            <td>Optional Boss</td>
+            <td>A lighter optional fight once the encounter is found.</td>
+          </tr>
+
+          <tr>
+            <td>Thorne</td>
+            <td class="stars">★★☆☆☆</td>
+            <td>Recurring Boss</td>
+            <td>Important narratively, but the early encounter is more instructional than brutal.</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="../database/bosses/nether-kraken.html">
+                Nether Kraken
+              </a>
+            </td>
+            <td class="stars">★★☆☆☆</td>
+            <td>Optional Intro Boss</td>
+            <td>More intimidating than mechanically punishing once its attacks are understood.</td>
+          </tr>
+
+          <tr>
+            <td>Hulk Trooper</td>
+            <td class="stars">★☆☆☆☆</td>
+            <td>Mini-boss</td>
+            <td>An introductory combat check rather than a major wall.</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="rating-group">
+
+    <div class="rating-group-header">
+
+      <h2>
+        ★★★★★ Very Hard
+      </h2>
+
+      <p>
+        The biggest walls on a normal first playthrough.
+        These fights either demand strong execution,
+        punish mistakes heavily, or stretch your healing and concentration.
+      </p>
+
+    </div>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            Mined Mind
+          </h3>
+
+        </div>
+
+        <div
+          class="boss-stars"
+          aria-label="5 out of 5 stars"
+        >
+          ★★★★★
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/mined-mind.webp"
+          alt="Mined Mind boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Mined Mind Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Mined Mind is one of the strongest first-playthrough difficulty checks.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Mined Mind earns a 5-star rating because the fight combines sustained pressure
+        with limited room for repeated mistakes.
+      </p>
+
+      <p>
+        Players who try to trade damage or force long attack strings
+        are likely to lose control of the fight.
+        Learning when to disengage matters as much as learning when to attack.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        5/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Sustained pressure and punishment for greed
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            Frozen Horror
+          </h3>
+
+        </div>
+
+        <div
+          class="boss-stars"
+          aria-label="5 out of 5 stars"
+        >
+          ★★★★★
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/frozen-horror.webp"
+          alt="Frozen Horror boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Frozen Horror Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Frozen Horror is a major Coltrane Peak difficulty wall.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Frozen Horror sits in the top tier because it arrives late enough
+        to expect strong movement fundamentals,
+        while still punishing poor timing very quickly.
+      </p>
+
+      <p>
+        A strong build helps, but the fight still rewards controlled movement
+        and clean reads more than reckless damage racing.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        5/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Late-game execution and limited tolerance for mistakes
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            The Congealed
+          </h3>
+
+        </div>
+
+        <div
+          class="boss-stars"
+          aria-label="5 out of 5 stars"
+        >
+          ★★★★★
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/the-congealed.webp"
+          alt="The Congealed boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>The Congealed Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          The Congealed is one of the hardest required fights on the critical path.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        The Congealed deserves 5 stars because it is not an optional superboss
+        that can simply be ignored.
+        It is a required late-game fight and a major progression wall.
+      </p>
+
+      <p>
+        By this point the game expects the player to combine movement,
+        resource management, and pattern recognition consistently.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        5/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        A required late-game endurance and execution check
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Secret Superboss
+          </p>
+
+          <h3>
+            Thalassion
+          </h3>
+
+        </div>
+
+        <div
+          class="boss-stars"
+          aria-label="5 out of 5 stars"
+        >
+          ★★★★★
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/thalassion.webp"
+          alt="Thalassion boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Thalassion Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Thalassion is an optional late fishing-chain superboss.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Thalassion is exactly the kind of optional fight that can be much harder
+        than the average story boss.
+        Because it sits deep in an optional quest chain,
+        the encounter can demand far more than a casual side activity suggests.
+      </p>
+
+      <p>
+        Players who reach it expecting a simple fishing reward
+        may instead run into one of the game's strongest optional challenges.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        5/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Optional-superboss pressure and late-game execution
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Endgame Boss
+          </p>
+
+          <h3>
+            Furgus the Faithful
+          </h3>
+
+        </div>
+
+        <div
+          class="boss-stars"
+          aria-label="5 out of 5 stars"
+        >
+          ★★★★★
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/furgus-the-faithful.webp"
+          alt="Furgus the Faithful boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Furgus the Faithful Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Furgus appears during the demanding Radiant Manor endgame sequence.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Furgus earns 5 stars not only because of the fight itself,
+        but because of where it appears.
+        Radiant Manor is already an endgame endurance sequence,
+        and difficult fights become more punishing when the player is mentally
+        and mechanically under constant pressure.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        5/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Endgame execution inside a demanding boss sequence
+
+      </div>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="rating-group">
+
+    <div class="rating-group-header">
+
+      <h2>
+        ★★★★☆ Hard
+      </h2>
+
+      <p>
+        Serious fights that punish greed and poor positioning,
+        but become substantially easier once their patterns are understood.
+      </p>
+
+    </div>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            Nox's Beast
+          </h3>
+
+        </div>
+
+        <div class="boss-stars">
+          ★★★★☆
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/noxs-beast.webp"
+          alt="Nox's Beast boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Nox&apos;s Beast Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Nox's Beast is one of the first fights where arena pressure becomes a major factor.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Nox's Beast is a major difficulty step because the fight asks the player
+        to manage the arena as well as the boss.
+      </p>
+
+      <p>
+        It is difficult enough to punish an underprepared build,
+        but once the movement and arena rhythm are understood,
+        it becomes more consistent than the 5-star fights.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        4/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Arena pressure and movement discipline
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            The Carving Man
+          </h3>
+
+        </div>
+
+        <div class="boss-stars">
+          ★★★★☆
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/the-carving-man.webp"
+          alt="The Carving Man boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>The Carving Man Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          The Carving Man combines chase pressure with a demanding final confrontation.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        The Carving Man earns 4 stars because the encounter creates pressure
+        before the player even settles into the final fight.
+      </p>
+
+      <p>
+        Panic and greed are heavily punished,
+        but the encounter becomes much more manageable
+        once the player stops reacting wildly and starts reading the rhythm.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        4/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Pressure, pacing, and staying calm
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Main Boss
+          </p>
+
+          <h3>
+            Locomotress Agnes
+          </h3>
+
+        </div>
+
+        <div class="boss-stars">
+          ★★★★☆
+        </div>
+
+      </div>
+
+
+      <p>
+        Locomotress Agnes is difficult because the fight leans heavily on movement
+        and maintaining control under pressure.
+      </p>
+
+      <p>
+        Once the player understands the encounter's momentum,
+        the fight becomes much more predictable,
+        which keeps it just below the 5-star tier.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        4/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Movement-heavy pressure
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Secret Boss
+          </p>
+
+          <h3>
+            Dark Deluxy
+          </h3>
+
+        </div>
+
+        <div class="boss-stars">
+          ★★★★☆
+        </div>
+
+      </div>
+
+
+      <p>
+        Dark Deluxy is a strong optional challenge.
+        Because the encounter is hidden behind optional progression,
+        players may reach it with very different levels of preparation.
+      </p>
+
+      <p>
+        A good build can reduce the difficulty significantly,
+        but an unprepared player may experience it as a much harder fight.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        4/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Optional-fight pressure and preparation
+
+      </div>
+
+    </section>
+
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+
+          <p class="boss-type-label">
+            Endgame Boss
+          </p>
+
+          <h3>
+            Baron Lionel
+          </h3>
+
+        </div>
+
+        <div class="boss-stars">
+          ★★★★☆
+        </div>
+
+      </div>
+
+
+      <figure class="boss-feature-image">
+
+        <img
+          src="../assets/images/bosses/baron-lionel.webp"
+          alt="Baron Lionel boss in Mina the Hollower"
+          loading="lazy"
+          width="1200"
+          height="675"
+          onerror="this.parentElement.outerHTML='<div class=&quot;image-placeholder&quot;>Baron Lionel Image Coming Soon</div>';"
+        >
+
+        <figcaption>
+          Baron Lionel is a fast late-game duel that rewards clean reads.
+        </figcaption>
+
+      </figure>
+
+
+      <p>
+        Baron Lionel is fast enough to punish missed tells,
+        but the fight remains readable once the player learns the visual cues.
+      </p>
+
+      <p>
+        That makes him a hard fight rather than an unpredictable one.
+        Better recognition usually produces a clear improvement from attempt to attempt.
+      </p>
+
+      <div class="boss-rating-summary">
+
+        <strong>Difficulty:</strong>
+        4/5
+
+        <br>
+
+        <strong>Main challenge:</strong>
+        Reading fast tells and avoiding greedy punish attempts
+
+      </div>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="rating-group">
+
+    <div class="rating-group-header">
+
+      <h2>
+        ★★★☆☆ Moderate
+      </h2>
+
+      <p>
+        Real bosses that demand pattern recognition,
+        but usually become consistent after a few attempts.
+      </p>
+
+    </div>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Main Boss</p>
+          <h3>The Duchess of Queensbury</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        The Duchess is one of the first fights that asks the player
+        to stop button-mashing and start respecting attack patterns.
+      </p>
+
+      <p>
+        She is a meaningful early wall,
+        but the fight becomes much easier once basic spacing and burrow timing click.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Learning the game's basic dodge-and-punish rhythm
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Boss</p>
+          <h3>Mock Moon</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        Mock Moon can feel awkward on a first attempt,
+        but its difficulty drops noticeably once the player understands the fight's rhythm.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Learning an unfamiliar encounter pattern
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Major Boss</p>
+          <h3>Madd House</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        Madd House is memorable and unusual,
+        but its challenge is more about understanding the encounter
+        than surviving extreme mechanical pressure.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Adapting to a gimmick-driven fight
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Boss</p>
+          <h3>Major Miner</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        Major Miner is a solid mid-game boss.
+        The fight demands attention,
+        but it does not usually create the same sustained pressure as the harder generator bosses.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Mid-game pattern recognition
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Astral Orrery Bosses</p>
+          <h3>Orrery Warden, Astromancer, Lumenarks &amp; Sparkmancer</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        These Astral Orrery encounters sit in the moderate range for this first edition.
+        Their exact difficulty can vary depending on which mechanics a player finds intuitive,
+        but they generally sit below The Congealed's major late-game wall.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Adapting to Astral Orrery mechanics and encounter-specific patterns
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Secret &amp; Optional Bosses</p>
+          <h3>Armand, Midden, Mirren, Wonder Willis, Maxi &amp; Evra</h3>
+        </div>
+
+        <div class="boss-stars">★★★☆☆</div>
+
+      </div>
+
+      <p>
+        These optional encounters land in the middle tier for different reasons.
+        Some can surprise the player,
+        while others become much easier if discovered later with stronger equipment.
+      </p>
+
+      <p>
+        Their difficulty is especially sensitive to when they are found,
+        so individual players may reasonably rate them one star higher or lower.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Variable preparation and discovery timing
+      </div>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="rating-group">
+
+    <div class="rating-group-header">
+
+      <h2>
+        ★★☆☆☆ Easy
+      </h2>
+
+      <p>
+        Encounters that are noticeable challenges,
+        but usually become straightforward once their core idea is understood.
+      </p>
+
+    </div>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Optional Boss</p>
+          <h3>Dugin</h3>
+        </div>
+
+        <div class="boss-stars">★★☆☆☆</div>
+
+      </div>
+
+      <p>
+        Dugin is more memorable for the strange way the encounter is found
+        than for overwhelming mechanical difficulty.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Finding the encounter rather than surviving it
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Recurring Story Boss</p>
+          <h3>Thorne</h3>
+        </div>
+
+        <div class="boss-stars">★★☆☆☆</div>
+
+      </div>
+
+      <p>
+        Thorne's overall role is much larger than the difficulty of the first encounter.
+        The early fight is designed to establish combat expectations
+        rather than act as one of the game's biggest walls.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Learning early boss fundamentals
+      </div>
+
+    </section>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Optional Intro Boss</p>
+          <h3>Nether Kraken</h3>
+        </div>
+
+        <div class="boss-stars">★★☆☆☆</div>
+
+      </div>
+
+      <p>
+        Nether Kraken is visually intimidating,
+        but once its attack rhythm becomes clear,
+        the encounter is generally more manageable than its presentation suggests.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Surviving an unfamiliar opening encounter
+      </div>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="rating-group">
+
+    <div class="rating-group-header">
+
+      <h2>
+        ★☆☆☆☆ Very Easy
+      </h2>
+
+      <p>
+        Introductory or mini-boss encounters that prepare players
+        for the real walls later in the game.
+      </p>
+
+    </div>
+
+
+    <section class="content-card boss-rating-entry">
+
+      <div class="boss-rating-header">
+
+        <div>
+          <p class="boss-type-label">Mini-boss</p>
+          <h3>Hulk Trooper</h3>
+        </div>
+
+        <div class="boss-stars">★☆☆☆☆</div>
+
+      </div>
+
+      <p>
+        Hulk Trooper is best understood as an introductory mini-boss.
+        It asks the player to respect a stronger enemy,
+        but it is not intended to stand beside the major generator bosses
+        as a full difficulty wall.
+      </p>
+
+      <div class="boss-rating-summary">
+        <strong>Main challenge:</strong>
+        Early combat fundamentals
+      </div>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Boss Difficulty Awards
+    </h2>
+
+    <div class="awards-grid">
+
+
+      <div class="award-card">
+
+        <span>
+          Hardest Required Boss
+        </span>
+
+        <h3>
+          The Congealed
+        </h3>
+
+        <p>
+          A required late-game wall where strong execution can no longer be avoided.
+        </p>
+
+      </div>
+
+
+      <div class="award-card">
+
+        <span>
+          Hardest Optional Boss
+        </span>
+
+        <h3>
+          Thalassion
+        </h3>
+
+        <p>
+          A late optional superboss that can exceed the difficulty of many story fights.
+        </p>
+
+      </div>
+
+
+      <div class="award-card">
+
+        <span>
+          Biggest Early Difficulty Spike
+        </span>
+
+        <h3>
+          Nox's Beast
+        </h3>
+
+        <p>
+          One of the first fights where arena control becomes as important as reading attacks.
+        </p>
+
+      </div>
+
+
+      <div class="award-card">
+
+        <span>
+          Best Fight for Learning Patience
+        </span>
+
+        <h3>
+          The Carving Man
+        </h3>
+
+        <p>
+          Panic and greed make the encounter much harder than controlled play does.
+        </p>
+
+      </div>
+
+
+      <div class="award-card">
+
+        <span>
+          Most Build-Sensitive Fight
+        </span>
+
+        <h3>
+          Dark Deluxy
+        </h3>
+
+        <p>
+          Preparation can significantly change how punishing the optional encounter feels.
+        </p>
+
+      </div>
+
+
+      <div class="award-card">
+
+        <span>
+          Most Misleading Optional Challenge
+        </span>
+
+        <h3>
+          Thalassion
+        </h3>
+
+        <p>
+          A fishing quest chain eventually leads to one of the game's hardest optional fights.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Why Your Ratings May Be Different
+    </h2>
+
+    <p>
+      Boss difficulty in Mina the Hollower is highly sensitive to build choices.
+    </p>
+
+    <p>
+      A player using a defensive Trinket setup,
+      a strong Sidearm matchup,
+      or higher Bone Up levels may experience a boss very differently
+      from someone who reaches the same fight early or underprepared.
+    </p>
+
+    <p>
+      That is why these ratings should be treated as a first-playthrough difficulty map,
+      not an objective mathematical ranking.
+    </p>
+
+    <div class="community-view">
+
+      <h4>
+        Community View
+      </h4>
+
+      <p>
+        Ratings may change as more player feedback is collected.
+        The most useful disagreements are the ones that explain
+        why a particular build or playstyle made a boss easier or harder.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      How This Page Will Be Updated
+    </h2>
+
+    <p>
+      This is not intended to be a permanently frozen ranking.
+    </p>
+
+    <p>
+      Ratings may be adjusted when:
+    </p>
+
+    <ul>
+
+      <li>
+        More community feedback reveals a consistent difficulty trend.
+      </li>
+
+      <li>
+        A boss mechanic is better documented.
+      </li>
+
+      <li>
+        A specific build is found to dramatically change a matchup.
+      </li>
+
+      <li>
+        New individual Boss guides provide stronger evidence for a rating.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Update Log
+    </h2>
+
+    <ul class="update-log-list">
+
+      <li>
+        <strong>July 14, 2026:</strong>
+        Published the first complete Boss Difficulty Ratings guide.
+      </li>
+
+      <li>
+        <strong>July 14, 2026:</strong>
+        Added the first 1-to-5-star difficulty table and detailed analysis
+        for the highest difficulty tiers.
+      </li>
+
+      <li>
+        <strong>Future updates:</strong>
+        Ratings may be adjusted as more Boss guides,
+        images, and community feedback are added.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section class="content-card">
+
+    <h2>
+      Related Guides
+    </h2>
+
+    <ul>
+
+      <li>
+        <a href="../database/bosses/index.html">
+          Full Boss Database
+        </a>
+      </li>
+
+      <li>
+        <a href="boss-tier-list.html">
+          Boss Tier List
+        </a>
+      </li>
+
+      <li>
+        <a href="best-builds.html">
+          Best Builds
+        </a>
+      </li>
+
+      <li>
+        <a href="best-weapons.html">
+          Best Weapons
+        </a>
+      </li>
+
+      <li>
+        <a href="hidden-secrets.html">
+          Hidden Secrets
+        </a>
+      </li>
+
+      <li>
+        <a href="100-percent-cleanup-checklist.html">
+          100% Cleanup Checklist
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+
+</main>
+
+
+
+<footer>
+
+  <div class="footer-brand">
+    Tenebrous Isle Guide
+  </div>
+
+  <p class="footer-text">
+    A fan-made Mina the Hollower guide for bosses,
+    Trinkets, builds, secrets, tools, and 100% completion.
+  </p>
+
+  <div class="footer-links">
+
+    <a href="index.html">
+      Blog
+    </a>
+
+    <a href="../database/index.html">
+      Database
+    </a>
+
+    <a href="../database/bosses/index.html">
+      Bosses
+    </a>
+
+    <a href="../database/trinkets/index.html">
+      Trinkets
+    </a>
+
+    <a href="../tools/index.html">
+      Tools
+    </a>
+
+    <a href="../about.html">
+      About
+    </a>
+
+    <a href="../privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    <a href="../contact.html">
+      Contact
+    </a>
+
+    <a href="../terms.html">
+      Terms
+    </a>
+
+  </div>
+
+  <p class="footer-disclaimer">
+    This is a fan-made guide site.
+    Mina the Hollower is a trademark of Yacht Club Games.
+    All game content belongs to their respective owners.
+  </p>
+
+</footer>
+
+
+
+<script src="../assets/js/main.js"></script>
+
+<script
+  defer
+  src="/_vercel/insights/script.js">
+</script>
+
+
+</body>
+
+</html>
