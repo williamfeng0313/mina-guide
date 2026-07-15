@@ -16,13 +16,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mina the Hollower Guide" />
   <meta property="og:description" content="Boss guides, all 60 Trinkets, builds, tools, database pages, and walkthroughs for Mina the Hollower." />
-  <meta property="og:url" content="https://minahollower.com/" />
-  <meta property="og:image" content="https://minahollower.com/assets/images/cover.jpg" />
+  <meta property="og:url" content="https://www.minahollower.com/" />
+  <meta property="og:image" content="https://www.minahollower.com/assets/images/cover.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mina the Hollower Guide" />
   <meta name="twitter:description" content="Complete guide, database, tools, builds, Trinkets, and boss strategies." />
-  <meta name="twitter:image" content="https://minahollower.com/assets/images/cover.jpg" />
+  <meta name="twitter:image" content="https://www.minahollower.com/assets/images/cover.jpg" />
 
   <meta name="theme-color" content="#1a1209" />
 
@@ -1233,18 +1233,14 @@
 }
   </style>
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "MinaHollower",
-    "url": "https://minahollower.com/",
-    "description": "Complete fan-made guide, database, tools, and walkthroughs for Mina the Hollower.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://minahollower.com/search.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "name": "Tenebrous Isle Guide",
+    "alternateName": "MinaHollower",
+    "url": "https://www.minahollower.com/",
+    "description": "A complete fan-made Mina the Hollower guide with Trinkets, boss strategies, builds, tools, walkthroughs, hidden secrets, and 100% completion help."
   }
   </script>
 </head>
@@ -1788,16 +1784,19 @@
             <p>Ossex location, one-hit shield effect, refresh mechanic, and best defensive uses.</p>
           </a>
 
-          <a class="update-card" href="blog/dark-deluxy-guide.html">
+          <a class="update-card" href="database/bosses/dark-deluxy.html">
             <time>Secret Boss</time>
             <h3>Dark Deluxy Guide</h3>
             <p>Unlock notes, difficulty, recommended builds, weapon tips, and 100% cleanup value for Dark Deluxy.</p>
           </a>
 
-          <a class="update-card" href="database/bosses/worm-queen.html">
-            <time>Boss Strategy</time>
-            <h3>Worm Queen</h3>
-            <p>Pattern breakdown, safe windows, and early build suggestions.</p>
+          <a class="update-card" href="blog/boss-difficulty-ratings.html">
+            <time>Boss Ratings</time>
+            <h3>Every Boss Rated 1–5 Stars</h3>
+            <p>
+              A first-playthrough difficulty ranking for major bosses,
+              secret fights, optional encounters, and the toughest walls in the game.
+            </p>
           </a>
 
           <a class="update-card" href="blog/achievement-difficulty.html">
@@ -1855,34 +1854,40 @@
 
   </div>
 
+ 
   <script>
     const searchInput = document.querySelector(".nav-search input");
-
+  
     if (searchInput) {
       searchInput.addEventListener("keydown", function (event) {
         if (event.key !== "Enter") return;
-
+  
         const q = this.value.trim().toLowerCase();
         if (!q) return;
-
+  
         const routes = [
-          { keys: ["boss", "worm", "queen"], url: "database/bosses/index.html" },
-          { keys: ["trinket", "bubble", "ring"], url: "database/trinkets/index.html" },
-          { keys: ["weapon", "hammer", "best weapon", "starting weapon"], url: "blog/best-weapons.html" },
-          { keys: ["tool", "planner"], url: "tools/build-planner.html" },
-          { keys: ["checklist", "100", "cleanup", "completion"], url: "blog/100-percent-cleanup-checklist.html" },
-          { keys: ["beginner", "start"], url: "blog/beginner-guide.html" },
-          { keys: ["best", "rank"], url: "blog/best-trinkets.html" }，
-          { keys: ["missable", "missing", "missed trinket"], url: "blog/missable-trinkets.html" },
-          { keys: [ "secret", "secrets", "hidden secret", "easter egg", "hidden boss", "secret ending"], url: "blog/hidden-secrets.html“ },
-          ];
-
-        const match = routes.find(route => route.keys.some(key => q.includes(key)));
-        window.location.href = match ? match.url : "blog/index.html";
+              { keys: ["trinket", "best trinket", "rank"], url: "blog/best-trinkets.html" },
+              { keys: ["build", "weapon", "loadout"], url: "blog/best-builds.html" },
+              { keys: ["boss", "tier"], url: "blog/boss-tier-list.html" },
+              { keys: ["boss difficulty", "difficulty rating", "boss rating"], url: "blog/boss-difficulty-ratings.html" },
+              { keys: ["secret", "hidden secret", "easter egg"], url: "blog/hidden-secrets.html" },
+              { keys: ["mechanic", "burrow"], url: "blog/hidden-mechanics.html" },
+              { keys: ["mistake", "wrong", "death"], url: "blog/mistakes.html" },
+              { keys: ["database"], url: "database/index.html" },
+              { keys: ["tool", "planner"], url: "tools/index.html" }
+              ];
+        const match = routes.find(route =>
+          route.keys.some(key => q.includes(key))
+        );
+  
+        window.location.href = match ? match.url : "index.html";
       });
     }
   </script>
+  
   <script src="assets/js/main.js"></script>
+  
   <script defer src="/_vercel/insights/script.js"></script>
-</body>
-</html>
+  
+  </body>
+  </html>
