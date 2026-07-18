@@ -902,6 +902,31 @@
 .reading-path-link:hover strong {
   color: #8a5b08;
 }
+
+.main-article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-article-content {
+  padding-bottom: 1.2rem;
+}
+
+.main-article-image {
+  margin-top: auto;
+  padding-top: 1.2rem;
+}
+
+.main-article-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgba(200, 134, 10, 0.28);
+  background: rgba(0, 0, 0, 0.25);
+}
+
   </style>
 
   <script type="application/ld+json">
@@ -1073,19 +1098,38 @@
 
         <div class="featured-layout">
           <a class="article-card main-article" href="beginner-guide.html">
-            <div class="article-meta">
-              <span class="tag tag-green">Beginner</span>
-              <span class="tag">5 min read</span>
-              <span class="tag">Most useful first</span>
+
+            <div class="main-article-content">
+          
+              <div class="article-meta">
+                <span class="tag tag-green">Beginner</span>
+                <span class="tag">5 min read</span>
+                <span class="tag">Most useful first</span>
+              </div>
+          
+              <h3>
+                Beginner Guide: 11 Things Mina the Hollower Never Tells You
+              </h3>
+          
+              <p>
+                A practical first-read guide covering burrow timing,
+                early Trinket choices, resource traps, exploration habits,
+                and the mistakes that make the opening hours more punishing
+                than they need to be.
+              </p>
+          
             </div>
-
-            <h3>Beginner Guide: 11 Things Mina the Hollower Never Tells You</h3>
-
-            <p>
-              A practical first-read guide covering burrow timing, early Trinket choices,
-              resource traps, exploration habits, and the mistakes that make the opening hours
-              more punishing than they need to be.
-            </p>
+          
+            <div class="main-article-image">
+              <img
+                src="../assets/images/blog/beginner-guide.webp"
+                alt="Mina exploring an early area in Mina the Hollower"
+                width="1200"
+                height="675"
+                loading="eager"
+              >
+            </div>
+          
           </a>
 
           <div class="side-list">
