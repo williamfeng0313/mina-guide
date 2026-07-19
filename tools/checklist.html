@@ -1,239 +1,723 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mina the Hollower Checklist & Tracker: 100% Completion, Trinkets, Weapons & Mirrors</title>
-<meta name="description" content="Use this Mina the Hollower checklist and tracker to track 100% completion, trinkets, weapons, mirrors, bosses, achievements, and late-game cleanup progress.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina the Hollower 100% Checklist & Progress Tracker</title>
+  <meta name="description" content="Track Mina the Hollower 100% completion with a free checklist for Trinkets, bosses, weapons, Sidearms, quests, achievements, upgrades, endings, fishing, mirrors, and missable content.">
+  <link rel="canonical" href="https://www.minahollower.com/tools/checklist.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mina the Hollower 100% Checklist & Progress Tracker">
+  <meta property="og:description" content="Track Trinkets, bosses, achievements, weapons, Sidearms, quests, upgrades, endings, fishing, and other completion goals.">
+  <meta property="og:url" content="https://www.minahollower.com/tools/checklist.html">
+  <meta property="og:image" content="https://www.minahollower.com/assets/images/cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mina the Hollower 100% Checklist">
+  <meta name="twitter:description" content="A free browser-based progress tracker for Mina the Hollower completion.">
+  <meta name="twitter:image" content="https://www.minahollower.com/assets/images/cover.jpg">
+  <meta name="theme-color" content="#1a1209">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
 
+  <style>
+    .checklist-hero,
+    .checklist-panel,
+    .checklist-guides,
+    .checklist-faq {
+      margin-bottom: 1.4rem;
+      padding: 1.1rem;
+      border: 1px solid rgba(200, 134, 10, 0.22);
+      background: rgba(245, 234, 216, 0.045);
+    }
+    .checklist-title {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      line-height: 1.15;
+    }
+    .checklist-intro {
+      margin-bottom: 0.75rem;
+      color: var(--bone);
+      line-height: 1.65;
+    }
+    .checklist-note {
+      margin-bottom: 0.75rem;
+      color: var(--bone-dark);
+      line-height: 1.6;
+    }
+    .checklist-note:last-child { margin-bottom: 0; }
+    .progress-dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 1.2rem 0;
+    }
+    .progress-stat {
+      padding: 0.9rem;
+      text-align: center;
+      border: 1px solid rgba(200, 134, 10, 0.2);
+      background: rgba(5, 12, 8, 0.42);
+    }
+    .progress-stat strong {
+      display: block;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+    .progress-stat span {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--bone-dark);
+      font-size: 0.8rem;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(5, 12, 8, 0.58);
+    }
+    .progress-bar-fill {
+      width: 0;
+      height: 100%;
+      background: var(--candle);
+      transition: width 0.2s ease;
+    }
+    .checklist-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .checklist-search,
+    .checklist-filter,
+    .checklist-reset {
+      min-height: 42px;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(5, 12, 8, 0.5);
+      color: var(--bone);
+      font: inherit;
+    }
+    .checklist-search { width: 100%; padding: 0.65rem 0.75rem; }
+    .checklist-filter { padding: 0.65rem 0.75rem; }
+    .checklist-reset { padding: 0.65rem 0.85rem; cursor: pointer; }
+    .checklist-reset:hover {
+      border-color: var(--candle);
+      color: var(--candle-light);
+    }
+    .checklist-category {
+      margin-bottom: 0.85rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      background: rgba(245, 234, 216, 0.025);
+    }
+    .checklist-category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 0;
+      background: rgba(200, 134, 10, 0.07);
+      color: var(--parchment);
+      cursor: pointer;
+      text-align: left;
+    }
+    .checklist-category-header strong {
+      font-family: "Cinzel", serif;
+      font-size: 0.92rem;
+    }
+    .category-progress {
+      color: var(--candle-light);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+    .checklist-category-items {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.7rem;
+    }
+    .checklist-category.is-collapsed .checklist-category-items { display: none; }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.72rem 0.8rem;
+      border: 1px solid rgba(200, 134, 10, 0.12);
+      background: rgba(5, 12, 8, 0.38);
+      color: var(--bone);
+      cursor: pointer;
+      line-height: 1.45;
+    }
+    .checklist-item:hover { border-color: rgba(200, 134, 10, 0.35); }
+    .checklist-item input {
+      margin-top: 0.2rem;
+      accent-color: var(--candle);
+    }
+    .checklist-item.is-complete span {
+      color: var(--bone-dark);
+      text-decoration: line-through;
+    }
+    .checklist-empty {
+      padding: 1.2rem;
+      text-align: center;
+      color: var(--bone-dark);
+      border: 1px dashed rgba(200, 134, 10, 0.2);
+    }
+    .checklist-panel h2,
+    .checklist-guides h2,
+    .checklist-faq h2 {
+      margin-bottom: 0.6rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+    }
+    .checklist-faq h3 {
+      margin-top: 1rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+    .checklist-faq p {
+      color: var(--bone-dark);
+      line-height: 1.6;
+    }
+    .checklist-guides ul {
+      margin-left: 1.2rem;
+      color: var(--bone-dark);
+    }
+    .checklist-guides li { margin-bottom: 0.45rem; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (max-width: 720px) {
+      .progress-dashboard { grid-template-columns: 1fr; }
+      .checklist-controls { grid-template-columns: 1fr; }
+      .checklist-filter,
+      .checklist-reset { width: 100%; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mina the Hollower 100% Checklist & Progress Tracker",
+    "description": "A browser-based Mina the Hollower completion checklist for Trinkets, bosses, weapons, Sidearms, quests, achievements, upgrades, endings, fishing, mirrors, and missable content.",
+    "url": "https://www.minahollower.com/tools/checklist.html",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript and local storage",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    }
+  }
+  </script>
 </head>
 <body>
-
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  <div class="announce">
+    Mina the Hollower guides are live and updating regularly &nbsp;|&nbsp;
+    <a href="../blog/secret-bosses.html">New: Complete Secret Bosses Guide →</a>
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
-
-<main class="page-wrap narrow">
-  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Checklist</div>
-
-  <div class="section-divider"><h2>Mina the Hollower Checklist</h2></div>
-
-  <section style="margin-bottom:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.22); background:rgba(245,234,216,0.045);">
-    <h1 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.45rem; margin-bottom:0.6rem;">
-      Mina the Hollower 100% Completion Checklist & Tracker
-    </h1>
-
-    <p style="color:var(--bone); margin-bottom:0.75rem;">
-      Use this Mina the Hollower checklist and tracker to track important completion goals,
-      missable checks, mirrors, trinkets, weapons, bosses, achievements, and late-game cleanup progress.
-      It is designed for players trying to finish 100% completion or find the final missing item.
-    </p>
-    
-    <p style="color:var(--bone-dark); margin-bottom:0.75rem;">
-      This page works as a simple Mina the Hollower completion tracker. Your progress saves in your browser,
-      so you can come back later while working through Tenebrous Isle.
-    </p>
-    
-    <p style="color:var(--bone-dark); margin-bottom:0.75rem;">
-      If you are missing your final Trinket, missing a final achievement, or trying to remember which mirrors,
-      weapons, bosses, and cleanup checks are already done, this tracker gives you a lightweight place to mark progress.
-    </p>
-
-    <p style="color:var(--bone-dark); margin:0;">
-      If you are missing your final Trinket or cleaning up your final checks, also use the
-      <a href="../blog/all-trinket-locations.html">All Trinket Locations</a>,
-      <a href="../blog/missable-trinkets.html">Missable Trinkets</a>,
-      <a href="../blog/100-percent-cleanup-checklist.html">100% Cleanup Checklist</a>, and
-      <a href="../blog/achievement-difficulty.html">100% Achievement Guide</a>.
-    </p>
-  </section>
-
-  <section style="margin-bottom:1rem;">
-    <h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.5rem;">
-      Track Your 100% Completion Progress
-    </h2>
-    <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1rem; font-style:italic;">
-      Check off major cleanup goals before they are forgotten. This Mina the Hollower tracker saves progress locally in your browser.
-    </p>
-  </section>
-
-  <div id="checklist-app" style="display:flex; flex-direction:column; gap:0.5rem;"></div>
-
-  <section style="margin-top:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.18); background:rgba(245,234,216,0.035);">
-    <h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-      Related Completion Guides
-    </h2>
-
-    <p style="color:var(--bone-dark); margin-bottom:0.75rem;">
-      Use these guides with the checklist tool when tracking Mina the Hollower 100% completion,
-      missed Trinkets, achievements, mirrors, weapons, and final cleanup progress.
-    </p>
-
-    <ul style="margin-left:1.2rem; color:var(--bone-dark);">
-      <li><a href="../blog/100-percent-cleanup-checklist.html">Mina the Hollower 100% Cleanup Checklist</a></li>
-      <li><a href="../blog/all-trinket-locations.html">All Trinket Locations</a></li>
-      <li><a href="../blog/missable-trinkets.html">Missable Trinkets</a></li>
-      <li><a href="../database/trinkets/index.html">Full Trinket Database</a></li>
-      <li><a href="../blog/achievement-difficulty.html">How Hard Is 100% in Mina the Hollower?</a></li>
-      <li><a href="../blog/mirror-guide.html">Mirror Guide</a></li>
-      <li><a href="../blog/best-weapons.html">Best Weapons Guide</a></li>
-      <li><a href="../blog/best-builds.html">Best Builds Guide</a></li>
+  <nav>
+    <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
+    <ul class="nav-links">
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
+      <li><a href="../about.html">About</a></li>
     </ul>
-  </section>
-  <section style="margin-top:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.18); background:rgba(245,234,216,0.035);">
-    <h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-      Checklist & Tracker FAQ
-    </h2>
-  
-    <h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-      Is this a Mina the Hollower checklist or tracker?
-    </h3>
-    <p style="color:var(--bone-dark); line-height:1.6;">
-      It works as both. You can use it as a checklist for 100% completion goals and as a simple tracker
-      because checked items save locally in your browser.
-    </p>
-  
-    <h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-      Does the tracker save my progress?
-    </h3>
-    <p style="color:var(--bone-dark); line-height:1.6;">
-      Yes. Progress is saved in your browser using local storage. It does not require an account.
-    </p>
-  
-    <h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-      What should I check if I am missing my final Trinket?
-    </h3>
-    <p style="color:var(--bone-dark); line-height:1.6;">
-      Start with the All Trinket Locations page, then check Missable Trinkets, Black Market recovery,
-      and the 100% Cleanup Checklist. The tracker helps you mark what you have already reviewed.
-    </p>
-  </section>
+    <div class="nav-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+    </div>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
 
-</main>
-<script>
-  (function(){
-    const items = [
-      'All Trinkets collected',
-      'Missable Trinkets checked',
-      'All Trinket Locations reviewed',
-      'Black Market recovery checked',
-  
-      'Bubble Ring collected',
-      'Flame Guard collected',
-      'Proto Spark completed',
-      'Dead Leaf collected',
-      'Tunneling Codex collected',
-      'Joule Syringe collected',
-      'Oozing Organ collected',
-      'Reckless Beastium collected',
-      'Glutton\'s Jug upgraded into Plasma Jug',
-  
-      'Dark Deluxy secret boss cleared',
-      'All 3 Sparks restored',
-  
-      'Mirror routes checked',
-      'Mirror 1 activated',
-      'Mirror 2 activated',
-      'Mirror 3 activated',
-  
-      'Weapons collected',
-      'Sidearms checked',
-      'Bosses cleared',
-  
-      'Bounding Bonanza achievement checked',
-      'Below Zero restrictions reviewed',
-      'Final 100% cleanup complete'
-    ];
-  
-    const key = 'minaChecklist';
-    const saved = JSON.parse(localStorage.getItem(key) || '{}');
-    const app = document.getElementById('checklist-app');
-  
-    items.forEach(label => {
-      const id = label.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-  
-      const wrap = document.createElement('label');
-  
-      wrap.style.cssText =
-        'display:flex;' +
-        'align-items:flex-start;' +
-        'gap:10px;' +
-        'padding:0.6rem 0.8rem;' +
-        'background:rgba(245,234,216,0.04);' +
-        'border:1px solid rgba(200,134,10,0.15);' +
-        'border-radius:3px;' +
-        'cursor:pointer;' +
-        'color:var(--bone);' +
-        'font-size:0.9rem;';
-  
-      const cb = document.createElement('input');
-  
-      cb.type = 'checkbox';
-      cb.checked = !!saved[id];
-      cb.style.accentColor = 'var(--candle)';
-  
-      cb.onchange = () => {
-        saved[id] = cb.checked;
-        localStorage.setItem(key, JSON.stringify(saved));
-      };
-  
-      wrap.appendChild(cb);
-      wrap.appendChild(document.createTextNode(label));
-      app.appendChild(wrap);
-    });
-  })();
-  </script>
-
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower — updated daily as we explore the island.</p>
-  <div class="footer-links">
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+    <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
+    <a href="../index.html">Home</a>
     <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../database/index.html">Database</a>
     <a href="../tools/index.html">Tools</a>
     <a href="../about.html">About</a>
   </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
 
-<script src="../assets/js/main.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
+  <main class="page-wrap narrow">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Checklist
+    </div>
 
+    <section class="checklist-hero">
+      <h1 class="checklist-title">Mina the Hollower 100% Checklist & Progress Tracker</h1>
+      <p class="checklist-intro">
+        Track the major completion goals in Mina the Hollower, including Trinkets, bosses,
+        weapons, Sidearms, quests, achievements, upgrades, endings, fishing, mirrors,
+        and missable content.
+      </p>
+      <p class="checklist-note">
+        Your checked items are saved locally in this browser. No account or sign-in is required.
+      </p>
+      <p class="checklist-note">
+        This tracker focuses on the major categories needed for a thorough cleanup pass.
+        Use the linked databases and guides for exact item locations.
+      </p>
+    </section>
+
+    <section class="checklist-panel">
+      <h2>Track Your Completion Progress</h2>
+      <p class="checklist-note">
+        Check off completed goals, search for a specific task, or filter the list to show only unfinished items.
+      </p>
+
+      <div class="progress-dashboard" aria-live="polite">
+        <div class="progress-stat">
+          <strong id="progress-percent">0%</strong>
+          <span>Overall progress</span>
+        </div>
+        <div class="progress-stat">
+          <strong id="progress-count">0 / 0</strong>
+          <span>Tasks completed</span>
+        </div>
+        <div class="progress-stat">
+          <strong id="category-count">0 / 0</strong>
+          <span>Categories completed</span>
+        </div>
+      </div>
+
+      <div class="progress-bar" role="progressbar" aria-label="Overall checklist progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+
+      <div class="checklist-controls">
+        <label>
+          <span class="sr-only">Search checklist</span>
+          <input class="checklist-search" id="checklist-search" type="search" placeholder="Search bosses, Trinkets, achievements...">
+        </label>
+        <label>
+          <span class="sr-only">Filter checklist</span>
+          <select class="checklist-filter" id="checklist-filter">
+            <option value="all">Show all</option>
+            <option value="remaining">Remaining only</option>
+            <option value="completed">Completed only</option>
+          </select>
+        </label>
+        <button class="checklist-reset" id="checklist-reset" type="button">Reset Progress</button>
+      </div>
+
+      <div id="checklist-app"></div>
+      <p class="checklist-empty" id="checklist-empty" hidden>No checklist items match your search.</p>
+    </section>
+
+    <section class="checklist-guides">
+      <h2>Related Completion Guides</h2>
+      <p class="checklist-note">
+        Use these guides to verify exact locations, unlock conditions, achievement requirements,
+        and anything still missing from your save.
+      </p>
+      <ul>
+        <li><a href="../blog/100-percent-cleanup-checklist.html">Mina the Hollower 100% Cleanup Guide</a></li>
+        <li><a href="../blog/achievement-difficulty.html">How Hard Is 100% Completion?</a></li>
+        <li><a href="../blog/secret-bosses.html">Secret Bosses and Unlock Conditions</a></li>
+        <li><a href="../blog/mina-the-hollower-walkthrough.html">Complete Walkthrough</a></li>
+        <li><a href="../blog/all-trinket-locations.html">All Trinket Locations</a></li>
+        <li><a href="../blog/missable-trinkets.html">Missable and Easy-to-Miss Trinkets</a></li>
+        <li><a href="../database/trinkets/index.html">Full Trinket Database</a></li>
+        <li><a href="../blog/hidden-secrets.html">Hidden Secrets and Easter Eggs</a></li>
+      </ul>
+    </section>
+
+    <section class="checklist-faq">
+      <h2>Mina the Hollower Checklist FAQ</h2>
+
+      <h3>Does this checklist save my progress?</h3>
+      <p>
+        Yes. Checked items are stored locally in your browser. You do not need to create an account,
+        but progress will not automatically sync between different browsers or devices.
+      </p>
+
+      <h3>How many achievements are in Mina the Hollower?</h3>
+      <p>
+        Mina the Hollower currently has 50 achievements or Feats, including story, challenge,
+        Sidearm, Trinket, collection, and minigame objectives.
+      </p>
+
+      <h3>How many Trinkets are in Mina the Hollower?</h3>
+      <p>
+        Current completion databases document 61 Trinkets. Use the All Trinket Locations guide
+        and Trinket Database for exact acquisition details.
+      </p>
+
+      <h3>Does this tracker list every individual collectible?</h3>
+      <p>
+        This version tracks the major completion categories and cleanup goals. Exact item-by-item
+        locations are provided through the linked databases and guides while the full tracker continues to expand.
+      </p>
+
+      <h3>What should I check before New Game+?</h3>
+      <p>
+        Review secret bosses, missable encounters, achievements, Trinkets, upgrades, quests,
+        endings, fishing rewards, and anything easier to finish on the current save.
+      </p>
+
+      <h3>Can I reset the checklist?</h3>
+      <p>
+        Yes. Use the Reset Progress button above. The tool asks for confirmation before deleting saved progress.
+      </p>
+    </section>
+  </main>
+
+  <script>
+  (function () {
+    "use strict";
+
+    const checklistData = [
+      {
+        id: "trinkets",
+        title: "Trinkets & Equipment Slots",
+        items: [
+          "Compare inventory against all 61 Trinkets",
+          "Review missable and easy-to-overlook Trinkets",
+          "Check normal acquisition routes before recovery routes",
+          "Collect all Trinket Bags and equipment slots",
+          "Complete upgraded Trinket forms",
+          "Collect the full Beastium set",
+          "Test the Beastium Convergence transformation",
+          "Confirm achievement-related Trinkets"
+        ]
+      },
+      {
+        id: "bosses",
+        title: "Bosses & Optional Encounters",
+        items: [
+          "Complete the optional prologue encounter",
+          "Defeat all main story bosses",
+          "Defeat all Spark Generator bosses",
+          "Defeat optional regional bosses",
+          "Complete all secret boss encounters",
+          "Collect every post-boss reward",
+          "Review no-hit and special boss achievements"
+        ]
+      },
+      {
+        id: "weapons-sidearms",
+        title: "Weapons & Sidearms",
+        items: [
+          "Collect all five main weapons",
+          "Complete main weapon upgrades",
+          "Collect all available Sidearms",
+          "Unlock dual-Sidearm access",
+          "Review all Sidearm achievements",
+          "Confirm weapon-specific achievement setups"
+        ]
+      },
+      {
+        id: "quests",
+        title: "Quests & Minigames",
+        items: [
+          "Review all side quests and NPC quest chains",
+          "Collect all quest rewards",
+          "Complete Racing challenges",
+          "Complete Ring Dive challenges",
+          "Complete Wrecker challenges",
+          "Finish the fishing quest line",
+          "Complete quests that unlock secret bosses",
+          "Revisit quest NPCs after major story milestones"
+        ]
+      },
+      {
+        id: "achievements",
+        title: "Achievements & Challenge Runs",
+        items: [
+          "Review all 50 achievements or Feats",
+          "Complete all story achievements",
+          "Complete Sidearm achievements",
+          "Complete Trinket achievements",
+          "Complete collection achievements",
+          "Complete minigame achievements",
+          "Review Below Zero restrictions",
+          "Review New Game+ achievement requirements",
+          "Record achievements requiring another playthrough"
+        ]
+      },
+      {
+        id: "upgrades",
+        title: "Upgrades & Collectibles",
+        items: [
+          "Collect all permanent health upgrades",
+          "Complete Plasma Vial capacity upgrades",
+          "Collect Spark Containers",
+          "Complete Joule capacity upgrades",
+          "Collect equipment capacity upgrades",
+          "Review Bonestones and regional collectibles",
+          "Review Fish Board trophies",
+          "Review Songscroll collection progress"
+        ]
+      },
+      {
+        id: "travel",
+        title: "Travel, Mirrors & Exploration",
+        items: [
+          "Activate and review Mirror routes",
+          "Open available train stations",
+          "Review Underlab access points",
+          "Open major regional shortcuts",
+          "Revisit blocked routes after movement upgrades",
+          "Check suspicious rooms and hidden paths",
+          "Complete a final region-by-region sweep"
+        ]
+      },
+      {
+        id: "endings",
+        title: "Endings & Missable Content",
+        items: [
+          "Complete the normal ending",
+          "Review hidden ending requirements",
+          "Review ending epilogue requirements",
+          "Check optional prologue content",
+          "Review dialogue-triggered encounters",
+          "Confirm missable achievement conditions",
+          "Collect unresolved NPC and quest rewards"
+        ]
+      },
+      {
+        id: "final-cleanup",
+        title: "Final Cleanup & New Game+",
+        items: [
+          "Compare progress with the interactive tracker",
+          "Review the full Trinket database",
+          "Review the boss and secret boss guides",
+          "Check all unfinished achievements",
+          "Record tasks requiring another run",
+          "Confirm current-save cleanup is complete",
+          "Prepare equipment before starting New Game+"
+        ]
+      }
+    ];
+
+    const storageKey = "minaChecklistV2";
+    const oldStorageKey = "minaChecklist";
+
+    const app = document.getElementById("checklist-app");
+    const searchInput = document.getElementById("checklist-search");
+    const filterSelect = document.getElementById("checklist-filter");
+    const resetButton = document.getElementById("checklist-reset");
+    const emptyState = document.getElementById("checklist-empty");
+    const percentElement = document.getElementById("progress-percent");
+    const countElement = document.getElementById("progress-count");
+    const categoryCountElement = document.getElementById("category-count");
+    const progressFill = document.getElementById("progress-bar-fill");
+    const progressBar = document.querySelector(".progress-bar");
+
+    let state = loadState();
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    function loadState() {
+      try {
+        const current = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        if (Object.keys(current).length > 0) return current;
+
+        const oldState = JSON.parse(localStorage.getItem(oldStorageKey) || "{}");
+        const migrated = {};
+
+        checklistData.forEach(function (category) {
+          category.items.forEach(function (label) {
+            const newId = category.id + "--" + slugify(label);
+            const oldId = slugify(label);
+            if (oldState[oldId]) migrated[newId] = true;
+          });
+        });
+
+        return migrated;
+      } catch (error) {
+        console.warn("Checklist progress could not be loaded.", error);
+        return {};
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      } catch (error) {
+        console.warn("Checklist progress could not be saved.", error);
+      }
+    }
+
+    function getAllItems() {
+      return checklistData.flatMap(function (category) {
+        return category.items.map(function (label) {
+          return {
+            id: category.id + "--" + slugify(label),
+            label: label
+          };
+        });
+      });
+    }
+
+    function updateProgress() {
+      const allItems = getAllItems();
+      const completed = allItems.filter(function (item) { return !!state[item.id]; }).length;
+      const total = allItems.length;
+      const percentage = total ? Math.round((completed / total) * 100) : 0;
+
+      const completedCategories = checklistData.filter(function (category) {
+        return category.items.every(function (label) {
+          return !!state[category.id + "--" + slugify(label)];
+        });
+      }).length;
+
+      percentElement.textContent = percentage + "%";
+      countElement.textContent = completed + " / " + total;
+      categoryCountElement.textContent = completedCategories + " / " + checklistData.length;
+      progressFill.style.width = percentage + "%";
+      progressBar.setAttribute("aria-valuenow", String(percentage));
+    }
+
+    function render() {
+      const query = searchInput.value.trim().toLowerCase();
+      const filter = filterSelect.value;
+      app.innerHTML = "";
+      let visibleItemCount = 0;
+
+      checklistData.forEach(function (category) {
+        const filteredItems = category.items.filter(function (label) {
+          const id = category.id + "--" + slugify(label);
+          const completed = !!state[id];
+          const matchesSearch = label.toLowerCase().includes(query) || category.title.toLowerCase().includes(query);
+          const matchesFilter = filter === "all" || (filter === "completed" && completed) || (filter === "remaining" && !completed);
+          return matchesSearch && matchesFilter;
+        });
+
+        if (filteredItems.length === 0) return;
+        visibleItemCount += filteredItems.length;
+
+        const categorySection = document.createElement("section");
+        categorySection.className = "checklist-category";
+
+        const completedInCategory = category.items.filter(function (label) {
+          return !!state[category.id + "--" + slugify(label)];
+        }).length;
+
+        const header = document.createElement("button");
+        header.type = "button";
+        header.className = "checklist-category-header";
+        header.setAttribute("aria-expanded", "true");
+
+        const title = document.createElement("strong");
+        title.textContent = category.title;
+
+        const count = document.createElement("span");
+        count.className = "category-progress";
+        count.textContent = completedInCategory + " / " + category.items.length;
+
+        header.appendChild(title);
+        header.appendChild(count);
+
+        const itemsContainer = document.createElement("div");
+        itemsContainer.className = "checklist-category-items";
+
+        filteredItems.forEach(function (label) {
+          const id = category.id + "--" + slugify(label);
+          const item = document.createElement("label");
+          item.className = "checklist-item";
+          if (state[id]) item.classList.add("is-complete");
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = !!state[id];
+
+          const text = document.createElement("span");
+          text.textContent = label;
+
+          checkbox.addEventListener("change", function () {
+            state[id] = checkbox.checked;
+            saveState();
+            render();
+          });
+
+          item.appendChild(checkbox);
+          item.appendChild(text);
+          itemsContainer.appendChild(item);
+        });
+
+        header.addEventListener("click", function () {
+          const isCollapsed = categorySection.classList.toggle("is-collapsed");
+          header.setAttribute("aria-expanded", String(!isCollapsed));
+        });
+
+        categorySection.appendChild(header);
+        categorySection.appendChild(itemsContainer);
+        app.appendChild(categorySection);
+      });
+
+      emptyState.hidden = visibleItemCount !== 0;
+      updateProgress();
+    }
+
+    searchInput.addEventListener("input", render);
+    filterSelect.addEventListener("change", render);
+
+    resetButton.addEventListener("click", function () {
+      const confirmed = window.confirm("Reset all saved checklist progress in this browser?");
+      if (!confirmed) return;
+      state = {};
+      saveState();
+      render();
+    });
+
+    render();
+  })();
+  </script>
+
+  <footer>
+    <div class="footer-brand">Tenebrous Isle Guide</div>
+    <p class="footer-text">The most complete English guide for Mina the Hollower — updated regularly as we explore the island.</p>
+    <div class="footer-links">
+      <a href="../blog/index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+    </div>
+    <p class="footer-disclaimer">
+      This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to its respective owners.
+    </p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
