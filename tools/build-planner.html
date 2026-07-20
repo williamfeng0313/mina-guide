@@ -1,116 +1,1137 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Planner - Mina the Hollower Guide</title>
-<meta name="description" content="Plan and share Mina the Hollower builds.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Mina the Hollower Build Planner: Weapons, Sidearms & Trinkets</title>
+
+  <meta
+    name="description"
+    content="Create and share Mina the Hollower builds by choosing a weapon, Sidearm, and up to six Trinkets. Generate a shareable build URL for bosses, exploration, and 100% cleanup."
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.minahollower.com/tools/build-planner.html"
+  >
+
+  <meta property="og:type" content="website">
+  <meta
+    property="og:title"
+    content="Mina the Hollower Build Planner"
+  >
+  <meta
+    property="og:description"
+    content="Choose a weapon, Sidearm, and up to six Trinkets to create and share a Mina the Hollower build."
+  >
+  <meta
+    property="og:url"
+    content="https://www.minahollower.com/tools/build-planner.html"
+  >
+  <meta
+    property="og:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Mina the Hollower Build Planner"
+  >
+  <meta
+    name="twitter:description"
+    content="Create and share Mina the Hollower builds using weapons, Sidearms, and Trinkets."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="theme-color" content="#1a1209">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    .planner-hero,
+    .planner-tool,
+    .planner-guide,
+    .planner-faq,
+    .planner-related {
+      margin-bottom: 1.4rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .planner-kicker {
+      margin-bottom: 0.5rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .planner-hero h1 {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .planner-hero p,
+    .planner-guide p,
+    .planner-faq p,
+    .planner-related p {
+      color: var(--bone-dark);
+      line-height: 1.65;
+    }
+
+    .planner-heading,
+    .planner-guide h2,
+    .planner-faq h2,
+    .planner-related h2 {
+      margin-bottom: 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+    }
+
+    .planner-guide h3,
+    .planner-faq h3 {
+      margin: 1rem 0 0.35rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    .planner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .planner-field label,
+    .planner-trinket-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .planner-field select,
+    .planner-search,
+    .planner-url {
+      width: 100%;
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid rgba(200, 134, 10, 0.3);
+      border-radius: 3px;
+      outline: none;
+      background: rgba(10, 18, 12, 0.8);
+      color: var(--parchment);
+      font-family: "Crimson Text", serif;
+      font-size: 0.95rem;
+    }
+
+    .planner-search {
+      margin-bottom: 0.75rem;
+    }
+
+    .planner-trinket-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .planner-trinket-label {
+      margin: 0;
+    }
+
+    .planner-count {
+      color: var(--bone-dark);
+      font-family: "Cinzel", serif;
+      font-size: 0.67rem;
+      letter-spacing: 0.05em;
+    }
+
+    .planner-trinkets {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 6px;
+      max-height: 330px;
+      margin-bottom: 1rem;
+      padding-right: 4px;
+      overflow-y: auto;
+    }
+
+    .trinket-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      padding: 0.65rem 0.7rem;
+      border: 1px solid rgba(200, 134, 10, 0.15);
+      border-radius: 3px;
+      background: rgba(10, 18, 12, 0.45);
+      color: var(--bone);
+      cursor: pointer;
+      line-height: 1.35;
+    }
+
+    .trinket-option:hover {
+      border-color: rgba(200, 134, 10, 0.4);
+    }
+
+    .trinket-option input {
+      margin-top: 0.18rem;
+      accent-color: var(--candle);
+    }
+
+    .trinket-option.is-selected {
+      border-color: rgba(200, 134, 10, 0.55);
+      background: rgba(200, 134, 10, 0.1);
+    }
+
+    .trinket-option.is-disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+
+    .planner-output {
+      min-height: 110px;
+      margin-bottom: 0.9rem;
+      padding: 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.2);
+      border-radius: 3px;
+      background: rgba(10, 18, 12, 0.6);
+    }
+
+    .planner-output-title {
+      margin-bottom: 0.6rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+    }
+
+    .planner-summary-empty {
+      color: var(--bone-dark);
+      font-style: italic;
+    }
+
+    .planner-summary-list {
+      display: grid;
+      gap: 0.45rem;
+      color: var(--bone);
+    }
+
+    .planner-summary-list strong {
+      color: var(--parchment);
+    }
+
+    .planner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .planner-actions .planner-url {
+      flex: 1;
+      min-width: 220px;
+      color: var(--bone-dark);
+      font-size: 0.84rem;
+    }
+
+    .planner-button {
+      min-height: 42px;
+      padding: 8px 14px;
+      border: 1px solid rgba(200, 134, 10, 0.38);
+      border-radius: 3px;
+      background: rgba(200, 134, 10, 0.12);
+      color: var(--candle-light);
+      cursor: pointer;
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .planner-button.primary {
+      border: none;
+      background: var(--candle);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .planner-button:hover {
+      border-color: var(--candle-light);
+    }
+
+    .planner-message {
+      min-height: 1.3rem;
+      margin-top: 0.7rem;
+      color: var(--candle-light);
+      font-size: 0.85rem;
+    }
+
+    .planner-guide ul,
+    .planner-guide ol,
+    .planner-related ul {
+      margin: 0.6rem 0 1rem 1.3rem;
+      color: var(--bone-dark);
+    }
+
+    .planner-guide li,
+    .planner-related li {
+      margin-bottom: 0.45rem;
+    }
+
+    .planner-faq h3:first-of-type {
+      margin-top: 0.4rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 700px) {
+      .planner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .planner-actions {
+        flex-direction: column;
+      }
+
+      .planner-actions .planner-url,
+      .planner-button {
+        width: 100%;
+      }
+
+      .planner-trinkets {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mina the Hollower Build Planner",
+    "description": "A free browser-based tool for creating and sharing Mina the Hollower builds using weapons, Sidearms, and Trinkets.",
+    "url": "https://www.minahollower.com/tools/build-planner.html",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  <div class="announce">
+    Mina the Hollower guides are live and updating regularly
+    &nbsp;|&nbsp;
+    <a href="../blog/best-builds.html">
+      Explore the Best Builds Guide →
+    </a>
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+  <nav>
+    <a href="../index.html" class="nav-brand">
+      Tenebrous Isle Guide
+    </a>
 
-<main class="page-wrap narrow">
-  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Build Planner</div>
-  <section aria-label="Build planner tool">
-      <div class="section-divider"><h2>⚙ Build Planner</h2></div>
-      <p style="color:var(--bone-dark); font-size:0.9rem; margin-bottom:1.2rem; font-style:italic;">
-        Pick your weapon, trinkets, and sidearm — get a shareable build URL instantly.
-      </p>
-      <div style="background:rgba(245,234,216,0.04); border:1px solid rgba(200,134,10,0.25); border-radius:4px; padding:1.2rem;">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
-          <div>
-            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Weapon</label>
-            <select id="planner-weapon" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
-              <option value="">— Choose weapon —</option>
-              <option>Nightstar (Whip)</option>
-              <option>Whisper &amp; Vesper (Daggers)</option>
-              <option>Blaststrike Maul (Hammer)</option>
-              <option>Guardian Casket (Shield)</option>
-              <option>Battery Buster (Blaster)</option>
-            </select>
-          </div>
-          <div>
-            <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Sidearm</label>
-            <select id="planner-sidearm" onchange="updatePlanner()" style="width:100%; background:rgba(10,18,12,0.8); border:1px solid rgba(200,134,10,0.3); color:var(--parchment); font-family:'Crimson Text',serif; font-size:0.95rem; padding:7px 10px; border-radius:3px; outline:none;">
-              <option value="">— Choose sidearm —</option>
-              <option>Recall Disc</option>
-              <option>Drill Driver</option>
-              <option>Homing Lantern</option>
-              <option>Boneshot</option>
-              <option>Shock Grenade</option>
-              <option>Plasma Mortar</option>
-            </select>
-          </div>
-        </div>
-        <label style="display:block; font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Trinkets <span style="color:var(--bone-dark); font-size:0.65rem;" id="trinket-count">(0 / 6 selected)</span></label>
-        <div id="planner-trinkets" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:5px; margin-bottom:1rem; max-height:220px; overflow-y:auto; padding-right:4px;"></div>
-        <div id="planner-output" style="background:rgba(10,18,12,0.6); border:1px solid rgba(200,134,10,0.2); border-radius:3px; padding:0.9rem; margin-bottom:0.9rem; min-height:60px;">
-          <div style="font-family:'Cinzel',serif; font-size:0.68rem; color:var(--candle); letter-spacing:0.1em; margin-bottom:6px;">YOUR BUILD</div>
-          <div id="planner-summary" style="font-size:0.85rem; color:var(--bone-dark); font-style:italic;">Select a weapon and at least one trinket to generate your build.</div>
-        </div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <input id="planner-url" readonly style="flex:1; min-width:180px; background:rgba(10,18,12,0.7); border:1px solid rgba(200,134,10,0.25); color:var(--bone-dark); font-family:'Crimson Text',serif; font-size:0.82rem; padding:7px 10px; border-radius:3px; outline:none;" placeholder="Build URL appears here…">
-          <button onclick="copyBuildUrl()" style="background:var(--candle); color:var(--ink); border:none; font-family:'Cinzel',serif; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; border-radius:3px; cursor:pointer; white-space:nowrap;" id="copy-btn">📋 Copy URL</button>
-          <button onclick="shareForum('reddit')" style="background:rgba(255,69,0,0.2); border:1px solid rgba(255,69,0,0.4); color:#ff9070; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Reddit</button>
-          <button onclick="shareForum('discord')" style="background:rgba(88,101,242,0.2); border:1px solid rgba(88,101,242,0.4); color:#9ba6ff; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border-radius:3px; cursor:pointer; white-space:nowrap;">↗ Discord</button>
-        </div>
-      </div>
-    </section>
-</main>
+    <ul class="nav-links">
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li>
+        <a
+          href="../tools/index.html"
+          style="color:var(--candle-light)"
+        >
+          Tools
+        </a>
+      </li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
+    <div class="nav-search">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+
+      <input
+        type="text"
+        placeholder="Search guides..."
+        aria-label="Search guides"
+        data-search-root="../"
+      >
+    </div>
+
+    <button
+      class="hamburger"
+      aria-label="Open menu"
+      onclick="document.getElementById('mobileNav').classList.add('open')"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div
+    class="mobile-nav-overlay"
+    id="mobileNav"
+    role="dialog"
+    aria-label="Navigation"
+  >
+    <button
+      class="mobile-close-btn"
+      onclick="document.getElementById('mobileNav').classList.remove('open')"
+      aria-label="Close menu"
+    >
+      X
+    </button>
+
+    <a href="../index.html">Home</a>
     <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../database/index.html">Database</a>
     <a href="../tools/index.html">Tools</a>
     <a href="../about.html">About</a>
   </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
 
-<script src="../assets/js/main.js"></script>
+  <main class="page-wrap narrow">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      /
+      <a href="index.html">Tools</a>
+      /
+      Build Planner
+    </div>
+
+    <section class="planner-hero">
+      <p class="planner-kicker">
+        Free Build Tool
+      </p>
+
+      <h1>
+        Mina the Hollower Build Planner
+      </h1>
+
+      <p>
+        Choose a main weapon, Sidearm, and up to six Trinkets to create
+        a custom Mina the Hollower build. The generated URL can be copied,
+        bookmarked, or shared with other players.
+      </p>
+    </section>
+
+    <section class="planner-tool" aria-label="Build planner tool">
+
+      <h2 class="planner-heading">
+        Create Your Build
+      </h2>
+
+      <p style="color:var(--bone-dark); margin-bottom:1rem;">
+        Select one weapon, one Sidearm, and up to six Trinkets.
+        Your choices update the summary and shareable URL automatically.
+      </p>
+
+      <div class="planner-grid">
+
+        <div class="planner-field">
+          <label for="planner-weapon">
+            Weapon
+          </label>
+
+          <select id="planner-weapon">
+            <option value="">— Choose weapon —</option>
+            <option value="Nightstar (Whip)">Nightstar (Whip)</option>
+            <option value="Whisper & Vesper (Daggers)">Whisper &amp; Vesper (Daggers)</option>
+            <option value="Blaststrike Maul (Hammer)">Blaststrike Maul (Hammer)</option>
+            <option value="Guardian Casket (Shield)">Guardian Casket (Shield)</option>
+            <option value="Battery Buster (Blaster)">Battery Buster (Blaster)</option>
+          </select>
+        </div>
+
+        <div class="planner-field">
+          <label for="planner-sidearm">
+            Sidearm
+          </label>
+
+          <select id="planner-sidearm">
+            <option value="">— Choose Sidearm —</option>
+            <option value="Recall Disc">Recall Disc</option>
+            <option value="Drill Driver">Drill Driver</option>
+            <option value="Homing Lantern">Homing Lantern</option>
+            <option value="Boneshot">Boneshot</option>
+            <option value="Shock Grenade">Shock Grenade</option>
+            <option value="Plasma Mortar">Plasma Mortar</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="planner-trinket-heading">
+        <label class="planner-trinket-label" for="planner-search">
+          Trinkets
+        </label>
+
+        <span class="planner-count" id="trinket-count">
+          0 / 6 selected
+        </span>
+      </div>
+
+      <input
+        id="planner-search"
+        class="planner-search"
+        type="search"
+        placeholder="Search Trinkets..."
+        aria-label="Search Trinkets"
+      >
+
+      <div
+        id="planner-trinkets"
+        class="planner-trinkets"
+      ></div>
+
+      <div
+        id="planner-output"
+        class="planner-output"
+        aria-live="polite"
+      >
+        <div class="planner-output-title">
+          YOUR BUILD
+        </div>
+
+        <div id="planner-summary">
+          <p class="planner-summary-empty">
+            Select a weapon and at least one Trinket to generate your build.
+          </p>
+        </div>
+      </div>
+
+      <div class="planner-actions">
+
+        <label style="flex:1;">
+          <span class="sr-only">
+            Shareable build URL
+          </span>
+
+          <input
+            id="planner-url"
+            class="planner-url"
+            readonly
+            placeholder="Build URL appears here..."
+          >
+        </label>
+
+        <button
+          type="button"
+          class="planner-button primary"
+          id="copy-btn"
+        >
+          Copy URL
+        </button>
+
+        <button
+          type="button"
+          class="planner-button"
+          id="reddit-btn"
+        >
+          Share to Reddit
+        </button>
+
+        <button
+          type="button"
+          class="planner-button"
+          id="reset-btn"
+        >
+          Reset Build
+        </button>
+
+      </div>
+
+      <p
+        class="planner-message"
+        id="planner-message"
+        aria-live="polite"
+      ></p>
+
+    </section>
+
+    <section class="planner-guide">
+
+      <h2>
+        How to Use the Build Planner
+      </h2>
+
+      <ol>
+        <li>Choose one of Mina's five main weapons.</li>
+        <li>Select the Sidearm used for the build.</li>
+        <li>Choose up to six Trinkets.</li>
+        <li>Review the generated build summary.</li>
+        <li>Copy the URL to save or share the setup.</li>
+      </ol>
+
+      <h2>
+        What Makes a Good Build?
+      </h2>
+
+      <p>
+        A useful build should have a clear purpose. Boss builds may
+        prioritize damage, Joule efficiency, and survival, while exploration
+        builds often benefit from movement, resource recovery, and safer
+        traversal.
+      </p>
+
+      <h3>Boss builds</h3>
+
+      <p>
+        Boss-focused setups usually combine a comfortable main weapon,
+        a Sidearm that covers range or burst damage, and Trinkets that improve
+        damage, healing, defense, or resource efficiency.
+      </p>
+
+      <h3>Exploration builds</h3>
+
+      <p>
+        Exploration setups can prioritize movement, pit safety, repeated
+        burrowing, recovery, and convenient travel through older regions.
+      </p>
+
+      <h3>100% cleanup builds</h3>
+
+      <p>
+        Cleanup builds should focus on consistency rather than maximum damage.
+        Choose equipment that makes revisiting rooms, fighting normal enemies,
+        and checking hidden routes less frustrating.
+      </p>
+
+      <p>
+        For recommended starting points, read the
+        <a href="../blog/best-builds.html">Best Builds Guide</a>
+        and
+        <a href="../blog/best-weapons.html">Best Weapons Guide</a>.
+      </p>
+
+    </section>
+
+    <section class="planner-faq">
+
+      <h2>
+        Mina the Hollower Build Planner FAQ
+      </h2>
+
+      <h3>
+        Does the build planner save my setup?
+      </h3>
+
+      <p>
+        The selected build is encoded in the generated URL.
+        Copy or bookmark the URL to save the setup, and opening that URL
+        will restore the selected weapon, Sidearm, and Trinkets.
+      </p>
+
+      <h3>
+        How many Trinkets can I select?
+      </h3>
+
+      <p>
+        The planner allows up to six Trinkets. When six are selected,
+        the remaining unselected options are temporarily disabled.
+      </p>
+
+      <h3>
+        What is the best Mina the Hollower build?
+      </h3>
+
+      <p>
+        There is no single best build for every situation. Boss fights,
+        exploration, achievement cleanup, and challenge runs benefit from
+        different combinations.
+      </p>
+
+      <h3>
+        Does the planner calculate damage?
+      </h3>
+
+      <p>
+        No. This version creates and shares equipment combinations.
+        It does not calculate exact damage, defense, or Joule efficiency.
+      </p>
+
+      <h3>
+        Can I share a build on Reddit?
+      </h3>
+
+      <p>
+        Yes. Generate a build, then use the Reddit button or copy the URL
+        and paste it into a discussion.
+      </p>
+
+    </section>
+
+    <section class="planner-related">
+
+      <h2>
+        Related Build Guides
+      </h2>
+
+      <ul>
+        <li>
+          <a href="../blog/best-builds.html">
+            Best Builds in Mina the Hollower
+          </a>
+        </li>
+
+        <li>
+          <a href="../blog/best-weapons.html">
+            Best Weapons Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="../blog/best-trinkets.html">
+            Best Trinkets Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="../database/trinkets/index.html">
+            Full Trinket Database
+          </a>
+        </li>
+
+        <li>
+          <a href="checklist.html">
+            100% Checklist & Progress Tracker
+          </a>
+        </li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      Tenebrous Isle Guide
+    </div>
+
+    <p class="footer-text">
+      The most complete English guide for Mina the Hollower —
+      updated regularly as we explore the island.
+    </p>
+
+    <div class="footer-links">
+      <a href="../blog/index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is a fan-made guide site.
+      Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to their respective owners.
+    </p>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    const MAX_TRINKETS = 6;
+
+    const trinkets = [
+      "Bubble Ring",
+      "Dead Leaf",
+      "Dodging Pendulum",
+      "Dummy Cache",
+      "Flame Guard",
+      "Glutton's Jug",
+      "Joule Syringe",
+      "Lightning Grip",
+      "Marrow Flask",
+      "Oozing Organ",
+      "Pit Preserver",
+      "Plasma Jug",
+      "Pneumatic Armlet",
+      "Polyp Lamp",
+      "Primed Vial Pouch",
+      "Proto Spark",
+      "Reckless Beastium",
+      "Repulsing Root",
+      "Seismic Belt",
+      "Shadowhide",
+      "Shock Flint",
+      "Smelling Salts",
+      "Spark Catcher",
+      "Spike Spurs",
+      "Starving Beastium",
+      "Steady Soles",
+      "Stolenoid",
+      "Thermal Pack",
+      "Thorn Harness",
+      "Tumbling Tutu",
+      "Tunneling Codex",
+      "Uranium Bracelet",
+      "Valor Medallion",
+      "Vascular Syrup",
+      "Vial Salvo",
+      "Volatile Beastium",
+      "Voltaic Guard",
+      "Warding Beastium",
+      "Windfall Charm"
+    ];
+
+    const weaponSelect = document.getElementById("planner-weapon");
+    const sidearmSelect = document.getElementById("planner-sidearm");
+    const trinketContainer = document.getElementById("planner-trinkets");
+    const searchInput = document.getElementById("planner-search");
+    const countElement = document.getElementById("trinket-count");
+    const summaryElement = document.getElementById("planner-summary");
+    const urlElement = document.getElementById("planner-url");
+    const messageElement = document.getElementById("planner-message");
+    const copyButton = document.getElementById("copy-btn");
+    const redditButton = document.getElementById("reddit-btn");
+    const resetButton = document.getElementById("reset-btn");
+
+    let selectedTrinkets = new Set();
+
+    function slugify(value) {
+      return value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+    }
+
+    function setMessage(message) {
+      messageElement.textContent = message;
+
+      if (message) {
+        window.setTimeout(function () {
+          if (messageElement.textContent === message) {
+            messageElement.textContent = "";
+          }
+        }, 2500);
+      }
+    }
+
+    function renderTrinkets() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      trinketContainer.innerHTML = "";
+
+      trinkets
+        .filter(function (name) {
+          return name.toLowerCase().includes(query);
+        })
+        .forEach(function (name) {
+          const id = "trinket-" + slugify(name);
+          const selected = selectedTrinkets.has(name);
+          const limitReached =
+            selectedTrinkets.size >= MAX_TRINKETS && !selected;
+
+          const label = document.createElement("label");
+          label.className = "trinket-option";
+
+          if (selected) {
+            label.classList.add("is-selected");
+          }
+
+          if (limitReached) {
+            label.classList.add("is-disabled");
+          }
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.id = id;
+          checkbox.value = name;
+          checkbox.checked = selected;
+          checkbox.disabled = limitReached;
+
+          const text = document.createElement("span");
+          text.textContent = name;
+
+          checkbox.addEventListener("change", function () {
+            if (checkbox.checked) {
+              if (selectedTrinkets.size >= MAX_TRINKETS) {
+                checkbox.checked = false;
+                setMessage("You can select up to six Trinkets.");
+                return;
+              }
+
+              selectedTrinkets.add(name);
+            } else {
+              selectedTrinkets.delete(name);
+            }
+
+            updatePlanner();
+            renderTrinkets();
+          });
+
+          label.appendChild(checkbox);
+          label.appendChild(text);
+          trinketContainer.appendChild(label);
+        });
+
+      if (!trinketContainer.children.length) {
+        const empty = document.createElement("p");
+        empty.style.color = "var(--bone-dark)";
+        empty.textContent = "No Trinkets match your search.";
+        trinketContainer.appendChild(empty);
+      }
+    }
+
+    function buildUrl() {
+      const url = new URL(window.location.href);
+
+      url.search = "";
+
+      if (weaponSelect.value) {
+        url.searchParams.set("weapon", weaponSelect.value);
+      }
+
+      if (sidearmSelect.value) {
+        url.searchParams.set("sidearm", sidearmSelect.value);
+      }
+
+      if (selectedTrinkets.size) {
+        url.searchParams.set(
+          "trinkets",
+          Array.from(selectedTrinkets).join("|")
+        );
+      }
+
+      return url.toString();
+    }
+
+    function updatePlanner() {
+      const weapon = weaponSelect.value;
+      const sidearm = sidearmSelect.value;
+      const selected = Array.from(selectedTrinkets);
+
+      countElement.textContent =
+        selected.length + " / " + MAX_TRINKETS + " selected";
+
+      if (!weapon && !sidearm && selected.length === 0) {
+        summaryElement.innerHTML =
+          '<p class="planner-summary-empty">' +
+          "Select a weapon and at least one Trinket to generate your build." +
+          "</p>";
+
+        urlElement.value = "";
+        window.history.replaceState({}, "", window.location.pathname);
+        return;
+      }
+
+      const parts = [];
+
+      parts.push(
+        "<div><strong>Weapon:</strong> " +
+        (weapon || "Not selected") +
+        "</div>"
+      );
+
+      parts.push(
+        "<div><strong>Sidearm:</strong> " +
+        (sidearm || "Not selected") +
+        "</div>"
+      );
+
+      parts.push(
+        "<div><strong>Trinkets:</strong> " +
+        (selected.length ? selected.join(", ") : "None selected") +
+        "</div>"
+      );
+
+      summaryElement.innerHTML =
+        '<div class="planner-summary-list">' +
+        parts.join("") +
+        "</div>";
+
+      const generatedUrl = buildUrl();
+      urlElement.value = generatedUrl;
+
+      const relativeUrl =
+        generatedUrl.replace(window.location.origin, "");
+
+      window.history.replaceState({}, "", relativeUrl);
+    }
+
+    function restoreFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+
+      const weapon = params.get("weapon") || "";
+      const sidearm = params.get("sidearm") || "";
+      const trinketValue = params.get("trinkets") || "";
+
+      const weaponValues = Array.from(weaponSelect.options).map(
+        function (option) {
+          return option.value;
+        }
+      );
+
+      const sidearmValues = Array.from(sidearmSelect.options).map(
+        function (option) {
+          return option.value;
+        }
+      );
+
+      if (weaponValues.includes(weapon)) {
+        weaponSelect.value = weapon;
+      }
+
+      if (sidearmValues.includes(sidearm)) {
+        sidearmSelect.value = sidearm;
+      }
+
+      if (trinketValue) {
+        trinketValue
+          .split("|")
+          .filter(function (name) {
+            return trinkets.includes(name);
+          })
+          .slice(0, MAX_TRINKETS)
+          .forEach(function (name) {
+            selectedTrinkets.add(name);
+          });
+      }
+    }
+
+    async function copyBuildUrl() {
+      if (!urlElement.value) {
+        setMessage("Choose at least one build option first.");
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(urlElement.value);
+        setMessage("Build URL copied.");
+      } catch (error) {
+        urlElement.focus();
+        urlElement.select();
+
+        const copied = document.execCommand("copy");
+
+        setMessage(
+          copied
+            ? "Build URL copied."
+            : "Copy the URL manually from the field."
+        );
+      }
+    }
+
+    function shareToReddit() {
+      if (!urlElement.value) {
+        setMessage("Choose at least one build option first.");
+        return;
+      }
+
+      const title = "My Mina the Hollower build";
+      const redditUrl =
+        "https://www.reddit.com/submit?url=" +
+        encodeURIComponent(urlElement.value) +
+        "&title=" +
+        encodeURIComponent(title);
+
+      window.open(
+        redditUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+    function resetPlanner() {
+      weaponSelect.value = "";
+      sidearmSelect.value = "";
+      selectedTrinkets.clear();
+      searchInput.value = "";
+      messageElement.textContent = "";
+
+      window.history.replaceState(
+        {},
+        "",
+        window.location.pathname
+      );
+
+      renderTrinkets();
+      updatePlanner();
+    }
+
+    weaponSelect.addEventListener("change", updatePlanner);
+    sidearmSelect.addEventListener("change", updatePlanner);
+    searchInput.addEventListener("input", renderTrinkets);
+    copyButton.addEventListener("click", copyBuildUrl);
+    redditButton.addEventListener("click", shareToReddit);
+    resetButton.addEventListener("click", resetPlanner);
+
+    restoreFromUrl();
+    renderTrinkets();
+    updatePlanner();
+  })();
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
