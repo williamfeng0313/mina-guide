@@ -490,7 +490,7 @@ $toolsIndexBody = @"
     <a class="hub-card" href="build-quiz.html"><h3>⚡ Build Quiz</h3><p>Answer 3 questions — get your recommended weapon and 6 trinkets.</p></a>
     <a class="hub-card" href="build-planner.html"><h3>📋 Build Planner</h3><p>Pick loadout components and share a build URL.</p></a>
     <a class="hub-card" href="checklist.html"><h3>✓ 100% Checklist</h3><p>Track missables, trinkets, and secret bosses.</p></a>
-    <a class="hub-card" href="progress.html"><h3>🗺 Progress Tracker</h3><p>Mark regions, Sparks, and mirrors as you explore.</p></a>
+    <a class="hub-card" href="checklist.html"><h3>🗺 Progress Tracker</h3><p>Mark regions, Sparks, and mirrors as you explore.</p></a>
   </div>
 </main>
 "@
@@ -600,7 +600,7 @@ $progressBody = @"
 })();
 </script>
 "@
-Write-Page 'tools/progress.html' 'Progress Tracker' 'Track region progress in Mina the Hollower.' $progressBody -ActiveNav 'tools'
+Write-Page 'tools/checklist.html' 'Progress Tracker' 'Track region progress in Mina the Hollower.' $progressBody -ActiveNav 'tools'
 
 # ── images placeholder ──
 [System.IO.File]::WriteAllText((Join-Path $Root 'assets/images/.gitkeep'), '', [System.Text.UTF8Encoding]::new($false))
