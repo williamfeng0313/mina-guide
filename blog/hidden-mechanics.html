@@ -4,104 +4,751 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hidden Mechanics - Mina the Hollower Guide</title>
-  <meta name="description" content="Lesser-known systems in Mina the Hollower.">
+  <title>Mina the Hollower Hidden Mechanics: Burrowing, Plasma, NG+ & More</title>
+
+  <meta
+    name="description"
+    content="Learn useful hidden and easily missed mechanics in Mina the Hollower, including burrow timing, Plasma management, Trinket interactions, Black Market recovery, and NG+ modifiers."
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.minahollower.com/blog/hidden-mechanics.html"
+  >
+
+  <meta property="og:type" content="article">
+  <meta
+    property="og:title"
+    content="Mina the Hollower Hidden Mechanics"
+  >
+  <meta
+    property="og:description"
+    content="A practical guide to burrow timing, Plasma interactions, hidden Trinket behavior, Black Market recovery, and NG+ modifiers."
+  >
+  <meta
+    property="og:url"
+    content="https://www.minahollower.com/blog/hidden-mechanics.html"
+  >
+  <meta
+    property="og:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Mina the Hollower Hidden Mechanics"
+  >
+  <meta
+    name="twitter:description"
+    content="Burrow timing, Plasma interactions, Trinket behavior, Black Market recovery, and NG+ modifiers explained."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="theme-color" content="#1a1209">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    .mechanics-hero,
+    .quick-answer,
+    .mechanic-card,
+    .testing-note,
+    .mechanics-faq,
+    .related-guides {
+      margin-bottom: 1.4rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .mechanics-kicker {
+      margin-bottom: 0.5rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .mechanics-hero h1 {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .mechanics-hero p,
+    .quick-answer p,
+    .mechanic-card p,
+    .testing-note p,
+    .mechanics-faq p,
+    .related-guides p {
+      color: var(--bone-dark);
+      line-height: 1.68;
+    }
+
+    .quick-answer {
+      border-color: rgba(200, 134, 10, 0.46);
+      background: rgba(200, 134, 10, 0.07);
+    }
+
+    .quick-answer h2,
+    .mechanic-card h2,
+    .testing-note h2,
+    .mechanics-faq h2,
+    .related-guides h2 {
+      margin-bottom: 0.65rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .mechanic-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.55rem;
+      border: 1px solid rgba(200, 134, 10, 0.4);
+      border-radius: 50%;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.78rem;
+      vertical-align: middle;
+    }
+
+    .mechanic-card h3,
+    .mechanics-faq h3 {
+      margin: 1rem 0 0.35rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    .mechanic-card ul,
+    .quick-answer ul,
+    .related-guides ul {
+      margin: 0.65rem 0 0 1.3rem;
+      color: var(--bone-dark);
+    }
+
+    .mechanic-card li,
+    .quick-answer li,
+    .related-guides li {
+      margin-bottom: 0.48rem;
+      line-height: 1.55;
+    }
+
+    .mechanic-tip {
+      margin-top: 0.9rem;
+      padding: 0.85rem 0.95rem;
+      border-left: 3px solid var(--candle);
+      background: rgba(200, 134, 10, 0.07);
+    }
+
+    .mechanic-tip strong {
+      color: var(--parchment);
+    }
+
+    .mechanics-index {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .mechanics-index a {
+      display: block;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      border-radius: 3px;
+      background: rgba(10, 18, 12, 0.42);
+      color: var(--bone);
+      text-decoration: none;
+    }
+
+    .mechanics-index a:hover {
+      border-color: rgba(200, 134, 10, 0.45);
+      color: var(--candle-light);
+    }
+
+    .updated-line {
+      margin-top: 0.9rem;
+      color: var(--bone-dark);
+      font-size: 0.82rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 640px) {
+      .mechanic-number {
+        display: flex;
+        margin: 0 0 0.55rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mina the Hollower Hidden Mechanics: Burrowing, Plasma, NG+ & More",
+    "description": "A practical guide to useful hidden and easily missed mechanics in Mina the Hollower.",
+    "url": "https://www.minahollower.com/blog/hidden-mechanics.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.minahollower.com/blog/hidden-mechanics.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    },
+    "dateModified": "2026-07-21"
+  }
+  </script>
 </head>
 
 <body>
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-
-  <ul class="nav-links">
-    <li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <circle cx="11" cy="11" r="8"/>
-      <path d="m21 21-4.35-4.35"/>
-    </svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  <div class="announce">
+    Independent Mina the Hollower guides, databases, and completion tools
+    &nbsp;|&nbsp;
+    <a href="../tools/checklist.html">
+      Open the 100% Checklist →
+    </a>
   </div>
 
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M3 6h18M3 12h18M3 18h18"/>
-    </svg>
-  </button>
-</nav>
+  <nav>
+    <a href="../index.html" class="nav-brand">
+      Tenebrous Isle Guide
+    </a>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+    <ul class="nav-links">
+      <li>
+        <a
+          href="../blog/index.html"
+          style="color:var(--candle-light)"
+        >
+          Blog
+        </a>
+      </li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li><a href="../tools/index.html">Tools</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
 
-<main class="page-wrap narrow">
-  <div class="breadcrumb">
-    <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Hidden Mechanics
-  </div>
+    <div class="nav-search">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
 
-  <div class="section-divider">
-    <h2>Hidden Mechanics</h2>
-  </div>
+      <input
+        type="text"
+        placeholder="Search guides..."
+        aria-label="Search guides"
+        data-search-root="../"
+      >
+    </div>
 
-  <div class="article-body">
-    <h2>Burrow invulnerability windows</h2>
-    <p>Many attacks whiff entirely if you burrow at the right moment. Shadowhide extends this by preventing burrow cancel on hit.</p>
+    <button
+      class="hamburger"
+      aria-label="Open menu"
+      onclick="document.getElementById('mobileNav').classList.add('open')"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
 
-    <h2>Plasma overflow</h2>
-    <p>Glutton's Jug, upgraded to Plasma Jug, lets Plasma exceed the normal cap — pair with Shock Flint for massive burst damage.</p>
+  <div
+    class="mobile-nav-overlay"
+    id="mobileNav"
+    role="dialog"
+    aria-label="Navigation"
+  >
+    <button
+      class="mobile-close-btn"
+      onclick="document.getElementById('mobileNav').classList.remove('open')"
+      aria-label="Close menu"
+    >
+      X
+    </button>
 
-    <h2>Black Market retroactive purchases</h2>
-    <p>Missable trinkets marked ⚠ can still be bought from the Black Market after meeting their unlock condition.</p>
-
-    <h2>NG+ mode remixing</h2>
-    <p>Seven NG+ modes change more than HP scaling — item placement and world rules can shift between runs.</p>
-  </div>
-</main>
-
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-
-  <p class="footer-text">
-    The most complete English guide for Mina the Hollower — updated daily as we explore the island.
-  </p>
-
-  <div class="footer-links">
+    <a href="../index.html">Home</a>
     <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../database/index.html">Database</a>
     <a href="../tools/index.html">Tools</a>
     <a href="../about.html">About</a>
   </div>
 
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
+  <main class="page-wrap narrow">
 
-<script src="../assets/js/main.js"></script>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      /
+      <a href="index.html">Blog</a>
+      /
+      Hidden Mechanics
+    </div>
+
+    <article>
+
+      <header class="mechanics-hero">
+        <p class="mechanics-kicker">
+          Systems Guide
+        </p>
+
+        <h1>
+          Mina the Hollower Hidden Mechanics
+        </h1>
+
+        <p>
+          Mina the Hollower explains its basic controls well, but several
+          combat, movement, equipment, and New Game Plus systems are easy to
+          misunderstand. This guide focuses on mechanics that meaningfully
+          change how you dodge, explore, manage resources, and recover missed
+          items.
+        </p>
+
+        <p class="updated-line">
+          Last updated:
+          <time datetime="2026-07-21">July 21, 2026</time>
+        </p>
+      </header>
+
+      <section class="quick-answer">
+        <h2>
+          Quick Answer
+        </h2>
+
+        <p>
+          The most useful hidden mechanics are not secret cheat codes. They are
+          small rules the game does not always explain clearly: burrowing is a
+          timed defensive action rather than permanent invulnerability,
+          Trinkets can change the way resources and movement behave, some missed
+          purchases can be recovered later, and NG+ uses a large modifier system
+          rather than a simple enemy-health increase.
+        </p>
+
+        <div class="mechanics-index">
+          <a href="#burrow-timing">Burrow timing</a>
+          <a href="#burrow-modifiers">Burrow modifiers</a>
+          <a href="#plasma-interactions">Plasma interactions</a>
+          <a href="#upgrade-forms">Upgraded Trinket forms</a>
+          <a href="#black-market">Black Market recovery</a>
+          <a href="#ng-plus">NG+ modifiers</a>
+        </div>
+      </section>
+
+      <section class="mechanic-card" id="burrow-timing">
+        <h2>
+          <span class="mechanic-number">1</span>
+          Burrowing Is a Timed Dodge, Not Permanent Safety
+        </h2>
+
+        <p>
+          Burrowing is Mina's core defensive movement tool, but entering the
+          ground does not automatically make every situation safe. The useful
+          part is the timing: many attacks can be avoided by moving underground
+          before the hit connects, then surfacing after the dangerous part of
+          the animation has passed.
+        </p>
+
+        <p>
+          This matters most against attacks with a clear startup and a narrow
+          active window. Burrowing too early can leave you surfacing into the
+          follow-up, while burrowing too late can still result in damage before
+          Mina is fully protected.
+        </p>
+
+        <h3>
+          Practical timing rule
+        </h3>
+
+        <ul>
+          <li>Watch the enemy animation rather than Mina's position alone.</li>
+          <li>Burrow just before the active hit, not at the beginning of every windup.</li>
+          <li>Delay the surface when the attack has a lingering area or second swing.</li>
+          <li>Use open ground to practice before relying on the timing in a boss fight.</li>
+        </ul>
+
+        <div class="mechanic-tip">
+          <strong>Useful habit:</strong>
+          Treat burrowing like a dodge with an entry, travel, and exit phase.
+          The exit is often where careless damage happens.
+        </div>
+      </section>
+
+      <section class="mechanic-card" id="burrow-modifiers">
+        <h2>
+          <span class="mechanic-number">2</span>
+          Some Modifiers Change Burrowing More Than Trinkets Do
+        </h2>
+
+        <p>
+          New Game Plus and modifier presets can alter the normal burrow rules.
+          For example, the modifier list includes effects such as
+          <strong>Invulnerable Burrow</strong>, which causes burrowing to ignore
+          damage, and <strong>Burrow Chain</strong>, which allows one burrow jump
+          to lead directly into another.
+        </p>
+
+        <p>
+          These options should not be confused with the default rules of a
+          normal playthrough. A strategy that feels completely safe under an
+          assistance or modifier preset may not work the same way with standard
+          settings.
+        </p>
+
+        <h3>
+          Why this causes confusion
+        </h3>
+
+        <p>
+          Players often compare experiences without mentioning active
+          modifiers. When two people report different burrow behavior, first
+          check whether either run uses an accessibility preset, NG+ preset, or
+          individual gameplay modifier.
+        </p>
+      </section>
+
+      <section class="mechanic-card" id="plasma-interactions">
+        <h2>
+          <span class="mechanic-number">3</span>
+          Plasma Effects Can Change the Value of an Entire Build
+        </h2>
+
+        <p>
+          Plasma is not only a resource to spend. Certain equipment and
+          modifiers can change how much Plasma you can hold, how it is gained,
+          or what it does. That means a Trinket that looks average in a normal
+          setup can become much stronger when the rest of the build supports
+          the same resource loop.
+        </p>
+
+        <p>
+          The important lesson is to evaluate Plasma-related equipment as a
+          package. Extra capacity has limited value when the build cannot fill
+          it, and faster gain has limited value when there is no useful way to
+          spend the resource.
+        </p>
+
+        <h3>
+          Questions to ask before using a Plasma build
+        </h3>
+
+        <ul>
+          <li>Can the route or boss reliably provide enough Plasma?</li>
+          <li>Does the Sidearm convert the extra resource into useful damage or control?</li>
+          <li>Does the build still work when Plasma drops to zero?</li>
+          <li>Are you sacrificing too much defense for a resource loop that is not always active?</li>
+        </ul>
+
+        <div class="mechanic-tip">
+          <strong>Build rule:</strong>
+          Do not judge a Plasma Trinket in isolation. Test the complete loop:
+          generation, capacity, spending, and recovery.
+        </div>
+      </section>
+
+      <section class="mechanic-card" id="upgrade-forms">
+        <h2>
+          <span class="mechanic-number">4</span>
+          Upgraded Trinket Forms Are Not Always Separate Collection Slots
+        </h2>
+
+        <p>
+          Some equipment can change into an upgraded form after completing a
+          requirement or returning to the relevant character. A key example is
+          the relationship between
+          <a href="../database/trinkets/glutton-s-jug.html">Glutton's Jug</a>
+          and
+          <a href="../database/trinkets/plasma-jug.html">Plasma Jug</a>.
+        </p>
+
+        <p>
+          Plasma Jug should be treated as the upgraded form in that progression
+          path, not automatically counted as an unrelated extra pickup. This
+          distinction matters when checking collection totals and when building
+          a cleanup checklist.
+        </p>
+
+        <h3>
+          Why upgrade forms matter
+        </h3>
+
+        <ul>
+          <li>They can change the effect of an item you already own.</li>
+          <li>They may require a kill count, quest step, or return visit.</li>
+          <li>They can create apparent collection-count mismatches.</li>
+          <li>They should be documented separately without being mistaken for a new standard slot.</li>
+        </ul>
+      </section>
+
+      <section class="mechanic-card" id="black-market">
+        <h2>
+          <span class="mechanic-number">5</span>
+          The Black Market Can Recover Some Missed Opportunities
+        </h2>
+
+        <p>
+          Missing an item at its first opportunity does not always mean the
+          entire save is ruined. Some items can become available through the
+          Black Market after their relevant unlock condition has been met.
+        </p>
+
+        <p>
+          This is especially important during 100% cleanup. Before restarting
+          the game or assuming an item is permanently missable, check the Black
+          Market and confirm whether the original condition was completed.
+        </p>
+
+        <h3>
+          Cleanup order
+        </h3>
+
+        <ol>
+          <li>Confirm the item's original unlock condition.</li>
+          <li>Complete the required quest, encounter, or progression step.</li>
+          <li>Revisit the Black Market after the condition is satisfied.</li>
+          <li>Check the dedicated item page before declaring the pickup permanently missed.</li>
+        </ol>
+
+        <p>
+          See the
+          <a href="black-market-trinkets.html">
+            Black Market Trinkets guide
+          </a>
+          for a focused cleanup route.
+        </p>
+      </section>
+
+      <section class="mechanic-card" id="ng-plus">
+        <h2>
+          <span class="mechanic-number">6</span>
+          NG+ Is a Modifier System, Not Just a Health Increase
+        </h2>
+
+        <p>
+          New Game Plus can change far more than enemy durability. The game
+          includes a broad modifier menu with harder, easier, unusual,
+          starter, cosmetic, and display-oriented effects. Presets can combine
+          multiple modifiers, while individual settings can alter movement,
+          damage, resources, checkpoints, equipment availability, and other
+          world rules.
+        </p>
+
+        <p>
+          This means two NG+ runs can feel dramatically different even when
+          both are described simply as “NG+.” When sharing a route, build, or
+          challenge strategy, list the active preset or important modifiers.
+        </p>
+
+        <h3>
+          Examples of systems modifiers can affect
+        </h3>
+
+        <ul>
+          <li>Damage taken and invulnerability duration</li>
+          <li>Burrow behavior and movement rules</li>
+          <li>Health, Joules, Plasma, and healing</li>
+          <li>Starting weapons and equipment access</li>
+          <li>Underlabs and boss checkpoints</li>
+          <li>Economy, shop prices, and item availability</li>
+        </ul>
+
+        <div class="mechanic-tip">
+          <strong>Correction to the old version of this page:</strong>
+          NG+ should not be described as only “seven modes.” The modifier
+          system is much broader and includes many individual rules and
+          developer-curated presets.
+        </div>
+      </section>
+
+      <section class="testing-note">
+        <h2>
+          How to Test a Hidden Mechanic Reliably
+        </h2>
+
+        <p>
+          Community descriptions can become inaccurate when patches, equipment,
+          and modifiers are mixed together. For reliable testing, change one
+          variable at a time: use the same enemy, the same room, the same
+          equipment, and the same modifier settings.
+        </p>
+
+        <p>
+          Record whether the result is consistent across several attempts.
+          A single lucky dodge or unusual enemy animation is not enough to prove
+          a mechanic.
+        </p>
+      </section>
+
+      <section class="mechanics-faq">
+        <h2>
+          Hidden Mechanics FAQ
+        </h2>
+
+        <h3>
+          Is Mina invincible for the entire time she is underground?
+        </h3>
+
+        <p>
+          Do not assume permanent safety under the normal rules. Burrowing is
+          best treated as a timed defensive action. Specific modifiers can
+          change its behavior.
+        </p>
+
+        <h3>
+          Is Plasma Jug a separate Trinket from Glutton's Jug?
+        </h3>
+
+        <p>
+          It is an upgraded form in the same progression path. Documenting both
+          forms is useful, but it should not automatically be treated as an
+          unrelated additional collection slot.
+        </p>
+
+        <h3>
+          Can missed Trinkets always be purchased later?
+        </h3>
+
+        <p>
+          No. The Black Market can help recover some missed opportunities, but
+          availability depends on the specific item and its unlock condition.
+          Check the dedicated item guide before relying on it.
+        </p>
+
+        <h3>
+          Does every NG+ run use the same rules?
+        </h3>
+
+        <p>
+          No. Presets and individual modifiers can produce very different
+          movement, combat, economy, and progression rules.
+        </p>
+
+        <h3>
+          Are all community-reported interactions confirmed?
+        </h3>
+
+        <p>
+          No. Some reports mix default mechanics with equipment effects or
+          active modifiers. Re-test uncertain claims under controlled settings.
+        </p>
+      </section>
+
+      <section class="related-guides">
+        <h2>
+          Related Guides
+        </h2>
+
+        <ul>
+          <li>
+            <a href="hidden-secrets.html">
+              Hidden Secrets and Easter Eggs
+            </a>
+          </li>
+
+          <li>
+            <a href="black-market-trinkets.html">
+              Black Market Trinkets Guide
+            </a>
+          </li>
+
+          <li>
+            <a href="missable-trinkets.html">
+              Missable Trinkets Guide
+            </a>
+          </li>
+
+          <li>
+            <a href="best-builds.html">
+              Best Builds Guide
+            </a>
+          </li>
+
+          <li>
+            <a href="../tools/checklist.html">
+              100% Checklist & Progress Tracker
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      Tenebrous Isle Guide
+    </div>
+
+    <p class="footer-text">
+      Independent Mina the Hollower guides, databases, and completion tools.
+    </p>
+
+    <div class="footer-links">
+      <a href="../blog/index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is a fan-made guide site.
+      Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to their respective owners.
+    </p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>

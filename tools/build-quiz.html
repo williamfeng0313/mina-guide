@@ -1,96 +1,1357 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Quiz - Mina the Hollower Guide</title>
-<meta name="description" content="Find your ideal Mina the Hollower build in 3 questions.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Mina the Hollower Build Quiz: Find Your Playstyle Build</title>
+
+  <meta
+    name="description"
+    content="Answer three quick questions to get a Mina the Hollower build recommendation with a weapon, Sidearm, and six Trinkets based on your playstyle."
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.minahollower.com/tools/build-quiz.html"
+  >
+
+  <meta property="og:type" content="website">
+  <meta
+    property="og:title"
+    content="Mina the Hollower Build Quiz"
+  >
+  <meta
+    property="og:description"
+    content="Answer three questions and get a recommended Mina the Hollower weapon, Sidearm, and six-Trinket setup."
+  >
+  <meta
+    property="og:url"
+    content="https://www.minahollower.com/tools/build-quiz.html"
+  >
+  <meta
+    property="og:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Mina the Hollower Build Quiz"
+  >
+  <meta
+    name="twitter:description"
+    content="Find a Mina the Hollower build that matches your playstyle in three questions."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="theme-color" content="#1a1209">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    .quiz-hero,
+    .quiz-shell,
+    .quiz-explainer,
+    .quiz-faq,
+    .quiz-related {
+      margin-bottom: 1.4rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .quiz-kicker {
+      margin-bottom: 0.5rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .quiz-hero h1 {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .quiz-hero p,
+    .quiz-explainer p,
+    .quiz-faq p,
+    .quiz-related p {
+      color: var(--bone-dark);
+      line-height: 1.65;
+    }
+
+    .quiz-progress-wrap {
+      margin-bottom: 1rem;
+    }
+
+    .quiz-progress-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.45rem;
+      color: var(--bone-dark);
+      font-family: "Cinzel", serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .quiz-progress {
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(200, 134, 10, 0.25);
+      border-radius: 99px;
+      background: rgba(10, 18, 12, 0.6);
+    }
+
+    .quiz-progress-bar {
+      width: 33.333%;
+      height: 100%;
+      background: var(--candle);
+      transition: width 180ms ease;
+    }
+
+    .quiz-question {
+      display: none;
+    }
+
+    .quiz-question.is-active {
+      display: block;
+    }
+
+    .quiz-question h2 {
+      margin-bottom: 0.45rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .quiz-question-intro {
+      margin-bottom: 1rem;
+      color: var(--bone-dark);
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .quiz-option {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.25);
+      border-radius: 4px;
+      background: rgba(10, 18, 12, 0.55);
+      color: var(--bone);
+      cursor: pointer;
+      text-align: left;
+      transition:
+        border-color 150ms ease,
+        background 150ms ease,
+        transform 150ms ease;
+    }
+
+    .quiz-option:hover,
+    .quiz-option:focus-visible {
+      border-color: var(--candle);
+      background: rgba(200, 134, 10, 0.1);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .quiz-option-title {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 0.84rem;
+      letter-spacing: 0.03em;
+    }
+
+    .quiz-option-text {
+      display: block;
+      color: var(--bone-dark);
+      font-family: "Crimson Text", serif;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .quiz-back-row {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+
+    .quiz-secondary-button,
+    .quiz-primary-button {
+      min-height: 42px;
+      padding: 8px 14px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .quiz-secondary-button {
+      border: 1px solid rgba(200, 134, 10, 0.35);
+      background: rgba(200, 134, 10, 0.08);
+      color: var(--candle-light);
+    }
+
+    .quiz-primary-button {
+      border: 0;
+      background: var(--candle);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .quiz-result {
+      display: none;
+    }
+
+    .quiz-result.is-visible {
+      display: block;
+    }
+
+    .quiz-result-label {
+      margin-bottom: 0.4rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .quiz-result h2 {
+      margin-bottom: 0.6rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.25;
+    }
+
+    .quiz-result-summary {
+      margin-bottom: 1rem;
+      color: var(--bone-dark);
+      line-height: 1.65;
+    }
+
+    .quiz-build-card {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.25);
+      border-radius: 4px;
+      background: rgba(10, 18, 12, 0.55);
+    }
+
+    .quiz-build-grid {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .quiz-build-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.7rem;
+      align-items: start;
+    }
+
+    .quiz-build-label {
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .quiz-build-value {
+      color: var(--bone);
+      line-height: 1.45;
+    }
+
+    .quiz-rationale {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(200, 134, 10, 0.18);
+    }
+
+    .quiz-rationale h3 {
+      margin-bottom: 0.4rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.92rem;
+    }
+
+    .quiz-rationale p {
+      color: var(--bone-dark);
+      line-height: 1.6;
+    }
+
+    .quiz-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quiz-message {
+      min-height: 1.3rem;
+      margin-top: 0.7rem;
+      color: var(--candle-light);
+      font-size: 0.85rem;
+    }
+
+    .quiz-explainer h2,
+    .quiz-faq h2,
+    .quiz-related h2 {
+      margin-bottom: 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+    }
+
+    .quiz-explainer h3,
+    .quiz-faq h3 {
+      margin: 1rem 0 0.35rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    .quiz-related ul {
+      margin: 0.6rem 0 0 1.3rem;
+      color: var(--bone-dark);
+    }
+
+    .quiz-related li {
+      margin-bottom: 0.45rem;
+    }
+
+    @media (max-width: 640px) {
+      .quiz-build-row {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+
+      .quiz-actions {
+        flex-direction: column;
+      }
+
+      .quiz-actions button,
+      .quiz-actions a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mina the Hollower Build Quiz",
+    "description": "A free three-question quiz that recommends a Mina the Hollower weapon, Sidearm, and Trinket build based on playstyle.",
+    "url": "https://www.minahollower.com/tools/build-quiz.html",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../blog/index.html">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html" style="color:var(--candle-light)">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  <div class="announce">
+    Mina the Hollower guides are live and updating regularly
+    &nbsp;|&nbsp;
+    <a href="../blog/best-builds.html">
+      Read the Best Builds Guide →
+    </a>
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+  <nav>
+    <a href="../index.html" class="nav-brand">
+      Tenebrous Isle Guide
+    </a>
 
-<main class="page-wrap narrow">
-  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Build Quiz</div>
-  <div class="section-divider"><h2>鈿?Find Your Build</h2></div>
-  <div class="sidebar-box" id="build-quiz" style="border-color:rgba(200,134,10,0.45); max-width:480px;">
-    <div style="padding:1rem;" id="quiz-body">
-      <p style="font-size:0.85rem; color:var(--bone-dark); margin-bottom:0.9rem;">Answer 3 questions 鈥?get your recommended weapon + 6 trinkets in 10 seconds.</p>
-      <div id="q1">
-        <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">HOW DO YOU PREFER TO FIGHT?</p>
-        <button class="quiz-btn" onclick="quizAnswer('style','aggro',this)">鈿?Get in close, hit fast</button>
-        <button class="quiz-btn" onclick="quizAnswer('style','safe',this)">馃徆 Keep distance, play safe</button>
-        <button class="quiz-btn" onclick="quizAnswer('style','tank',this)">馃洝 Absorb hits, counter hard</button>
-      </div>
-      <div id="q2" style="display:none;">
-        <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">WHAT KILLS YOU MOST OFTEN?</p>
-        <button class="quiz-btn" onclick="quizAnswer('death','burst',this)">馃挜 Sudden burst damage</button>
-        <button class="quiz-btn" onclick="quizAnswer('death','pits',this)">馃暢 Falling into pits</button>
-        <button class="quiz-btn" onclick="quizAnswer('death','multi',this)">馃懢 Too many enemies at once</button>
-      </div>
-      <div id="q3" style="display:none;">
-        <p style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--candle); letter-spacing:0.08em; margin-bottom:0.5rem;">WHERE ARE YOU IN THE GAME?</p>
-        <button class="quiz-btn" onclick="quizAnswer('progress','early',this)">馃尡 Just started</button>
-        <button class="quiz-btn" onclick="quizAnswer('progress','mid',this)">鈿?Mid-game (3+ Sparks)</button>
-        <button class="quiz-btn" onclick="quizAnswer('progress','late',this)">馃専 Endgame / NG+</button>
-      </div>
-      <div id="quiz-result" style="display:none;"></div>
+    <ul class="nav-links">
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li>
+        <a
+          href="../tools/index.html"
+          style="color:var(--candle-light)"
+        >
+          Tools
+        </a>
+      </li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-search">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+
+      <input
+        type="text"
+        placeholder="Search guides..."
+        aria-label="Search guides"
+        data-search-root="../"
+      >
     </div>
-  </div>
-</main>
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
+    <button
+      class="hamburger"
+      aria-label="Open menu"
+      onclick="document.getElementById('mobileNav').classList.add('open')"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div
+    class="mobile-nav-overlay"
+    id="mobileNav"
+    role="dialog"
+    aria-label="Navigation"
+  >
+    <button
+      class="mobile-close-btn"
+      onclick="document.getElementById('mobileNav').classList.remove('open')"
+      aria-label="Close menu"
+    >
+      X
+    </button>
+
+    <a href="../index.html">Home</a>
     <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../database/index.html">Database</a>
     <a href="../tools/index.html">Tools</a>
     <a href="../about.html">About</a>
   </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
 
-<script src="../assets/js/main.js"></script>
+  <main class="page-wrap narrow">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      /
+      <a href="index.html">Tools</a>
+      /
+      Build Quiz
+    </div>
+
+    <section class="quiz-hero">
+      <p class="quiz-kicker">
+        Three-Question Recommendation Tool
+      </p>
+
+      <h1>
+        Mina the Hollower Build Quiz
+      </h1>
+
+      <p>
+        Answer three quick questions about your preferred combat style,
+        your most common cause of death, and your current progression.
+        The quiz will suggest a weapon, Sidearm, and six-Trinket setup
+        you can open directly in the Build Planner.
+      </p>
+    </section>
+
+    <section class="quiz-shell" aria-label="Mina the Hollower build quiz">
+
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-row">
+          <span id="quiz-step-label">Question 1 of 3</span>
+          <span id="quiz-progress-label">33%</span>
+        </div>
+
+        <div
+          class="quiz-progress"
+          role="progressbar"
+          aria-valuemin="1"
+          aria-valuemax="3"
+          aria-valuenow="1"
+          aria-label="Quiz progress"
+        >
+          <div
+            class="quiz-progress-bar"
+            id="quiz-progress-bar"
+          ></div>
+        </div>
+      </div>
+
+      <div class="quiz-question is-active" data-step="1">
+        <h2>
+          How do you prefer to fight?
+        </h2>
+
+        <p class="quiz-question-intro">
+          Pick the option that best matches how you naturally approach combat.
+        </p>
+
+        <div class="quiz-options">
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="style"
+            data-answer-value="aggro"
+          >
+            <span class="quiz-option-title">
+              Get in close and attack quickly
+            </span>
+
+            <span class="quiz-option-text">
+              You prefer pressure, fast attacks, and staying near the enemy.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="style"
+            data-answer-value="safe"
+          >
+            <span class="quiz-option-title">
+              Keep distance and play safely
+            </span>
+
+            <span class="quiz-option-text">
+              You value range, control, and avoiding unnecessary risks.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="style"
+            data-answer-value="tank"
+          >
+            <span class="quiz-option-title">
+              Absorb pressure and counter
+            </span>
+
+            <span class="quiz-option-text">
+              You prefer defense, patience, and punishing openings.
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-step="2">
+        <h2>
+          What causes most of your deaths?
+        </h2>
+
+        <p class="quiz-question-intro">
+          Choose the problem that most often ends a promising run.
+        </p>
+
+        <div class="quiz-options">
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="death"
+            data-answer-value="burst"
+          >
+            <span class="quiz-option-title">
+              Sudden burst damage
+            </span>
+
+            <span class="quiz-option-text">
+              A few heavy hits or a bad mistake removes too much health.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="death"
+            data-answer-value="pits"
+          >
+            <span class="quiz-option-title">
+              Falling into pits
+            </span>
+
+            <span class="quiz-option-text">
+              Platforming, knockback, or missed movement causes trouble.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="death"
+            data-answer-value="multi"
+          >
+            <span class="quiz-option-title">
+              Too many enemies at once
+            </span>
+
+            <span class="quiz-option-text">
+              Crowds, projectiles, and overlapping threats become overwhelming.
+            </span>
+          </button>
+        </div>
+
+        <div class="quiz-back-row">
+          <button
+            type="button"
+            class="quiz-secondary-button"
+            data-back
+          >
+            Back
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-step="3">
+        <h2>
+          Where are you in the game?
+        </h2>
+
+        <p class="quiz-question-intro">
+          This helps the quiz favor more accessible or more specialized setups.
+        </p>
+
+        <div class="quiz-options">
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="progress"
+            data-answer-value="early"
+          >
+            <span class="quiz-option-title">
+              Early game
+            </span>
+
+            <span class="quiz-option-text">
+              You recently started and want a practical, forgiving setup.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="progress"
+            data-answer-value="mid"
+          >
+            <span class="quiz-option-title">
+              Mid-game
+            </span>
+
+            <span class="quiz-option-text">
+              You have several Sparks and a growing pool of equipment.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="quiz-option"
+            data-answer-key="progress"
+            data-answer-value="late"
+          >
+            <span class="quiz-option-title">
+              Endgame or NG+
+            </span>
+
+            <span class="quiz-option-text">
+              You want a more specialized setup for difficult encounters.
+            </span>
+          </button>
+        </div>
+
+        <div class="quiz-back-row">
+          <button
+            type="button"
+            class="quiz-secondary-button"
+            data-back
+          >
+            Back
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quiz-result">
+        <p class="quiz-result-label">
+          Your Recommended Build
+        </p>
+
+        <h2 id="result-title">
+          Recommended Build
+        </h2>
+
+        <p
+          class="quiz-result-summary"
+          id="result-summary"
+        ></p>
+
+        <div class="quiz-build-card">
+          <div class="quiz-build-grid">
+
+            <div class="quiz-build-row">
+              <div class="quiz-build-label">
+                Weapon
+              </div>
+
+              <div
+                class="quiz-build-value"
+                id="result-weapon"
+              ></div>
+            </div>
+
+            <div class="quiz-build-row">
+              <div class="quiz-build-label">
+                Sidearm
+              </div>
+
+              <div
+                class="quiz-build-value"
+                id="result-sidearm"
+              ></div>
+            </div>
+
+            <div class="quiz-build-row">
+              <div class="quiz-build-label">
+                Trinkets
+              </div>
+
+              <div
+                class="quiz-build-value"
+                id="result-trinkets"
+              ></div>
+            </div>
+
+          </div>
+
+          <div class="quiz-rationale">
+            <h3>
+              Why this build?
+            </h3>
+
+            <p id="result-rationale"></p>
+          </div>
+        </div>
+
+        <div class="quiz-actions">
+          <button
+            type="button"
+            class="quiz-primary-button"
+            id="open-planner-button"
+          >
+            Open in Build Planner
+          </button>
+
+          <button
+            type="button"
+            class="quiz-secondary-button"
+            id="copy-result-button"
+          >
+            Copy Recommendation
+          </button>
+
+          <button
+            type="button"
+            class="quiz-secondary-button"
+            id="restart-button"
+          >
+            Retake Quiz
+          </button>
+        </div>
+
+        <p
+          class="quiz-message"
+          id="quiz-message"
+          aria-live="polite"
+        ></p>
+      </div>
+
+    </section>
+
+    <section class="quiz-explainer">
+
+      <h2>
+        How the Build Quiz Works
+      </h2>
+
+      <p>
+        The quiz matches your answers with a small set of playstyle profiles.
+        It is designed as a starting point rather than an exact damage
+        calculator. The recommendations prioritize understandable combinations
+        and common player needs such as aggression, safety, defense,
+        crowd control, and exploration comfort.
+      </p>
+
+      <h3>
+        Aggressive recommendations
+      </h3>
+
+      <p>
+        Close-range players receive faster or more pressure-focused weapon
+        suggestions with Trinkets chosen to support momentum, recovery,
+        and consistent offense.
+      </p>
+
+      <h3>
+        Safe recommendations
+      </h3>
+
+      <p>
+        Distance-focused players receive ranged or control-oriented options
+        with defensive and mobility support.
+      </p>
+
+      <h3>
+        Defensive recommendations
+      </h3>
+
+      <p>
+        Players who prefer counterattacks receive sturdier recommendations
+        designed around survival, patience, and safer recovery from mistakes.
+      </p>
+
+      <p>
+        After receiving a result, open it in the
+        <a href="build-planner.html">Build Planner</a>
+        to adjust individual Trinkets and create a shareable URL.
+      </p>
+
+    </section>
+
+    <section class="quiz-faq">
+
+      <h2>
+        Build Quiz FAQ
+      </h2>
+
+      <h3>
+        Is the recommended build guaranteed to be the strongest?
+      </h3>
+
+      <p>
+        No. The quiz recommends a practical starting point based on your
+        answers. Personal comfort, upgrades, encounter type, and available
+        equipment can make another setup better for you.
+      </p>
+
+      <h3>
+        Does the quiz calculate exact damage?
+      </h3>
+
+      <p>
+        No. It does not calculate exact damage, defense, or Joule efficiency.
+        It uses playstyle rules to select a reasonable equipment combination.
+      </p>
+
+      <h3>
+        Can I edit the recommended build?
+      </h3>
+
+      <p>
+        Yes. Use the Open in Build Planner button to load the recommendation
+        into the full planner, where you can change the weapon, Sidearm,
+        or Trinkets.
+      </p>
+
+      <h3>
+        Why does the result include six Trinkets?
+      </h3>
+
+      <p>
+        The quiz creates a complete six-Trinket recommendation so the result
+        can be passed directly into the Build Planner.
+      </p>
+
+      <h3>
+        Should early-game players expect to own every recommended Trinket?
+      </h3>
+
+      <p>
+        Not always. Early-game recommendations favor more general-purpose
+        ideas, but equipment availability varies. Treat unavailable items as
+        a role to replace, such as defense, pit protection, recovery,
+        or crowd control.
+      </p>
+
+    </section>
+
+    <section class="quiz-related">
+
+      <h2>
+        Related Build Resources
+      </h2>
+
+      <ul>
+        <li>
+          <a href="build-planner.html">
+            Mina the Hollower Build Planner
+          </a>
+        </li>
+
+        <li>
+          <a href="../blog/best-builds.html">
+            Best Builds Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="../blog/best-weapons.html">
+            Best Weapons Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="../blog/best-trinkets.html">
+            Best Trinkets Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="../database/trinkets/index.html">
+            Full Trinket Database
+          </a>
+        </li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      Tenebrous Isle Guide
+    </div>
+
+    <p class="footer-text">
+      Independent Mina the Hollower guides, databases, and completion tools.
+    </p>
+
+    <div class="footer-links">
+      <a href="../blog/index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is a fan-made guide site.
+      Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to their respective owners.
+    </p>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    const answers = {
+      style: "",
+      death: "",
+      progress: ""
+    };
+
+    const questions = Array.from(
+      document.querySelectorAll(".quiz-question")
+    );
+
+    const optionButtons = Array.from(
+      document.querySelectorAll(".quiz-option")
+    );
+
+    const backButtons = Array.from(
+      document.querySelectorAll("[data-back]")
+    );
+
+    const resultPanel = document.getElementById("quiz-result");
+    const stepLabel = document.getElementById("quiz-step-label");
+    const progressLabel = document.getElementById("quiz-progress-label");
+    const progressBar = document.getElementById("quiz-progress-bar");
+    const progressRoot = document.querySelector(".quiz-progress");
+
+    const resultTitle = document.getElementById("result-title");
+    const resultSummary = document.getElementById("result-summary");
+    const resultWeapon = document.getElementById("result-weapon");
+    const resultSidearm = document.getElementById("result-sidearm");
+    const resultTrinkets = document.getElementById("result-trinkets");
+    const resultRationale = document.getElementById("result-rationale");
+
+    const openPlannerButton = document.getElementById(
+      "open-planner-button"
+    );
+
+    const copyResultButton = document.getElementById(
+      "copy-result-button"
+    );
+
+    const restartButton = document.getElementById("restart-button");
+    const messageElement = document.getElementById("quiz-message");
+
+    let currentStep = 1;
+    let currentRecommendation = null;
+
+    const profiles = {
+      aggro: {
+        name: "Close-Range Pressure Build",
+        weapon: "Whisper & Vesper (Daggers)",
+        sidearm: "Shock Grenade",
+        trinkets: [
+          "Joule Syringe",
+          "Proto Spark",
+          "Spark Catcher",
+          "Reckless Beastium",
+          "Steady Soles",
+          "Vial Salvo"
+        ],
+        summary:
+          "A fast, momentum-focused setup for players who like to stay close and keep attacking.",
+        rationale:
+          "The recommendation favors quick pressure, resource support, and tools that help maintain offense. It is best treated as a starting point for aggressive play rather than an exact maximum-damage calculation."
+      },
+
+      safe: {
+        name: "Ranged Control Build",
+        weapon: "Battery Buster (Blaster)",
+        sidearm: "Homing Lantern",
+        trinkets: [
+          "Bubble Ring",
+          "Voltaic Guard",
+          "Windfall Charm",
+          "Pneumatic Armlet",
+          "Marrow Flask",
+          "Smelling Salts"
+        ],
+        summary:
+          "A cautious setup built around distance, control, and recovering from mistakes.",
+        rationale:
+          "The weapon and Sidearm support safer spacing, while the Trinket selection leans toward protection, recovery, and consistency."
+      },
+
+      tank: {
+        name: "Defensive Counter Build",
+        weapon: "Guardian Casket (Shield)",
+        sidearm: "Recall Disc",
+        trinkets: [
+          "Bubble Ring",
+          "Flame Guard",
+          "Voltaic Guard",
+          "Warding Beastium",
+          "Marrow Flask",
+          "Valor Medallion"
+        ],
+        summary:
+          "A defense-first setup for players who prefer patience, blocking pressure, and counterattacking.",
+        rationale:
+          "The recommendation emphasizes durability and safer recovery. It suits players who would rather survive a mistake and punish an opening than rely on constant aggression."
+      }
+    };
+
+    function uniqueItems(items) {
+      return Array.from(new Set(items));
+    }
+
+    function getRecommendation() {
+      const base = JSON.parse(
+        JSON.stringify(profiles[answers.style] || profiles.safe)
+      );
+
+      let title = base.name;
+      let summary = base.summary;
+      let rationale = base.rationale;
+      let trinkets = base.trinkets.slice();
+      let sidearm = base.sidearm;
+
+      if (answers.death === "pits") {
+        trinkets.unshift("Pit Preserver", "Tumbling Tutu");
+        rationale +=
+          " Because pit deaths are a major problem, the setup adds extra support for safer traversal and recovery from movement mistakes.";
+      }
+
+      if (answers.death === "burst") {
+        trinkets.unshift("Bubble Ring", "Marrow Flask");
+        rationale +=
+          " Because sudden damage is the main issue, the setup gives additional priority to protection and recovery.";
+      }
+
+      if (answers.death === "multi") {
+        sidearm = "Shock Grenade";
+        trinkets.unshift("Repulsing Root", "Vial Salvo");
+        rationale +=
+          " Because crowds cause the most trouble, the setup shifts toward space control and handling multiple enemies.";
+      }
+
+      if (answers.progress === "early") {
+        title = "Beginner-Friendly " + title;
+        summary +=
+          " The early-game version favors a forgiving overall concept rather than a highly specialized setup.";
+        rationale +=
+          " Replace any unavailable Trinket with another item that serves the same role, such as defense, recovery, movement safety, or crowd control.";
+      }
+
+      if (answers.progress === "mid") {
+        title = "Mid-Game " + title;
+        rationale +=
+          " At mid-game, use this as a flexible template and swap individual Trinkets around the upgrades and equipment you currently own.";
+      }
+
+      if (answers.progress === "late") {
+        title = "Endgame " + title;
+        trinkets.unshift("Plasma Jug", "Tunneling Codex");
+        rationale +=
+          " The endgame version includes more specialized options and assumes access to a broader equipment pool.";
+      }
+
+      trinkets = uniqueItems(trinkets).slice(0, 6);
+
+      while (trinkets.length < 6) {
+        const fallback = [
+          "Steady Soles",
+          "Windfall Charm",
+          "Smelling Salts",
+          "Proto Spark",
+          "Marrow Flask",
+          "Bubble Ring"
+        ].find(function (item) {
+          return !trinkets.includes(item);
+        });
+
+        if (!fallback) {
+          break;
+        }
+
+        trinkets.push(fallback);
+      }
+
+      return {
+        title: title,
+        weapon: base.weapon,
+        sidearm: sidearm,
+        trinkets: trinkets,
+        summary: summary,
+        rationale: rationale
+      };
+    }
+
+    function showStep(step) {
+      currentStep = step;
+
+      questions.forEach(function (question) {
+        question.classList.toggle(
+          "is-active",
+          Number(question.dataset.step) === step
+        );
+      });
+
+      resultPanel.classList.remove("is-visible");
+
+      const percentage = Math.round((step / 3) * 100);
+
+      stepLabel.textContent = "Question " + step + " of 3";
+      progressLabel.textContent = percentage + "%";
+      progressBar.style.width = percentage + "%";
+      progressRoot.setAttribute("aria-valuenow", String(step));
+    }
+
+    function showResult() {
+      currentRecommendation = getRecommendation();
+
+      questions.forEach(function (question) {
+        question.classList.remove("is-active");
+      });
+
+      resultPanel.classList.add("is-visible");
+
+      stepLabel.textContent = "Quiz complete";
+      progressLabel.textContent = "100%";
+      progressBar.style.width = "100%";
+      progressRoot.setAttribute("aria-valuenow", "3");
+
+      resultTitle.textContent = currentRecommendation.title;
+      resultSummary.textContent = currentRecommendation.summary;
+      resultWeapon.textContent = currentRecommendation.weapon;
+      resultSidearm.textContent = currentRecommendation.sidearm;
+      resultTrinkets.textContent =
+        currentRecommendation.trinkets.join(", ");
+      resultRationale.textContent = currentRecommendation.rationale;
+
+      resultPanel.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function buildPlannerUrl() {
+      if (!currentRecommendation) {
+        return "build-planner.html";
+      }
+
+      const params = new URLSearchParams();
+
+      params.set("weapon", currentRecommendation.weapon);
+      params.set("sidearm", currentRecommendation.sidearm);
+      params.set(
+        "trinkets",
+        currentRecommendation.trinkets.join("|")
+      );
+
+      return "build-planner.html?" + params.toString();
+    }
+
+    function getRecommendationText() {
+      if (!currentRecommendation) {
+        return "";
+      }
+
+      return [
+        currentRecommendation.title,
+        "Weapon: " + currentRecommendation.weapon,
+        "Sidearm: " + currentRecommendation.sidearm,
+        "Trinkets: " + currentRecommendation.trinkets.join(", "),
+        "",
+        currentRecommendation.summary
+      ].join("\n");
+    }
+
+    function setMessage(message) {
+      messageElement.textContent = message;
+
+      window.setTimeout(function () {
+        if (messageElement.textContent === message) {
+          messageElement.textContent = "";
+        }
+      }, 2500);
+    }
+
+    optionButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const key = button.dataset.answerKey;
+        const value = button.dataset.answerValue;
+
+        answers[key] = value;
+
+        if (currentStep < 3) {
+          showStep(currentStep + 1);
+        } else {
+          showResult();
+        }
+      });
+    });
+
+    backButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (currentStep > 1) {
+          showStep(currentStep - 1);
+        }
+      });
+    });
+
+    openPlannerButton.addEventListener("click", function () {
+      window.location.href = buildPlannerUrl();
+    });
+
+    copyResultButton.addEventListener("click", async function () {
+      const text = getRecommendationText();
+
+      if (!text) {
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(text);
+        setMessage("Recommendation copied.");
+      } catch (error) {
+        const temporary = document.createElement("textarea");
+        temporary.value = text;
+        temporary.setAttribute("readonly", "");
+        temporary.style.position = "fixed";
+        temporary.style.opacity = "0";
+        document.body.appendChild(temporary);
+        temporary.select();
+
+        const copied = document.execCommand("copy");
+        temporary.remove();
+
+        setMessage(
+          copied
+            ? "Recommendation copied."
+            : "Copying failed. Please select the text manually."
+        );
+      }
+    });
+
+    restartButton.addEventListener("click", function () {
+      answers.style = "";
+      answers.death = "";
+      answers.progress = "";
+      currentRecommendation = null;
+      messageElement.textContent = "";
+      showStep(1);
+
+      document.querySelector(".quiz-shell").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    showStep(1);
+  })();
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
