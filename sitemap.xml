@@ -348,29 +348,26 @@
     <priority>0.95</priority>
  </url>
 
-<url>
-    <loc>https://www.minahollower.com/database/privacy-policy.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+   <url>
+   <loc>https://www.minahollower.com/privacy-policy.html</loc>
+   <lastmod>2026-07-21</lastmod>
+   <changefreq>yearly</changefreq>
+   <priority>0.30</priority>
  </url>
 
-<url>
-    <loc>https://www.minahollower.com/database/contact.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+   <url>
+   <loc>https://www.minahollower.com/contact.html</loc>
+   <lastmod>2026-07-21</lastmod>
+   <changefreq>yearly</changefreq>
+   <priority>0.30</priority>
  </url>
 
-<url>
-    <loc>https://www.minahollower.com/database/terms.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+   <url>
+   <loc>https://www.minahollower.com/terms.html</loc>
+   <lastmod>2026-07-21</lastmod>
+   <changefreq>yearly</changefreq>
+   <priority>0.30</priority>
  </url>
-
-
-
 
  <url>
     <loc>https://www.minahollower.com/database/trinkets/spring-heels.html</loc>
