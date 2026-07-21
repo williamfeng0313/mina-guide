@@ -1,55 +1,475 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weapons & Builds - Mina the Hollower Guide</title>
-<meta name="description" content="All weapons and recommended builds in Mina the Hollower.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Mina the Hollower Weapons Guide: Compare All 5 Weapons</title>
+
+  <meta
+    name="description"
+    content="Compare all five Mina the Hollower weapons by range, speed, damage style, strengths, weaknesses, and recommended playstyle."
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.minahollower.com/database/weapons/index.html"
+  >
+
+  <meta property="og:type" content="website">
+  <meta
+    property="og:title"
+    content="Mina the Hollower Weapons Guide"
+  >
+  <meta
+    property="og:description"
+    content="Compare all five weapons by range, speed, strengths, weaknesses, and ideal playstyle."
+  >
+  <meta
+    property="og:url"
+    content="https://www.minahollower.com/database/weapons/index.html"
+  >
+  <meta
+    property="og:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Mina the Hollower Weapons Guide"
+  >
+  <meta
+    name="twitter:description"
+    content="Compare all five Mina the Hollower weapons and find the right playstyle."
+  >
+  <meta
+    name="twitter:image"
+    content="https://www.minahollower.com/assets/images/cover.jpg"
+  >
+
+  <meta name="theme-color" content="#1a1209">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .weapons-hero,
+    .comparison-card,
+    .rating-note,
+    .weapon-faq,
+    .weapon-links {
+      margin-bottom: 1.4rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .weapons-kicker {
+      margin-bottom: 0.5rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .weapons-hero h1 {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .weapons-hero p,
+    .rating-note p,
+    .weapon-faq p,
+    .weapon-links p,
+    .weapon-description,
+    .weapon-detail {
+      color: var(--bone-dark);
+      line-height: 1.65;
+    }
+
+    .rating-note {
+      border-color: rgba(200, 134, 10, 0.4);
+      background: rgba(200, 134, 10, 0.07);
+    }
+
+    .rating-note strong,
+    .weapon-detail strong {
+      color: var(--parchment);
+    }
+
+    .comparison-card h2,
+    .weapon-faq h2,
+    .weapon-links h2 {
+      margin-bottom: 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+    }
+
+    .comparison-table-wrap {
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(10, 18, 12, 0.5);
+    }
+
+    .comparison-table td {
+      color: var(--bone-dark);
+    }
+
+    .weapon-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .weapon-card {
+      padding: 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.22);
+      border-radius: 4px;
+      background: rgba(245, 234, 216, 0.04);
+    }
+
+    .weapon-name {
+      margin-bottom: 0.25rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .weapon-type {
+      margin-bottom: 0.8rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .weapon-bars {
+      margin-bottom: 0.85rem;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.45rem;
+    }
+
+    .bar-label {
+      color: var(--bone-dark);
+      font-family: "Cinzel", serif;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+    }
+
+    .bar-track {
+      height: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      border-radius: 99px;
+      background: rgba(10, 18, 12, 0.6);
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--candle);
+    }
+
+    .weapon-description {
+      margin-bottom: 0.8rem;
+    }
+
+    .weapon-detail {
+      margin-bottom: 0.5rem;
+    }
+
+    .weapon-for {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(200, 134, 10, 0.16);
+      color: var(--candle-light);
+      font-style: italic;
+    }
+
+    .weapon-faq h3 {
+      margin: 1rem 0 0.35rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    .weapon-links ul {
+      margin: 0.6rem 0 0 1.3rem;
+      color: var(--bone-dark);
+    }
+
+    .weapon-links li {
+      margin-bottom: 0.45rem;
+    }
+
+    @media (max-width: 640px) {
+      .weapon-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Mina the Hollower Weapons Guide",
+    "description": "A comparison of all five Mina the Hollower weapons by range, speed, strengths, weaknesses, and playstyle.",
+    "url": "https://www.minahollower.com/database/weapons/index.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-  <ul class="nav-links">
-    <li><a href="../../blog/index.html">Blog</a></li>
-    <li><a href="../../database/index.html" style="color:var(--candle-light)">Database</a></li>
-    <li><a href="../../tools/index.html">Tools</a></li>
-    <li><a href="../../about.html">About</a></li>
-  </ul>
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../../">
+  <div class="announce">
+    Independent Mina the Hollower guides, databases, and completion tools
+    &nbsp;|&nbsp;
+    <a href="../../tools/build-planner.html">
+      Open the Build Planner →
+    </a>
   </div>
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-  </button>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+  <nav>
+    <a href="../../index.html" class="nav-brand">
+      Tenebrous Isle Guide
+    </a>
 
-<main class="page-wrap">
-  <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../index.html">Database</a> / Weapons</div>
-  <section aria-label="Weapons and builds">
-      <div class="section-divider"><h2>Weapons & Builds</h2></div>
+    <ul class="nav-links">
+      <li><a href="../../blog/index.html">Blog</a></li>
+      <li>
+        <a
+          href="../../database/index.html"
+          style="color:var(--candle-light)"
+        >
+          Database
+        </a>
+      </li>
+      <li><a href="../../tools/index.html">Tools</a></li>
+      <li><a href="../../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-search">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+
+      <input
+        type="text"
+        placeholder="Search guides..."
+        aria-label="Search guides"
+        data-search-root="../../"
+      >
+    </div>
+
+    <button
+      class="hamburger"
+      aria-label="Open menu"
+      onclick="document.getElementById('mobileNav').classList.add('open')"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div
+    class="mobile-nav-overlay"
+    id="mobileNav"
+    role="dialog"
+    aria-label="Navigation"
+  >
+    <button
+      class="mobile-close-btn"
+      onclick="document.getElementById('mobileNav').classList.remove('open')"
+      aria-label="Close menu"
+    >
+      X
+    </button>
+
+    <a href="../../index.html">Home</a>
+    <a href="../../blog/index.html">Blog</a>
+    <a href="../../database/index.html">Database</a>
+    <a href="../../tools/index.html">Tools</a>
+    <a href="../../about.html">About</a>
+  </div>
+
+  <main class="page-wrap">
+
+    <div class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      /
+      <a href="../index.html">Database</a>
+      /
+      Weapons
+    </div>
+
+    <section class="weapons-hero">
+      <p class="weapons-kicker">
+        Weapon Database
+      </p>
+
+      <h1>
+        Mina the Hollower Weapons Guide
+      </h1>
+
+      <p>
+        Mina has five main weapons, each built around a different combat
+        rhythm. This page compares their reach, speed, pressure, defensive
+        value, and ideal playstyle so you can choose the right weapon before
+        building a complete setup.
+      </p>
+
+      <p>
+        For full equipment combinations, use the
+        <a href="../../tools/build-planner.html">Build Planner</a>
+        or read the
+        <a href="../../blog/best-builds.html">Best Builds Guide</a>.
+      </p>
+    </section>
+
+    <section class="rating-note">
+      <p>
+        <strong>How to read the bars:</strong>
+        These are relative editorial comparisons, not official in-game damage,
+        range, or frame data. They show how each weapon feels compared with the
+        other available weapons.
+      </p>
+    </section>
+
+    <section class="comparison-card">
+      <h2>
+        Quick Weapon Comparison
+      </h2>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Weapon</th>
+              <th>Style</th>
+              <th>Main Strength</th>
+              <th>Main Weakness</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Nightstar</td>
+              <td>Balanced reach</td>
+              <td>Safe spacing</td>
+              <td>Moderate burst</td>
+              <td>Beginners and exploration</td>
+            </tr>
+
+            <tr>
+              <td>Whisper &amp; Vesper</td>
+              <td>Fast close-range pressure</td>
+              <td>Speed and aggression</td>
+              <td>Short reach</td>
+              <td>Confident, aggressive players</td>
+            </tr>
+
+            <tr>
+              <td>Blaststrike Maul</td>
+              <td>Heavy melee</td>
+              <td>High impact</td>
+              <td>Slow attacks</td>
+              <td>Patient players</td>
+            </tr>
+
+            <tr>
+              <td>Guardian Casket</td>
+              <td>Defensive counterplay</td>
+              <td>Protection and punishment</td>
+              <td>Requires timing</td>
+              <td>Defensive players</td>
+            </tr>
+
+            <tr>
+              <td>Battery Buster</td>
+              <td>Ranged control</td>
+              <td>Distance and flexibility</td>
+              <td>Resource awareness</td>
+              <td>Safe and adaptable play</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-label="Mina the Hollower weapons">
+
       <div class="weapon-cards">
-        <div class="weapon-card">
+
+        <article class="weapon-card">
           <div class="weapon-name">Nightstar</div>
           <div class="weapon-type">Whip — Starter</div>
           <div class="weapon-bars">
@@ -57,19 +477,27 @@
             <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
           </div>
-          <div class="weapon-for">Best for: Beginners, safe spacing, crowd control</div>
-        </div>
-        <div class="weapon-card">
-          <div class="weapon-name">Whisper & Vesper</div>
+          <p class="weapon-description">Nightstar offers excellent reach and safe spacing. Its balanced rhythm makes it a reliable weapon for learning enemy patterns and controlling groups without standing directly beside them.</p>
+          <p class="weapon-detail"><strong>Strengths:</strong> Long reach, safe positioning, and dependable crowd control.</p>
+          <p class="weapon-detail"><strong>Weaknesses:</strong> Lower burst pressure than more specialized close-range weapons.</p>
+          <div class="weapon-for">Best for: beginners, exploration, and learning boss patterns</div>
+        </article>
+
+        <article class="weapon-card">
+          <div class="weapon-name">Whisper &amp; Vesper</div>
           <div class="weapon-type">Twin Daggers — Starter</div>
           <div class="weapon-bars">
             <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
           </div>
-          <div class="weapon-for">Best for: Aggressive players, high-DPS boss runs</div>
-        </div>
-        <div class="weapon-card">
+          <p class="weapon-description">Whisper &amp; Vesper reward close-range pressure and quick reactions. They feel strongest when you can stay near the target and keep attacking through safe openings.</p>
+          <p class="weapon-detail"><strong>Strengths:</strong> Fast attacks, strong pressure, and responsive movement.</p>
+          <p class="weapon-detail"><strong>Weaknesses:</strong> Short reach leaves less room for positioning mistakes.</p>
+          <div class="weapon-for">Best for: aggressive players and high-pressure boss attempts</div>
+        </article>
+
+        <article class="weapon-card">
           <div class="weapon-name">Blaststrike Maul</div>
           <div class="weapon-type">Hammer — Starter</div>
           <div class="weapon-bars">
@@ -77,19 +505,27 @@
             <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
           </div>
-          <div class="weapon-for">Best for: Patient players, stagger-focused combat</div>
-        </div>
-        <div class="weapon-card">
+          <p class="weapon-description">Blaststrike Maul is built around deliberate, high-impact attacks. It works best when you wait for clear openings instead of pressing buttons continuously.</p>
+          <p class="weapon-detail"><strong>Strengths:</strong> Heavy impact and strong punishment during large openings.</p>
+          <p class="weapon-detail"><strong>Weaknesses:</strong> Slow attacks can be punished when used carelessly.</p>
+          <div class="weapon-for">Best for: patient players and stagger-focused combat</div>
+        </article>
+
+        <article class="weapon-card">
           <div class="weapon-name">Guardian Casket</div>
           <div class="weapon-type">Shield — Unlockable</div>
           <div class="weapon-bars">
             <div class="bar-row"><span class="bar-label">Range</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
-            <div class="bar-row"><span class="bar-label">Parry</span><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--candle-light)"></div></div></div>
+            <div class="bar-row"><span class="bar-label">Defense</span><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--candle-light)"></div></div></div>
           </div>
-          <div class="weapon-for">Best for: Parry specialists, counter-attack builds</div>
-        </div>
-        <div class="weapon-card">
+          <p class="weapon-description">Guardian Casket supports a defensive rhythm built around reading enemy attacks, surviving pressure, and answering with controlled counterattacks.</p>
+          <p class="weapon-detail"><strong>Strengths:</strong> Defensive utility and strong counterplay.</p>
+          <p class="weapon-detail"><strong>Weaknesses:</strong> Requires timing and may feel slower than aggressive options.</p>
+          <div class="weapon-for">Best for: defensive players and counterattack-focused builds</div>
+        </article>
+
+        <article class="weapon-card">
           <div class="weapon-name">Battery Buster</div>
           <div class="weapon-type">Blaster — Unlockable</div>
           <div class="weapon-bars">
@@ -97,30 +533,60 @@
             <div class="bar-row"><span class="bar-label">Speed</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></div>
             <div class="bar-row"><span class="bar-label">Damage</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
           </div>
-          <div class="weapon-for">Best for: Mixed-range combat, versatile runs</div>
-        </div>
+          <p class="weapon-description">Battery Buster gives Mina a safer ranged option and can make difficult enemy formations easier to control. It rewards players who value spacing and flexibility.</p>
+          <p class="weapon-detail"><strong>Strengths:</strong> Range, flexible positioning, and safe pressure.</p>
+          <p class="weapon-detail"><strong>Weaknesses:</strong> Requires better awareness of spacing and available resources.</p>
+          <div class="weapon-for">Best for: ranged control and adaptable exploration builds</div>
+        </article>
+
       </div>
     </section>
-</main>
 
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-  <p class="footer-text">The most complete English guide for Mina the Hollower 鈥?updated daily as we explore the island.</p>
-  <div class="footer-links">
-    <a href="../../blog/index.html">Blog</a>
-    <a href="../../database/bosses/index.html">Bosses</a>
-    <a href="../../database/weapons/index.html">Weapons</a>
-    <a href="../../database/trinkets/index.html">Trinkets</a>
-    <a href="../../tools/index.html">Tools</a>
-    <a href="../../about.html">About</a>
-  </div>
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
+    <section class="weapon-faq">
+      <h2>Mina the Hollower Weapons FAQ</h2>
+      <h3>What is the best weapon for beginners?</h3>
+      <p>Nightstar is a strong starting option because its reach allows safer spacing while learning enemy and boss patterns.</p>
+      <h3>Which weapon is best for aggressive players?</h3>
+      <p>Whisper &amp; Vesper favor close-range pressure and rapid attacks, but the short reach demands confident positioning.</p>
+      <h3>Which weapon is best for defensive play?</h3>
+      <p>Guardian Casket is the natural choice for players who prefer defense, patience, and counterattacks.</p>
+      <h3>Can every weapon complete the game?</h3>
+      <p>Yes. Weapon choice is mainly about comfort, encounter type, and how the rest of the build supports the weapon.</p>
+      <h3>Where can I create a full build?</h3>
+      <p>Use the <a href="../../tools/build-planner.html">Build Planner</a> to combine a weapon, Sidearm, and up to six Trinkets.</p>
+    </section>
 
-<script src="../../assets/js/main.js"></script>
+    <section class="weapon-links">
+      <h2>Related Weapon and Build Guides</h2>
+      <ul>
+        <li><a href="../../blog/best-weapons.html">Best Weapons Guide</a></li>
+        <li><a href="../../blog/best-builds.html">Best Builds Guide</a></li>
+        <li><a href="../../tools/build-planner.html">Build Planner</a></li>
+        <li><a href="../../tools/build-quiz.html">Build Quiz</a></li>
+        <li><a href="../trinkets/index.html">Trinket Database</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">Tenebrous Isle Guide</div>
+    <p class="footer-text">Independent Mina the Hollower guides, databases, and completion tools.</p>
+    <div class="footer-links">
+      <a href="../../blog/index.html">Blog</a>
+      <a href="../../database/bosses/index.html">Bosses</a>
+      <a href="../../database/weapons/index.html">Weapons</a>
+      <a href="../../database/trinkets/index.html">Trinkets</a>
+      <a href="../../tools/index.html">Tools</a>
+      <a href="../../about.html">About</a>
+      <a href="../../privacy-policy.html">Privacy Policy</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p class="footer-disclaimer">This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games. All game content belongs to their respective owners.</p>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
