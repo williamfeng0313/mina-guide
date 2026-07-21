@@ -4,107 +4,545 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Common Mistakes - Mina the Hollower Guide</title>
-  <meta name="description" content="Mistakes that kill runs in Mina the Hollower.">
+  <title>10 Common Mina the Hollower Mistakes and How to Avoid Them</title>
+  <meta name="description" content="Avoid common Mina the Hollower mistakes involving Bones, Sparks, Sidearms, checkpoints, NPCs, Trinkets, boss preparation, and 100% cleanup.">
+  <link rel="canonical" href="https://www.minahollower.com/blog/mistakes.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="10 Common Mina the Hollower Mistakes">
+  <meta property="og:description" content="A practical guide to the mistakes that waste resources, slow progression, and make Mina the Hollower harder than it needs to be.">
+  <meta property="og:url" content="https://www.minahollower.com/blog/mistakes.html">
+  <meta property="og:image" content="https://www.minahollower.com/assets/images/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="10 Common Mina the Hollower Mistakes">
+  <meta name="twitter:description" content="Avoid resource loss, weak builds, missed NPC progress, and inefficient cleanup.">
+  <meta name="twitter:image" content="https://www.minahollower.com/assets/images/cover.jpg">
+
+  <meta name="theme-color" content="#1a1209">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    .mistakes-hero,
+    .quick-answer,
+    .mistake-card,
+    .mistakes-faq,
+    .related-guides {
+      margin-bottom: 1.4rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.24);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .mistakes-kicker {
+      margin-bottom: 0.5rem;
+      color: var(--candle);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .mistakes-hero h1 {
+      margin: 0 0 0.7rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .mistakes-hero p,
+    .quick-answer p,
+    .mistake-card p,
+    .mistakes-faq p,
+    .related-guides p {
+      color: var(--bone-dark);
+      line-height: 1.68;
+    }
+
+    .quick-answer {
+      border-color: rgba(200, 134, 10, 0.46);
+      background: rgba(200, 134, 10, 0.07);
+    }
+
+    .quick-answer h2,
+    .mistake-card h2,
+    .mistakes-faq h2,
+    .related-guides h2 {
+      margin-bottom: 0.65rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .mistake-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.55rem;
+      border: 1px solid rgba(200, 134, 10, 0.4);
+      border-radius: 50%;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.78rem;
+      vertical-align: middle;
+    }
+
+    .mistake-card h3,
+    .mistakes-faq h3 {
+      margin: 1rem 0 0.35rem;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    .mistake-card ul,
+    .quick-answer ul,
+    .related-guides ul {
+      margin: 0.65rem 0 0 1.3rem;
+      color: var(--bone-dark);
+    }
+
+    .mistake-card li,
+    .quick-answer li,
+    .related-guides li {
+      margin-bottom: 0.48rem;
+      line-height: 1.55;
+    }
+
+    .mistake-fix {
+      margin-top: 0.9rem;
+      padding: 0.85rem 0.95rem;
+      border-left: 3px solid var(--candle);
+      background: rgba(200, 134, 10, 0.07);
+      color: var(--bone-dark);
+      line-height: 1.58;
+    }
+
+    .mistake-fix strong {
+      color: var(--parchment);
+    }
+
+    .mistakes-index {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .mistakes-index a {
+      display: block;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      border-radius: 3px;
+      background: rgba(10, 18, 12, 0.42);
+      color: var(--bone);
+      text-decoration: none;
+    }
+
+    .mistakes-index a:hover {
+      border-color: rgba(200, 134, 10, 0.45);
+      color: var(--candle-light);
+    }
+
+    .updated-line {
+      margin-top: 0.9rem;
+      color: var(--bone-dark);
+      font-size: 0.82rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 640px) {
+      .mistake-number {
+        display: flex;
+        margin: 0 0 0.55rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "10 Common Mina the Hollower Mistakes and How to Avoid Them",
+    "description": "A practical guide to common mistakes involving resources, builds, checkpoints, NPC progress, and 100% cleanup in Mina the Hollower.",
+    "url": "https://www.minahollower.com/blog/mistakes.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.minahollower.com/blog/mistakes.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide",
+      "url": "https://www.minahollower.com/"
+    },
+    "dateModified": "2026-07-21"
+  }
+  </script>
 </head>
 
 <body>
 
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-
-<nav>
-  <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
-
-  <ul class="nav-links">
-    <li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
-    <li><a href="../database/index.html">Database</a></li>
-    <li><a href="../tools/index.html">Tools</a></li>
-    <li><a href="../about.html">About</a></li>
-  </ul>
-
-  <div class="nav-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <circle cx="11" cy="11" r="8"/>
-      <path d="m21 21-4.35-4.35"/>
-    </svg>
-    <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+  <div class="announce">
+    Independent Mina the Hollower guides, databases, and completion tools
+    &nbsp;|&nbsp;
+    <a href="../tools/checklist.html">Open the 100% Checklist →</a>
   </div>
 
-  <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M3 6h18M3 12h18M3 18h18"/>
-    </svg>
-  </button>
-</nav>
+  <nav>
+    <a href="../index.html" class="nav-brand">Tenebrous Isle Guide</a>
 
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
-  <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
-  <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-  <a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-  <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
-  <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-  <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
+    <ul class="nav-links">
+      <li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li><a href="../tools/index.html">Tools</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
 
-<main class="page-wrap narrow">
-  <div class="breadcrumb">
-    <a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Common Mistakes
-  </div>
+    <div class="nav-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="text" placeholder="Search guides..." aria-label="Search guides" data-search-root="../">
+    </div>
 
-  <div class="section-divider">
-    <h2>5 Mistakes That Kill Runs</h2>
-  </div>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
 
-  <div class="article-body">
-    <h2>1. Carrying too many unbanked Bones</h2>
-    <p>Bones on your person are lost on death. Bank at vendors before every boss — especially without Proto Spark.</p>
-
-    <h2>2. Using sidearms during exploration</h2>
-    <p>Sidearms cost Joules and disappear when you die. Save them for boss attempts.</p>
-
-    <h2>3. Skipping NPC dialogue after each Spark</h2>
-    <p>Vendor stock and questlines unlock after restoring power. Many top trinkets are NPC rewards, not chest drops.</p>
-
-    <h2>4. Entering Nox's Bayou without Thorn Harness</h2>
-    <p>Persistent poison makes the region brutal without 60% poison reduction. Farm it on Bone Beach first.</p>
-
-    <h2>5. Delaying mirror activation</h2>
-    <p>Mirrors enable fast travel immediately. There is no benefit to saving them — activate on first discovery.</p>
-  </div>
-</main>
-
-<footer>
-  <div class="footer-brand">Tenebrous Isle Guide</div>
-
-  <p class="footer-text">
-    The most complete English guide for Mina the Hollower — updated daily as we explore the island.
-  </p>
-
-  <div class="footer-links">
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Navigation">
+    <button class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">X</button>
+    <a href="../index.html">Home</a>
     <a href="../blog/index.html">Blog</a>
-    <a href="../database/bosses/index.html">Bosses</a>
-    <a href="../database/weapons/index.html">Weapons</a>
-    <a href="../database/trinkets/index.html">Trinkets</a>
+    <a href="../database/index.html">Database</a>
     <a href="../tools/index.html">Tools</a>
     <a href="../about.html">About</a>
   </div>
 
-  <p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
+  <main class="page-wrap narrow">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> /
+      <a href="index.html">Blog</a> /
+      Common Mistakes
+    </div>
 
-<script src="../assets/js/main.js"></script>
+    <article>
+      <header class="mistakes-hero">
+        <p class="mistakes-kicker">Beginner and Progression Guide</p>
+        <h1>10 Common Mina the Hollower Mistakes</h1>
+        <p>
+          Mina the Hollower becomes much easier when you stop losing progress
+          to preventable mistakes. The most damaging errors are rarely about
+          reaction speed alone. They usually involve poor resource management,
+          ignoring NPC progress, using the wrong build for the situation, or
+          attempting cleanup without a reliable tracking method.
+        </p>
+        <p class="updated-line">
+          Last updated: <time datetime="2026-07-21">July 21, 2026</time>
+        </p>
+      </header>
 
+      <section class="quick-answer">
+        <h2>Quick Answer</h2>
+        <p>
+          The biggest mistakes are carrying valuable resources into risky
+          encounters, spending Joules without a plan, ignoring checkpoints and
+          return visits, refusing to change equipment for a boss, and assuming
+          that a missed item is permanently lost. Most of these problems can be
+          fixed by preparing before difficult rooms and keeping a simple
+          completion checklist.
+        </p>
+
+        <div class="mistakes-index">
+          <a href="#resource-risk">Resource risk</a>
+          <a href="#sidearm-waste">Sidearm waste</a>
+          <a href="#checkpoint-neglect">Checkpoint neglect</a>
+          <a href="#npc-return">Ignoring NPC return visits</a>
+          <a href="#one-build">Using one build everywhere</a>
+          <a href="#trinket-isolation">Judging Trinkets alone</a>
+          <a href="#missable-panic">Panic over missed items</a>
+          <a href="#cleanup-tracking">No cleanup tracking</a>
+          <a href="#modifier-confusion">Modifier confusion</a>
+          <a href="#unverified-advice">Unverified community advice</a>
+        </div>
+      </section>
+
+      <section class="mistake-card" id="resource-risk">
+        <h2><span class="mistake-number">1</span>Carrying Valuable Resources into a Risky Encounter</h2>
+        <p>
+          Entering a boss room, difficult route, or unfamiliar region while
+          carrying a large amount of valuable currency is an avoidable risk.
+          Even when the exact death penalty changes with your current state,
+          spending or securing resources before a dangerous attempt reduces the
+          cost of failure.
+        </p>
+        <p>
+          The problem is not simply “having too many Bones.” The real mistake is
+          failing to decide whether the next ten minutes are a farming trip,
+          an exploration trip, or a boss attempt.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Buy upgrades, visit vendors, or secure
+          your progress before entering an area where repeated deaths are likely.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="sidearm-waste">
+        <h2><span class="mistake-number">2</span>Spending Joules Without a Plan</h2>
+        <p>
+          Sidearms are useful during both exploration and boss fights, so using
+          them outside a boss arena is not automatically a mistake. The mistake
+          is spending Joules on low-value situations and then reaching a more
+          dangerous room without the resource needed for control, burst damage,
+          or a safer opening.
+        </p>
+        <p>
+          A Sidearm should solve a specific problem: hitting a distant target,
+          controlling a crowd, interrupting pressure, or creating damage during
+          a safe window.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Decide what your Sidearm is for before
+          entering a region, and avoid using it simply because the resource bar is full.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="checkpoint-neglect">
+        <h2><span class="mistake-number">3</span>Passing a Checkpoint Without Activating It</h2>
+        <p>
+          Progression becomes much more punishing when you walk past an obvious
+          checkpoint, mirror, or safe return point and continue deeper into an
+          unfamiliar route. The next death may force you to repeat several rooms
+          that could have been skipped.
+        </p>
+        <p>
+          Players sometimes delay interacting with a checkpoint because they
+          want to keep moving or assume they will return later. That saves only
+          a few seconds and can cost several minutes.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Activate travel and checkpoint systems
+          when you first reach them, unless the game clearly gives you a reason not to.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="npc-return">
+        <h2><span class="mistake-number">4</span>Failing to Revisit NPCs and Shops</h2>
+        <p>
+          NPC dialogue, shop inventory, upgrade paths, and side objectives can
+          change as the story advances. A character who had nothing useful
+          earlier may offer a new conversation, item, or progression step after
+          a major event.
+        </p>
+        <p>
+          This is especially easy to miss when the game does not place a large
+          quest marker over every change.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> After major bosses, Sparks, or story
+          milestones, revisit important hubs and speak to recurring NPCs again.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="one-build">
+        <h2><span class="mistake-number">5</span>Using the Same Build for Every Situation</h2>
+        <p>
+          A comfortable general-purpose setup is useful, but it should not
+          become a rule. Bosses, platforming routes, crowded rooms, and cleanup
+          runs reward different priorities.
+        </p>
+        <p>
+          A high-damage setup may feel excellent in a short boss fight but
+          frustrating during exploration. A defensive setup may keep you alive
+          while slowing down an encounter where aggression is safer.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Keep at least three mental presets:
+          boss damage, safe exploration, and 100% cleanup. Use the
+          <a href="../tools/build-planner.html">Build Planner</a> to save combinations.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="trinket-isolation">
+        <h2><span class="mistake-number">6</span>Judging a Trinket in Isolation</h2>
+        <p>
+          Many Trinkets look weak or strong when read alone, but their value
+          depends on the weapon, Sidearm, resource loop, and challenge in front
+          of you. Extra capacity is not useful without generation. A defensive
+          effect is less valuable when the encounter is already easy to avoid.
+        </p>
+        <p>
+          This is why tier lists should be treated as starting points rather
+          than universal rules.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Evaluate the complete build. Ask what
+          each Trinket contributes and whether two items are solving the same
+          problem unnecessarily.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="missable-panic">
+        <h2><span class="mistake-number">7</span>Assuming a Missed Item Has Ruined the Save</h2>
+        <p>
+          Missing an item during its first opportunity can feel like a
+          permanent failure, but some rewards can be recovered later through
+          shops, return visits, alternate conditions, or cleanup routes.
+        </p>
+        <p>
+          Restarting immediately without checking the exact item wastes far
+          more time than the original mistake.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Check the dedicated item page, the
+          <a href="missable-trinkets.html">Missable Trinkets guide</a>, and the
+          <a href="black-market-trinkets.html">Black Market guide</a> before restarting.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="cleanup-tracking">
+        <h2><span class="mistake-number">8</span>Attempting 100% Cleanup From Memory</h2>
+        <p>
+          A large completion run contains too many small objectives to track
+          reliably in your head. Players often revisit the same rooms multiple
+          times because they cannot remember whether a Trinket, boss, quest, or
+          upgrade was already completed.
+        </p>
+        <p>
+          This makes the final few missing items feel much harder than they
+          actually are.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Use the
+          <a href="../tools/checklist.html">100% Checklist &amp; Progress Tracker</a>
+          and mark progress as soon as an objective is completed.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="modifier-confusion">
+        <h2><span class="mistake-number">9</span>Comparing Runs Without Checking Modifiers</h2>
+        <p>
+          NG+, accessibility options, and gameplay modifiers can change combat,
+          movement, resources, equipment access, and checkpoints. Two players
+          can describe different behavior and both be correct within their own
+          settings.
+        </p>
+        <p>
+          This becomes a problem when a strategy is copied from a modified run
+          into a standard playthrough.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Before following a build or route,
+          confirm the active preset and any important modifiers. See the
+          <a href="hidden-mechanics.html">Hidden Mechanics guide</a> for more context.
+        </div>
+      </section>
+
+      <section class="mistake-card" id="unverified-advice">
+        <h2><span class="mistake-number">10</span>Treating Community Advice as Confirmed Fact</h2>
+        <p>
+          Early guides, forum replies, and comments can mix real mechanics with
+          assumptions, patch-specific behavior, or modifier effects. A confident
+          explanation is not automatically a tested explanation.
+        </p>
+        <p>
+          This matters most for exact percentages, hidden conditions, item
+          counts, and claims that something is permanently missable.
+        </p>
+        <div class="mistake-fix">
+          <strong>Better approach:</strong> Verify important claims using multiple
+          attempts, current sources, and controlled testing. Change one variable at a time.
+        </div>
+      </section>
+
+      <section class="mistakes-faq">
+        <h2>Common Mistakes FAQ</h2>
+
+        <h3>Should Sidearms be saved only for bosses?</h3>
+        <p>
+          No. Sidearms can be valuable during exploration. The better rule is
+          to spend Joules intentionally and avoid reaching a difficult room
+          with no resource left.
+        </p>
+
+        <h3>Is one strong build enough for the whole game?</h3>
+        <p>
+          A general build can handle much of the game, but changing a few
+          Trinkets for bosses, platforming, or cleanup usually makes progress easier.
+        </p>
+
+        <h3>Does missing one item always require a new save?</h3>
+        <p>
+          No. Recovery depends on the specific item and its condition. Check
+          the relevant item page before restarting.
+        </p>
+
+        <h3>What is the easiest way to avoid cleanup confusion?</h3>
+        <p>
+          Use a checklist and mark objectives immediately after completing
+          them. Waiting until the end creates unnecessary uncertainty.
+        </p>
+
+        <h3>Why do guides sometimes disagree?</h3>
+        <p>
+          They may be based on different patches, modifiers, equipment,
+          progression states, or incomplete testing.
+        </p>
+      </section>
+
+      <section class="related-guides">
+        <h2>Related Guides</h2>
+        <ul>
+          <li><a href="beginner-guide.html">Beginner Guide</a></li>
+          <li><a href="hidden-mechanics.html">Hidden Mechanics Guide</a></li>
+          <li><a href="best-builds.html">Best Builds Guide</a></li>
+          <li><a href="missable-trinkets.html">Missable Trinkets Guide</a></li>
+          <li><a href="../tools/checklist.html">100% Checklist &amp; Progress Tracker</a></li>
+          <li><a href="../tools/build-planner.html">Build Planner</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Tenebrous Isle Guide</div>
+    <p class="footer-text">Independent Mina the Hollower guides, databases, and completion tools.</p>
+
+    <div class="footer-links">
+      <a href="../blog/index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to their respective owners.
+    </p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
