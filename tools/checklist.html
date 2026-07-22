@@ -209,6 +209,28 @@
       .checklist-filter,
       .checklist-reset { width: 100%; }
     }
+
+    .checklist-preview {
+      margin: 0 0 1.4rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(200, 134, 10, 0.22);
+      background: rgba(245, 234, 216, 0.035);
+    }
+
+    .checklist-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+    }
+
+    .checklist-preview figcaption {
+      margin-top: 0.65rem;
+      color: var(--bone-dark);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      text-align: center;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -290,6 +312,10 @@
         This tracker focuses on the major categories needed for a thorough cleanup pass.
         Use the linked databases and guides for exact item locations.
       </p>
+      <p class="checklist-note">
+        <strong>Last updated:</strong>
+        <time datetime="2026-07-22">July 22, 2026</time>
+      </p>
     </section>
 
     <section class="checklist-panel">
@@ -337,6 +363,21 @@
       <p class="checklist-empty" id="checklist-empty" hidden>No checklist items match your search.</p>
     </section>
 
+    <figure class="checklist-preview">
+
+      <img
+        src="../assets/images/tools/checklist-preview.webp"
+        alt="Mina the Hollower 100% checklist and progress tracker preview"
+        width="1536"
+        height="1024"
+        loading="lazy"
+      >
+    
+      <figcaption>
+        Concept preview of the fan-made Mina the Hollower checklist and progress tracker.
+      </figcaption>
+    
+    </figure>
     <section class="checklist-guides">
       <h2>Related Completion Guides</h2>
       <p class="checklist-note">
@@ -710,6 +751,8 @@
       <a href="../database/trinkets/index.html">Trinkets</a>
       <a href="../tools/index.html">Tools</a>
       <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
     </div>
     <p class="footer-disclaimer">
       This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
