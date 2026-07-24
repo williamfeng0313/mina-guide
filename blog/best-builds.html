@@ -13,6 +13,31 @@
 
   <link rel="canonical" href="https://www.minahollower.com/blog/best-builds.html" />
   <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    .discussion-section {
+      margin-top: 1.8rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.22);
+      background: rgba(245, 234, 216, 0.035);
+    }
+  
+    .discussion-section h2 {
+      margin-bottom: 0.65rem;
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+    }
+  
+    .discussion-section > p {
+      margin-bottom: 1rem;
+      color: var(--bone-dark);
+      line-height: 1.6;
+    }
+  
+    #disqus_thread {
+      min-height: 260px;
+    }
+  </style>
    
   <style>
     .build-guide-image {
@@ -665,7 +690,47 @@
                 <strong>Build Planner</strong>
               </a>
             </div>
+
+            
           </section>
+
+          <section class="discussion-section" aria-labelledby="discussion-title">
+            <h2 id="discussion-title">Share Your Best Build</h2>
+          
+            <p>
+              Share your weapon and Trinket setup, explain what it works best for,
+              and mention any important weaknesses or difficult boss matchups.
+            </p>
+          
+            <div id="disqus_thread"></div>
+          </section>
+          
+          <script>
+            var disqus_config = function () {
+              this.page.url =
+                "https://www.minahollower.com/blog/best-builds.html";
+          
+              this.page.identifier =
+                "blog-best-builds";
+            };
+          
+            (function () {
+              var d = document;
+              var s = d.createElement("script");
+          
+              s.src = "https://minahollower.disqus.com/embed.js";
+              s.setAttribute("data-timestamp", String(+new Date()));
+          
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          
+          <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+              comments powered by Disqus.
+            </a>
+          </noscript>
         </article>
 
         <aside class="sidebar">
