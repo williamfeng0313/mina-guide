@@ -434,8 +434,44 @@
         Yes. Use the Reset Progress button above. The tool asks for confirmation before deleting saved progress.
       </p>
     </section>
-  </main>
 
+    <section class="discussion-section" aria-labelledby="discussion-title">
+      <h2 id="discussion-title">Share Your Checklist Progress</h2>
+
+      <p>
+        Share your completion progress, report any missing collectibles,
+        or point out information that needs to be corrected.
+      </p>
+
+      <div id="disqus_thread"></div>
+    </section>
+  </main>
+  <script>
+    var disqus_config = function () {
+      this.page.url =
+        "https://www.minahollower.com/tools/checklist.html";
+
+      this.page.identifier =
+        "tools-checklist";
+    };
+
+    (function () {
+      var d = document;
+      var s = d.createElement("script");
+
+      s.src = "https://minahollower.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", String(+new Date()));
+
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus.
+    </a>
+  </noscript>
   <script>
   (function () {
     "use strict";
