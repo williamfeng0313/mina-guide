@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Create and share Mina the Hollower builds by choosing a weapon, Sidearm, and up to six Trinkets. Generate a shareable build URL for bosses, exploration, and 100% cleanup."
+    content="Create and share Mina the Hollower builds with five weapons, all 15 Sidearms, and all 61 documented Trinket forms. Choose up to six Trinkets and generate a shareable build URL."
   >
 
   <link
@@ -23,7 +23,7 @@
   >
   <meta
     property="og:description"
-    content="Choose a weapon, Sidearm, and up to six Trinkets to create and share a Mina the Hollower build."
+    content="Choose from five weapons, all 15 Sidearms, and all 61 documented Trinket forms to create and share a Mina the Hollower build."
   >
   <meta
     property="og:url"
@@ -41,7 +41,7 @@
   >
   <meta
     name="twitter:description"
-    content="Create and share Mina the Hollower builds using weapons, Sidearms, and Trinkets."
+    content="Create and share builds using five weapons, all 15 Sidearms, and all 61 documented Trinket forms."
   >
   <meta
     name="twitter:image"
@@ -345,7 +345,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Mina the Hollower Build Planner",
-    "description": "A free browser-based tool for creating and sharing Mina the Hollower builds using weapons, Sidearms, and Trinkets.",
+    "description": "A free browser-based tool for creating and sharing Mina the Hollower builds using five weapons, all 15 Sidearms, and all 61 documented Trinket forms.",
     "url": "https://www.minahollower.com/tools/build-planner.html",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -474,8 +474,9 @@
       </h1>
 
       <p>
-        Choose a main weapon, Sidearm, and up to six Trinkets to create
-        a custom Mina the Hollower build. The generated URL can be copied,
+        Choose a main weapon, one of all 15 Sidearms, and up to six
+        Trinkets from all 61 documented forms to create a custom
+        Mina the Hollower build. The generated URL can be copied,
         bookmarked, or shared with other players.
       </p>
     </section>
@@ -487,8 +488,9 @@
       </h2>
 
       <p style="color:var(--bone-dark); margin-bottom:1rem;">
-        Select one weapon, one Sidearm, and up to six Trinkets.
-        Your choices update the summary and shareable URL automatically.
+        Select one weapon, one of 15 Sidearms, and up to six Trinkets
+        from the complete 61-form list. Your choices update the summary
+        and shareable URL automatically.
       </p>
 
       <div class="planner-grid">
@@ -515,12 +517,6 @@
 
           <select id="planner-sidearm">
             <option value="">— Choose Sidearm —</option>
-            <option value="Recall Disc">Recall Disc</option>
-            <option value="Drill Driver">Drill Driver</option>
-            <option value="Homing Lantern">Homing Lantern</option>
-            <option value="Boneshot">Boneshot</option>
-            <option value="Shock Grenade">Shock Grenade</option>
-            <option value="Plasma Mortar">Plasma Mortar</option>
           </select>
         </div>
 
@@ -697,6 +693,17 @@
       </p>
 
       <h3>
+        Does the planner include every Trinket and Sidearm?
+      </h3>
+
+      <p>
+        Yes. The planner includes all 15 Sidearms and 61 selectable
+        Trinket forms. The Trinket compendium has 60 numbered slots,
+        but Glutton's Jug and its Plasma Jug upgrade share slot 29
+        and are shown separately because they have different effects.
+      </p>
+
+      <h3>
         What is the best Mina the Hollower build?
       </h3>
 
@@ -794,341 +801,10 @@
     </p>
   </footer>
 
-  <script>
-  (function () {
-    "use strict";
-
-    const MAX_TRINKETS = 6;
-
-    const trinkets = [
-      "Bubble Ring",
-      "Dead Leaf",
-      "Dodging Pendulum",
-      "Dummy Cache",
-      "Flame Guard",
-      "Glutton's Jug",
-      "Joule Syringe",
-      "Lightning Grip",
-      "Oozing Organ",
-      "Pit Preserver",
-      "Plasma Jug",
-      "Pneumatic Armlet",
-      "Polyp Lamp",
-      "Primed Vial Pouch",
-      "Proto Spark",
-      "Reckless Beastium",
-      "Repulsing Root",
-      "Seismic Belt",
-      "Shock Flint",
-      "Smelling Salts",
-      "Spark Catcher",
-      "Spike Spurs",
-      "Starving Beastium",
-      "Steady Soles",
-      "Stolenoid",
-      "Thermal Pack",
-      "Tumbling Tutu",
-      "Tunneling Codex",
-      "Uranium Bracelet",
-      "Valor Medallion",
-      "Vascular Syrup",
-      "Vial Salvo",
-      "Volatile Beastium",
-      "Voltaic Guard",
-      "Warding Beastium",
-      "Windfall Charm"
-    ];
-
-    const weaponSelect = document.getElementById("planner-weapon");
-    const sidearmSelect = document.getElementById("planner-sidearm");
-    const trinketContainer = document.getElementById("planner-trinkets");
-    const searchInput = document.getElementById("planner-search");
-    const countElement = document.getElementById("trinket-count");
-    const summaryElement = document.getElementById("planner-summary");
-    const urlElement = document.getElementById("planner-url");
-    const messageElement = document.getElementById("planner-message");
-    const copyButton = document.getElementById("copy-btn");
-    const redditButton = document.getElementById("reddit-btn");
-    const resetButton = document.getElementById("reset-btn");
-
-    let selectedTrinkets = new Set();
-
-    function slugify(value) {
-      return value
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
-    }
-
-    function setMessage(message) {
-      messageElement.textContent = message;
-
-      if (message) {
-        window.setTimeout(function () {
-          if (messageElement.textContent === message) {
-            messageElement.textContent = "";
-          }
-        }, 2500);
-      }
-    }
-
-    function renderTrinkets() {
-      const query = searchInput.value.trim().toLowerCase();
-
-      trinketContainer.innerHTML = "";
-
-      trinkets
-        .filter(function (name) {
-          return name.toLowerCase().includes(query);
-        })
-        .forEach(function (name) {
-          const id = "trinket-" + slugify(name);
-          const selected = selectedTrinkets.has(name);
-          const limitReached =
-            selectedTrinkets.size >= MAX_TRINKETS && !selected;
-
-          const label = document.createElement("label");
-          label.className = "trinket-option";
-
-          if (selected) {
-            label.classList.add("is-selected");
-          }
-
-          if (limitReached) {
-            label.classList.add("is-disabled");
-          }
-
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.id = id;
-          checkbox.value = name;
-          checkbox.checked = selected;
-          checkbox.disabled = limitReached;
-
-          const text = document.createElement("span");
-          text.textContent = name;
-
-          checkbox.addEventListener("change", function () {
-            if (checkbox.checked) {
-              if (selectedTrinkets.size >= MAX_TRINKETS) {
-                checkbox.checked = false;
-                setMessage("You can select up to six Trinkets.");
-                return;
-              }
-
-              selectedTrinkets.add(name);
-            } else {
-              selectedTrinkets.delete(name);
-            }
-
-            updatePlanner();
-            renderTrinkets();
-          });
-
-          label.appendChild(checkbox);
-          label.appendChild(text);
-          trinketContainer.appendChild(label);
-        });
-
-      if (!trinketContainer.children.length) {
-        const empty = document.createElement("p");
-        empty.style.color = "var(--bone-dark)";
-        empty.textContent = "No Trinkets match your search.";
-        trinketContainer.appendChild(empty);
-      }
-    }
-
-    function buildUrl() {
-      const url = new URL(window.location.href);
-
-      url.search = "";
-
-      if (weaponSelect.value) {
-        url.searchParams.set("weapon", weaponSelect.value);
-      }
-
-      if (sidearmSelect.value) {
-        url.searchParams.set("sidearm", sidearmSelect.value);
-      }
-
-      if (selectedTrinkets.size) {
-        url.searchParams.set(
-          "trinkets",
-          Array.from(selectedTrinkets).join("|")
-        );
-      }
-
-      return url.toString();
-    }
-
-    function updatePlanner() {
-      const weapon = weaponSelect.value;
-      const sidearm = sidearmSelect.value;
-      const selected = Array.from(selectedTrinkets);
-
-      countElement.textContent =
-        selected.length + " / " + MAX_TRINKETS + " selected";
-
-      if (!weapon && !sidearm && selected.length === 0) {
-        summaryElement.innerHTML =
-          '<p class="planner-summary-empty">' +
-          "Select a weapon and at least one Trinket to generate your build." +
-          "</p>";
-
-        urlElement.value = "";
-        window.history.replaceState({}, "", window.location.pathname);
-        return;
-      }
-
-      const parts = [];
-
-      parts.push(
-        "<div><strong>Weapon:</strong> " +
-        (weapon || "Not selected") +
-        "</div>"
-      );
-
-      parts.push(
-        "<div><strong>Sidearm:</strong> " +
-        (sidearm || "Not selected") +
-        "</div>"
-      );
-
-      parts.push(
-        "<div><strong>Trinkets:</strong> " +
-        (selected.length ? selected.join(", ") : "None selected") +
-        "</div>"
-      );
-
-      summaryElement.innerHTML =
-        '<div class="planner-summary-list">' +
-        parts.join("") +
-        "</div>";
-
-      const generatedUrl = buildUrl();
-      urlElement.value = generatedUrl;
-
-      const relativeUrl =
-        generatedUrl.replace(window.location.origin, "");
-
-      window.history.replaceState({}, "", relativeUrl);
-    }
-
-    function restoreFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-
-      const weapon = params.get("weapon") || "";
-      const sidearm = params.get("sidearm") || "";
-      const trinketValue = params.get("trinkets") || "";
-
-      const weaponValues = Array.from(weaponSelect.options).map(
-        function (option) {
-          return option.value;
-        }
-      );
-
-      const sidearmValues = Array.from(sidearmSelect.options).map(
-        function (option) {
-          return option.value;
-        }
-      );
-
-      if (weaponValues.includes(weapon)) {
-        weaponSelect.value = weapon;
-      }
-
-      if (sidearmValues.includes(sidearm)) {
-        sidearmSelect.value = sidearm;
-      }
-
-      if (trinketValue) {
-        trinketValue
-          .split("|")
-          .filter(function (name) {
-            return trinkets.includes(name);
-          })
-          .slice(0, MAX_TRINKETS)
-          .forEach(function (name) {
-            selectedTrinkets.add(name);
-          });
-      }
-    }
-
-    async function copyBuildUrl() {
-      if (!urlElement.value) {
-        setMessage("Choose at least one build option first.");
-        return;
-      }
-
-      try {
-        await navigator.clipboard.writeText(urlElement.value);
-        setMessage("Build URL copied.");
-      } catch (error) {
-        urlElement.focus();
-        urlElement.select();
-
-        const copied = document.execCommand("copy");
-
-        setMessage(
-          copied
-            ? "Build URL copied."
-            : "Copy the URL manually from the field."
-        );
-      }
-    }
-
-    function shareToReddit() {
-      if (!urlElement.value) {
-        setMessage("Choose at least one build option first.");
-        return;
-      }
-
-      const title = "My Mina the Hollower build";
-      const redditUrl =
-        "https://www.reddit.com/submit?url=" +
-        encodeURIComponent(urlElement.value) +
-        "&title=" +
-        encodeURIComponent(title);
-
-      window.open(
-        redditUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-
-    function resetPlanner() {
-      weaponSelect.value = "";
-      sidearmSelect.value = "";
-      selectedTrinkets.clear();
-      searchInput.value = "";
-      messageElement.textContent = "";
-
-      window.history.replaceState(
-        {},
-        "",
-        window.location.pathname
-      );
-
-      renderTrinkets();
-      updatePlanner();
-    }
-
-    weaponSelect.addEventListener("change", updatePlanner);
-    sidearmSelect.addEventListener("change", updatePlanner);
-    searchInput.addEventListener("input", renderTrinkets);
-    copyButton.addEventListener("click", copyBuildUrl);
-    redditButton.addEventListener("click", shareToReddit);
-    resetButton.addEventListener("click", resetPlanner);
-
-    restoreFromUrl();
-    renderTrinkets();
-    updatePlanner();
-  })();
-  </script>
-
+  <script src="../assets/js/game-data.js"></script>
   <script src="../assets/js/main.js"></script>
   <script defer src="/_vercel/insights/script.js"></script>
-
+   
+ 
 </body>
 </html>
