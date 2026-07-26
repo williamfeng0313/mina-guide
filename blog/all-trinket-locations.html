@@ -578,15 +578,32 @@
       <a href="black-market-trinkets.html">Black Market Trinkets recovery guide</a>.
     </p>
 </section>
-<section aria-label="Corrections" class="content-card correction-note">
-<h2>Found a missing Trinket note?</h2>
-<p>
-      This checklist is still being refined. If you spot an incorrect location, missing NPC reward,
-      or unclear Black Market recovery note, message me on
-      <a href="https://www.reddit.com/user/False_Suspect_2212/" rel="noopener" target="_blank">Reddit</a>
-      and I’ll update the guide.
-    </p>
+<section
+  class="content-card discussion-section"
+  aria-labelledby="all-trinkets-discussion-title"
+>
+  <p class="discussion-kicker">Community Discussion</p>
+
+  <h2 id="all-trinkets-discussion-title">
+    Which Trinket Was Your Last Missing One?
+  </h2>
+
+  <p class="discussion-question">
+    Tell us the Trinket name, region, and the route or condition that
+    finally worked. If an entry in this guide is inaccurate, include
+    the exact correction.
+  </p>
+
+  <div id="disqus_thread"></div>
+
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+      comments powered by Disqus.
+    </a>
+  </noscript>
 </section>
+
 <section class="content-card">
 <h2>Recommended Next Guides</h2>
 <ul>
@@ -619,6 +636,30 @@
     All game content belongs to their respective owners.
   </p>
 </footer>
+
+<script>
+  var disqus_config = function () {
+    this.page.url =
+      "https://www.minahollower.com/blog/all-trinket-locations.html";
+
+    this.page.identifier =
+      "blog-all-trinket-locations";
+
+    this.page.title =
+      "All Trinket Locations Discussion";
+  };
+
+  (function () {
+    var d = document;
+    var s = d.createElement("script");
+
+    s.src = "https://minahollower.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
 <script src="../assets/js/main.js"></script>
 <script defer="" src="/_vercel/insights/script.js"></script>
 </body>

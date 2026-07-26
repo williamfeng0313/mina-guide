@@ -2163,7 +2163,39 @@
 
   </section>
 
+  <section
+  class="content-card discussion-section"
+  aria-labelledby="boss-ratings-discussion-title"
+>
 
+  <h2 id="boss-ratings-discussion-title">
+    Which Boss Rating Do You Disagree With Most?
+  </h2>
+
+  <p>
+    Name the boss, give it your own 1–5 star rating, and explain
+    which weapon, Sidearm, Trinkets, or difficulty setting shaped
+    your experience.
+  </p>
+
+  <div class="rating-intro-note">
+    <strong>Suggested format:</strong>
+    Boss name — Your rating — Build used — Why you agree or disagree.
+  </div>
+
+  <div id="disqus_thread"></div>
+
+  <noscript>
+    Please enable JavaScript to view the
+    <a
+      href="https://disqus.com/?ref_noscript"
+      rel="nofollow"
+    >
+      comments powered by Disqus.
+    </a>
+  </noscript>
+
+</section>
 
   <section class="content-card">
 
@@ -2346,7 +2378,28 @@
 
 </footer>
 
+<script>
+  var disqus_config = function () {
+    this.page.url =
+      "https://www.minahollower.com/blog/boss-difficulty-ratings.html";
 
+    this.page.identifier =
+      "blog-boss-difficulty-ratings";
+
+    this.page.title =
+      "Mina the Hollower Boss Ratings Discussion";
+  };
+
+  (function () {
+    var d = document;
+    var s = d.createElement("script");
+
+    s.src = "https://minahollower.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", String(+new Date()));
+
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
 
 <script src="../assets/js/main.js"></script>
 

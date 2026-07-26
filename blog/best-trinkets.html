@@ -382,15 +382,34 @@
             </p>
           </div>
           
-          <section class="content-card correction-note" aria-label="Corrections">
-            <h2>Found a Trinket interaction we missed?</h2>
-            <p>
-              Trinket interactions and build ideas are still being tested. If you find a useful combo,
-              incorrect interaction, or better setup, message me on
-              <a href="https://www.reddit.com/user/False_Suspect_2212/" target="_blank" rel="noopener">Reddit</a>
-              and I’ll review it for the guide.
-            </p>
-          </section>
+          <section
+        class="content-card discussion-section"
+        aria-labelledby="best-trinkets-discussion-title"
+      >
+        <h2 id="best-trinkets-discussion-title">
+          Which Trinket Combo Deserves a Higher Ranking?
+        </h2>
+
+        <p class="discussion-question">
+          Share the Trinkets in your setup and explain what it is designed for:
+          boss fights, survival, exploration, Bone farming, or 100% cleanup.
+          If possible, include the weapon or Sidearm that makes the combo work.
+        </p>
+
+        <p class="intro-note">
+          <strong>Suggested format:</strong>
+          Trinkets — Weapon or Sidearm — Best use — Why it works.
+        </p>
+
+        <div id="disqus_thread"></div>
+
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
+      </section>
 
           <section class="next-panel" aria-label="Recommended next reads">
             <h2>Read next</h2>
@@ -441,6 +460,11 @@
               <li><a href="#tier-list">Tier list</a></li>
               <li><a href="#how-to-choose">How to choose</a></li>
               <li><a href="#faq">FAQ</a></li>
+              <li>
+                <a href="#best-trinkets-discussion-title">
+                  Community Builds
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -513,6 +537,29 @@
         window.location.href = match ? match.url : "index.html";
       });
     }
+  </script>
+   <!-- Best Trinkets Disqus -->
+  <script>
+    var disqus_config = function () {
+      this.page.url =
+        "https://www.minahollower.com/blog/best-trinkets.html";
+
+      this.page.identifier =
+        "blog-best-trinkets";
+
+      this.page.title =
+        "Best Trinkets and Trinket Combos Discussion";
+    };
+
+    (function () {
+      var d = document;
+      var s = d.createElement("script");
+
+      s.src = "https://minahollower.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", String(+new Date()));
+
+      (d.head || d.body).appendChild(s);
+    })();
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
