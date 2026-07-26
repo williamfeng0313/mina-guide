@@ -1044,6 +1044,36 @@ nav {
   border-bottom: 1px dotted rgba(232,160,32,0.45);
 }
 
+.discussion-section {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(200, 134, 10, 0.28);
+  background: rgba(245, 234, 216, 0.04);
+}
+
+.discussion-kicker {
+  margin-bottom: 0.35rem;
+  color: var(--candle);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.discussion-section h2 {
+  margin-bottom: 0.65rem;
+  color: var(--parchment);
+}
+
+.discussion-question {
+  margin-bottom: 1rem;
+  color: var(--bone-dark);
+  line-height: 1.7;
+}
+
+#disqus_thread {
+  margin-top: 1rem;
+}
 .intro-note {
   border-left: 3px solid var(--candle);
   background: rgba(200,134,10,0.08);
