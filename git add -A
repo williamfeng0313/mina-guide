@@ -1,0 +1,115 @@
+warning: in the working copy of 'blog/100-percent-cleanup-checklist.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/all-trinket-locations.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/beginner-guide.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/best-builds.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/best-trinkets.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/black-market-trinkets.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/mina-the-hollower-walkthrough.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blog/missable-trinkets.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'database/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'database/trinkets/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/build-planner.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/checklist.html', LF will be replaced by CRLF the next time Git touches it
+ blog/100-percent-cleanup-checklist.html     |   70 [32m+[m[31m-[m
+ blog/achievement-difficulty.html            |   10 [32m+[m[31m-[m
+ blog/all-trinket-locations.html             |   20 [32m+[m[31m-[m
+ blog/beginner-guide.html                    |   16 [32m+[m[31m-[m
+ blog/best-builds.html                       |   28 [32m+[m[31m-[m
+ blog/best-trinkets.html                     |   24 [32m+[m[31m-[m
+ blog/best-weapons.html                      |    4 [32m+[m[31m-[m
+ blog/black-market-trinkets.html             |   33 [32m+[m[31m-[m
+ blog/bone-beach-all-collectibles.html       |   42 [32m+[m[31m-[m
+ blog/boss-difficulty-ratings.html           |  132 [32m+[m[31m--[m
+ blog/boss-tier-list.html                    |   16 [32m+[m[31m-[m
+ blog/hidden-mechanics.html                  |    8 [32m+[m[31m-[m
+ blog/hidden-secrets.html                    |   34 [32m+[m[31m-[m
+ blog/how-to-get-tunneling-codex.html        |    2 [32m+[m[31m-[m
+ blog/index.html                             |   18 [32m+[m[31m-[m
+ blog/mina-the-hollower-walkthrough.html     |   26 [32m+[m[31m-[m
+ blog/mirror-guide.html                      |   24 [32m+[m[31m-[m
+ blog/missable-trinkets.html                 |   21 [32m+[m[31m-[m
+ blog/mistakes.html                          |    6 [32m+[m[31m-[m
+ blog/sandfalls-all-collectibles.html        |   44 [32m+[m[31m-[m
+ blog/secret-bosses.html                     |   14 [32m+[m[31m-[m
+ database/bosses/astral-gate-warden.html     |    8 [32m+[m[31m-[m
+ database/bosses/carving-man.html            |    8 [32m+[m[31m-[m
+ database/bosses/dark-deluxy.html            |    8 [32m+[m[31m-[m
+ database/bosses/index.html                  |   64 [32m+[m[31m-[m
+ database/bosses/major-miner.html            |    8 [32m+[m[31m-[m
+ database/bosses/nether-kraken.html          |    8 [32m+[m[31m-[m
+ database/bosses/the-worms-back.html         |    8 [32m+[m[31m-[m
+ database/bosses/tide-caller.html            |    8 [32m+[m[31m-[m
+ database/bosses/worm-queen.html             |    8 [32m+[m[31m-[m
+ database/index.html                         |   33 [32m+[m[31m-[m
+ database/sidearms/index.html                |   12 [32m+[m[31m-[m
+ database/trinkets/bell-of-grace.html        |    8 [32m+[m[31m-[m
+ database/trinkets/bellows-bustle.html       |    6 [32m+[m[31m-[m
+ database/trinkets/blinking-glass.html       |    6 [32m+[m[31m-[m
+ database/trinkets/bridge-weaver.html        |    8 [32m+[m[31m-[m
+ database/trinkets/brisk-brew.html           |    8 [32m+[m[31m-[m
+ database/trinkets/bubble-ring.html          |    8 [32m+[m[31m-[m
+ database/trinkets/burning-beastium.html     |    6 [32m+[m[31m-[m
+ database/trinkets/chain-capacitor.html      |    8 [32m+[m[31m-[m
+ database/trinkets/counter-vial.html         |    8 [32m+[m[31m-[m
+ database/trinkets/dead-leaf.html            |    8 [32m+[m[31m-[m
+ database/trinkets/deboning-wand.html        |    8 [32m+[m[31m-[m
+ database/trinkets/desperation-bonnet.html   |    8 [32m+[m[31m-[m
+ database/trinkets/dodging-pendulum.html     |    6 [32m+[m[31m-[m
+ database/trinkets/draining-beastium.html    |    8 [32m+[m[31m-[m
+ database/trinkets/dummy-cache.html          |    6 [32m+[m[31m-[m
+ database/trinkets/evasion-powder.html       |    6 [32m+[m[31m-[m
+ database/trinkets/flame-guard.html          |    8 [32m+[m[31m-[m
+ database/trinkets/fly-bait.html             |    6 [32m+[m[31m-[m
+ database/trinkets/glutton-s-jug.html        |    8 [32m+[m[31m-[m
+ database/trinkets/helio-the-wisp.html       |    6 [32m+[m[31m-[m
+ database/trinkets/index.html                |  135 [32m+[m[31m--[m
+ database/trinkets/intravenous-vial.html     |    8 [32m+[m[31m-[m
+ database/trinkets/iron-lung.html            |    6 [32m+[m[31m-[m
+ database/trinkets/joule-syringe.html        |    6 [32m+[m[31m-[m
+ database/trinkets/keri-the-wisp.html        |    6 [32m+[m[31m-[m
+ database/trinkets/lace-glove.html           |    6 [32m+[m[31m-[m
+ database/trinkets/lightning-grip.html       |    8 [32m+[m[31m-[m
+ database/trinkets/niter-belt.html           |    6 [32m+[m[31m-[m
+ database/trinkets/oozing-organ.html         |    6 [32m+[m[31m-[m
+ database/trinkets/pit-preserver.html        |    8 [32m+[m[31m-[m
+ database/trinkets/plasma-funnel.html        |    8 [32m+[m[31m-[m
+ database/trinkets/plasma-jug.html           |    6 [32m+[m[31m-[m
+ database/trinkets/pneumatic-armlet.html     |    8 [32m+[m[31m-[m
+ database/trinkets/polyp-lamp.html           |    8 [32m+[m[31m-[m
+ database/trinkets/primed-vial-pouch.html    |    8 [32m+[m[31m-[m
+ database/trinkets/proto-spark.html          |    8 [32m+[m[31m-[m
+ database/trinkets/reckless-beastium.html    |    6 [32m+[m[31m-[m
+ database/trinkets/repulsing-root.html       |    8 [32m+[m[31m-[m
+ database/trinkets/seismic-belt.html         |    8 [32m+[m[31m-[m
+ database/trinkets/shock-flint.html          |    8 [32m+[m[31m-[m
+ database/trinkets/smelling-salts.html       |    8 [32m+[m[31m-[m
+ database/trinkets/spark-catcher.html        |    8 [32m+[m[31m-[m
+ database/trinkets/spike-spurs.html          |    8 [32m+[m[31m-[m
+ database/trinkets/spring-heels.html         |    6 [32m+[m[31m-[m
+ database/trinkets/starving-beastium.html    |    8 [32m+[m[31m-[m
+ database/trinkets/steady-soles.html         |    8 [32m+[m[31m-[m
+ database/trinkets/stolenoid.html            |    8 [32m+[m[31m-[m
+ database/trinkets/thermal-pack.html         |    8 [32m+[m[31m-[m
+ database/trinkets/tumbling-tutu.html        |    6 [32m+[m[31m-[m
+ database/trinkets/tunneling-codex.html      |    4 [32m+[m[31m-[m
+ database/trinkets/twill-weave.html          |    8 [32m+[m[31m-[m
+ database/trinkets/uranium-bracelet.html     |    8 [32m+[m[31m-[m
+ database/trinkets/valor-medallion.html      |    8 [32m+[m[31m-[m
+ database/trinkets/vascular-syrup.html       |    8 [32m+[m[31m-[m
+ database/trinkets/vial-salvo.html           |    8 [32m+[m[31m-[m
+ database/trinkets/volatile-beastium.html    |    8 [32m+[m[31m-[m
+ database/trinkets/voltaic-guard.html        |    8 [32m+[m[31m-[m
+ database/trinkets/wallower-s-gauntlets.html |    6 [32m+[m[31m-[m
+ database/trinkets/warding-beastium.html     |    8 [32m+[m[31m-[m
+ database/trinkets/watchful-eye.html         |    8 [32m+[m[31m-[m
+ database/trinkets/willow-the-wisp.html      |    8 [32m+[m[31m-[m
+ database/trinkets/windfall-charm.html       |    8 [32m+[m[31m-[m
+ database/weapons/index.html                 |   14 [32m+[m[31m-[m
+ index.html                                  |   69 [32m+[m[31m-[m
+ tools/build-planner.html                    |   34 [32m+[m[31m-[m
+ tools/build-quiz.html                       |    4 [32m+[m[31m-[m
+ tools/checklist.html                        | 1296 [32m+++++++++++++++++++[m[31m--------[m
+ tools/index.html                            |   14 [32m+[m[31m-[m
+ 100 files changed, 1676 insertions(+), 1101 deletions(-)

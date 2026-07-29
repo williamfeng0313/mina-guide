@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -163,6 +163,10 @@
       color: var(--bone-dark);
       text-decoration: line-through;
     }
+    .checklist-category[hidden],
+    .checklist-item[hidden] {
+      display: none !important;
+    }
     .checklist-empty {
       padding: 1.2rem;
       text-align: center;
@@ -259,7 +263,7 @@
 <body>
   <div class="announce">
     Mina the Hollower guides are live and updating regularly &nbsp;|&nbsp;
-    <a href="../blog/secret-bosses.html">New: Complete Secret Bosses Guide →</a>
+    <a href="../blog/secret-bosses.html">New: Complete Secret Bosses Guide &#x2192;</a>
   </div>
 
   <nav>
@@ -315,7 +319,7 @@
       </p>
       <p class="checklist-note">
         <strong>Last updated:</strong>
-        <time datetime="2026-07-26">July 26, 2026</time>
+        <time datetime="2026-07-28">July 28, 2026</time>
       </p>
     </section>
 
@@ -331,11 +335,11 @@
           <span>Overall progress</span>
         </div>
         <div class="progress-stat">
-          <strong id="progress-count">0 / 0</strong>
+          <strong id="progress-count">0 / 141</strong>
           <span>Tasks completed</span>
         </div>
         <div class="progress-stat">
-          <strong id="category-count">0 / 0</strong>
+          <strong id="category-count">0 / 11</strong>
           <span>Categories completed</span>
         </div>
       </div>
@@ -360,12 +364,716 @@
         <button class="checklist-reset" id="checklist-reset" type="button">Reset Progress</button>
       </div>
 
-      <p class="checklist-empty" id="checklist-data-warning" role="alert" hidden>
-        Trinket or Sidearm data could not be loaded. Check that game-data.js exists
-        and is loaded before the Checklist script.
-      </p>
-      <div id="checklist-app"></div>
-      <p class="checklist-empty" id="checklist-empty" hidden>No checklist items match your search.</p>
+      <div id="checklist-app">
+        <section class="checklist-category" data-category-id="trinkets">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-trinkets"
+            aria-expanded="true"
+          >
+            <strong>Trinket Forms &#x2014; Individual Collection</strong>
+            <span class="category-progress">0 / 61</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-trinkets">
+            <label class="checklist-item" data-item-id="trinket--lace-glove">
+              <input type="checkbox">
+              <span>Lace Glove collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--twill-weave">
+              <input type="checkbox">
+              <span>Twill Weave collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--smelling-salts">
+              <input type="checkbox">
+              <span>Smelling Salts collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--brisk-brew">
+              <input type="checkbox">
+              <span>Brisk Brew collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--seismic-belt">
+              <input type="checkbox">
+              <span>Seismic Belt collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--plasma-funnel">
+              <input type="checkbox">
+              <span>Plasma Funnel collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--deboning-wand">
+              <input type="checkbox">
+              <span>Deboning Wand collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--steady-soles">
+              <input type="checkbox">
+              <span>Steady Soles collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--valor-medallion">
+              <input type="checkbox">
+              <span>Valor Medallion collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--bell-of-grace">
+              <input type="checkbox">
+              <span>Bell of Grace collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--willow-the-wisp">
+              <input type="checkbox">
+              <span>Willow the Wisp collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--helio-the-wisp">
+              <input type="checkbox">
+              <span>Helio the Wisp collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--keri-the-wisp">
+              <input type="checkbox">
+              <span>Keri the Wisp collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--windfall-charm">
+              <input type="checkbox">
+              <span>Windfall Charm collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--chain-capacitor">
+              <input type="checkbox">
+              <span>Chain Capacitor collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--spike-spurs">
+              <input type="checkbox">
+              <span>Spike Spurs collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--desperation-bonnet">
+              <input type="checkbox">
+              <span>Desperation Bonnet collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--stolenoid">
+              <input type="checkbox">
+              <span>Stolenoid collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--fly-bait">
+              <input type="checkbox">
+              <span>Fly Bait collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--proto-spark">
+              <input type="checkbox">
+              <span>Proto Spark collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--primed-vial-pouch">
+              <input type="checkbox">
+              <span>Primed Vial Pouch collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--flame-guard">
+              <input type="checkbox">
+              <span>Flame Guard collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--spark-catcher">
+              <input type="checkbox">
+              <span>Spark Catcher collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--evasion-powder">
+              <input type="checkbox">
+              <span>Evasion Powder collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--vascular-syrup">
+              <input type="checkbox">
+              <span>Vascular Syrup collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--pit-preserver">
+              <input type="checkbox">
+              <span>Pit Preserver collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--iron-lung">
+              <input type="checkbox">
+              <span>Iron Lung collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--tumbling-tutu">
+              <input type="checkbox">
+              <span>Tumbling Tutu collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--glutton-s-jug">
+              <input type="checkbox">
+              <span>Glutton's Jug collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--plasma-jug">
+              <input type="checkbox">
+              <span>Plasma Jug unlocked from Glutton's Jug</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--uranium-bracelet">
+              <input type="checkbox">
+              <span>Uranium Bracelet collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--bubble-ring">
+              <input type="checkbox">
+              <span>Bubble Ring collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--shock-flint">
+              <input type="checkbox">
+              <span>Shock Flint collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--intravenous-vial">
+              <input type="checkbox">
+              <span>Intravenous Vial collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--pneumatic-armlet">
+              <input type="checkbox">
+              <span>Pneumatic Armlet collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--starving-beastium">
+              <input type="checkbox">
+              <span>Starving Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--draining-beastium">
+              <input type="checkbox">
+              <span>Draining Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--reckless-beastium">
+              <input type="checkbox">
+              <span>Reckless Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--volatile-beastium">
+              <input type="checkbox">
+              <span>Volatile Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--burning-beastium">
+              <input type="checkbox">
+              <span>Burning Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--warding-beastium">
+              <input type="checkbox">
+              <span>Warding Beastium collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--dummy-cache">
+              <input type="checkbox">
+              <span>Dummy Cache collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--blinking-glass">
+              <input type="checkbox">
+              <span>Blinking Glass collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--watchful-eye">
+              <input type="checkbox">
+              <span>Watchful Eye collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--bridge-weaver">
+              <input type="checkbox">
+              <span>Bridge Weaver collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--vial-salvo">
+              <input type="checkbox">
+              <span>Vial Salvo collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--dodging-pendulum">
+              <input type="checkbox">
+              <span>Dodging Pendulum collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--spring-heels">
+              <input type="checkbox">
+              <span>Spring Heels collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--wallower-s-gauntlets">
+              <input type="checkbox">
+              <span>Wallower's Gauntlets collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--oozing-organ">
+              <input type="checkbox">
+              <span>Oozing Organ collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--voltaic-guard">
+              <input type="checkbox">
+              <span>Voltaic Guard collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--repulsing-root">
+              <input type="checkbox">
+              <span>Repulsing Root collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--lightning-grip">
+              <input type="checkbox">
+              <span>Lightning Grip collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--dead-leaf">
+              <input type="checkbox">
+              <span>Dead Leaf collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--niter-belt">
+              <input type="checkbox">
+              <span>Niter Belt collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--bellows-bustle">
+              <input type="checkbox">
+              <span>Bellows Bustle collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--tunneling-codex">
+              <input type="checkbox">
+              <span>Tunneling Codex collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--joule-syringe">
+              <input type="checkbox">
+              <span>Joule Syringe collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--polyp-lamp">
+              <input type="checkbox">
+              <span>Polyp Lamp collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--thermal-pack">
+              <input type="checkbox">
+              <span>Thermal Pack collected</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket--counter-vial">
+              <input type="checkbox">
+              <span>Counter Vial collected</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="trinket-cleanup">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-trinket-cleanup"
+            aria-expanded="true"
+          >
+            <strong>Trinket Cleanup &amp; Upgrades</strong>
+            <span class="category-progress">0 / 7</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-trinket-cleanup">
+            <label class="checklist-item" data-item-id="trinket-cleanup--review-missable-and-easy-to-overlook-trinkets">
+              <input type="checkbox">
+              <span>Review missable and easy-to-overlook Trinkets</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--check-normal-acquisition-routes-before-recovery-routes">
+              <input type="checkbox">
+              <span>Check normal acquisition routes before recovery routes</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--collect-all-trinket-bags-and-equipment-slots">
+              <input type="checkbox">
+              <span>Collect all Trinket Bags and equipment slots</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--complete-upgraded-trinket-forms">
+              <input type="checkbox">
+              <span>Complete upgraded Trinket forms</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--collect-the-full-beastium-set">
+              <input type="checkbox">
+              <span>Collect the full Beastium set</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--test-the-beastium-convergence-transformation">
+              <input type="checkbox">
+              <span>Test the Beastium Convergence transformation</span>
+            </label>
+            <label class="checklist-item" data-item-id="trinket-cleanup--confirm-achievement-related-trinkets">
+              <input type="checkbox">
+              <span>Confirm achievement-related Trinkets</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="sidearms">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-sidearms"
+            aria-expanded="true"
+          >
+            <strong>Sidearms &#x2014; Individual Collection</strong>
+            <span class="category-progress">0 / 15</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-sidearms">
+            <label class="checklist-item" data-item-id="sidearm--angler-s-raft">
+              <input type="checkbox">
+              <span>Angler's Raft obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--beckoning-collar">
+              <input type="checkbox">
+              <span>Beckoning Collar obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--bounding-bombs">
+              <input type="checkbox">
+              <span>Bounding Bombs obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--deflector-parasol">
+              <input type="checkbox">
+              <span>Deflector Parasol obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--drill-driver">
+              <input type="checkbox">
+              <span>Drill Driver obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--dynamo-lantern">
+              <input type="checkbox">
+              <span>Dynamo Lantern obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--fishing-rod">
+              <input type="checkbox">
+              <span>Fishing Rod obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--fog-thrower">
+              <input type="checkbox">
+              <span>Fog Thrower obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--gnawing-ghosts">
+              <input type="checkbox">
+              <span>Gnawing Ghosts obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--gyro-dagger">
+              <input type="checkbox">
+              <span>Gyro Dagger obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--hollower-s-rocks">
+              <input type="checkbox">
+              <span>Hollower's Rocks obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--iron-steed">
+              <input type="checkbox">
+              <span>Iron Steed obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--mist-jar">
+              <input type="checkbox">
+              <span>Mist Jar obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--recall-disc">
+              <input type="checkbox">
+              <span>Recall Disc obtained</span>
+            </label>
+            <label class="checklist-item" data-item-id="sidearm--volt-hatchet">
+              <input type="checkbox">
+              <span>Volt Hatchet obtained</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="weapons-sidearms">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-weapons-sidearms"
+            aria-expanded="true"
+          >
+            <strong>Weapons &amp; Loadout Cleanup</strong>
+            <span class="category-progress">0 / 5</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-weapons-sidearms">
+            <label class="checklist-item" data-item-id="weapons-sidearms--collect-all-five-main-weapons">
+              <input type="checkbox">
+              <span>Collect all five main weapons</span>
+            </label>
+            <label class="checklist-item" data-item-id="weapons-sidearms--complete-main-weapon-upgrades">
+              <input type="checkbox">
+              <span>Complete main weapon upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="weapons-sidearms--unlock-dual-sidearm-access">
+              <input type="checkbox">
+              <span>Unlock dual-Sidearm access</span>
+            </label>
+            <label class="checklist-item" data-item-id="weapons-sidearms--review-all-sidearm-achievements">
+              <input type="checkbox">
+              <span>Review all Sidearm achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="weapons-sidearms--confirm-weapon-specific-achievement-setups">
+              <input type="checkbox">
+              <span>Confirm weapon-specific achievement setups</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="bosses">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-bosses"
+            aria-expanded="true"
+          >
+            <strong>Bosses &amp; Optional Encounters</strong>
+            <span class="category-progress">0 / 7</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-bosses">
+            <label class="checklist-item" data-item-id="bosses--complete-the-optional-prologue-encounter">
+              <input type="checkbox">
+              <span>Complete the optional prologue encounter</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--defeat-all-main-story-bosses">
+              <input type="checkbox">
+              <span>Defeat all main story bosses</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--defeat-all-spark-generator-bosses">
+              <input type="checkbox">
+              <span>Defeat all Spark Generator bosses</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--defeat-optional-regional-bosses">
+              <input type="checkbox">
+              <span>Defeat optional regional bosses</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--complete-all-secret-boss-encounters">
+              <input type="checkbox">
+              <span>Complete all secret boss encounters</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--collect-every-post-boss-reward">
+              <input type="checkbox">
+              <span>Collect every post-boss reward</span>
+            </label>
+            <label class="checklist-item" data-item-id="bosses--review-no-hit-and-special-boss-achievements">
+              <input type="checkbox">
+              <span>Review no-hit and special boss achievements</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="quests">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-quests"
+            aria-expanded="true"
+          >
+            <strong>Quests &amp; Minigames</strong>
+            <span class="category-progress">0 / 8</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-quests">
+            <label class="checklist-item" data-item-id="quests--review-all-side-quests-and-npc-quest-chains">
+              <input type="checkbox">
+              <span>Review all side quests and NPC quest chains</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--collect-all-quest-rewards">
+              <input type="checkbox">
+              <span>Collect all quest rewards</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--complete-racing-challenges">
+              <input type="checkbox">
+              <span>Complete Racing challenges</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--complete-ring-dive-challenges">
+              <input type="checkbox">
+              <span>Complete Ring Dive challenges</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--complete-wrecker-challenges">
+              <input type="checkbox">
+              <span>Complete Wrecker challenges</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--finish-the-fishing-quest-line">
+              <input type="checkbox">
+              <span>Finish the fishing quest line</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--complete-quests-that-unlock-secret-bosses">
+              <input type="checkbox">
+              <span>Complete quests that unlock secret bosses</span>
+            </label>
+            <label class="checklist-item" data-item-id="quests--revisit-quest-npcs-after-major-story-milestones">
+              <input type="checkbox">
+              <span>Revisit quest NPCs after major story milestones</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="achievements">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-achievements"
+            aria-expanded="true"
+          >
+            <strong>Achievements &amp; Challenge Runs</strong>
+            <span class="category-progress">0 / 9</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-achievements">
+            <label class="checklist-item" data-item-id="achievements--review-all-50-achievements-or-feats">
+              <input type="checkbox">
+              <span>Review all 50 achievements or Feats</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--complete-all-story-achievements">
+              <input type="checkbox">
+              <span>Complete all story achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--complete-sidearm-achievements">
+              <input type="checkbox">
+              <span>Complete Sidearm achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--complete-trinket-achievements">
+              <input type="checkbox">
+              <span>Complete Trinket achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--complete-collection-achievements">
+              <input type="checkbox">
+              <span>Complete collection achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--complete-minigame-achievements">
+              <input type="checkbox">
+              <span>Complete minigame achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--review-below-zero-restrictions">
+              <input type="checkbox">
+              <span>Review Below Zero restrictions</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--review-new-game-achievement-requirements">
+              <input type="checkbox">
+              <span>Review New Game+ achievement requirements</span>
+            </label>
+            <label class="checklist-item" data-item-id="achievements--record-achievements-requiring-another-playthrough">
+              <input type="checkbox">
+              <span>Record achievements requiring another playthrough</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="upgrades">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-upgrades"
+            aria-expanded="true"
+          >
+            <strong>Upgrades &amp; Collectibles</strong>
+            <span class="category-progress">0 / 8</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-upgrades">
+            <label class="checklist-item" data-item-id="upgrades--collect-all-permanent-health-upgrades">
+              <input type="checkbox">
+              <span>Collect all permanent health upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--complete-plasma-vial-capacity-upgrades">
+              <input type="checkbox">
+              <span>Complete Plasma Vial capacity upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--collect-spark-containers">
+              <input type="checkbox">
+              <span>Collect Spark Containers</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--complete-joule-capacity-upgrades">
+              <input type="checkbox">
+              <span>Complete Joule capacity upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--collect-equipment-capacity-upgrades">
+              <input type="checkbox">
+              <span>Collect equipment capacity upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--review-bonestones-and-regional-collectibles">
+              <input type="checkbox">
+              <span>Review Bonestones and regional collectibles</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--review-fish-board-trophies">
+              <input type="checkbox">
+              <span>Review Fish Board trophies</span>
+            </label>
+            <label class="checklist-item" data-item-id="upgrades--review-songscroll-collection-progress">
+              <input type="checkbox">
+              <span>Review Songscroll collection progress</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="travel">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-travel"
+            aria-expanded="true"
+          >
+            <strong>Travel, Mirrors &amp; Exploration</strong>
+            <span class="category-progress">0 / 7</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-travel">
+            <label class="checklist-item" data-item-id="travel--activate-and-review-mirror-routes">
+              <input type="checkbox">
+              <span>Activate and review Mirror routes</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--open-available-train-stations">
+              <input type="checkbox">
+              <span>Open available train stations</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--review-underlab-access-points">
+              <input type="checkbox">
+              <span>Review Underlab access points</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--open-major-regional-shortcuts">
+              <input type="checkbox">
+              <span>Open major regional shortcuts</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--revisit-blocked-routes-after-movement-upgrades">
+              <input type="checkbox">
+              <span>Revisit blocked routes after movement upgrades</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--check-suspicious-rooms-and-hidden-paths">
+              <input type="checkbox">
+              <span>Check suspicious rooms and hidden paths</span>
+            </label>
+            <label class="checklist-item" data-item-id="travel--complete-a-final-region-by-region-sweep">
+              <input type="checkbox">
+              <span>Complete a final region-by-region sweep</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="endings">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-endings"
+            aria-expanded="true"
+          >
+            <strong>Endings &amp; Missable Content</strong>
+            <span class="category-progress">0 / 7</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-endings">
+            <label class="checklist-item" data-item-id="endings--complete-the-normal-ending">
+              <input type="checkbox">
+              <span>Complete the normal ending</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--review-hidden-ending-requirements">
+              <input type="checkbox">
+              <span>Review hidden ending requirements</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--review-ending-epilogue-requirements">
+              <input type="checkbox">
+              <span>Review ending epilogue requirements</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--check-optional-prologue-content">
+              <input type="checkbox">
+              <span>Check optional prologue content</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--review-dialogue-triggered-encounters">
+              <input type="checkbox">
+              <span>Review dialogue-triggered encounters</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--confirm-missable-achievement-conditions">
+              <input type="checkbox">
+              <span>Confirm missable achievement conditions</span>
+            </label>
+            <label class="checklist-item" data-item-id="endings--collect-unresolved-npc-and-quest-rewards">
+              <input type="checkbox">
+              <span>Collect unresolved NPC and quest rewards</span>
+            </label>
+          </div>
+        </section>
+        <section class="checklist-category" data-category-id="final-cleanup">
+          <button
+            type="button"
+            class="checklist-category-header"
+            aria-controls="checklist-items-final-cleanup"
+            aria-expanded="true"
+          >
+            <strong>Final Cleanup &amp; New Game+</strong>
+            <span class="category-progress">0 / 7</span>
+          </button>
+          <div class="checklist-category-items" id="checklist-items-final-cleanup">
+            <label class="checklist-item" data-item-id="final-cleanup--compare-progress-with-the-interactive-tracker">
+              <input type="checkbox">
+              <span>Compare progress with the interactive tracker</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--review-the-full-trinket-database">
+              <input type="checkbox">
+              <span>Review the full Trinket database</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--review-the-boss-and-secret-boss-guides">
+              <input type="checkbox">
+              <span>Review the boss and secret boss guides</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--check-all-unfinished-achievements">
+              <input type="checkbox">
+              <span>Check all unfinished achievements</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--record-tasks-requiring-another-run">
+              <input type="checkbox">
+              <span>Record tasks requiring another run</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--confirm-current-save-cleanup-is-complete">
+              <input type="checkbox">
+              <span>Confirm current-save cleanup is complete</span>
+            </label>
+            <label class="checklist-item" data-item-id="final-cleanup--prepare-equipment-before-starting-new-game">
+              <input type="checkbox">
+              <span>Prepare equipment before starting New Game+</span>
+            </label>
+          </div>
+        </section>
+      </div>
+      <p class="checklist-empty" id="checklist-empty" aria-live="polite" hidden></p>
     </section>
 
     <figure class="checklist-preview">
@@ -418,13 +1126,13 @@
 
       <h3>How many Trinkets are in Mina the Hollower?</h3>
       <p>
-        Mina has 60 collectible Trinket slots. This tracker displays 61 entries because
-        Glutton's Jug and its Plasma Jug upgrade are recorded separately.
+        Mina has 60 numbered Compendium slots, 61 usable forms including Plasma Jug.
+        Glutton's Jug and Plasma Jug share slot 29, but the tracker records each usable form separately.
       </p>
 
       <h3>Does this tracker list every Trinket and Sidearm?</h3>
       <p>
-        Yes. The tracker records all 61 documented Trinket forms and all 15 Sidearms
+        Yes. The tracker records all 61 usable Trinket forms and all 15 Sidearms
         individually. Other completion areas remain grouped into practical cleanup goals.
       </p>
 
@@ -480,7 +1188,7 @@
 
   <footer>
     <div class="footer-brand">Tenebrous Isle Guide</div>
-    <p class="footer-text">The most complete English guide for Mina the Hollower — updated regularly as we explore the island.</p>
+    <p class="footer-text">The most complete English guide for Mina the Hollower &#x2014; updated regularly as we explore the island.</p>
     <div class="footer-links">
       <a href="../blog/index.html">Blog</a>
       <a href="../database/bosses/index.html">Bosses</a>
@@ -497,209 +1205,9 @@
     </p>
   </footer>
 
-  <script src="../assets/js/game-data.js"></script>
   <script>
   (function () {
     "use strict";
-
-    const expectedTrinketCount = 61;
-    const expectedSidearmCount = 15;
-    const minaData = window.MINA_DATA || {};
-
-    function slugify(value) {
-      return String(value)
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
-    }
-
-    function normalizeNames(values) {
-      if (!Array.isArray(values)) return [];
-
-      return values
-        .map(function (item) {
-          if (typeof item === "string") return item.trim();
-          if (item && typeof item.name === "string") return item.name.trim();
-          return "";
-        })
-        .filter(Boolean);
-    }
-
-    function makeItem(id, label) {
-      return { id: id, label: label };
-    }
-
-    function categoryFromLabels(id, title, labels) {
-      return {
-        id: id,
-        title: title,
-        items: labels.map(function (label) {
-          return makeItem(id + "--" + slugify(label), label);
-        })
-      };
-    }
-
-    const trinketNames = normalizeNames(minaData.trinkets);
-    const sidearmNames = normalizeNames(minaData.sidearms);
-
-    console.assert(
-      trinketNames.length === expectedTrinketCount,
-      "Expected " + expectedTrinketCount +
-        " Trinket entries, found " + trinketNames.length
-    );
-    console.assert(
-      new Set(trinketNames).size === trinketNames.length,
-      "Duplicate Trinket names found in game-data.js"
-    );
-    console.assert(
-      sidearmNames.length === expectedSidearmCount,
-      "Expected " + expectedSidearmCount +
-        " Sidearm entries, found " + sidearmNames.length
-    );
-    console.assert(
-      new Set(sidearmNames).size === sidearmNames.length,
-      "Duplicate Sidearm names found in game-data.js"
-    );
-
-    const checklistData = [
-      {
-        id: "trinkets",
-        title: "Trinkets — Individual Collection",
-        items: trinketNames.map(function (name) {
-          const label = name === "Plasma Jug"
-            ? "Plasma Jug unlocked from Glutton's Jug"
-            : name + " collected";
-
-          return makeItem("trinket--" + slugify(name), label);
-        })
-      },
-      categoryFromLabels(
-        "trinket-cleanup",
-        "Trinket Cleanup & Upgrades",
-        [
-          "Review missable and easy-to-overlook Trinkets",
-          "Check normal acquisition routes before recovery routes",
-          "Collect all Trinket Bags and equipment slots",
-          "Complete upgraded Trinket forms",
-          "Collect the full Beastium set",
-          "Test the Beastium Convergence transformation",
-          "Confirm achievement-related Trinkets"
-        ]
-      ),
-      {
-        id: "sidearms",
-        title: "Sidearms — Individual Collection",
-        items: sidearmNames.map(function (name) {
-          return makeItem("sidearm--" + slugify(name), name + " obtained");
-        })
-      },
-      categoryFromLabels(
-        "weapons-sidearms",
-        "Weapons & Loadout Cleanup",
-        [
-          "Collect all five main weapons",
-          "Complete main weapon upgrades",
-          "Unlock dual-Sidearm access",
-          "Review all Sidearm achievements",
-          "Confirm weapon-specific achievement setups"
-        ]
-      ),
-      categoryFromLabels(
-        "bosses",
-        "Bosses & Optional Encounters",
-        [
-          "Complete the optional prologue encounter",
-          "Defeat all main story bosses",
-          "Defeat all Spark Generator bosses",
-          "Defeat optional regional bosses",
-          "Complete all secret boss encounters",
-          "Collect every post-boss reward",
-          "Review no-hit and special boss achievements"
-        ]
-      ),
-      categoryFromLabels(
-        "quests",
-        "Quests & Minigames",
-        [
-          "Review all side quests and NPC quest chains",
-          "Collect all quest rewards",
-          "Complete Racing challenges",
-          "Complete Ring Dive challenges",
-          "Complete Wrecker challenges",
-          "Finish the fishing quest line",
-          "Complete quests that unlock secret bosses",
-          "Revisit quest NPCs after major story milestones"
-        ]
-      ),
-      categoryFromLabels(
-        "achievements",
-        "Achievements & Challenge Runs",
-        [
-          "Review all 50 achievements or Feats",
-          "Complete all story achievements",
-          "Complete Sidearm achievements",
-          "Complete Trinket achievements",
-          "Complete collection achievements",
-          "Complete minigame achievements",
-          "Review Below Zero restrictions",
-          "Review New Game+ achievement requirements",
-          "Record achievements requiring another playthrough"
-        ]
-      ),
-      categoryFromLabels(
-        "upgrades",
-        "Upgrades & Collectibles",
-        [
-          "Collect all permanent health upgrades",
-          "Complete Plasma Vial capacity upgrades",
-          "Collect Spark Containers",
-          "Complete Joule capacity upgrades",
-          "Collect equipment capacity upgrades",
-          "Review Bonestones and regional collectibles",
-          "Review Fish Board trophies",
-          "Review Songscroll collection progress"
-        ]
-      ),
-      categoryFromLabels(
-        "travel",
-        "Travel, Mirrors & Exploration",
-        [
-          "Activate and review Mirror routes",
-          "Open available train stations",
-          "Review Underlab access points",
-          "Open major regional shortcuts",
-          "Revisit blocked routes after movement upgrades",
-          "Check suspicious rooms and hidden paths",
-          "Complete a final region-by-region sweep"
-        ]
-      ),
-      categoryFromLabels(
-        "endings",
-        "Endings & Missable Content",
-        [
-          "Complete the normal ending",
-          "Review hidden ending requirements",
-          "Review ending epilogue requirements",
-          "Check optional prologue content",
-          "Review dialogue-triggered encounters",
-          "Confirm missable achievement conditions",
-          "Collect unresolved NPC and quest rewards"
-        ]
-      ),
-      categoryFromLabels(
-        "final-cleanup",
-        "Final Cleanup & New Game+",
-        [
-          "Compare progress with the interactive tracker",
-          "Review the full Trinket database",
-          "Review the boss and secret boss guides",
-          "Check all unfinished achievements",
-          "Record tasks requiring another run",
-          "Confirm current-save cleanup is complete",
-          "Prepare equipment before starting New Game+"
-        ]
-      )
-    ];
 
     const storageKey = "minaChecklistV3";
     const legacyStorageKeys = ["minaChecklistV2", "minaChecklist"];
@@ -709,7 +1217,6 @@
     const filterSelect = document.getElementById("checklist-filter");
     const resetButton = document.getElementById("checklist-reset");
     const emptyState = document.getElementById("checklist-empty");
-    const dataWarning = document.getElementById("checklist-data-warning");
     const percentElement = document.getElementById("progress-percent");
     const countElement = document.getElementById("progress-count");
     const categoryCountElement = document.getElementById("category-count");
@@ -722,7 +1229,6 @@
       !filterSelect ||
       !resetButton ||
       !emptyState ||
-      !dataWarning ||
       !percentElement ||
       !countElement ||
       !categoryCountElement ||
@@ -733,74 +1239,119 @@
       return;
     }
 
-    const dataIsValid =
-      trinketNames.length === expectedTrinketCount &&
-      new Set(trinketNames).size === trinketNames.length &&
-      sidearmNames.length === expectedSidearmCount &&
-      new Set(sidearmNames).size === sidearmNames.length;
+    const categories = Array.from(
+      app.querySelectorAll(".checklist-category[data-category-id]")
+    );
+    const items = Array.from(
+      app.querySelectorAll(".checklist-item[data-item-id]")
+    );
+    const itemIds = items.map(function (item) {
+      return item.dataset.itemId;
+    });
 
-    dataWarning.hidden = dataIsValid;
+    console.assert(
+      categories.length === 11,
+      "Expected 11 checklist categories, found " + categories.length
+    );
+    console.assert(
+      items.length === 141,
+      "Expected 141 checklist items, found " + items.length
+    );
+    console.assert(
+      new Set(itemIds).size === itemIds.length,
+      "Duplicate checklist item IDs found"
+    );
 
-    const collapsedCategories = new Set();
-    let state = loadState();
+    function slugify(value) {
+      return String(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+    }
 
-    function getAllItems() {
-      return checklistData.flatMap(function (category) {
-        return category.items;
-      });
+    function readStoredObject(key) {
+      let raw;
+
+      try {
+        raw = localStorage.getItem(key);
+      } catch (error) {
+        console.warn("Checklist storage is unavailable.", error);
+        return {};
+      }
+
+      if (raw === null) return null;
+
+      try {
+        const parsed = JSON.parse(raw);
+
+        if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+          return parsed;
+        }
+      } catch (error) {
+        console.warn("Could not read checklist storage: " + key, error);
+      }
+
+      return {};
+    }
+
+    function getItemLabel(item) {
+      const text = item.querySelector("span");
+      return text ? text.textContent.trim() : "";
     }
 
     function loadState() {
-      try {
-        const currentRaw = localStorage.getItem(storageKey);
+      const currentState = readStoredObject(storageKey);
 
-        if (currentRaw !== null) {
-          return JSON.parse(currentRaw) || {};
-        }
+      if (currentState !== null) {
+        const validState = {};
 
-        const allItems = getAllItems();
-        const validIds = new Set(allItems.map(function (item) {
-          return item.id;
-        }));
-        const migrated = {};
+        items.forEach(function (item) {
+          const itemId = item.dataset.itemId;
 
-        for (const legacyKey of legacyStorageKeys) {
-          const legacyRaw = localStorage.getItem(legacyKey);
-          if (legacyRaw === null) continue;
+          if (currentState[itemId] === true) {
+            validState[itemId] = true;
+          }
+        });
 
-          const legacyState = JSON.parse(legacyRaw) || {};
-
-          allItems.forEach(function (item) {
-            if (validIds.has(item.id) && legacyState[item.id]) {
-              migrated[item.id] = true;
-              return;
-            }
-
-            const oldCategoryId = item.id.startsWith("trinket-cleanup--")
-              ? item.id.replace("trinket-cleanup--", "trinkets--")
-              : "";
-
-            if (oldCategoryId && legacyState[oldCategoryId]) {
-              migrated[item.id] = true;
-              return;
-            }
-
-            const oldLabelId = slugify(item.label);
-            if (legacyState[oldLabelId]) {
-              migrated[item.id] = true;
-            }
-          });
-
-          break;
-        }
-
-        localStorage.setItem(storageKey, JSON.stringify(migrated));
-        return migrated;
-      } catch (error) {
-        console.warn("Checklist progress could not be loaded.", error);
-        return {};
+        return validState;
       }
+
+      const migrated = {};
+
+      for (const legacyKey of legacyStorageKeys) {
+        const legacyState = readStoredObject(legacyKey);
+        if (legacyState === null) continue;
+
+        items.forEach(function (item) {
+          const itemId = item.dataset.itemId;
+          const labelId = slugify(getItemLabel(item));
+          const oldCategoryId = itemId.startsWith("trinket-cleanup--")
+            ? itemId.replace("trinket-cleanup--", "trinkets--")
+            : "";
+
+          if (
+            legacyState[itemId] ||
+            legacyState[labelId] ||
+            (oldCategoryId && legacyState[oldCategoryId])
+          ) {
+            migrated[itemId] = true;
+          }
+        });
+
+        break;
+      }
+
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(migrated));
+      } catch (error) {
+        console.warn("Migrated progress could not be saved.", error);
+      }
+
+      return migrated;
     }
+
+    let state = loadState();
+    const collapsedCategories = new Set();
 
     function saveState() {
       try {
@@ -811,141 +1362,157 @@
     }
 
     function isCompleted(item) {
-      return state[item.id] === true;
+      return state[item.dataset.itemId] === true;
+    }
+
+    function syncItem(item) {
+      const checkbox = item.querySelector('input[type="checkbox"]');
+      const completed = isCompleted(item);
+
+      if (checkbox) {
+        checkbox.checked = completed;
+      }
+
+      item.classList.toggle("is-complete", completed);
+    }
+
+    function getCategoryItems(category) {
+      return Array.from(
+        category.querySelectorAll(".checklist-item[data-item-id]")
+      );
     }
 
     function updateProgress() {
-      const allItems = getAllItems();
-      const activeCategories = checklistData.filter(function (category) {
-        return category.items.length > 0;
-      });
-      const completed = allItems.filter(isCompleted).length;
-      const total = allItems.length;
-      const percentage = total
-        ? Math.round((completed / total) * 100)
+      const completedItems = items.filter(isCompleted).length;
+      const totalItems = items.length;
+      const percentage = totalItems
+        ? Math.round((completedItems / totalItems) * 100)
         : 0;
-      const completedCategories = activeCategories.filter(function (category) {
-        return category.items.every(isCompleted);
-      }).length;
+      let completedCategories = 0;
+
+      categories.forEach(function (category) {
+        const categoryItems = getCategoryItems(category);
+        const completedInCategory = categoryItems.filter(isCompleted).length;
+        const categoryProgress = category.querySelector(".category-progress");
+
+        if (categoryProgress) {
+          categoryProgress.textContent =
+            completedInCategory + " / " + categoryItems.length;
+        }
+
+        if (
+          categoryItems.length > 0 &&
+          completedInCategory === categoryItems.length
+        ) {
+          completedCategories += 1;
+        }
+      });
 
       percentElement.textContent = percentage + "%";
-      countElement.textContent = completed + " / " + total;
+      countElement.textContent = completedItems + " / " + totalItems;
       categoryCountElement.textContent =
-        completedCategories + " / " + activeCategories.length;
+        completedCategories + " / " + categories.length;
       progressFill.style.width = percentage + "%";
       progressBar.setAttribute("aria-valuenow", String(percentage));
     }
 
-    function render() {
+    function applyFilters() {
       const query = searchInput.value.trim().toLowerCase();
       const filter = filterSelect.value;
       const filtering = query !== "" || filter !== "all";
-
-      app.innerHTML = "";
       let visibleItemCount = 0;
 
-      checklistData.forEach(function (category) {
-        const filteredItems = category.items.filter(function (item) {
+      categories.forEach(function (category) {
+        const categoryId = category.dataset.categoryId;
+        const titleElement = category.querySelector(
+          ".checklist-category-header strong"
+        );
+        const categoryTitle = titleElement
+          ? titleElement.textContent.trim().toLowerCase()
+          : "";
+        const categoryMatches =
+          query !== "" && categoryTitle.includes(query);
+        let visibleInCategory = 0;
+
+        getCategoryItems(category).forEach(function (item) {
           const completed = isCompleted(item);
+          const label = getItemLabel(item).toLowerCase();
           const matchesSearch =
-            item.label.toLowerCase().includes(query) ||
-            category.title.toLowerCase().includes(query);
+            query === "" || categoryMatches || label.includes(query);
           const matchesFilter =
             filter === "all" ||
             (filter === "completed" && completed) ||
             (filter === "remaining" && !completed);
+          const visible = matchesSearch && matchesFilter;
 
-          return matchesSearch && matchesFilter;
+          item.hidden = !visible;
+
+          if (visible) {
+            visibleInCategory += 1;
+            visibleItemCount += 1;
+          }
         });
 
-        if (filteredItems.length === 0) return;
-        visibleItemCount += filteredItems.length;
+        category.hidden = visibleInCategory === 0;
 
-        const categorySection = document.createElement("section");
-        categorySection.className = "checklist-category";
+        const collapsed =
+          !filtering && collapsedCategories.has(categoryId);
+        category.classList.toggle("is-collapsed", collapsed);
 
-        const itemsId = "checklist-items-" + category.id;
-        const completedInCategory = category.items.filter(isCompleted).length;
-        const isCollapsed =
-          !filtering && collapsedCategories.has(category.id);
-
-        if (isCollapsed) {
-          categorySection.classList.add("is-collapsed");
+        const header = category.querySelector(".checklist-category-header");
+        if (header) {
+          header.setAttribute("aria-expanded", String(!collapsed));
         }
-
-        const header = document.createElement("button");
-        header.type = "button";
-        header.className = "checklist-category-header";
-        header.setAttribute("aria-controls", itemsId);
-        header.setAttribute("aria-expanded", String(!isCollapsed));
-
-        const title = document.createElement("strong");
-        title.textContent = category.title;
-
-        const count = document.createElement("span");
-        count.className = "category-progress";
-        count.textContent =
-          completedInCategory + " / " + category.items.length;
-
-        header.appendChild(title);
-        header.appendChild(count);
-
-        const itemsContainer = document.createElement("div");
-        itemsContainer.className = "checklist-category-items";
-        itemsContainer.id = itemsId;
-
-        filteredItems.forEach(function (itemData) {
-          const item = document.createElement("label");
-          item.className = "checklist-item";
-
-          if (isCompleted(itemData)) {
-            item.classList.add("is-complete");
-          }
-
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.checked = isCompleted(itemData);
-
-          const text = document.createElement("span");
-          text.textContent = itemData.label;
-
-          checkbox.addEventListener("change", function () {
-            if (checkbox.checked) {
-              state[itemData.id] = true;
-            } else {
-              delete state[itemData.id];
-            }
-
-            saveState();
-            render();
-          });
-
-          item.appendChild(checkbox);
-          item.appendChild(text);
-          itemsContainer.appendChild(item);
-        });
-
-        header.addEventListener("click", function () {
-          if (collapsedCategories.has(category.id)) {
-            collapsedCategories.delete(category.id);
-          } else {
-            collapsedCategories.add(category.id);
-          }
-
-          render();
-        });
-
-        categorySection.appendChild(header);
-        categorySection.appendChild(itemsContainer);
-        app.appendChild(categorySection);
       });
 
-      emptyState.hidden = visibleItemCount !== 0;
-      updateProgress();
+      const hasResults = visibleItemCount > 0;
+      emptyState.hidden = hasResults;
+      emptyState.textContent = hasResults
+        ? ""
+        : "No checklist items match your search.";
     }
 
-    searchInput.addEventListener("input", render);
-    filterSelect.addEventListener("change", render);
+    items.forEach(function (item) {
+      syncItem(item);
+
+      const checkbox = item.querySelector('input[type="checkbox"]');
+      if (!checkbox) return;
+
+      checkbox.addEventListener("change", function () {
+        const itemId = item.dataset.itemId;
+
+        if (checkbox.checked) {
+          state[itemId] = true;
+        } else {
+          delete state[itemId];
+        }
+
+        syncItem(item);
+        saveState();
+        updateProgress();
+        applyFilters();
+      });
+    });
+
+    categories.forEach(function (category) {
+      const header = category.querySelector(".checklist-category-header");
+      if (!header) return;
+
+      header.addEventListener("click", function () {
+        const categoryId = category.dataset.categoryId;
+
+        if (collapsedCategories.has(categoryId)) {
+          collapsedCategories.delete(categoryId);
+        } else {
+          collapsedCategories.add(categoryId);
+        }
+
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener("input", applyFilters);
+    filterSelect.addEventListener("change", applyFilters);
 
     resetButton.addEventListener("click", function () {
       const confirmed = window.confirm(
@@ -957,10 +1524,13 @@
       state = {};
       collapsedCategories.clear();
       saveState();
-      render();
+      items.forEach(syncItem);
+      updateProgress();
+      applyFilters();
     });
 
-    render();
+    updateProgress();
+    applyFilters();
   })();
   </script>
   <script src="../assets/js/main.js"></script>
