@@ -798,7 +798,7 @@
     "@type": "CollectionPage",
     "name": "Mina the Hollower Tools",
     "url": "https://www.minahollower.com/tools/",
-    "description": "Interactive tools for Mina the Hollower including build planner, build quiz, checklist, and progress tracker."
+    "description": "Interactive tools for Mina the Hollower including a missing item finder, build planner, build quiz, checklist, and progress tracker."
   }
   </script>
 </head>
@@ -930,6 +930,23 @@
         </div>
 
         <div class="tools-grid">
+          <a class="tool-card" href="what-am-i-missing.html">
+            <div class="tool-top">
+              <span class="tool-icon">&#x1F441;</span>
+              <span class="tool-status">Beta</span>
+            </div>
+            <h3>What Am I Missing?</h3>
+            <p>
+              Use the region, missing collectible type, All-Seeing Skull signal,
+              and a nearby landmark to rank the most likely missing items.
+            </p>
+            <div class="tool-tags">
+              <span class="tag">Collectibles</span>
+              <span class="tag">Finder</span>
+              <span class="tag">Cleanup</span>
+            </div>
+          </a>
+
           <a class="tool-card" href="build-planner.html">
             <div class="tool-top">
               <span class="tool-icon">&#x2692;</span>
@@ -979,8 +996,6 @@
               <span class="tag">Tracking</span>
               <span class="tag">Completion</span>
             </div>
-          </a>
-
           </a>
         </div>
       </section>
@@ -1056,6 +1071,7 @@
         if (!q) return;
 
         const routes = [
+          { keys: ["missing", "finder", "collectible", "stuck"], url: "what-am-i-missing.html" },
           { keys: ["planner", "build", "loadout"], url: "build-planner.html" },
           { keys: ["quiz", "recommend"], url: "build-quiz.html" },
           { keys: ["checklist", "100", "completion"], url: "checklist.html" },

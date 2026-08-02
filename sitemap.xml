@@ -442,9 +442,16 @@
 
   <url>
     <loc>https://www.minahollower.com/tools/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.minahollower.com/tools/what-am-i-missing.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
