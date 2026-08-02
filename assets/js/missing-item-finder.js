@@ -204,12 +204,15 @@ const LABELS = {
   }
 };
 
+const DEFAULT_RESULT_LIMIT = 5;
+
 const state = {
   region: null,
   category: null,
   signal: null,
   landmark: null,
-  rejected: new Set()
+  rejected: new Set(),
+  showAllResults: false
 };
 
 const elements = {
@@ -223,11 +226,44 @@ const elements = {
   resultList: document.getElementById("result-list"),
   resultSummary: document.getElementById("result-summary"),
   shareButton: document.getElementById("share-button"),
-  toast: document.getElementById("toast")
+  toast: document.getElementById("toast"),
+  moreActions: null,
+  showMoreButton: null,
+  moreHint: null
 };
+
+/* Build the optional "show more" controls in JavaScript so this file also
+   works with the earlier HTML version that only contains #result-list. */
+function ensureMoreControls() {
+  if (!elements.results || !elements.resultList) return;
+
+  let moreActions = document.getElementById("more-actions");
+  if (!moreActions) {
+    moreActions = document.createElement("div");
+    moreActions.className = "finder-more-actions";
+    moreActions.id = "more-actions";
+    moreActions.hidden = true;
+    moreActions.innerHTML = `
+      <button
+        class="finder-button finder-button--more"
+        type="button"
+        id="show-more-button"
+        aria-expanded="false"
+        aria-controls="result-list"
+      >Show more possibilities</button>
+      <p class="finder-more-hint" id="more-hint"></p>
+    `;
+    elements.resultList.insertAdjacentElement("afterend", moreActions);
+  }
+
+  elements.moreActions = moreActions;
+  elements.showMoreButton = document.getElementById("show-more-button");
+  elements.moreHint = document.getElementById("more-hint");
+}
 
 function selectChoice(group, value, options = {}) {
   const { fromUrl = false } = options;
+  state.showAllResults = false;
   document.querySelectorAll(`[data-group="${group}"]`).forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.value === value));
   });
@@ -339,15 +375,18 @@ function getCandidates() {
     .filter((item) => state.category === "not-sure" || item.category === state.category)
     .filter((item) => !state.rejected.has(item.id))
     .map((item) => ({ ...item, score: scoreItem(item) }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+    .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
 }
 
-function renderResults() {
+function renderResults(options = {}) {
+  const { scroll = true } = options;
   if (!state.region || !state.category || !state.signal) return;
   if ((state.signal === "red" || state.signal === "blue") && !state.landmark) return;
 
   const candidates = getCandidates();
+  const visibleCandidates = state.showAllResults
+    ? candidates
+    : candidates.slice(0, DEFAULT_RESULT_LIMIT);
   const regionName = LABELS.regions[state.region];
   const categoryName = LABELS.categories[state.category];
   const signalName = LABELS.signals[state.signal];
@@ -366,8 +405,12 @@ function renderResults() {
         <a class="finder-button finder-button--primary" href="${guideUrl}">Open the full ${escapeHtml(regionName)} guide</a>
       </div>
     `;
+    hideMoreControls();
   } else {
-    elements.resultList.innerHTML = candidates.map((item, index) => resultCard(item, index)).join("");
+    elements.resultList.innerHTML = visibleCandidates
+      .map((item, index) => resultCard(item, index))
+      .join("");
+    renderMoreButton(candidates.length);
   }
 
   elements.results.hidden = false;
@@ -381,13 +424,65 @@ function renderResults() {
       category: state.category,
       signal: state.signal,
       landmark: state.landmark || "none",
-      result_count: candidates.length
+      result_count: candidates.length,
+      visible_result_count: visibleCandidates.length
     });
   }
 
-  requestAnimationFrame(() => {
+  if (scroll) {
+    requestAnimationFrame(() => {
+      elements.results.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+}
+
+function hideMoreControls() {
+  if (elements.moreActions) elements.moreActions.hidden = true;
+}
+
+function renderMoreButton(totalCandidates) {
+  if (
+    totalCandidates <= DEFAULT_RESULT_LIMIT ||
+    !elements.moreActions ||
+    !elements.showMoreButton ||
+    !elements.moreHint
+  ) {
+    hideMoreControls();
+    return;
+  }
+
+  const remainingCount = totalCandidates - DEFAULT_RESULT_LIMIT;
+  elements.moreActions.hidden = false;
+  elements.showMoreButton.setAttribute(
+    "aria-expanded",
+    String(state.showAllResults)
+  );
+
+  if (state.showAllResults) {
+    elements.showMoreButton.textContent = "Show fewer possibilities";
+    elements.moreHint.textContent = `Showing all ${totalCandidates} possibilities.`;
+  } else {
+    elements.showMoreButton.textContent = `Show ${remainingCount} more possibilities`;
+    elements.moreHint.textContent =
+      `Showing the ${DEFAULT_RESULT_LIMIT} most likely of ${totalCandidates} possibilities.`;
+  }
+}
+
+function toggleMoreResults() {
+  state.showAllResults = !state.showAllResults;
+  renderResults({ scroll: false });
+
+  if (!state.showAllResults && elements.results) {
     elements.results.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+  }
+
+  if (window.gtag) {
+    window.gtag("event", "missing_item_show_more", {
+      region: state.region,
+      category: state.category,
+      expanded: state.showAllResults
+    });
+  }
 }
 
 function resultCard(item, index) {
@@ -479,6 +574,7 @@ function markFound(id) {
       </div>
     </div>
   `;
+  hideMoreControls();
 
   if (window.gtag) {
     window.gtag("event", "missing_item_found", {
@@ -526,6 +622,7 @@ function resetFinder(options = {}) {
   state.category = null;
   state.signal = null;
   state.landmark = null;
+  state.showAllResults = false;
   state.rejected.clear();
   ["region", "category", "signal", "landmark"].forEach(clearPressed);
   elements.categoryStep.hidden = true;
@@ -541,6 +638,8 @@ function resetFinder(options = {}) {
 function hideResults() {
   elements.results.hidden = true;
   elements.resultList.innerHTML = "";
+  state.showAllResults = false;
+  hideMoreControls();
   elements.backButton.hidden = !state.category;
 }
 
@@ -636,9 +735,12 @@ document.addEventListener("click", (event) => {
   if (action.dataset.action === "restart") resetFinder();
 });
 
-elements.backButton.addEventListener("click", goBack);
-elements.resetButton.addEventListener("click", () => resetFinder());
-elements.shareButton.addEventListener("click", copySearch);
+ensureMoreControls();
+
+if (elements.backButton) elements.backButton.addEventListener("click", goBack);
+if (elements.resetButton) elements.resetButton.addEventListener("click", () => resetFinder());
+if (elements.shareButton) elements.shareButton.addEventListener("click", copySearch);
+if (elements.showMoreButton) elements.showMoreButton.addEventListener("click", toggleMoreResults);
 
 loadFromUrl();
 updateProgress();

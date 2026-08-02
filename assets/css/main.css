@@ -2489,6 +2489,34 @@ body.finder-page {
   font-weight: 750;
 }
 
+.finder-more-actions {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--finder-border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  text-align: center;
+}
+
+.finder-button--more {
+  min-width: 260px;
+  border-color: rgba(184, 137, 248, 0.6);
+  color: #f2eaff;
+  background: rgba(123, 79, 174, 0.16);
+}
+
+.finder-button--more:hover {
+  border-color: #cda8ff;
+  background: rgba(123, 79, 174, 0.3);
+  transform: translateY(-1px);
+}
+
+.finder-more-hint {
+  margin: 12px 0 0;
+  color: var(--finder-muted);
+  font-size: 0.88rem;
+}
+
 @media (max-width: 720px) {
   .finder-shell {
     width: min(100% - 22px, 980px);
@@ -2525,6 +2553,17 @@ body.finder-page {
   .finder-results__header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  @media (max-width: 640px) {
+    .finder-button--more {
+      width: 100%;
+      min-width: 0;
+    }
+  
+    .finder-more-actions {
+      padding: 16px;
+    }
   }
 }
 
