@@ -443,40 +443,79 @@
     input.dataset.mainJsReady = "true";
 
     const root = input.dataset.searchRoot || "";
-    const routes = {
-      boss: root + "database/bosses/index.html",
-      weapon: root + "database/weapons/index.html",
-      trinket: root + "database/trinkets/index.html",
-      build: root + "tools/build-planner.html",
-      quiz: root + "tools/build-quiz.html",
-      checklist: root + "tools/checklist.html",
-      beginner: root + "blog/beginner-guide.html",
-      tip: root + "blog/beginner-guide.html",
-      mistake: root + "blog/mistakes.html",
-      walkthrough: root + "blog/walkthrough.html",
-      secret: root + "blog/hidden-secrets.html",
-      mechanic: root + "blog/hidden-mechanics.html",
-      blog: root + "blog/index.html",
-      tool: root + "tools/index.html",
-      about: root + "about.html"
+    const normalized = function (value) {
+      return value
+        .toLowerCase()
+        .replace(/[’']/g, "'")
+        .replace(/\s+/g, " ")
+        .trim();
     };
+
+    const exactRoutes = [
+      [["loner's landing", "loners landing"], "database/maps/loners-landing.html"],
+      [["southern outskirts", "southern outskirt"], "database/maps/southern-outskirts.html"],
+      [["ossex"], "database/maps/ossex.html"],
+      [["eastern heath"], "database/maps/eastern-heath.html"],
+      [["mourner's mile", "mourners mile"], "database/maps/mourners-mile.html"],
+      [["queensbury crypt"], "database/maps/queensbury-crypt.html"],
+      [["western wilds"], "database/maps/western-wilds.html"],
+      [["kindlewood"], "database/maps/kindlewood.html"],
+      [["septemburg"], "database/maps/septemburg.html"],
+      [["backwaters"], "database/maps/backwaters.html"],
+      [["nox's bayou", "noxs bayou"], "database/maps/noxs-bayou.html"],
+      [["sandfalls"], "database/maps/sandfalls.html"],
+      [["bone beach"], "database/maps/bone-beach.html"],
+      [["coltrane peak"], "database/maps/coltrane-peak.html"],
+      [["astral orrery"], "database/maps/astral-orrery.html"],
+      [["radiant manor"], "database/maps/radiant-manor.html"]
+    ];
+
+    const categoryRoutes = [
+      [["map", "maps", "region", "regions", "atlas"], "database/maps/index.html"],
+      [["boss", "bosses"], "database/bosses/index.html"],
+      [["weapon", "weapons"], "database/weapons/index.html"],
+      [["sidearm", "sidearms"], "database/sidearms/index.html"],
+      [["trinket", "trinkets"], "database/trinkets/index.html"],
+      [["build planner", "build"], "tools/build-planner.html"],
+      [["quiz"], "tools/build-quiz.html"],
+      [["what am i missing", "missing item", "missing"], "tools/what-am-i-missing.html"],
+      [["checklist", "100%"], "tools/checklist.html"],
+      [["release date"], "blog/mina-the-hollower-release-date.html"],
+      [["walkthrough", "progression"], "blog/mina-the-hollower-walkthrough.html"],
+      [["beginner", "tips"], "blog/beginner-guide.html"],
+      [["mistake", "mistakes"], "blog/mistakes.html"],
+      [["secret", "secrets"], "blog/hidden-secrets.html"],
+      [["mechanic", "mechanics"], "blog/hidden-mechanics.html"],
+      [["blog", "guide", "guides"], "blog/index.html"],
+      [["tool", "tools"], "tools/index.html"],
+      [["about"], "about.html"]
+    ];
 
     input.addEventListener("keydown", function (event) {
       if (event.key !== "Enter") return;
 
-      const query = input.value.trim().toLowerCase();
+      const query = normalized(input.value);
       if (!query) return;
 
-      let target = root + "index.html";
-
-      for (const keyword of Object.keys(routes)) {
-        if (query.includes(keyword)) {
-          target = routes[keyword];
-          break;
+      for (const entry of exactRoutes) {
+        const aliases = entry[0];
+        const path = entry[1];
+        if (aliases.some(function (alias) { return query.includes(alias); })) {
+          window.location.href = root + path;
+          return;
         }
       }
 
-      window.location.href = target;
+      for (const entry of categoryRoutes) {
+        const aliases = entry[0];
+        const path = entry[1];
+        if (aliases.some(function (alias) { return query.includes(alias); })) {
+          window.location.href = root + path;
+          return;
+        }
+      }
+
+      window.location.href = root + "index.html";
     });
   }
 
