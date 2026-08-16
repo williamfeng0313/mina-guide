@@ -1,182 +1,668 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mina the Hollower Boss Tier List: Hardest Bosses Ranked</title>
-<meta content="Mina the Hollower boss tier list ranking the hardest bosses by difficulty, mechanics, pressure, preparation, and first-clear challenge." name="description"/>
-<link href="https://www.minahollower.com/blog/boss-tier-list.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=IM+Fell+English:ital@0;1&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/main.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mina the Hollower Boss Tier List: Hardest Bosses Ranked</title>
+  <meta
+    name="description"
+    content="Mina the Hollower boss tier list ranking the hardest bosses by first-clear difficulty, mechanics, arena pressure, preparation, and recovery difficulty."
+  />
+  <link rel="canonical" href="https://www.minahollower.com/blog/boss-tier-list.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mina the Hollower Boss Tier List: Hardest Bosses Ranked" />
+  <meta
+    property="og:description"
+    content="A first-playthrough Mina the Hollower boss ranking with the hardest bosses, tier list, locations, and preparation advice."
+  />
+  <meta property="og:url" content="https://www.minahollower.com/blog/boss-tier-list.html" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mina the Hollower Boss Tier List: Hardest Bosses Ranked" />
+  <meta
+    name="twitter:description"
+    content="Hardest Mina the Hollower bosses ranked for a normal first playthrough."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <style>
+    .tier-hero {
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(200, 134, 10, 0.22);
+      background: rgba(245, 234, 216, 0.045);
+    }
+
+    .tier-hero h1 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 0.7rem;
+    }
+
+    .tier-hero p {
+      color: var(--bone);
+      line-height: 1.65;
+    }
+
+    .editorial-note {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--candle);
+      background: rgba(200, 134, 10, 0.06);
+      color: var(--bone-dark);
+      line-height: 1.6;
+    }
+
+    .quick-ranking {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .rank-card {
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      background: rgba(245, 234, 216, 0.03);
+    }
+
+    .rank-card strong {
+      color: var(--parchment);
+    }
+
+    .rank-card span {
+      display: block;
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .tier-block {
+      margin-top: 1.6rem;
+      padding: 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      background: rgba(245, 234, 216, 0.025);
+    }
+
+    .tier-block h2 {
+      margin-bottom: 0.35rem;
+    }
+
+    .tier-block > p {
+      color: var(--bone-dark);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .boss-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .boss-row {
+      padding: 0.85rem 0;
+      border-top: 1px solid rgba(200, 134, 10, 0.14);
+    }
+
+    .boss-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .boss-row h3 {
+      color: var(--parchment);
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .boss-row p {
+      margin: 0.2rem 0;
+      color: var(--bone);
+      line-height: 1.55;
+    }
+
+    .boss-meta {
+      color: var(--bone-dark) !important;
+      font-size: 0.92rem;
+    }
+
+    .ranking-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .ranking-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    .ranking-table th,
+    .ranking-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid rgba(200, 134, 10, 0.15);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .ranking-table th {
+      color: var(--candle-light);
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      background: rgba(200, 134, 10, 0.05);
+    }
+
+    .ranking-table td {
+      color: var(--bone);
+    }
+
+    .sources-box {
+      margin-top: 1.6rem;
+      padding: 1rem;
+      border: 1px solid rgba(200, 134, 10, 0.18);
+      background: rgba(245, 234, 216, 0.025);
+    }
+
+    .sources-box p {
+      color: var(--bone-dark);
+      line-height: 1.6;
+      margin-bottom: 0.55rem;
+    }
+
+    .sources-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 720px) {
+      .quick-ranking {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mina the Hollower Boss Tier List: Hardest Bosses Ranked",
+    "description": "A first-playthrough Mina the Hollower boss tier list ranking the hardest bosses by difficulty, mechanics, pressure, preparation, and recovery difficulty.",
+    "dateModified": "2026-08-16",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.minahollower.com/blog/boss-tier-list.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tenebrous Isle Guide"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Hardest Mina the Hollower Bosses",
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": 10,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Mined Mind"},
+      {"@type":"ListItem","position":2,"name":"Frozen Horror"},
+      {"@type":"ListItem","position":3,"name":"The Congealed"},
+      {"@type":"ListItem","position":4,"name":"Thalassion"},
+      {"@type":"ListItem","position":5,"name":"Furgus the Faithful"},
+      {"@type":"ListItem","position":6,"name":"Nox's Beast"},
+      {"@type":"ListItem","position":7,"name":"The Carving Man"},
+      {"@type":"ListItem","position":8,"name":"Locomotress Agnes"},
+      {"@type":"ListItem","position":9,"name":"Dark Deluxy"},
+      {"@type":"ListItem","position":10,"name":"Baron Lionel"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the hardest boss in Mina the Hollower?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For this site's normal first-playthrough ranking, Mined Mind is ranked as the hardest boss, followed by Frozen Horror and The Congealed. Difficulty is subjective and can change with build, level, Sidearm, Trinkets, and route order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the hardest bosses in Mina the Hollower?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The top difficulty tier in this editorial ranking includes Mined Mind, Frozen Horror, The Congealed, Thalassion, and Furgus the Faithful."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this Mina the Hollower boss ranking official?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Boss names and locations are checked against official and community reference sources, but the difficulty order is an editorial ranking for a normal first playthrough."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
-<div class="announce">
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily  | 
-  <a href="../blog/beginner-guide.html">New: 11 beginner tips</a>
-</div>
-<nav>
-<a class="nav-brand" href="../index.html">Tenebrous Isle Guide</a>
-<ul class="nav-links">
-<li><a href="../blog/index.html" style="color:var(--candle-light)">Blog</a></li>
-<li><a href="../database/index.html">Database</a></li><li><a href="../database/maps/index.html">Maps</a></li>
-<li><a href="../tools/index.html">Tools</a></li>
-<li><a href="../about.html">About</a></li>
-</ul>
-<div class="nav-search">
-<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
-<circle cx="11" cy="11" r="8"></circle>
-<path d="m21 21-4.35-4.35"></path>
-</svg>
-<input aria-label="Search maps and guides" data-search-root="../" placeholder="Search maps, guides..." type="text"/>
-</div>
-<button aria-label="Open menu" class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
-<svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22">
-<path d="M3 6h18M3 12h18M3 18h18"></path>
-</svg>
-</button>
-</nav>
-<div aria-label="Navigation" class="mobile-nav-overlay" id="mobileNav" role="dialog">
-<button aria-label="Close menu" class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">X</button>
-<a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
-<a href="../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
-<a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a><a href="../database/maps/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Maps</a>
-<a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
-<a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
-</div>
-<main class="page-wrap narrow">
-<div class="breadcrumb">
-<a href="../index.html">Home</a> / <a href="index.html">Blog</a> / Boss Tier List
+  <div class="announce">
+    Mina the Hollower launched May 29, 2026 - guides are live and updating daily &nbsp;|&nbsp;
+    <a href="beginner-guide.html">New: 11 beginner tips</a>
   </div>
-<div class="section-divider">
-<h2>Boss Tier List (First Clear)</h2>
-</div>
-<div class="article-body">
-<section style="margin-bottom:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.22); background:rgba(245,234,216,0.045);">
-<h1 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.45rem; margin-bottom:0.6rem;">
-        Mina the Hollower Boss Tier List
-      </h1>
-<h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-        Quick Answer: Hardest Bosses in Mina the Hollower
-      </h2>
-<p style="color:var(--bone); line-height:1.6; margin-bottom:0.75rem;">
-        This Mina the Hollower boss tier list ranks bosses by first-clear difficulty, pattern pressure,
-        arena control, preparation needs, and how punishing each fight feels before you fully understand the mechanics.
-      </p>
-<p style="color:var(--bone-dark); line-height:1.6; margin:0;">
-        For most players, the hardest fights are not only about damage. They are hard because they combine visual clutter,
-        movement pressure, hazards, adds, mirror routing, or long cleanup routes. This list is based on a standard first playthrough,
-        not speedruns, NG+, or challenge restrictions.
-      </p>
-</section>
-<section style="margin-bottom:1.2rem;">
-<h2>S Tier — Brutal</h2>
-<p>
-<strong>Astral Gate Warden</strong> — A late-game wall that tests routing, mirrors, survival, and loadout discipline.
-        This kind of fight is brutal because the pressure comes from the full route around it, not just the boss arena itself.
-      </p>
-</section>
-<section style="margin-bottom:1.2rem;">
-<h2>A Tier — Hard</h2>
-<p>
-<strong>Nether Kraken, The Worm's Back, Worm Queen, <a href="dark-deluxy-guide.html">Dark Deluxy</a></strong> — These fights can feel difficult because of
-        pattern density, movement pressure, secret requirements, or awkward punish windows. They are learnable, but they punish
-        impatient play hard.
-      </p>
-</section>
-<section style="margin-bottom:1.2rem;">
-<h2>B Tier — Normal</h2>
-<p>
-<strong>Carving Man, Major Miner, Tide Caller</strong> — These bosses have clearer patterns and more forgiving windows.
-        They can still kill you, but they usually become manageable once you slow down and learn when to attack.
-      </p>
-</section>
-<section style="margin-top:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.18); background:rgba(245,234,216,0.035);">
-<h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-        How This Boss Tier List Is Ranked
-      </h2>
-<ul style="margin-left:1.2rem; color:var(--bone); line-height:1.6;">
-<li><strong>Pattern pressure:</strong> how hard the boss is to read on a first clear.</li>
-<li><strong>Arena danger:</strong> hazards, walls, adds, and movement restrictions.</li>
-<li><strong>Loadout pressure:</strong> whether the fight feels much harder without a good build.</li>
-<li><strong>Recovery difficulty:</strong> how punishing mistakes feel during the fight.</li>
-<li><strong>Cleanup relevance:</strong> whether the boss matters for 100% completion or late-game checks.</li>
-</ul>
-</section>
-<section style="margin-top:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.18); background:rgba(245,234,216,0.035);">
-<h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-        Recommended Before Hard Bosses
-      </h2>
-<p style="color:var(--bone); line-height:1.6; margin-bottom:0.75rem;">
-        If a boss feels unfair, check your weapon, Trinkets, and cleanup progress before forcing attempts.
-        Mina rewards preparation more than rushing.
-      </p>
-<ul style="margin-left:1.2rem; color:var(--bone); line-height:1.6;">
-<li><a href="best-weapons.html">Best Weapons Guide</a></li>
-<li><a href="best-builds.html">Best Builds Guide</a></li>
-<li><a href="best-trinkets.html">Best Trinkets</a></li>
-<li><a href="achievement-difficulty.html">100% Achievement Guide</a></li>
-<li><a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a></li>
-<li><a href="../database/bosses/index.html">Full Boss Database</a></li>
-<li><a href="dark-deluxy-guide.html">Dark Deluxy Guide</a></li>
-</ul>
-</section>
-<section style="margin-top:1.4rem; padding:1rem; border:1px solid rgba(200,134,10,0.18); background:rgba(245,234,216,0.035);">
-<h2 style="color:var(--parchment); font-family:'Cinzel',serif; font-size:1.15rem; margin-bottom:0.6rem;">
-        Boss Tier List FAQ
-      </h2>
-<h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-        What is the hardest boss in Mina the Hollower?
-      </h3>
-<p style="color:var(--bone-dark); line-height:1.6;">
-        The hardest boss depends on your build and route, but late-game fights with heavy pressure, hazards,
-        mirror routing, or long gauntlets tend to feel the most punishing on a first clear.
-      </p>
-<h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-        Should I change builds for hard bosses?
-      </h3>
-<p style="color:var(--bone-dark); line-height:1.6;">
-        Yes. If you are dying before learning patterns, use a safer build. If you already understand the fight,
-        switch toward more damage. The best boss build is the one that solves your current problem.
-      </p>
-<h3 style="color:var(--candle-light); font-family:'Cinzel',serif; font-size:0.95rem; margin-top:0.8rem;">
-        Is this tier list for 100% completion?
-      </h3>
-<p style="color:var(--bone-dark); line-height:1.6;">
-        This list is mainly for first-clear difficulty, but some boss and secret fights also matter during 100% cleanup.
-        Use the 100% Cleanup Checklist if you are tracking completion.
-      </p>
-</section>
-</div>
-</main>
-<footer>
-<div class="footer-brand">Tenebrous Isle Guide</div>
-<p class="footer-text">
-    The most complete English guide for Mina the Hollower — updated daily as we explore the island.
-  </p>
-<div class="footer-links">
-<a href="../blog/index.html">Blog</a>
-<a href="../database/bosses/index.html">Bosses</a>
-<a href="../database/weapons/index.html">Weapons</a>
-<a href="../database/trinkets/index.html">Trinkets</a>
-<a href="../tools/index.html">Tools</a>
-<a href="../about.html">About</a>
-<a href="../database/maps/index.html">Maps</a></div>
-<p class="footer-disclaimer">
-    This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-<p>
-    Looking for pure difficulty instead of overall boss ranking?
-    See our
-    <a href="boss-difficulty-ratings.html">
-      Boss Difficulty Ratings
-    </a>.
-  </p>
-</footer>
-<script src="../assets/js/main.js"></script>
-<script defer="" src="/_vercel/insights/script.js"></script>
+
+  <nav>
+    <a class="nav-brand" href="../index.html">Tenebrous Isle Guide</a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" style="color:var(--candle-light)">Blog</a></li>
+      <li><a href="../database/index.html">Database</a></li>
+      <li><a href="../database/maps/index.html">Maps</a></li>
+      <li><a href="../tools/index.html">Tools</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+
+    <div class="nav-search">
+      <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input aria-label="Search maps and guides" data-search-root="../" placeholder="Search maps, guides..." type="text" />
+    </div>
+
+    <button aria-label="Open menu" class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="22">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div aria-label="Navigation" class="mobile-nav-overlay" id="mobileNav" role="dialog">
+    <button aria-label="Close menu" class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">X</button>
+    <a href="../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+    <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Blog</a>
+    <a href="../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Database</a>
+    <a href="../database/maps/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Maps</a>
+    <a href="../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Tools</a>
+    <a href="../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+  </div>
+
+  <main class="page-wrap narrow">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> /
+      <a href="index.html">Blog</a> /
+      Boss Tier List
+    </div>
+
+    <div class="section-divider">
+      <h2>Boss Tier List · Normal First Playthrough</h2>
+    </div>
+
+    <div class="article-body">
+      <section class="tier-hero">
+        <h1>Mina the Hollower Boss Tier List: Hardest Bosses Ranked</h1>
+        <p>
+          This Mina the Hollower boss tier list ranks major and optional encounters by normal first-clear difficulty:
+          pattern pressure, arena danger, recovery difficulty, preparation needs, and how punishing mistakes feel before you know the fight.
+        </p>
+        <div class="editorial-note">
+          <strong>Important:</strong> the boss names and locations below are checked against current official/community reference lists,
+          but the difficulty order is editorial. Your weapon, Bone Up level, Sidearm, Trinkets, route order, and playstyle can move a fight up or down a tier.
+        </div>
+      </section>
+
+      <section>
+        <h2>Quick Answer: What Is the Hardest Boss in Mina the Hollower?</h2>
+        <p>
+          For this site's normal first-playthrough ranking, <strong>Mined Mind</strong> is the hardest boss overall.
+          It is followed by <strong>Frozen Horror</strong>, <strong>The Congealed</strong>, <strong>Thalassion</strong>, and
+          <strong>Furgus the Faithful</strong> in the top difficulty tier.
+        </p>
+
+        <div class="quick-ranking">
+          <div class="rank-card"><span>#1 Hardest</span><strong>Mined Mind</strong><br />Bone Beach · Brain Alcove</div>
+          <div class="rank-card"><span>#2</span><strong>Frozen Horror</strong><br />Coltrane Peak · Icebound Cavern</div>
+          <div class="rank-card"><span>#3</span><strong>The Congealed</strong><br />Astral Orrery · Sealed Archive</div>
+          <div class="rank-card"><span>#4</span><strong>Thalassion</strong><br />Backwaters · Fishing Hole</div>
+          <div class="rank-card"><span>#5</span><strong>Furgus the Faithful</strong><br />Radiant Manor · Servants' Quarters</div>
+          <div class="rank-card"><span>#6</span><strong>Nox's Beast</strong><br />Nox's Bayou · Tainted Lair</div>
+          <div class="rank-card"><span>#7</span><strong>The Carving Man</strong><br />Septemburg · Carving Shack</div>
+          <div class="rank-card"><span>#8</span><strong>Locomotress Agnes</strong><br />Coltrane Peak · Maelstrom</div>
+          <div class="rank-card"><span>#9</span><strong>Dark Deluxy</strong><br />Septemburg · Windy Generator</div>
+          <div class="rank-card"><span>#10</span><strong>Baron Lionel</strong><br />Radiant Manor · Study</div>
+        </div>
+      </section>
+
+      <section class="tier-block">
+        <h2>S Tier — Hardest Bosses</h2>
+        <p>The biggest first-playthrough walls. These are the fights most likely to punish weak resource management, greed, or inconsistent movement.</p>
+
+        <div class="boss-list">
+          <div class="boss-row">
+            <h3>#1 Mined Mind</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/bone-beach.html">Bone Beach</a> · Brain Alcove</p>
+            <p>
+              Our #1 first-clear difficulty pick. The fight creates sustained pressure and gives very little room for repeated mistakes,
+              so clean movement and disciplined damage windows matter more than trying to race the boss.
+            </p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#2 Frozen Horror</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/coltrane-peak.html">Coltrane Peak</a> · Icebound Cavern</p>
+            <p>
+              A severe execution check that arrives late enough to expect strong fundamentals. A better build helps, but bad timing is still punished quickly.
+            </p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#3 The Congealed</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/astral-orrery.html">Astral Orrery</a> · Sealed Archive</p>
+            <p>
+              A required late-game wall rather than an optional challenge. The fight asks for movement, pattern recognition, and resource discipline at the same time.
+            </p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#4 Thalassion</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/backwaters.html">Backwaters</a> · Fishing Hole</p>
+            <p>
+              An optional encounter that can punish even well-prepared players. Because it is optional, many players reach it with very different builds and progression levels.
+            </p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#5 Furgus the Faithful</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/radiant-manor.html">Radiant Manor</a> · Servants' Quarters</p>
+            <p>
+              A demanding late-game fight inside an already exhausting region. Mistakes are expensive when your focus and healing resources are already under pressure.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tier-block">
+        <h2>A Tier — Very Hard</h2>
+        <p>Serious walls that become more manageable once the core pattern or arena problem is understood.</p>
+
+        <div class="boss-list">
+          <div class="boss-row">
+            <h3>#6 Nox's Beast</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/noxs-bayou.html">Nox's Bayou</a> · Tainted Lair</p>
+            <p>A strong early-to-mid-game wall with dangerous arena pressure and enough punishment to expose sloppy movement.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#7 <a href="../database/bosses/carving-man.html">The Carving Man</a></h3>
+            <p class="boss-meta">Location: <a href="../database/maps/septemburg.html">Septemburg</a> · Carving Shack</p>
+            <p>Fast pressure and a fight that punishes panic. It gets much easier once you stop forcing attacks and read the timing.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#8 Locomotress Agnes</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/coltrane-peak.html">Coltrane Peak</a> · Maelstrom</p>
+            <p>Movement-heavy pressure makes careless positioning expensive and can make the fight feel chaotic before the route becomes familiar.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#9 <a href="../database/bosses/dark-deluxy.html">Dark Deluxy</a></h3>
+            <p class="boss-meta">Location: <a href="../database/maps/septemburg.html">Septemburg</a> · Windy Generator</p>
+            <p>A difficult optional encounter that rewards preparation. See the <a href="dark-deluxy-guide.html">Dark Deluxy guide</a> for a dedicated breakdown.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>#10 Baron Lionel</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/radiant-manor.html">Radiant Manor</a> · Study</p>
+            <p>A fast late-game duel where missed reads can snowball quickly, especially if you enter the sequence with a weak recovery plan.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tier-block">
+        <h2>B Tier — Moderate</h2>
+        <p>Real boss fights that demand attention, but usually become consistent after their central gimmick or rhythm is learned.</p>
+
+        <div class="boss-list">
+          <div class="boss-row">
+            <h3>The Duchess of Queensbury</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/queensbury-crypt.html">Queensbury Crypt</a></p>
+            <p>An important early difficulty step that teaches proper dodge-and-punish rhythm.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>Mock Moon</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/noxs-bayou.html">Nox's Bayou</a> · Moonlit Path</p>
+            <p>Tricky at first, but much easier once the encounter rhythm becomes familiar.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>Madd House</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/kindlewood.html">Kindlewood</a> · Overgrowth</p>
+            <p>A memorable encounter with enough environmental and execution pressure to punish players who ignore the arena.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3><a href="../database/bosses/major-miner.html">Major Miner</a></h3>
+            <p class="boss-meta">Location: <a href="../database/maps/sandfalls.html">Sandfalls</a> · Miner's Den</p>
+            <p>A solid mid-game test with manageable patterns once you stop overcommitting.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>Lumenarks</h3>
+            <p class="boss-meta">Location: <a href="../database/maps/astral-orrery.html">Astral Orrery</a> · Hall of Scholars</p>
+            <p>A later encounter that rewards pattern recognition more than raw damage output.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>Armand · Midden · Mirren · Wonder Willis · Maxi · Evra the Undying</h3>
+            <p class="boss-meta">Optional encounters across Ossex, Queensbury Crypt, Coltrane Peak, Eastern Heath, and Goddred's Grave.</p>
+            <p>These optional fights can be dangerous when discovered early or unprepared, but usually sit below the game's largest progression walls.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tier-block">
+        <h2>C Tier — Easier Once Understood</h2>
+        <p>Bosses or recurring encounters that are still meaningful, but generally create less first-clear pressure than the tiers above.</p>
+
+        <div class="boss-list">
+          <div class="boss-row">
+            <h3>The Dugin</h3>
+            <p class="boss-meta">Locations include <a href="../database/maps/southern-outskirts.html">Southern Outskirts</a> and <a href="../database/maps/western-wilds.html">Western Wilds</a>.</p>
+            <p>A unique optional encounter with an unusual setup, but not one of the largest mechanical walls once you understand what is happening.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3>Thorne</h3>
+            <p class="boss-meta">Locations include Ossex and <a href="../database/maps/coltrane-peak.html">Coltrane Peak</a>.</p>
+            <p>Important narratively, but the earlier fight functions more as a combat check than an endgame execution wall.</p>
+          </div>
+
+          <div class="boss-row">
+            <h3><a href="../database/bosses/nether-kraken.html">Nether Kraken</a></h3>
+            <p class="boss-meta">Location: Tenebrous Sea</p>
+            <p>Visually intimidating, but comparatively manageable after its attacks are understood.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:1.6rem;">
+        <h2>Top 10 Hardest Bosses at a Glance</h2>
+        <div class="ranking-table-wrap">
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Boss</th>
+                <th>Tier</th>
+                <th>Location</th>
+                <th>Why It Ranks Here</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Mined Mind</td><td>S</td><td>Bone Beach</td><td>Sustained pressure and little margin for repeated mistakes.</td></tr>
+              <tr><td>2</td><td>Frozen Horror</td><td>S</td><td>Coltrane Peak</td><td>Severe execution and timing check.</td></tr>
+              <tr><td>3</td><td>The Congealed</td><td>S</td><td>Astral Orrery</td><td>Required late-game progression wall.</td></tr>
+              <tr><td>4</td><td>Thalassion</td><td>S</td><td>Backwaters</td><td>Optional high-pressure fight that punishes weak preparation.</td></tr>
+              <tr><td>5</td><td>Furgus the Faithful</td><td>S</td><td>Radiant Manor</td><td>Demanding late-game fight in a long sequence.</td></tr>
+              <tr><td>6</td><td>Nox's Beast</td><td>A</td><td>Nox's Bayou</td><td>Strong arena and movement pressure.</td></tr>
+              <tr><td>7</td><td>The Carving Man</td><td>A</td><td>Septemburg</td><td>Fast pressure that punishes panic.</td></tr>
+              <tr><td>8</td><td>Locomotress Agnes</td><td>A</td><td>Coltrane Peak</td><td>Movement-heavy fight with costly positioning errors.</td></tr>
+              <tr><td>9</td><td>Dark Deluxy</td><td>A</td><td>Septemburg</td><td>Optional fight where preparation matters heavily.</td></tr>
+              <tr><td>10</td><td>Baron Lionel</td><td>A</td><td>Radiant Manor</td><td>Fast late-game duel with high punishment for missed reads.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section style="margin-top:1.6rem;">
+        <h2>How This Boss Tier List Is Ranked</h2>
+        <ul>
+          <li><strong>Pattern pressure:</strong> how difficult the boss is to read on a first clear.</li>
+          <li><strong>Arena danger:</strong> hazards, adds, walls, pits, and movement restrictions.</li>
+          <li><strong>Loadout pressure:</strong> how much a weak weapon/Trinket setup increases difficulty.</li>
+          <li><strong>Recovery difficulty:</strong> how hard it is to stabilize after taking damage.</li>
+          <li><strong>First-clear punishment:</strong> how severely the fight punishes unfamiliarity and greed.</li>
+        </ul>
+        <p>
+          This page ranks distinct major and optional encounters most useful to compare by difficulty.
+          Recurring or transformed versions are not always separated into their own ranking slot.
+        </p>
+      </section>
+
+      <section style="margin-top:1.6rem;">
+        <h2>Recommended Before Hard Bosses</h2>
+        <p>
+          If a boss feels unfair, stop forcing attempts for a moment. A better weapon, safer Trinket setup, more healing capacity,
+          or a different Sidearm can turn a frustrating wall into a learnable fight.
+        </p>
+        <ul>
+          <li><a href="best-weapons.html">Best Weapons Guide</a></li>
+          <li><a href="best-builds.html">Best Builds Guide</a></li>
+          <li><a href="best-trinkets.html">Best Trinkets</a></li>
+          <li><a href="100-percent-cleanup-checklist.html">100% Cleanup Checklist</a></li>
+          <li><a href="../database/bosses/index.html">Full Boss Database</a></li>
+          <li><a href="boss-difficulty-ratings.html">Every Boss Rated 1–5 Stars</a></li>
+        </ul>
+      </section>
+
+      <section style="margin-top:1.6rem;">
+        <h2>Boss Tier List FAQ</h2>
+
+        <h3>What is the hardest boss in Mina the Hollower?</h3>
+        <p>
+          In this site's normal first-playthrough ranking, <strong>Mined Mind</strong> takes the #1 spot.
+          The exact answer can change depending on route order, weapon, Bone Up level, Sidearm, Trinkets, and player strengths.
+        </p>
+
+        <h3>What are the hardest bosses in Mina the Hollower?</h3>
+        <p>
+          Our S Tier contains Mined Mind, Frozen Horror, The Congealed, Thalassion, and Furgus the Faithful.
+          Nox's Beast, The Carving Man, Locomotress Agnes, Dark Deluxy, and Baron Lionel sit immediately below them in A Tier.
+        </p>
+
+        <h3>Is this an official boss ranking?</h3>
+        <p>
+          No. Yacht Club Games provides official game and boss information, but this difficulty order is an editorial ranking.
+          Boss names and locations are checked against current reference sources; difficulty remains subjective.
+        </p>
+
+        <h3>Should I change builds for hard bosses?</h3>
+        <p>
+          Yes. If you are dying before learning the pattern, favor survivability and consistency. Once the fight is understood,
+          shift toward damage if faster phases make the encounter easier for you.
+        </p>
+
+        <h3>Where can I find individual boss locations?</h3>
+        <p>
+          Use the <a href="../database/bosses/index.html">Boss Database</a> and the
+          <a href="../database/maps/index.html">Mina the Hollower Map Database</a> to connect boss names with their regions and routes.
+        </p>
+      </section>
+
+      <section class="sources-box">
+        <h2>Sources & Verification</h2>
+        <p>
+          Boss names and official enemy/boss references:
+          <a
+            href="https://www.yachtclubgames.com/blog/mina-the-hollower-enemy-boss-list"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Yacht Club Games — Mina the Hollower Enemy & Boss List</a>.
+        </p>
+        <p>
+          Boss locations and current boss index cross-check:
+          <a
+            href="https://minathehollower.wiki.gg/wiki/Bosses"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Mina the Hollower Wiki — Bosses</a>.
+        </p>
+        <p>
+          The <strong>difficulty order itself is editorial</strong>; these sources are used to verify boss identity and location, not to claim an official difficulty ranking.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Tenebrous Isle Guide</div>
+    <p class="footer-text">
+      The most complete English guide for Mina the Hollower — updated as we explore the island.
+    </p>
+
+    <div class="footer-links">
+      <a href="index.html">Blog</a>
+      <a href="../database/bosses/index.html">Bosses</a>
+      <a href="../database/weapons/index.html">Weapons</a>
+      <a href="../database/trinkets/index.html">Trinkets</a>
+      <a href="../database/maps/index.html">Maps</a>
+      <a href="../tools/index.html">Tools</a>
+      <a href="../about.html">About</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+      All game content belongs to their respective owners.
+    </p>
+
+    <p>
+      Want individual star ratings instead of a tier list?
+      See <a href="boss-difficulty-ratings.html">Every Mina the Hollower Boss Rated from 1 to 5 Stars</a>.
+    </p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
