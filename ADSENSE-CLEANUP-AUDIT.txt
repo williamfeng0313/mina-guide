@@ -1,0 +1,46 @@
+Mina the Hollower — AdSense Low-Value Cleanup Audit
+Build date: 2026-08-17
+
+BEFORE -> AFTER
+- HTML pages: 125 -> 121 (4 invalid boss stubs removed)
+- "Coming Soon" occurrences: 52 -> 0
+- noindex pages: 33 -> 25 (4 valid boss pages upgraded/indexable; 4 invalid boss pages removed)
+- noindex URLs inside sitemap: 33 -> 0
+- Sitemap URLs pointing to missing local files: 1+ known issue -> 0 in final scan
+- Internal broken HTML links: 0 in final scan
+- Missing local CSS/JS/image assets referenced by HTML: 0 in final scan
+- Canonical mismatches: 0 in final scan
+- Missing title/meta description/H1: 0 in final scan
+- Duplicate titles: 0 in final scan
+- Duplicate meta descriptions: 0 in final scan
+
+P0 FIXES CLOSED
+1) 33 noindex pages were listed in sitemap.xml
+   CLOSED: every remaining noindex page is now excluded from sitemap.xml.
+
+2) Eight weak/incorrect boss detail pages
+   CLOSED:
+   - Deleted: Astral Gate Warden, Worm Queen, The Worm's Back (as a boss page), Tide Caller.
+   - Upgraded and made indexable: The Carving Man, Dark Deluxy, Major Miner, Nether Kraken.
+   - Rebuilt Boss Database with the current 26-boss reference list.
+   - Rebuilt Boss Difficulty Ratings against the same boss baseline.
+   - Cleaned unverified boss names from key region map pages.
+
+3) 52 visible "Image Coming Soon" placeholders
+   CLOSED: 0 occurrences remain. Existing walkthrough images are retained.
+
+ADDITIONAL P0/P0.5 FIXES
+- Bell of Grace canonical corrected to /database/trinkets/bell-of-grace.html.
+- Removed incorrect /database/bosses/bell-of-grace.html from sitemap and added the correct Trinket URL.
+- Trinkets hub canonical normalized to /database/trinkets/.
+- Weapons hub canonical normalized to /database/weapons/.
+- Removed the Google AdSense loader from the navigation-only /tools/index.html page.
+- Added source/reference links to cleaned boss resources.
+
+NOT YET TREATED AS "CLOSED"
+- 25 thin Trinket pages remain intentionally noindex. They are NOT in the sitemap and do NOT load the AdSense script. They should be upgraded one by one before becoming indexable.
+- Several indexed Trinket pages are still relatively template-like. They are the next P1 content-quality batch, but were not mass-noindexed because some have search potential.
+
+DEPLOYMENT
+Preferred: replace the entire old website folder with this build. This package intentionally excludes .git metadata.
+If overlaying onto the old folder, run cleanup-invalid-boss-pages.ps1 so the four deleted boss stubs do not remain on disk.

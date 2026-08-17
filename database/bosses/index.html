@@ -1,1233 +1,238 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>All Bosses in Mina the Hollower | Boss Guide &amp; Difficulty</title>
-<meta content="Browse Mina the Hollower bosses, secret bosses, optional encounters, regions, difficulty ratings, and strategy guides across Tenebrous Isle." name="description"/>
-<link href="https://www.minahollower.com/database/bosses/" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=IM+Fell+English:ital@0;1&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/css/main.css" rel="stylesheet"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279091849881318">
-</script>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>All Mina the Hollower Bosses | Locations & Difficulty Guide</title>
+<meta name="description" content="Browse the verified Mina the Hollower boss list with locations, first-clear difficulty ratings, secret encounters, and links to detailed boss guides."/>
+<link rel="canonical" href="https://www.minahollower.com/database/bosses/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/><link href="../../assets/css/main.css" rel="stylesheet"/>
 <style>
+.boss-intro{margin-bottom:1.5rem;padding:1.1rem;border:1px solid rgba(200,134,10,.22);background:rgba(245,234,216,.045)}
+.boss-intro h1{color:var(--parchment);font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.7rem}
+.boss-intro p{color:var(--bone);line-height:1.65}
+.boss-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.boss-card{border:1px solid rgba(200,134,10,.18);background:rgba(245,234,216,.03)}
+.boss-card-body{padding:1rem}
+.boss-card h3{font-family:'IM Fell English',serif;font-size:1.25rem;font-weight:400;margin:.15rem 0 .35rem;color:var(--parchment)}
+.boss-card h3 a{color:inherit;text-decoration:none} .boss-card h3 a:hover{color:var(--candle-light)}
+.boss-type{display:inline-block;margin:0 0 .35rem;padding:.15rem .45rem;border:1px solid rgba(200,134,10,.28);color:var(--candle-light);font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.boss-region{color:var(--candle);font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.55rem}
+.boss-summary{color:var(--bone-dark);line-height:1.55;margin-bottom:.7rem} .boss-rating{color:var(--candle-light);font-size:.86rem}
+.hub-note{margin:1.4rem 0;padding:1rem;border-left:3px solid var(--candle);background:rgba(245,234,216,.04);color:var(--bone-dark);line-height:1.65}
+@media(max-width:900px){.boss-grid{grid-template-columns:repeat(2,1fr)}} @media(max-width:620px){.boss-grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class="announce">Independent Mina the Hollower guides, databases, and completion tools &nbsp;|&nbsp; <a href="../../blog/boss-tier-list.html">Boss Tier List →</a></div>
 
-.boss-hub-intro {
-  margin-bottom: 2rem;
-}
-
-.boss-hub-intro h1 {
-  color: var(--parchment);
-  font-family: "Cinzel", serif;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.boss-hub-intro p {
-  max-width: 850px;
-  color: var(--bone);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.boss-overview-note {
-  margin-top: 1.2rem;
-  padding: 1rem 1.1rem;
-  border-left: 3px solid var(--candle);
-  background: rgba(245, 234, 216, 0.04);
-  color: var(--bone-dark);
-  line-height: 1.6;
-}
-
-
-.boss-section-block {
-  margin-top: 3rem;
-}
-
-.boss-section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(200, 134, 10, 0.25);
-}
-
-.boss-section-head h2 {
-  color: var(--parchment);
-  font-family: "Cinzel", serif;
-  font-size: 1.45rem;
-}
-
-.boss-section-head p {
-  max-width: 520px;
-  color: var(--bone-dark);
-  font-size: 0.9rem;
-  font-style: italic;
-  text-align: right;
-}
-
-
-.boss-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-}
-
-
-.boss-card {
-  overflow: hidden;
-  border: 1px solid rgba(200, 134, 10, 0.22);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(245, 234, 216, 0.07),
-      rgba(245, 234, 216, 0.03)
-    );
-  transition: 0.18s ease;
-}
-
-.boss-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(200, 134, 10, 0.5);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(245, 234, 216, 0.1),
-      rgba(200, 134, 10, 0.05)
-    );
-}
-
-
-.boss-card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-
-.boss-image-wrap {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(200, 134, 10, 0.12),
-      transparent 60%
-    ),
-    rgba(5, 12, 8, 0.8);
-}
-
-.boss-image-wrap img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.boss-placeholder {
-  display: grid;
-  place-items: center;
-  color: var(--bone-dark);
-  font-family: "Cinzel", serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-
-.boss-type {
-  position: absolute;
-  left: 0.7rem;
-  bottom: 0.7rem;
-  padding: 0.22rem 0.52rem;
-  border: 1px solid rgba(200, 134, 10, 0.35);
-  background: rgba(8, 15, 10, 0.9);
-  color: var(--candle-pale);
-  font-family: "Cinzel", serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-
-.boss-card-body {
-  padding: 1rem;
-}
-
-.boss-card h3 {
-  color: var(--parchment);
-  font-family: "IM Fell English", serif;
-  font-size: 1.28rem;
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-
-.boss-region {
-  color: var(--candle);
-  font-family: "Cinzel", serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
-}
-
-.boss-summary {
-  color: var(--bone-dark);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.boss-rating {
-  margin-top: 0.8rem;
-  color: var(--candle-light);
-  font-size: 0.9rem;
-}
-
-
-.boss-hub-cta {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(200, 134, 10, 0.3);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(200, 134, 10, 0.08),
-      rgba(245, 234, 216, 0.03)
-    );
-}
-
-.boss-hub-cta h2 {
-  color: var(--parchment);
-  font-family: "Cinzel", serif;
-  margin-bottom: 0.65rem;
-}
-
-.boss-hub-cta p {
-  color: var(--bone);
-  line-height: 1.65;
-  margin-bottom: 1rem;
-}
-
-
-@media (max-width: 980px) {
-
-  .boss-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .boss-section-head {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .boss-section-head p {
-    text-align: left;
-  }
-
-}
-
-
-@media (max-width: 620px) {
-
-  .boss-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-</style>
-</head>
-<body>
-<div class="announce">
-
-  Mina the Hollower launched May 29, 2026 - guides are live and updating daily
-
-   | 
-
-  <a href="../../blog/hidden-secrets.html">
-    New: Hidden Secrets Living Guide
-  </a>
-</div>
 <nav>
-<a class="nav-brand" href="../../index.html">
-    Tenebrous Isle Guide
-  </a>
+<a class="nav-brand" href="../../index.html">Tenebrous Isle Guide</a>
 <ul class="nav-links">
-<li>
-<a href="../../blog/index.html">
-        Blog
-      </a>
-</li>
-<li>
-<a href="../../database/index.html" style="color:var(--candle-light)">
-        Database
-      </a>
-</li><li><a href="../maps/index.html">Maps</a></li>
-<li>
-<a href="../../tools/index.html">
-        Tools
-      </a>
-</li>
-<li>
-<a href="../../about.html">
-        About
-      </a>
-</li>
+<li><a href="../../blog/index.html">Blog</a></li>
+<li><a href="../../database/index.html" style="color:var(--candle-light)">Database</a></li>
+<li><a href="../maps/index.html">Maps</a></li>
+<li><a href="../../tools/index.html">Tools</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
-<div class="nav-search">
-<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14">
-<circle cx="11" cy="11" r="8">
-</circle>
-<path d="m21 21-4.35-4.35"></path>
-</svg>
-<input aria-label="Search maps and guides" data-search-root="../../" placeholder="Search maps, guides..." type="text"/>
-</div>
-<button aria-label="Open menu" class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
-<svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22">
-<path d="M3 6h18M3 12h18M3 18h18"></path>
-</svg>
-</button>
+<div class="nav-search"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg><input aria-label="Search maps and guides" data-search-root="../../" placeholder="Search maps, guides..." type="text"/></div>
+<button aria-label="Open menu" class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></button>
 </nav>
 <div aria-label="Navigation" class="mobile-nav-overlay" id="mobileNav" role="dialog">
-<button aria-label="Close menu" class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    X
-  </button>
-<a href="../../index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    Home
-  </a>
-<a href="../../blog/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    Blog
-  </a>
-<a href="../../database/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    Database
-  </a><a href="../maps/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Maps</a>
-<a href="../../tools/index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    Tools
-  </a>
-<a href="../../about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">
-    About
-  </a>
+<button aria-label="Close menu" class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">X</button>
+<a href="../../index.html">Home</a><a href="../../blog/index.html">Blog</a><a href="../../database/index.html">Database</a><a href="../maps/index.html">Maps</a><a href="../../tools/index.html">Tools</a><a href="../../about.html">About</a>
 </div>
-<main class="page-wrap">
-<div class="breadcrumb">
-<a href="../../index.html">
-      Home
-    </a>
-
-    /
-
-    <a href="../index.html">
-      Database
-    </a>
-
-    /
-
-    Bosses
-
-  </div>
-<section class="boss-hub-intro">
-<p class="eyebrow">
-      Boss Database
-    </p>
-<h1>
-      Mina the Hollower Boss Guide
-    </h1>
-<p>
-      Browse major story bosses, secret fights, optional encounters,
-      and special boss battles across Tenebrous Isle.
-      This hub will continue to expand with individual strategies,
-      difficulty ratings, screenshots, and community notes.
-    </p>
-<div class="boss-overview-note">
-
-      Mina the Hollower contains 26 boss fights in the main game count,
-      while database lists may show more entries because recurring encounters,
-      secret bosses, alternate forms, and mini-bosses are often catalogued separately.
-
-    </div>
+<main class="page-wrap"><div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../index.html">Database</a> / Bosses</div>
+<section class="boss-intro"><p class="eyebrow">Boss Database · Accuracy cleanup August 2026</p><h1>Mina the Hollower Boss Database</h1><p>This hub uses the current 26-entry boss list published by the Mina the Hollower Wiki as the factual name/location baseline. Difficulty stars are editorial first-playthrough ratings, not official ratings.</p></section>
+<div class="hub-note"><strong>How to use this page:</strong> use the boss name and location to connect an encounter to its region, then open the <a href="../maps/index.html">Map Database</a>, <a href="../../blog/boss-tier-list.html">Boss Tier List</a>, or <a href="../../blog/boss-difficulty-ratings.html">1–5 Star Difficulty Ratings</a>. Four encounters currently have dedicated strategy pages; the rest stay consolidated here rather than publishing thin placeholder pages.</div>
+<section><div class="section-divider"><h2>All Verified Bosses</h2></div><div class="boss-grid"><article class="boss-card" id="mined-mind">
+<div class="boss-card-body">
+<p class="boss-type">Main / Generator</p>
+<h3>Mined Mind</h3>
+<p class="boss-region">Bone Beach: Brain Alcove</p>
+<p class="boss-summary">One of the strongest first-clear execution checks in our editorial ranking.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="frozen-horror">
+<div class="boss-card-body">
+<p class="boss-type">Main</p>
+<h3>Frozen Horror</h3>
+<p class="boss-region">Coltrane Peak: Icebound Cavern</p>
+<p class="boss-summary">Late-region fight with little room for repeated mistakes.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="the-congealed">
+<div class="boss-card-body">
+<p class="boss-type">Main / Generator</p>
+<h3>The Congealed</h3>
+<p class="boss-region">Astral Orrery: Sealed Archive</p>
+<p class="boss-summary">A late-game wall that asks for consistent movement and resource control.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="thalassion">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Thalassion</h3>
+<p class="boss-region">Backwaters: Fishing Hole</p>
+<p class="boss-summary">An optional encounter best approached after strong preparation.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="furgus-the-faithful">
+<div class="boss-card-body">
+<p class="boss-type">Endgame</p>
+<h3>Furgus the Faithful</h3>
+<p class="boss-region">Radiant Manor: Servants&#x27; Quarters</p>
+<p class="boss-summary">A demanding late-game encounter in an already punishing stretch.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="radiant-lionel">
+<div class="boss-card-body">
+<p class="boss-type">Endgame</p>
+<h3>Radiant Lionel</h3>
+<p class="boss-region">Radiant Manor: Prime Generator</p>
+<p class="boss-summary">A major endgame confrontation tied to the Prime Generator.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="radiant-thorne">
+<div class="boss-card-body">
+<p class="boss-type">Endgame</p>
+<h3>Radiant Thorne</h3>
+<p class="boss-region">Ossex: City Center / Courtyard</p>
+<p class="boss-summary">A late-game version of a recurring rival encounter.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★★</div>
+</div></article><article class="boss-card" id="nox-s-beast">
+<div class="boss-card-body">
+<p class="boss-type">Main / Generator</p>
+<h3>Nox&#x27;s Beast</h3>
+<p class="boss-region">Nox&#x27;s Bayou: Tainted Lair</p>
+<p class="boss-summary">The Bayou&#x27;s Spark Generator boss and a major movement-pressure fight.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★☆</div>
+</div></article><article class="boss-card" id="the-carving-man">
+<div class="boss-card-body">
+<p class="boss-type">Main / Generator</p>
+<h3><a href="carving-man.html">The Carving Man</a></h3>
+<p class="boss-region">Septemburg: Carving Shack</p>
+<p class="boss-summary">A region-spanning pursuer that culminates in the Carving Shack fight.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★☆</div>
+</div></article><article class="boss-card" id="locomotress-agnes">
+<div class="boss-card-body">
+<p class="boss-type">Main</p>
+<h3>Locomotress Agnes</h3>
+<p class="boss-region">Coltrane Peak: Maelstrom</p>
+<p class="boss-summary">Movement-heavy pressure in one of the game&#x27;s late regions.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★☆</div>
+</div></article><article class="boss-card" id="dark-deluxy">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3><a href="dark-deluxy.html">Dark Deluxy</a></h3>
+<p class="boss-region">Septemburg: Windy Generator</p>
+<p class="boss-summary">An optional encounter linked to the Windy Generator route.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★☆</div>
+</div></article><article class="boss-card" id="baron-lionel">
+<div class="boss-card-body">
+<p class="boss-type">Endgame</p>
+<h3>Baron Lionel</h3>
+<p class="boss-region">Radiant Manor: Study</p>
+<p class="boss-summary">A late-game duel that rewards clean reads and disciplined punish windows.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★★☆</div>
+</div></article><article class="boss-card" id="the-duchess-of-queensbury">
+<div class="boss-card-body">
+<p class="boss-type">Main / Generator</p>
+<h3>The Duchess of Queensbury</h3>
+<p class="boss-region">Queensbury Crypt</p>
+<p class="boss-summary">The Spark Generator boss of Queensbury Crypt and a common first-region boss.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="mock-moon">
+<div class="boss-card-body">
+<p class="boss-type">Boss</p>
+<h3>Mock Moon</h3>
+<p class="boss-region">Nox&#x27;s Bayou: Moonlit Path</p>
+<p class="boss-summary">A distinct Bayou encounter that becomes more manageable after its rhythm is learned.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="madd-house">
+<div class="boss-card-body">
+<p class="boss-type">Boss</p>
+<h3>Madd House</h3>
+<p class="boss-region">Kindlewood: Overgrowth</p>
+<p class="boss-summary">A memorable Kindlewood encounter with a strong central gimmick.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="major-miner">
+<div class="boss-card-body">
+<p class="boss-type">Boss</p>
+<h3><a href="major-miner.html">Major Miner</a></h3>
+<p class="boss-region">Sandfalls: Miner&#x27;s Den</p>
+<p class="boss-summary">A Sandfalls boss encountered in Miner&#x27;s Den.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="lumenarks">
+<div class="boss-card-body">
+<p class="boss-type">Boss</p>
+<h3>Lumenarks</h3>
+<p class="boss-region">Astral Orrery: Hall of Scholars</p>
+<p class="boss-summary">A late-region Astral Orrery encounter.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="armand">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Armand</h3>
+<p class="boss-region">Ossex: Legovich&#x27;s Arms</p>
+<p class="boss-summary">An optional Ossex encounter associated with Legovich&#x27;s Arms.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="midden">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Midden</h3>
+<p class="boss-region">Queensbury Crypt: Ancestral Chamber</p>
+<p class="boss-summary">A hidden Queensbury Crypt encounter.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="mirren">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Mirren</h3>
+<p class="boss-region">Coltrane Peak: Frostbite Woods</p>
+<p class="boss-summary">A Coltrane Peak optional encounter.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="wonder-willis">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Wonder Willis</h3>
+<p class="boss-region">Ossex: Music Hall</p>
+<p class="boss-summary">An optional Ossex encounter tied to the Music Hall.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="maxi">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Maxi</h3>
+<p class="boss-region">Eastern Heath: Grassland</p>
+<p class="boss-summary">An optional encounter in Eastern Heath.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="evra-the-undying">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>Evra the Undying</h3>
+<p class="boss-region">Goddred&#x27;s Grave</p>
+<p class="boss-summary">An optional fight at Goddred&#x27;s Grave.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★★☆☆</div>
+</div></article><article class="boss-card" id="the-dugin">
+<div class="boss-card-body">
+<p class="boss-type">Optional</p>
+<h3>The Dugin</h3>
+<p class="boss-region">Ossex / Southern Outskirts / Western Wilds</p>
+<p class="boss-summary">A recurring optional encounter associated with the renegade route.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★☆☆☆</div>
+</div></article><article class="boss-card" id="thorne">
+<div class="boss-card-body">
+<p class="boss-type">Story</p>
+<h3>Thorne</h3>
+<p class="boss-region">Ossex: Courtyard / Coltrane Peak: Fateful Cliff</p>
+<p class="boss-summary">A recurring story boss whose difficulty changes across encounters.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★☆☆☆</div>
+</div></article><article class="boss-card" id="nether-kraken">
+<div class="boss-card-body">
+<p class="boss-type">Opening</p>
+<h3><a href="nether-kraken.html">Nether Kraken</a></h3>
+<p class="boss-region">Tenebrous Sea</p>
+<p class="boss-summary">The opening sea encounter that sets up Mina&#x27;s arrival on Tenebrous Isle.</p>
+<div class="boss-rating">Editorial first-clear difficulty: ★★☆☆☆</div>
+</div></article></div></section>
+<section class="source-note" style="margin-top:1.4rem;padding:1rem;border:1px solid rgba(200,134,10,.18);background:rgba(245,234,216,.035);line-height:1.65;">
+<strong>References:</strong>
+<a href="https://minathehollower.wiki.gg/wiki/Bosses" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Bosses</a> ·
+<a href="https://minathehollower.wiki.gg/wiki/Manual" target="_blank" rel="noopener noreferrer">In-game Manual reference</a> ·
+<a href="https://www.yachtclubgames.com/categories/all-news/" target="_blank" rel="noopener noreferrer">Yacht Club Games news</a>
 </section>
-<!-- MAIN & MAJOR BOSSES -->
-<section class="boss-section-block">
-<div class="boss-section-head">
-<div>
-<p class="section-kicker">
-          Main Route
-        </p>
-<h2>
-          Main &amp; Major Bosses
-        </h2>
-</div>
-<p>
-        Story bosses and major encounters tied to the main progression,
-        Spark Generator routes, and late-game sequence.
-      </p>
-</div>
-<div class="boss-grid">
-<!-- THORNE -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Major Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Thorne
-          </h3>
-<p class="boss-region">
-            Story Encounter
-          </p>
-<p class="boss-summary">
-            A recurring major opponent whose encounters appear at key points
-            throughout the story.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- DUCHESS -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-            Main Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            The Duchess of Queensbury
-          </h3>
-<p class="boss-region">
-            Queensbury Crypt
-          </p>
-<p class="boss-summary">
-            An early major boss that tests spacing,
-            burrow timing, and pattern recognition.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★☆☆☆
-          </div>
-</div>
-</article>
-<!-- NOX'S BEAST -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-            Main Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Nox's Beast
-          </h3>
-<p class="boss-region">
-            Nox's Bayou
-          </p>
-<p class="boss-summary">
-            A major Bayou encounter that increases pressure
-            and demands better movement discipline.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- MADD HOUSE -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-            Main Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Madd House
-          </h3>
-<p class="boss-region">
-            Kindlewood
-          </p>
-<p class="boss-summary">
-            A memorable major encounter on the route toward Septemburg.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- CARVING MAN -->
-<article class="boss-card">
-<a class="boss-card-link" href="carving-man.html">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-              Main Boss
-            </span>
-</div>
-<div class="boss-card-body">
-<h3>
-              The Carving Man
-            </h3>
-<p class="boss-region">
-              Septemburg
-            </p>
-<p class="boss-summary">
-              A chase-driven major encounter that becomes a full fight
-              once the final arena is reached.
-            </p>
-<div class="boss-rating">
-              Difficulty: ★★★★☆
-            </div>
-</div>
-</a>
-</article>
-<!-- MAJOR MINER -->
-<article class="boss-card">
-<a class="boss-card-link" href="major-miner.html">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-              Major Boss
-            </span>
-</div>
-<div class="boss-card-body">
-<h3>
-              Major Miner
-            </h3>
-<p class="boss-region">
-              Bone Beach
-            </p>
-<p class="boss-summary">
-              A mid-game boss with strong arena pressure
-              and a more demanding combat rhythm.
-            </p>
-<div class="boss-rating">
-              Difficulty: ★★★☆☆
-            </div>
-</div>
-</a>
-</article>
-<!-- MINED MIND -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-            Major Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Mined Mind
-          </h3>
-<p class="boss-region">
-            Bone Beach
-          </p>
-<p class="boss-summary">
-            One of the game's more punishing mid-to-late encounters,
-            with high pressure and limited room for mistakes.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-<!-- MOCK MOON -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Mock Moon
-          </h3>
-<p class="boss-region">
-            Nox's Bayou
-          </p>
-<p class="boss-summary">
-            An optional-style boss-room encounter found at the end
-            of the Moonlit Path.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- FROZEN HORROR -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Major Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Frozen Horror
-          </h3>
-<p class="boss-region">
-            Coltrane Peak
-          </p>
-<p class="boss-summary">
-            A difficult late-region encounter known for punishing mistakes
-            and demanding clean movement.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-<!-- LOCOMOTRESS AGNES -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Major Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Locomotress Agnes
-          </h3>
-<p class="boss-region">
-            Coltrane Peak
-          </p>
-<p class="boss-summary">
-            A demanding encounter with strong momentum
-            and relatively little room for careless positioning.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- ASTROMANCER -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Astromancer
-          </h3>
-<p class="boss-region">
-            Astral Orrery
-          </p>
-<p class="boss-summary">
-            One of the major encounters waiting inside the Astral Orrery.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- LUMENARKS -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Lumenarks
-          </h3>
-<p class="boss-region">
-            Astral Orrery
-          </p>
-<p class="boss-summary">
-            An Astral Orrery boss encounter connected to the late-game progression.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- ORRERY WARDEN -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Orrery Warden
-          </h3>
-<p class="boss-region">
-            Astral Orrery
-          </p>
-<p class="boss-summary">
-            A late-game Astral Orrery encounter guarding progression deeper
-            into the region.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- SPARKMANCER -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Sparkmancer
-          </h3>
-<p class="boss-region">
-            Astral Orrery
-          </p>
-<p class="boss-summary">
-            A Spark-themed boss encounter in the Astral Orrery.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- THE CONGEALED -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-<span class="boss-type">
-            Main Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            The Congealed
-          </h3>
-<p class="boss-region">
-            Astral Orrery
-          </p>
-<p class="boss-summary">
-            A required late-game fight and one of the strongest
-            difficulty checks on the main route.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-<!-- FURGUS -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Endgame Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Furgus the Faithful
-          </h3>
-<p class="boss-region">
-            Radiant Manor
-          </p>
-<p class="boss-summary">
-            A dangerous endgame encounter in the Radiant Manor sequence.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-<!-- PATCHLING -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Endgame Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Patchling
-          </h3>
-<p class="boss-region">
-            Radiant Manor
-          </p>
-<p class="boss-summary">
-            One of the encounters in the back-to-back Radiant Manor boss sequence.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- BARON LIONEL -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder"><span>Image Coming Soon</span>
-
-<span class="boss-type">
-            Endgame Boss
-          </span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Baron Lionel
-          </h3>
-<p class="boss-region">
-            Radiant Manor
-          </p>
-<p class="boss-summary">
-            A major late-game confrontation at the center
-            of the story's final sequence.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- RADIANT LIONEL -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Final Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Radiant Lionel
-          </h3>
-<p class="boss-region">
-            Endgame
-          </p>
-<p class="boss-summary">
-            A final-stage form associated with the game's climactic boss sequence.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-</div>
-</section>
-<!-- SECRET & OPTIONAL BOSSES -->
-<section class="boss-section-block">
-<div class="boss-section-head">
-<div>
-<p class="section-kicker">
-          Off the Main Path
-        </p>
-<h2>
-          Secret &amp; Optional Bosses
-        </h2>
-</div>
-<p>
-        Side-quest encounters, hidden fights, optional superbosses,
-        and bosses that many players can miss entirely.
-      </p>
-</div>
-<div class="boss-grid">
-<!-- NETHER KRAKEN -->
-<article class="boss-card">
-<a class="boss-card-link" href="nether-kraken.html">
-<div class="boss-image-wrap boss-placeholder">
-<span>
-              Image Coming Soon
-            </span>
-<span class="boss-type">
-              Optional Boss
-            </span>
-</div>
-<div class="boss-card-body">
-<h3>
-              Nether Kraken
-            </h3>
-<p class="boss-region">
-              Intro / Shipwreck
-            </p>
-<p class="boss-summary">
-              An optional opening encounter that can be missed
-              before the main island journey begins.
-            </p>
-<div class="boss-rating">
-              Difficulty: ★★★★☆
-            </div>
-</div>
-</a>
-</article>
-<!-- ARMAND -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Armand
-          </h3>
-<p class="boss-region">
-            Ossex
-          </p>
-<p class="boss-summary">
-            A secret encounter connected to Legovich's shop progression.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- DARK DELUXY -->
-<article class="boss-card">
-<a class="boss-card-link" href="dark-deluxy.html">
-<div class="boss-image-wrap boss-placeholder">
-<span>
-              Image Coming Soon
-            </span>
-<span class="boss-type">
-              Secret Boss
-            </span>
-</div>
-<div class="boss-card-body">
-<h3>
-              Dark Deluxy
-            </h3>
-<p class="boss-region">
-              Secret Encounter
-            </p>
-<p class="boss-summary">
-              A hidden optional fight aimed at players exploring beyond the main route.
-            </p>
-<div class="boss-rating">
-              Difficulty: ★★★★☆
-            </div>
-</div>
-</a>
-</article>
-<!-- DUGIN -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Optional Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Dugin
-          </h3>
-<p class="boss-region">
-            Southern Outskirts
-          </p>
-<p class="boss-summary">
-            An optional encounter tied to Ack and Dak,
-            with a randomized appearance and repeat fight requirement.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★☆☆☆
-          </div>
-</div>
-</article>
-<!-- EVRA -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Evra the Undying
-          </h3>
-<p class="boss-region">
-            Secret Encounter
-          </p>
-<p class="boss-summary">
-            An optional secret boss encountered outside the standard progression route.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- MAXI -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Maxi
-          </h3>
-<p class="boss-region">
-            Secret Encounter
-          </p>
-<p class="boss-summary">
-            An optional fight that can be missed during a normal story-focused playthrough.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- MIDDEN -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Optional Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Midden
-          </h3>
-<p class="boss-region">
-            Queensbury
-          </p>
-<p class="boss-summary">
-            A hidden Ancestral Chamber encounter triggered through
-            an unusual dialogue interaction.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★☆☆
-          </div>
-</div>
-</article>
-<!-- MIRREN -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Mirren
-          </h3>
-<p class="boss-region">
-            Optional Encounter
-          </p>
-<p class="boss-summary">
-            A secret encounter connected to exploration outside the main progression path.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- THALASSION -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Thalassion
-          </h3>
-<p class="boss-region">
-            Fishing Hole
-          </p>
-<p class="boss-summary">
-            A difficult optional giant-fish encounter and one of the game's stronger secret fights.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-<!-- WONDER WILLIS -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Secret Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Wonder Willis
-          </h3>
-<p class="boss-region">
-            Ossex Music Hall
-          </p>
-<p class="boss-summary">
-            A pirate-shark secret boss that serves as the payoff
-            to a long sidequest chain.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★☆
-          </div>
-</div>
-</article>
-<!-- RADIANT THORNE -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Special Boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Radiant Thorne
-          </h3>
-<p class="boss-region">
-            Late Game
-          </p>
-<p class="boss-summary">
-            A special late-game Thorne encounter separated from his earlier story fights.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★★★★
-          </div>
-</div>
-</article>
-</div>
-</section>
-<!-- MINI-BOSSES -->
-<section class="boss-section-block">
-<div class="boss-section-head">
-<div>
-<p class="section-kicker">
-          Special Encounters
-        </p>
-<h2>
-          Mini-bosses &amp; Other Major Encounters
-        </h2>
-</div>
-<p>
-        Smaller boss-like encounters that are useful to track separately
-        from the main 26-fight boss count.
-      </p>
-</div>
-<div class="boss-grid">
-<!-- HULK TROOPER -->
-<article class="boss-card">
-<div class="boss-image-wrap boss-placeholder">
-<span>Image Coming Soon</span>
-<span class="boss-type">Mini-boss</span>
-</div>
-<div class="boss-card-body">
-<h3>
-            Hulk Trooper
-          </h3>
-<p class="boss-region">
-            Prologue
-          </p>
-<p class="boss-summary">
-            A larger and more dangerous Trooper encounter
-            before the game's first proper major boss.
-          </p>
-<div class="boss-rating">
-            Difficulty: ★★☆☆☆
-          </div>
-</div>
-</article>
-</div>
-</section>
-<!-- RATING BLOG CTA -->
-<section class="boss-hub-cta">
-<p class="section-kicker">
-      Difficulty Guide
-    </p>
-<h2>
-      How Hard Is Every Boss?
-    </h2>
-<p>
-      The database gives you the encounter list.
-      The upcoming difficulty guide rates every major fight from 1 to 5 stars
-      based on a first normal playthrough, with short explanations
-      and community reactions.
-    </p>
-<a class="btn-primary" href="../../blog/boss-difficulty-ratings.html">
-      View Boss Difficulty Ratings
-    </a>
-<p>
-      Looking for a difficulty comparison?
-      See our
-      <a href="../../blog/boss-difficulty-ratings.html">
-        complete 1-to-5-star Boss Difficulty Ratings
-      </a>.
-    </p>
-</section>
-<!-- RELATED GUIDES -->
-<section class="boss-section-block">
-<div class="boss-section-head">
-<div>
-<p class="section-kicker">
-          Keep Exploring
-        </p>
-<h2>
-          Related Guides
-        </h2>
-</div>
-</div>
-<div class="boss-grid">
-<article class="boss-card">
-<a class="boss-card-link" href="../../blog/boss-tier-list.html">
-<div class="boss-card-body">
-<h3>
-              Boss Tier List
-            </h3>
-<p class="boss-summary">
-              A broader ranking of Mina the Hollower bosses
-              by threat, design, and overall encounter impact.
-            </p>
-</div>
-</a>
-</article>
-<article class="boss-card">
-<a class="boss-card-link" href="../../blog/best-builds.html">
-<div class="boss-card-body">
-<h3>
-              Best Builds
-            </h3>
-<p class="boss-summary">
-              Weapon, Sidearm, and Trinket combinations
-              for difficult fights and general progression.
-            </p>
-</div>
-</a>
-</article>
-<article class="boss-card">
-<a class="boss-card-link" href="../../blog/hidden-secrets.html">
-<div class="boss-card-body">
-<h3>
-              Hidden Secrets
-            </h3>
-<p class="boss-summary">
-              Secret bosses, hidden endings, unusual transformations,
-              and community discoveries.
-            </p>
-</div>
-</a>
-</article>
-</div>
-</section>
-<section class="boss-section-block" id="additional-boss-guides"><div class="boss-section-head"><div><p class="section-kicker">Individual pages</p><h2>Additional Boss Guides</h2></div></div><div class="boss-overview-note"><a href="astral-gate-warden.html">Astral Gate Warden</a> · <a href="the-worms-back.html">The Worm's Back</a> · <a href="tide-caller.html">Tide Caller</a> · <a href="worm-queen.html">Worm Queen</a></div></section></main>
+</main>
 <footer>
-<div class="footer-brand">
-    Tenebrous Isle Guide
-  </div>
-<p class="footer-text">
-    A fan-made Mina the Hollower guide for bosses,
-    Trinkets, builds, tools, secrets, and 100% completion.
-  </p>
-<div class="footer-links">
-<a href="../../blog/index.html">
-      Blog
-    </a>
-<a href="../../database/index.html">
-      Database
-    </a><a href="../maps/index.html">Maps</a>
-<a href="../../database/bosses/index.html">
-      Bosses
-    </a>
-<a href="../../database/trinkets/index.html">
-      Trinkets
-    </a>
-<a href="../../tools/index.html">
-      Tools
-    </a>
-<a href="../../about.html">
-      About
-    </a>
-<a href="../../privacy-policy.html">
-      Privacy Policy
-    </a>
-<a href="../../contact.html">
-      Contact
-    </a>
-<a href="../../terms.html">
-      Terms
-    </a>
-</div>
-<p class="footer-disclaimer">
-    This is a fan-made guide site.
-    Mina the Hollower is a trademark of Yacht Club Games.
-    All game content belongs to their respective owners.
-  </p>
-</footer>
-<script src="../../assets/js/main.js"></script>
-<script defer="" src="/_vercel/insights/script.js">
-</script>
-</body>
-</html>
+<div class="footer-brand">Tenebrous Isle Guide</div>
+<p class="footer-text">Independent Mina the Hollower guides, databases, maps, and completion tools.</p>
+<div class="footer-links"><a href="../../blog/index.html">Blog</a><a href="../../database/bosses/">Bosses</a><a href="../../database/weapons/">Weapons</a><a href="../../database/trinkets/">Trinkets</a><a href="../../tools/index.html">Tools</a><a href="../../about.html">About</a><a href="../maps/index.html">Maps</a></div>
+<p class="footer-disclaimer">This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games. All game content belongs to their respective owners.</p>
+</footer><script src="../../assets/js/main.js"></script><script defer src="/_vercel/insights/script.js"></script></body></html>
