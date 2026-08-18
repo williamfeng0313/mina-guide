@@ -1,0 +1,44 @@
+/database/maps/sandfalls.html — accuracy + Interactive Map patch
+
+The current page incorrectly lists Polyp Lamp under Sandfalls.
+Current Wiki location is Bone Beach: Hide Tent (Delver).
+
+A. QUICK SUMMARY
+Change:
+Tracked Trinkets = 3
+
+To:
+Tracked Trinkets = 2
+
+B. TRINKETS SECTION
+Keep:
+- Niter Belt — Sandfalls: Sifted Sands
+- Tunneling Codex — Sandfalls: Ring Dive Parlor (Ring Master)
+
+DELETE the entire Polyp Lamp card.
+
+For Niter Belt, change the small location text to:
+<small>Sifted Sands.</small>
+
+For Tunneling Codex, use:
+<small>Ring Dive Parlor (Ring Master); score 5,000 or more.</small>
+
+C. BOSS SECTION
+Major Miner is correct in Sandfalls.
+Use:
+<a class="map-entity-card" href="../bosses/major-miner.html">
+  <span class="map-badge">Boss</span>
+  <h3>Major Miner</h3>
+  <p>Sandfalls: Miner's Den</p>
+  <small>Open the detailed boss guide →</small>
+</a>
+
+D. CLEANUP COUNT
+Change:
+"Verify the 3 Trinket entries..."
+to:
+"Verify the 2 Trinket entries currently associated with this region/route."
+
+E. RELATED GUIDES
+Add:
+<li><a href="../../tools/interactive-map.html?region=sandfalls">Interactive Sandfalls Map</a></li>

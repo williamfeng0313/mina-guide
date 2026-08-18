@@ -1,0 +1,29 @@
+/database/trinkets/polyp-lamp.html — factual correction
+
+KEEP:
+<meta content="noindex, follow" name="robots"/>
+
+Do NOT index this page yet; it is still a thin P1 page.
+
+1. Replace meta description with:
+<meta content="Polyp Lamp effect and verified location in Mina the Hollower. It reduces damage in dark places and is found at Bone Beach: Hide Tent from Delver." name="description"/>
+
+2. Replace region label:
+Sandfalls
+with:
+Bone Beach
+
+3. Replace Location paragraph with:
+<p style="font-size:0.9rem; color:var(--bone-dark); line-height:1.6;">
+  📍 Bone Beach — Hide Tent (Delver).
+</p>
+
+4. Add this link before the closing </div> of .detail-card:
+<p style="margin-top:1rem;">
+  <a href="../../tools/interactive-map.html?region=bone-beach" style="color:var(--candle);">
+    Open Bone Beach in the Interactive Map →
+  </a>
+</p>
+
+Important:
+Leave this page OUT of sitemap.xml until it is expanded enough to remove noindex.

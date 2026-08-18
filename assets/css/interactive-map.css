@@ -1,0 +1,543 @@
+.interactive-map-page {
+  max-width: 1320px;
+}
+
+.imap-hero,
+.imap-controls,
+.imap-filter-section,
+.imap-map-panel,
+.imap-list-panel,
+.imap-detail-panel,
+.imap-info-grid article,
+.imap-related,
+.imap-sources {
+  border: 1px solid rgba(200, 134, 10, 0.22);
+  background: rgba(245, 234, 216, 0.04);
+}
+
+.imap-hero {
+  margin-bottom: 1rem;
+  padding: 1.35rem;
+}
+
+.imap-hero h1,
+.imap-filter-section h2,
+.imap-panel-head h2,
+.imap-detail-panel h2,
+.imap-info-grid h2,
+.imap-related h2,
+.imap-sources h2 {
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+}
+
+.imap-hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.imap-lead {
+  max-width: 900px;
+  color: var(--bone);
+  line-height: 1.7;
+}
+
+.imap-trust-note {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--candle);
+  background: rgba(200, 134, 10, 0.07);
+  color: var(--bone-dark);
+  line-height: 1.6;
+}
+
+.imap-trust-note strong {
+  color: var(--candle-light);
+}
+
+.imap-controls {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.7fr) minmax(260px, 1.3fr) auto;
+  gap: 0.85rem;
+  align-items: end;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.imap-control-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.imap-control-group label {
+  color: var(--candle-light);
+  font-family: "Cinzel", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.imap-control-group select,
+.imap-control-group input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(200, 134, 10, 0.26);
+  border-radius: 3px;
+  background: rgba(5, 12, 8, 0.62);
+  color: var(--bone);
+  font: inherit;
+}
+
+.imap-control-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.imap-action-button,
+.imap-filter,
+.imap-found-button,
+.imap-admin-readout button {
+  min-height: 42px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(200, 134, 10, 0.28);
+  border-radius: 3px;
+  background: rgba(5, 12, 8, 0.56);
+  color: var(--bone);
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.imap-action-button:hover,
+.imap-filter:hover,
+.imap-found-button:hover,
+.imap-admin-readout button:hover {
+  color: var(--candle-light);
+  border-color: var(--candle);
+}
+
+.imap-filter-section {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.imap-filter-head,
+.imap-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.imap-filter-head h2,
+.imap-panel-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.imap-counts {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.imap-counts span {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(200, 134, 10, 0.18);
+  color: var(--bone-dark);
+  font-size: 0.78rem;
+}
+
+.imap-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.imap-filter.is-active {
+  background: rgba(200, 134, 10, 0.16);
+  color: var(--candle-light);
+  border-color: rgba(200, 134, 10, 0.5);
+}
+
+.imap-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.7fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.imap-map-panel,
+.imap-list-panel {
+  padding: 1rem;
+}
+
+.imap-region-description {
+  margin: 0.6rem 0 0.9rem;
+  color: var(--bone-dark);
+  line-height: 1.6;
+}
+
+.imap-text-link,
+.imap-detail-link {
+  color: var(--candle-light);
+  text-decoration: none;
+}
+
+.imap-text-link:hover,
+.imap-detail-link:hover {
+  text-decoration: underline;
+}
+
+.imap-stage-wrap {
+  overflow: auto;
+  border: 1px solid rgba(200, 134, 10, 0.2);
+  background: rgba(5, 12, 8, 0.5);
+}
+
+.imap-stage {
+  position: relative;
+  width: 100%;
+  min-width: 620px;
+}
+
+.imap-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.imap-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.imap-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--parchment);
+  border-radius: 999px;
+  background: var(--candle);
+  color: #140d05;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.52);
+  cursor: pointer;
+  pointer-events: auto;
+  font-family: "Cinzel", serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+
+.imap-marker[data-type="boss"] {
+  background: #a13b32;
+  color: #fff5e8;
+}
+
+.imap-marker.is-found {
+  opacity: 0.48;
+}
+
+.imap-map-note {
+  margin-top: 0.8rem;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid rgba(200, 134, 10, 0.5);
+  background: rgba(245, 234, 216, 0.025);
+  color: var(--bone-dark);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.imap-admin-readout {
+  margin-top: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px dashed rgba(200, 134, 10, 0.36);
+  color: var(--bone-dark);
+}
+
+.imap-admin-readout strong {
+  color: var(--candle-light);
+}
+
+.imap-location-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  max-height: 690px;
+  overflow: auto;
+}
+
+.imap-location-card {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid rgba(200, 134, 10, 0.16);
+  border-radius: 3px;
+  background: rgba(5, 12, 8, 0.4);
+  color: var(--bone);
+  text-align: left;
+  cursor: pointer;
+}
+
+.imap-location-card:hover,
+.imap-location-card:focus-visible {
+  border-color: rgba(200, 134, 10, 0.5);
+  outline: none;
+}
+
+.imap-location-card.is-found {
+  opacity: 0.58;
+}
+
+.imap-location-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.imap-location-card h3 {
+  margin: 0.3rem 0;
+  color: var(--parchment);
+  font-family: "IM Fell English", serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+}
+
+.imap-type-badge,
+.imap-found-badge {
+  display: inline-block;
+  padding: 0.16rem 0.45rem;
+  border: 1px solid rgba(200, 134, 10, 0.24);
+  color: var(--candle-light);
+  font-family: "Cinzel", serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.imap-found-badge {
+  color: var(--bone-dark);
+}
+
+.imap-location-sub {
+  color: var(--candle);
+  font-size: 0.82rem;
+}
+
+.imap-location-note {
+  margin-top: 0.4rem;
+  color: var(--bone-dark);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.imap-empty {
+  margin-top: 0.85rem;
+  padding: 1rem;
+  border: 1px dashed rgba(200, 134, 10, 0.24);
+  color: var(--bone-dark);
+  text-align: center;
+}
+
+.imap-detail-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.imap-detail-panel h2 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.3rem;
+}
+
+.imap-detail-location {
+  color: var(--candle);
+}
+
+.imap-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: flex-end;
+}
+
+.imap-found-button.is-found {
+  color: var(--candle-light);
+  background: rgba(200, 134, 10, 0.12);
+}
+
+.imap-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(200, 134, 10, 0.28);
+  border-radius: 3px;
+  font-family: "Cinzel", serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.imap-detail-link.secondary {
+  color: var(--bone);
+}
+
+.imap-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.imap-info-grid article {
+  padding: 1rem;
+}
+
+.imap-info-grid h2 {
+  margin: 0.25rem 0 0.55rem;
+  font-size: 1rem;
+}
+
+.imap-info-grid p {
+  color: var(--bone-dark);
+  line-height: 1.6;
+}
+
+.imap-related,
+.imap-sources {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.imap-related h2,
+.imap-sources h2 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.imap-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.imap-related-grid a {
+  padding: 0.85rem;
+  border: 1px solid rgba(200, 134, 10, 0.16);
+  color: inherit;
+  text-decoration: none;
+  background: rgba(5, 12, 8, 0.34);
+}
+
+.imap-related-grid a:hover {
+  border-color: rgba(200, 134, 10, 0.5);
+}
+
+.imap-related-grid strong,
+.imap-related-grid span {
+  display: block;
+}
+
+.imap-related-grid strong {
+  color: var(--parchment);
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+}
+
+.imap-related-grid span {
+  margin-top: 0.35rem;
+  color: var(--bone-dark);
+  font-size: 0.88rem;
+}
+
+.imap-sources p,
+.imap-sources li {
+  color: var(--bone-dark);
+  line-height: 1.6;
+}
+
+.imap-sources ul {
+  margin: 0.7rem 0 0 1.2rem;
+}
+
+.imap-sources a {
+  color: var(--candle-light);
+}
+
+@media (max-width: 980px) {
+  .imap-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imap-control-actions {
+    grid-column: 1 / -1;
+  }
+
+  .imap-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .imap-location-list {
+    max-height: none;
+  }
+
+  .imap-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imap-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .imap-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .imap-control-actions {
+    grid-column: auto;
+  }
+
+  .imap-action-button,
+  .imap-control-actions {
+    width: 100%;
+  }
+
+  .imap-filter-head,
+  .imap-panel-head,
+  .imap-detail-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .imap-detail-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .imap-detail-link,
+  .imap-found-button {
+    width: 100%;
+  }
+
+  .imap-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imap-stage {
+    min-width: 540px;
+  }
+}

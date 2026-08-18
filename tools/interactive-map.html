@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Mina the Hollower Interactive Map | Trinkets, Bosses & Collectibles</title>
+<meta name="description" content="Use the Mina the Hollower interactive map to switch between Bone Beach and Sandfalls, filter verified locations, track found items, and open detailed guides."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.minahollower.com/tools/interactive-map.html"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Mina the Hollower Interactive Map"/>
+<meta property="og:description" content="Interactive Bone Beach and Sandfalls map reference with verified location filters and progress tracking."/>
+<meta property="og:url" content="https://www.minahollower.com/tools/interactive-map.html"/>
+<meta property="og:image" content="https://www.minahollower.com/assets/images/walkthrough/bone-beach.webp"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mina the Hollower Interactive Map"/>
+<meta name="twitter:description" content="Switch regions, filter verified locations, and track your Mina the Hollower cleanup progress."/>
+<meta name="twitter:image" content="https://www.minahollower.com/assets/images/walkthrough/bone-beach.webp"/>
+<meta name="theme-color" content="#1a1209"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/interactive-map.css"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mina the Hollower Interactive Map",
+  "description": "A browser-based interactive map and progress tracker for verified Mina the Hollower locations.",
+  "url": "https://www.minahollower.com/tools/interactive-map.html",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript and local storage",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "MinaHollower",
+    "url": "https://www.minahollower.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.minahollower.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://www.minahollower.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Interactive Map",
+      "item": "https://www.minahollower.com/tools/interactive-map.html"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<div class="site-shell">
+
+<div class="announce">
+  Mina the Hollower Interactive Map · Beta
+  &nbsp;|&nbsp;
+  <a href="../database/maps/index.html">Browse all 16 region guides →</a>
+</div>
+
+<nav>
+<a class="nav-brand" href="../index.html">MinaHollower</a>
+
+<ul class="nav-links">
+<li><a href="../blog/index.html">Blog</a></li>
+<li><a href="../database/index.html">Database</a></li>
+<li><a href="../database/maps/index.html">Maps</a></li>
+<li><a class="active" href="index.html">Tools</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+
+<div class="nav-search">
+<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.35-4.35"></path>
+</svg>
+<input aria-label="Search maps and guides" data-search-root="../" placeholder="Search maps, guides..." type="text"/>
+</div>
+
+<button aria-label="Open menu" class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+<svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+<path d="M3 6h18M3 12h18M3 18h18"></path>
+</svg>
+</button>
+</nav>
+
+<div aria-label="Navigation" class="mobile-nav-overlay" id="mobileNav" role="dialog">
+<button aria-label="Close menu" class="mobile-close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">×</button>
+<a href="../index.html">Home</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../database/index.html">Database</a>
+<a href="../database/maps/index.html">Maps</a>
+<a href="index.html">Tools</a>
+<a href="../about.html">About</a>
+</div>
+
+<main class="page-wrap interactive-map-page">
+
+<div class="breadcrumb">
+<a href="../index.html">Home</a> /
+<a href="index.html">Tools</a> /
+Interactive Map
+</div>
+
+<section class="imap-hero">
+<p class="eyebrow">Interactive Map · Verified-location beta</p>
+<h1>Mina the Hollower Interactive Map</h1>
+<p class="imap-lead">
+Switch between Bone Beach and Sandfalls, filter verified Trinkets and bosses,
+mark entries as found, and jump directly to the relevant guide or database page.
+</p>
+<div class="imap-trust-note">
+<strong>Accuracy rule:</strong>
+this beta does not invent map-pin coordinates. A location stays in the verified
+location list until its exact pixel position on the map image has been manually confirmed.
+The data structure already supports pins, so verified coordinates can be added later without rewriting the tool.
+</div>
+</section>
+
+<section class="imap-controls" aria-label="Interactive map controls">
+<div class="imap-control-group">
+<label for="imap-region">Region</label>
+<select id="imap-region">
+<option value="bone-beach">Bone Beach</option>
+<option value="sandfalls">Sandfalls</option>
+</select>
+</div>
+
+<div class="imap-control-group imap-search-group">
+<label for="imap-search">Find a location</label>
+<input id="imap-search" type="search" placeholder="Search Joule Syringe, Mined Mind..."/>
+</div>
+
+<div class="imap-control-actions">
+<button id="imap-copy-link" class="imap-action-button" type="button">Copy Region Link</button>
+<button id="imap-reset" class="imap-action-button" type="button">Reset Region Progress</button>
+</div>
+</section>
+
+<section class="imap-filter-section" aria-label="Location filters">
+<div class="imap-filter-head">
+<div>
+<p class="section-kicker">Filters</p>
+<h2>Show Location Types</h2>
+</div>
+<div class="imap-counts" aria-live="polite">
+<span id="imap-visible-count">0 visible</span>
+<span id="imap-found-count">0 found</span>
+</div>
+</div>
+
+<div class="imap-filter-buttons" id="imap-filters">
+<button class="imap-filter is-active" type="button" data-filter="all">All</button>
+<button class="imap-filter" type="button" data-filter="trinket">Trinkets</button>
+<button class="imap-filter" type="button" data-filter="boss">Bosses</button>
+</div>
+</section>
+
+<section class="imap-workspace">
+<div class="imap-map-panel">
+<div class="imap-panel-head">
+<div>
+<p class="section-kicker">Region map</p>
+<h2 id="imap-region-title">Bone Beach</h2>
+</div>
+<a id="imap-region-guide" class="imap-text-link" href="../database/maps/bone-beach.html">Open full region guide →</a>
+</div>
+
+<p id="imap-region-description" class="imap-region-description"></p>
+
+<div class="imap-stage-wrap">
+<div class="imap-stage" id="imap-stage">
+<img id="imap-image" src="../assets/images/walkthrough/bone-beach.webp" alt="Bone Beach map reference"/>
+<div id="imap-markers" class="imap-markers" aria-label="Verified map pins"></div>
+</div>
+</div>
+
+<div class="imap-map-note" id="imap-map-note">
+Exact pins appear only after their image coordinates have been verified.
+Use the location list on the right for the current verified sub-location data.
+</div>
+
+<div class="imap-admin-readout" id="imap-admin-readout" hidden>
+<strong>Coordinate helper:</strong>
+<span id="imap-admin-coordinates">Click the map to read x/y percentages.</span>
+<button id="imap-copy-coordinates" type="button">Copy</button>
+</div>
+</div>
+
+<aside class="imap-list-panel" aria-label="Verified locations">
+<div class="imap-panel-head">
+<div>
+<p class="section-kicker">Verified data</p>
+<h2>Locations</h2>
+</div>
+</div>
+
+<div id="imap-location-list" class="imap-location-list"></div>
+
+<div id="imap-empty" class="imap-empty" hidden>
+No locations match the current filters.
+</div>
+</aside>
+</section>
+
+<section class="imap-detail-panel" id="imap-detail-panel" hidden aria-live="polite">
+<div>
+<p class="section-kicker" id="imap-detail-type">Location</p>
+<h2 id="imap-detail-name">Location Name</h2>
+<p class="imap-detail-location" id="imap-detail-location"></p>
+<p id="imap-detail-note"></p>
+</div>
+
+<div class="imap-detail-actions">
+<button id="imap-detail-found" class="imap-found-button" type="button">Mark as Found</button>
+<a id="imap-detail-guide" class="imap-detail-link" href="#">Open Guide</a>
+<a id="imap-detail-source" class="imap-detail-link secondary" href="#" target="_blank" rel="noopener noreferrer">Verify Source</a>
+</div>
+</section>
+
+<section class="imap-info-grid">
+<article>
+<p class="section-kicker">Current beta</p>
+<h2>What This Version Tracks</h2>
+<p>
+The first release intentionally starts with two regions and six verified entries:
+Bone Beach tracks Joule Syringe, Polyp Lamp, and Mined Mind;
+Sandfalls tracks Niter Belt, Tunneling Codex, and Major Miner.
+</p>
+</article>
+
+<article>
+<p class="section-kicker">Progress</p>
+<h2>Your Found Status Is Local</h2>
+<p>
+“Found” status is saved only in this browser using localStorage.
+No account, login, or personal data is required.
+</p>
+</article>
+
+<article>
+<p class="section-kicker">Next expansion</p>
+<h2>Add Pins Without Rewriting the Tool</h2>
+<p>
+Each location already has optional <code>x</code> and <code>y</code> fields.
+Once an exact position is confirmed on the image, enter the percentages in
+<code>interactive-map-data.js</code> and the pin appears automatically.
+</p>
+</article>
+</section>
+
+<section class="imap-related">
+<p class="section-kicker">Related resources</p>
+<h2>Continue Your Cleanup</h2>
+<div class="imap-related-grid">
+<a href="../database/maps/index.html">
+<strong>All Region Maps</strong>
+<span>Browse the 16 region map guides.</span>
+</a>
+<a href="checklist.html">
+<strong>100% Checklist</strong>
+<span>Track full-game completion progress.</span>
+</a>
+<a href="what-am-i-missing.html">
+<strong>What Am I Missing?</strong>
+<span>Diagnose likely missing collectibles.</span>
+</a>
+<a href="../blog/bone-beach-all-collectibles.html">
+<strong>Bone Beach Collectibles</strong>
+<span>Open the detailed 100% cleanup route.</span>
+</a>
+</div>
+</section>
+
+<section class="imap-sources">
+<p class="section-kicker">Source policy</p>
+<h2>Verified Baseline Sources</h2>
+<p>
+This beta uses the Mina the Hollower Wiki/Manual as the factual baseline for the
+six location names below. Community sources can be added later for route nuance,
+but they should not override verified item or boss locations without stronger evidence.
+</p>
+<ul>
+<li><a href="https://minathehollower.wiki.gg/wiki/Trinkets" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Trinkets</a></li>
+<li><a href="https://minathehollower.wiki.gg/wiki/Tunneling_Codex" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Tunneling Codex</a></li>
+<li><a href="https://minathehollower.wiki.gg/wiki/Bosses" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Bosses</a></li>
+<li><a href="https://minathehollower.wiki.gg/wiki/Tenebrous_Isle" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Tenebrous Isle</a></li>
+</ul>
+</section>
+
+</main>
+
+<footer>
+<div class="footer-brand">MinaHollower</div>
+<p class="footer-text">Independent Mina the Hollower guides, databases, maps, and completion tools.</p>
+<div class="footer-links">
+<a href="../blog/index.html">Blog</a>
+<a href="../database/index.html">Database</a>
+<a href="../database/maps/index.html">Maps</a>
+<a href="index.html">Tools</a>
+<a href="../about.html">About</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../contact.html">Contact</a>
+</div>
+<p class="footer-disclaimer">
+This is a fan-made guide site. Mina the Hollower is a trademark of Yacht Club Games.
+All game content belongs to their respective owners.
+</p>
+</footer>
+
+</div>
+
+<script src="../assets/js/interactive-map-data.js"></script>
+<script src="../assets/js/interactive-map.js"></script>
+<script src="../assets/js/main.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

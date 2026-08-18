@@ -1,0 +1,16 @@
+In /database/maps/index.html, replace the current announcement block:
+
+<div class="announce">
+  Tenebrous Isle atlas &nbsp;|&nbsp;
+  <a href="../../blog/mina-the-hollower-walkthrough.html">Open the full walkthrough →</a>
+</div>
+
+with:
+
+<div class="announce">
+  Tenebrous Isle atlas
+  &nbsp;|&nbsp;
+  <a href="../../tools/interactive-map.html">Interactive Map Beta →</a>
+  &nbsp;|&nbsp;
+  <a href="../../blog/mina-the-hollower-walkthrough.html">Full Walkthrough →</a>
+</div>

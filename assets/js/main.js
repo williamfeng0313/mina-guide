@@ -471,6 +471,10 @@
     ];
 
     const categoryRoutes = [
+      [
+        ["interactive map", "map tracker", "location tracker"],
+        "tools/interactive-map.html"
+      ],
       [["map", "maps", "region", "regions", "atlas"], "database/maps/index.html"],
       [["boss", "bosses"], "database/bosses/index.html"],
       [["weapon", "weapons"], "database/weapons/index.html"],

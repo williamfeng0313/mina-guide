@@ -1,0 +1,11 @@
+In /assets/js/main.js, find this part inside categoryRoutes:
+
+[["map", "maps", "region", "regions", "atlas"], "database/maps/index.html"],
+
+Replace it with these TWO lines:
+
+[["interactive map", "map tracker", "location tracker"], "tools/interactive-map.html"],
+[["map", "maps", "region", "regions", "atlas"], "database/maps/index.html"],
+
+Why this order matters:
+"interactive map" contains the word "map". The specific route must come before the generic map route.

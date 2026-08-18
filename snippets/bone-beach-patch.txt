@@ -1,0 +1,54 @@
+/database/maps/bone-beach.html — accuracy + Interactive Map patch
+
+The current page has two factual problems:
+1) Major Miner is not a Bone Beach boss; current Wiki boss location is Sandfalls: Miner's Den.
+2) Polyp Lamp is a Bone Beach Trinket; current Wiki trinket location is Bone Beach: Hide Tent (Delver).
+
+A. QUICK SUMMARY
+Change:
+Tracked Trinkets = 1
+Tracked Encounters = 2
+
+To:
+Tracked Trinkets = 2
+Tracked Encounters = 1
+
+B. TRINKETS SECTION
+Keep Joule Syringe, but change its small location text to:
+<small>Secret Shoals.</small>
+
+Then add this card directly after Joule Syringe:
+
+<a class="map-entity-card" href="../trinkets/polyp-lamp.html">
+  <span class="map-badge">Trinket</span>
+  <h3>Polyp Lamp</h3>
+  <p>Glows faintly. Reduces damage taken in dark places.</p>
+  <small>Hide Tent (Delver).</small>
+</a>
+
+C. BOSSES SECTION
+DELETE the entire Major Miner card.
+
+Keep only Mined Mind and use this version:
+
+<a class="map-entity-card" href="../bosses/index.html#mined-mind">
+  <span class="map-badge">Boss</span>
+  <h3>Mined Mind</h3>
+  <p>Bone Beach: Brain Alcove</p>
+  <small>The Spark Generator boss of Bone Beach.</small>
+</a>
+
+D. 100% CLEANUP COUNTS
+Change:
+"Verify the 1 Trinket entry..."
+to:
+"Verify the 2 Trinket entries currently associated with this region/route."
+
+Change:
+"Review the 2 boss/major encounter entries..."
+to:
+"Review the 1 boss/major encounter entry associated with this area."
+
+E. RELATED GUIDES
+Add:
+<li><a href="../../tools/interactive-map.html?region=bone-beach">Interactive Bone Beach Map</a></li>
