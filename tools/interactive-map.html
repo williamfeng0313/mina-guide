@@ -135,7 +135,7 @@ Interactive Map
 <p class="eyebrow">Interactive Map · Verified-location beta</p>
 <h1>Mina the Hollower Interactive Map</h1>
 <p class="imap-lead">
-Switch between Bone Beach and Sandfalls, filter verified Trinkets and bosses,
+Switch between Bone Beach and Sandfalls, filter verified Trinkets, bosses, train stations, and routes,
 mark entries as found, and jump directly to the relevant guide or database page.
 </p>
 <div class="imap-trust-note">
@@ -182,6 +182,8 @@ The data structure already supports pins, so verified coordinates can be added l
 <button class="imap-filter is-active" type="button" data-filter="all">All</button>
 <button class="imap-filter" type="button" data-filter="trinket">Trinkets</button>
 <button class="imap-filter" type="button" data-filter="boss">Bosses</button>
+<button class="imap-filter" type="button" data-filter="station">Train Stations</button>
+<button class="imap-filter" type="button" data-filter="route">Routes</button>
 </div>
 </section>
 
@@ -252,9 +254,11 @@ No locations match the current filters.
 <p class="section-kicker">Current beta</p>
 <h2>What This Version Tracks</h2>
 <p>
-The first release intentionally starts with two regions and six verified entries:
-Bone Beach tracks Joule Syringe, Polyp Lamp, and Mined Mind;
-Sandfalls tracks Niter Belt, Tunneling Codex, and Major Miner.
+The calibrated beta starts with two regions and eight verified entries.
+Bone Beach tracks Joule Syringe, Polyp Lamp, and Mined Mind.
+Sandfalls tracks Niter Belt, Tunneling Codex, Sandy Station, Major Miner,
+and the route transition into Bone Beach. Sandy Station stays under Sandfalls
+even when a guide informally calls it the “Bone Beach Train Station.”
 </p>
 </article>
 
@@ -305,15 +309,20 @@ Once an exact position is confirmed on the image, enter the percentages in
 <p class="section-kicker">Source policy</p>
 <h2>Verified Baseline Sources</h2>
 <p>
-This beta uses the Mina the Hollower Wiki/Manual as the factual baseline for the
-six location names below. Community sources can be added later for route nuance,
-but they should not override verified item or boss locations without stronger evidence.
+This beta uses the current Mina the Hollower Wiki/Manual as the factual baseline
+for item, boss, region, and Coltrane Peak classification. GameSpot and a detailed
+GameFAQs walkthrough are used for the Sandfalls TNT route, Sandy Station access,
+and the practical transition into Bone Beach. Ambiguous transition screens are
+treated as boundary notes rather than silently reassigned to a neighboring region.
 </p>
 <ul>
 <li><a href="https://minathehollower.wiki.gg/wiki/Trinkets" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Trinkets</a></li>
 <li><a href="https://minathehollower.wiki.gg/wiki/Tunneling_Codex" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Tunneling Codex</a></li>
 <li><a href="https://minathehollower.wiki.gg/wiki/Bosses" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Bosses</a></li>
 <li><a href="https://minathehollower.wiki.gg/wiki/Tenebrous_Isle" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Tenebrous Isle</a></li>
+<li><a href="https://minathehollower.wiki.gg/wiki/Ambiguous_Area_Names" target="_blank" rel="noopener noreferrer">Mina the Hollower Wiki — Ambiguous Area Names</a></li>
+<li><a href="https://www.gamespot.com/articles/mina-the-hollower-fast-travel/" target="_blank" rel="noopener noreferrer">GameSpot — Train Stations &amp; Fast Travel</a></li>
+<li><a href="https://www.gamespot.com/articles/how-to-get-to-bone-beach-in-mina-the-hollower/" target="_blank" rel="noopener noreferrer">GameSpot — How to Reach Bone Beach</a></li>
 </ul>
 </section>
 

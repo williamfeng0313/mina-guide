@@ -241,6 +241,16 @@
   color: #fff5e8;
 }
 
+.imap-marker[data-type="station"] {
+  background: #496a75;
+  color: #fffaf0;
+}
+
+.imap-marker[data-type="route"] {
+  background: #436447;
+  color: #fffaf0;
+}
+
 .imap-marker.is-found {
   opacity: 0.48;
 }

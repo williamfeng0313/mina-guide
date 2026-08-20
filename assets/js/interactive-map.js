@@ -189,7 +189,13 @@
         marker.dataset.type = location.type;
         marker.style.left = location.x + "%";
         marker.style.top = location.y + "%";
-        marker.textContent = location.type === "boss" ? "B" : "T";
+        const markerLabels = {
+          trinket: "T",
+          boss: "B",
+          station: "S",
+          route: "→"
+        };
+        marker.textContent = markerLabels[location.type] || "•";
         marker.title = location.name + " — " + location.sublocation;
         marker.setAttribute("aria-label", marker.title);
 
@@ -214,8 +220,13 @@
   function openDetail(location) {
     selectedLocationId = location.id;
 
-    detailType.textContent =
-      location.type === "boss" ? "Boss" : "Trinket";
+    const typeLabels = {
+      trinket: "Trinket",
+      boss: "Boss",
+      station: "Train Station",
+      route: "Route / Transition"
+    };
+    detailType.textContent = typeLabels[location.type] || "Location";
     detailName.textContent = location.name;
     detailLocation.textContent =
       currentRegion().name + ": " + location.sublocation;
@@ -251,7 +262,7 @@
   }
 
   function setActiveFilter(filter) {
-    const allowed = ["all", "trinket", "boss"];
+    const allowed = ["all", "trinket", "boss", "station", "route"];
     activeFilter = allowed.includes(filter) ? filter : "all";
 
     filterWrap.querySelectorAll("[data-filter]").forEach(function (button) {
